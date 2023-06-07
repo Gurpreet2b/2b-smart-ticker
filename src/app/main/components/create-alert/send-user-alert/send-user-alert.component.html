@@ -108,7 +108,22 @@
                                         <tbody>
                                             <tr *ngFor="let org of OrganizationList | paginate: { itemsPerPage: 10, currentPage: currentPage, totalItems: totalItems }; let i=index">
                                                 <td>
-                                                    <input type="checkbox" [(ngModel)]="org.selected" (change)="IsSelectedOrgList($event, org)" />
+                                                    <div class="checkbox-wrapper-33 main-box">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox"
+                                                                class="checkbox__trigger visuallyhidden"
+                                                                id="orglist" name="orglist-aud"
+                                                                [(ngModel)]="org.selected" (change)="IsSelectedOrgList($event, org)">
+                                                            <span class="checkbox__symbol">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                    viewBox="0 0 28 28" height="28px" width="28px"
+                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                    <path d="M4 14l8 7L24 7"></path>
+                                                                </svg>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <!-- <input type="checkbox" [(ngModel)]="org.selected" (change)="IsSelectedOrgList($event, org)" /> -->
                                                 </td>
                                                 <td>
                                                     {{org.name}}
@@ -357,9 +372,9 @@
             </div>
             <!-- Modal body -->
             <div class="modal-body">
-                <h3>
-                    Selecting this option will send alerts to entire organiztion!!
-                </h3>
+                <h5>
+                    By selecting this option, please note that alerts will be disseminated to all members within the organization !!
+                </h5>
                 
             </div>
         </div>

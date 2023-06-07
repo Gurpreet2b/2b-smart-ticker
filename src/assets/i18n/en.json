@@ -242,7 +242,9 @@
         "rsvpDeviceMobile": "Mobile",
         "rsvpPreviewButton": "Preview",
         "rsvpSaveButton": "Save",
-        "rsvpSave&NextButton": "Save & Next "
+        "rsvpSave&NextButton": "Save & Next ",
+        "texttocalltitlehover": "The text-to-call module is currently unavailable. Please verify the settings for the SMS gateway for further assistance.",
+        "smsAlerttitlehover": "The SMS module is currently unavailable. Please verify the SMS gateway settings for further assistance."
     },
     "MultipleAlert": {
         "compaign": "Compaign:",
@@ -380,8 +382,8 @@
         "selectAlertType": "Please Select Alert Type",
         "selectAlertTypeBroadcast": "Broadcast",
         "selectRecipients": "Select Recipients",
-        "selectBroadcast": "Caution: sending the content via Broadcast will deliver it to every User/Group/Computer/Organizational Unit within your policy. Please note the following:",
-        "broadcastAlertRecieve": "1. If the alert is received by a Computer, it is immediately stored for all users working on it. So, if you want to send the message only to users currently online, sending to Computers (or by Broadcast) is not a good idea.",
+        "selectBroadcast": "Important Notice: When using the Broadcast feature, it is crucial to be aware that the content will be distributed to all Users/Groups/Computers/Organizational Units governed by your policy. Kindly take into consideration the following points:",
+        "broadcastAlertRecieve": "1.Please note that when an alert is received by a Computer, it is instantly saved and made available to all users utilizing the device. Therefore, if your intention is to exclusively target users who are currently online, it is advisable to refrain from sending the message to Computers or employing the Broadcast feature.",
         "broadcastEmailDeliver": "2. Emails (SMS messages) are delivered to any users with email addresses (phone numbers) specified, even if they do not have Smart Ticker clients. This may lead to the license limit exceeding and/or additional costs (in SMS messages case).",
         "broadcastSendButton": "Search",
         "recipientTypeChoose": "Type: ",
@@ -1625,7 +1627,8 @@
         "alertLanguageCode": "Language code",
         "alertDefaultLanguage": "Default language",
         "alertActions": "Actions",
-        "alertRecord": "No Record Found!"
+        "alertRecord": "No Record Found!",
+        "profileSettings": "Profile Settings"
     },
     "CreateSettings": {
         "languageName": "Language Name",

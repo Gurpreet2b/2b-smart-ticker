@@ -1122,10 +1122,10 @@
                                             <div class="card-body">
                                                 <div class="row">
                                                     <div class="col-md-4">
-                                                        <div class="checkbox-wrapper-33 main-box">
+                                                        <div class="checkbox-wrapper-33 main-box" title=" {{'CreateAlert.texttocalltitlehover' | translate}}">
                                                             <label class="checkbox">
                                                                 <div *ngIf="AlertChannelDetails.voice">
-                                                                    <input type="checkbox" title=""
+                                                                    <input type="checkbox" 
                                                                     class="checkbox__trigger visuallyhidden"
                                                                     id="msgchannel-alert" name="msgchannel_alert"
                                                                     formControlName="call_alert"
@@ -1155,7 +1155,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="checkbox-wrapper-33 main-box">
+                                                        <div class="checkbox-wrapper-33 main-box" title="{{'CreateAlert.scrollingTickerMessageChannelEmailAlertDangerText' | translate}}">
                                                             <label class="checkbox">
                                                                 <div *ngIf="AlertChannelDetails.email">
                                                                     <input type="checkbox"
@@ -1190,7 +1190,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="checkbox-wrapper-33 main-box">
+                                                        <div class="checkbox-wrapper-33 main-box" title="{{'CreateAlert.smsAlerttitlehover' | translate}}">
                                                             <label class="checkbox">
                                                                 <div *ngIf="AlertChannelDetails.sms">
                                                                     <input type="checkbox"
@@ -3081,7 +3081,7 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-md-4">
-                                                    <div class="checkbox-wrapper-33 main-box">
+                                                    <div class="checkbox-wrapper-33 main-box" title=" {{'CreateAlert.texttocalltitlehover' | translate}}">
                                                         <label class="checkbox">
                                                             <input type="checkbox"
                                                                 class="checkbox__trigger visuallyhidden"
@@ -3100,10 +3100,9 @@
                                                                 | translate}}</label>
                                                         </label>
                                                     </div>
-
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <div class="checkbox-wrapper-33 main-box">
+                                                    <div class="checkbox-wrapper-33 main-box" title=" {{'CreateAlert.scrollingTickerMessageChannelEmailAlertDangerText' | translate}}">
                                                         <label class="checkbox">
                                                             <input type="checkbox"
                                                                 class="checkbox__trigger visuallyhidden"
@@ -3122,15 +3121,14 @@
                                                                 | translate}}</label>
                                                         </label>
                                                     </div>
-                                                    <div class="well text-danger">
+                                                    <!-- <div class="well text-danger">
 
-                                                        {{'CreateAlert.scrollingTickerMessageChannelEmailAlertDangerText'
-                                                        | translate}}
+                                                        {{'CreateAlert.scrollingTickerMessageChannelEmailAlertDangerText' | translate}}
 
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <div class="checkbox-wrapper-33 main-box">
+                                                    <div class="checkbox-wrapper-33 main-box" title=" {{'CreateAlert.smsAlerttitlehover' | translate}}">
                                                         <label class="checkbox">
                                                             <input type="checkbox"
                                                                 class="checkbox__trigger visuallyhidden"

@@ -111,9 +111,10 @@
                                                 (click)="GetGraphStats(active, active)">
                                                 <img src="assets/img/sent-alert-action/graph.png" alt="">
                                             </span>
-                                            <span class="text-danger cursor" (click)="delete(active.id)"
+                                            <span class="text-danger cursor" (click)="delete(active.id)" title="Delete"
                                             *ngIf="RoleAssign[4].delete">
-                                                <i class="far fa-trash-alt"></i>
+                                            <img src="assets/img/sent-alert-action/delete.png" alt="">
+                                                <!-- <i class="far fa-trash-alt"></i> -->
                                             </span>
                                         </td>
                                     </tr>

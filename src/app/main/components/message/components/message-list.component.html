@@ -61,9 +61,10 @@
                                                 [routerLink]="['/message', message.id]">
                                                 <img src="assets/img/sent-alert-action/edit-popup.png" alt="">
                                             </span>
-                                            <span class="text-danger cursor" (click)="delete(message.id)"
+                                            <span class="text-danger cursor" (click)="delete(message.id)" title="Delete"
                                             *ngIf="RoleAssign[7].delete">
-                                                <i class="far fa-trash-alt"></i>
+                                                <!-- <i class="far fa-trash-alt"></i> -->
+                                                <img src="assets/img/sent-alert-action/delete.png" alt="">
                                             </span>
                                         </td>
                                     </tr>
