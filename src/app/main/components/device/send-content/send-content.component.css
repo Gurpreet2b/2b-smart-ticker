@@ -1,0 +1,125 @@
+.right-side {
+    background: #f5f5f5;
+    height: 25.5rem;
+    margin: 1.5rem 0.5rem 1rem 1rem;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+
+.col-lg-5 {
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 39.666667%;
+}
+
+.logo-skin{
+    height: 80px;
+    width: 80px;
+    background-color: #fff;
+    padding: 5%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    object-fit: contain;
+}
+
+.logo-ticker-skin{
+    height: 57px;
+    width: 63px;
+    background-color: #fff;
+    padding: 4%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    object-fit: contain;
+}
+
+.alert-change {
+    border: 4px solid #00838f;
+    padding: 5px;
+    height: 325px;
+}
+
+.alert-setting-card {
+    margin-top: 0.5rem;
+    /* padding: 20px; */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: #fff;
+    /* height: 100%; */
+}
+
+.card-header-text {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 12px;
+    margin-bottom: 0 !important;
+}
+
+/* .DNGreen {
+    border: 4px solid green;
+}
+
+.DNRed {
+    border: 4px solid red;
+}
+
+.DNBlue {
+    border: 4px solid blue;
+}
+
+.DNYellow {
+    border: 4px solid yellow;
+} */
+
+
+
+.alert-static {
+    max-width: 500px;
+    margin: 1.75rem auto;
+}
+
+.bbpt-4 {
+    padding-top: 1.8rem !important;
+}
+
+.accord {
+    color: #676b84;
+}
+
+.input-collape {
+    height: 27px;
+}
+
+.line-space {
+    line-height: 30px;
+}
+
+.size {
+    border: 1px solid #dddbdb;
+    background: #f7f7f7;
+    color: #676b84;
+    padding: 10px;
+}
+
+.send_content_button {
+    /* margin-top: 1em; */
+}
+
+/* .angular-editor-textarea{
+    resize: both;
+} */
+
+.angular_editor_Scroll {
+    height: 160px;
+    min-height: 10rem;
+    resize: both;
+    /* width: 687px; */
+}
+
+.ticker-skin {
+    background: #f5f5f5;
+    padding: 20px 5px;
+}
+
+#header-text::-webkit-scrollbar {
+    display: none;
+}

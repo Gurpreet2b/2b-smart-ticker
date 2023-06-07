@@ -1,0 +1,12 @@
+.users{
+    height: 50%;
+    width: 50%;
+    
+}
+
+.checkbox label {
+    margin-bottom: 0;
+    margin-top: 0 !important;
+    color: #000 !important;
+    margin-left: 0 !important;
+}

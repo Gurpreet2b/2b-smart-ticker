@@ -1,0 +1,23 @@
+.size {
+    border: 1px solid #dddbdb;
+    background: #f7f7f7;
+    color: #676b84;
+    padding: 10px;
+}
+.checkbox label {
+    margin-bottom: 0;
+    margin-top: 0 !important;
+    color: #000 !important;
+    margin-left: 0 !important;
+}
+
+.alert-visual-box{
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: #fff;
+}
+
+.m-l-0{
+    margin: 0.6rem;
+}
