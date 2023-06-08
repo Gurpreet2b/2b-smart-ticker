@@ -158,7 +158,7 @@
 
                                         <div class="cursor" *ngIf="SkinId || SkinList.length" data-bs-toggle="modal"
                                         data-bs-target="#SkinPreviewModal">
-                                        <div class="row" *ngIf="IsColorValue">
+                                        <!-- <div class="row" *ngIf="IsColorValue">
                                             <div class="col-md-12" style="padding: 3rem;">
                                                 <div [ngStyle]="{'background-color': AlertBgColor}">
                                                     <div class="alert-change"
@@ -221,9 +221,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
 
-                                        <div class="row" *ngIf="IsColorValue === false">
+                                        <div class="row">
                                             <div class="col-md-12" style="padding: 4rem;">
                                                 <div [ngStyle]="{'background-color': AlertBgColor}">
                                                     <div class=""
@@ -244,6 +244,7 @@
                                                                     [ngClass]="{'colorChange': IsWhiteColor === true}"
                                                                     class="alertTitle-scroll"
                                                                     style="color: #fff; word-wrap: break-word; max-height: 50px; overflow-x: auto;">
+                                                                   
                                                             
                                                                 </h3>
                                                             </div>
