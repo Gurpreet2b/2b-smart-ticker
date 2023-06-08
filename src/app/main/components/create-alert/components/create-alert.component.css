@@ -15,6 +15,10 @@
     max-width: 39.666667%;
 }
 
+.skin-message{
+    margin: 0.5rem;
+}
+
 .col-md-6 {
     flex: 0 0 50%;
     max-width: 48%;

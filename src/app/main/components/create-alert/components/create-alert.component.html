@@ -156,7 +156,7 @@
                                         
                                         </div> -->
 
-                                    <div class="cursor" *ngIf="SkinId || SkinList.length" data-bs-toggle="modal"
+                                        <div class="cursor" *ngIf="SkinId || SkinList.length" data-bs-toggle="modal"
                                         data-bs-target="#SkinPreviewModal">
                                         <div class="row" *ngIf="IsColorValue">
                                             <div class="col-md-12" style="padding: 3rem;">
@@ -186,7 +186,7 @@
                                                                 <h3 [innerHTML]="AlertEditTitlePreview"
                                                                     class="alertTitle-scroll"
                                                                     style="color: #fff; word-wrap: break-word; max-height: 50px; overflow-x: auto;">
-                                                                    <!-- {{AlertEditTitlePreview}} -->
+                                                                   
                                                                 </h3>
                                                             </div>
                                                         </div>
@@ -195,7 +195,7 @@
                                                             <div class="col-md-12">
                                                                 <h6 [innerHTML]="AlertEditBodyPreview"
                                                                     style="height: 150px; overflow: auto; color: #fff; word-wrap: break-word;">
-                                                                    <!-- {{AlertEditBodyPreview}} -->
+                                                                   
                                                                 </h6>
                                                             </div>
                                                         </div>
@@ -244,7 +244,7 @@
                                                                     [ngClass]="{'colorChange': IsWhiteColor === true}"
                                                                     class="alertTitle-scroll"
                                                                     style="color: #fff; word-wrap: break-word; max-height: 50px; overflow-x: auto;">
-                                                                    <!-- {{AlertEditTitlePreview}} -->
+                                                            
                                                                 </h3>
                                                             </div>
                                                         </div>
@@ -254,7 +254,7 @@
                                                                 <h6 [innerHTML]="AlertEditBodyPreview"
                                                                     [ngClass]="{'colorChange': IsWhiteColor === true}"
                                                                     style="height: 130px; color: #fff; overflow: auto; word-wrap: break-word;">
-                                                                    <!-- {{AlertEditBodyPreview}} -->
+                                                                   
                                                                 </h6>
                                                             </div>
                                                         </div>
@@ -274,6 +274,125 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <!-- <div class="cursor" *ngIf="SkinId || SkinList.length" data-bs-toggle="modal"
+                                        data-bs-target="#SkinPreviewModal">
+                                        <div class="row" *ngIf="IsColorValue">
+                                            <div class="col-md-12" style="padding: 3rem;">
+                                                <div [ngStyle]="{'background-color': AlertBgColor}">
+                                                    <div class="alert-change"
+                                                        [ngStyle]="{'border': Think + 'px solid' + HeaderBorder}">
+                                                        <div class="row p-1 m-0"
+                                                            [ngStyle]="{'background-color': HeaderBgColor}">
+                                                            <div class="col-md-5 p-0"
+                                                                [ngStyle]="{'color': footerColor}">
+                                                                <div [ngStyle]="{'font-size': HeaderFontSize + 'px'}"
+                                                                    class="mt-2"
+                                                                    style="font-family: system-ui; font-weight: bold; color: #7e7e7e;">
+                                                                    {{HeaderTitle}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-7 p-0">
+                                                                <div [ngStyle]="{'text-align': HeaderLogo}">
+                                                                    <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}"
+                                                                        alt="Skin pic" style="width: 180px;">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <h3 [innerHTML]="AlertEditTitlePreview"
+                                                                    class="alertTitle-scroll"
+                                                                    style="color: #fff; word-wrap: break-word; max-height: 50px; overflow-x: auto;">
+                                                                   
+                                                                </h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <h6 [innerHTML]="AlertEditBodyPreview"
+                                                                    style="height: 150px; overflow: auto; color: #fff; word-wrap: break-word;">
+                                                                   
+                                                                </h6>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row pt-1 pb-1 m-0"
+                                                            [ngStyle]="{'background-color': FooterBgColor}">
+                                                            <div class="col-md-5" style="padding-left: 0;">
+                                                                <div [ngStyle]="{'text-align': FooterLogo}">
+                                                                    <img *ngIf="FooterImageUrl" src="{{FooterImageUrl}}"
+                                                                        alt="skin pic"
+                                                                        style="width: 180px; height: 50px;"
+                                                                        class="mr-2">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-7 text-right"
+                                                                [ngStyle]="{'color': footerColor}">
+                                                                <div [ngStyle]="{'font-size': FooterFontSize + 'px'}"
+                                                                    class="mt-2" style="color: #7e7e7e;">
+                                                                    {{FooterText}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row" *ngIf="IsColorValue === false">
+                                            <div class="col-md-12" style="padding: 4rem;">
+                                                <div [ngStyle]="{'background-color': AlertBgColor}">
+                                                    <div class=""
+                                                        [ngStyle]="{'border': Think + 'px solid' + HeaderBorder}">
+                                                        <div class="row p-1 m-0"
+                                                            [ngStyle]="{'background-color': HeaderBgColor}">
+                                                            <div class="col-md-12 text-right">
+                                                                <div [ngStyle]="{'text-align': HeaderLogo}">
+                                                                    <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}"
+                                                                        alt="Skin pic" style="width: 70px;">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <h3 [innerHTML]="AlertEditTitlePreview"
+                                                                    [ngClass]="{'colorChange': IsWhiteColor === true}"
+                                                                    class="alertTitle-scroll"
+                                                                    style="color: #fff; word-wrap: break-word; max-height: 50px; overflow-x: auto;">
+                                                            
+                                                                </h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <h6 [innerHTML]="AlertEditBodyPreview"
+                                                                    [ngClass]="{'colorChange': IsWhiteColor === true}"
+                                                                    style="height: 130px; color: #fff; overflow: auto; word-wrap: break-word;">
+                                                                   
+                                                                </h6>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row"
+                                                            [ngStyle]="{'background-color': FooterBgColor}">
+                                                            <div class="col-md-12" style="padding-left: 0;">
+                                                                <div [ngStyle]="{'text-align': FooterLogo}">
+                                                                    <img *ngIf="FooterImgUrl" src="{{FooterImgUrl}}"
+                                                                        alt="skin pic"
+                                                                        style="width: 300px; height: auto;">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
                                 </div>
                             </div>
 
@@ -1078,7 +1197,7 @@
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <input type="radio" value="top-right"
-                                                                    formControlName="position" 
+                                                                    formControlName="position"
                                                                     [(ngModel)]="DefaultSettingList.alert_position">
                                                             </div>
                                                         </div>
@@ -1122,17 +1241,19 @@
                                             <div class="card-body">
                                                 <div class="row">
                                                     <div class="col-md-4">
-                                                        <div class="checkbox-wrapper-33 main-box" title=" {{'CreateAlert.texttocalltitlehover' | translate}}">
+                                                        <div class="checkbox-wrapper-33 main-box"
+                                                            title=" {{'CreateAlert.texttocalltitlehover' | translate}}">
                                                             <label class="checkbox">
                                                                 <div *ngIf="AlertChannelDetails.voice">
-                                                                    <input type="checkbox" 
-                                                                    class="checkbox__trigger visuallyhidden"
-                                                                    id="msgchannel-alert" name="msgchannel_alert"
-                                                                    formControlName="call_alert"
-                                                                    [(ngModel)]="DefaultSettingList.text_to_call">
+                                                                    <input type="checkbox"
+                                                                        class="checkbox__trigger visuallyhidden"
+                                                                        id="msgchannel-alert" name="msgchannel_alert"
+                                                                        formControlName="call_alert"
+                                                                        [(ngModel)]="DefaultSettingList.text_to_call">
                                                                     <span class="checkbox__symbol">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                            viewBox="0 0 28 28" height="28px" width="28px"
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            version="1" viewBox="0 0 28 28"
+                                                                            height="28px" width="28px"
                                                                             class="icon-checkbox" aria-hidden="true">
                                                                             <path d="M4 14l8 7L24 7"></path>
                                                                         </svg>
@@ -1140,14 +1261,15 @@
                                                                 </div>
                                                                 <div *ngIf="!AlertChannelDetails.voice">
                                                                     <span class="checkbox__symbol" title="test">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                            viewBox="0 0 28 28" height="28px" width="28px"
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            version="1" viewBox="0 0 28 28"
+                                                                            height="28px" width="28px"
                                                                             class="icon-checkbox" aria-hidden="true">
                                                                             <path d="M4 14l8 7L24 7"></path>
                                                                         </svg>
                                                                     </span>
                                                                 </div>
-                                                                
+
                                                                 <label for="msgchannel-alert">
                                                                     {{'CreateAlert.messagingChannelsTextCall' |
                                                                     translate}}</label>
@@ -1155,18 +1277,20 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="checkbox-wrapper-33 main-box" title="{{'CreateAlert.scrollingTickerMessageChannelEmailAlertDangerText' | translate}}">
+                                                        <div class="checkbox-wrapper-33 main-box"
+                                                            title="{{'CreateAlert.scrollingTickerMessageChannelEmailAlertDangerText' | translate}}">
                                                             <label class="checkbox">
                                                                 <div *ngIf="AlertChannelDetails.email">
                                                                     <input type="checkbox"
-                                                                    class="checkbox__trigger visuallyhidden"
-                                                                    id="msgchannelemail-alert"
-                                                                    name="msgchannelemail_alert"
-                                                                    formControlName="email_alert"
-                                                                    [(ngModel)]="DefaultSettingList.email">
+                                                                        class="checkbox__trigger visuallyhidden"
+                                                                        id="msgchannelemail-alert"
+                                                                        name="msgchannelemail_alert"
+                                                                        formControlName="email_alert"
+                                                                        [(ngModel)]="DefaultSettingList.email">
                                                                     <span class="checkbox__symbol">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                            viewBox="0 0 28 28" height="28px" width="28px"
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            version="1" viewBox="0 0 28 28"
+                                                                            height="28px" width="28px"
                                                                             class="icon-checkbox" aria-hidden="true">
                                                                             <path d="M4 14l8 7L24 7"></path>
                                                                         </svg>
@@ -1175,14 +1299,15 @@
 
                                                                 <div *ngIf="!AlertChannelDetails.email">
                                                                     <span class="checkbox__symbol" title="test">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                            viewBox="0 0 28 28" height="28px" width="28px"
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            version="1" viewBox="0 0 28 28"
+                                                                            height="28px" width="28px"
                                                                             class="icon-checkbox" aria-hidden="true">
                                                                             <path d="M4 14l8 7L24 7"></path>
                                                                         </svg>
                                                                     </span>
                                                                 </div>
-                                                                
+
                                                                 <label for="msgchannelemail-alert">
                                                                     {{'CreateAlert.messagingChannelsEmailAlert' |
                                                                     translate}}</label>
@@ -1190,28 +1315,32 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div class="checkbox-wrapper-33 main-box" title="{{'CreateAlert.smsAlerttitlehover' | translate}}">
+                                                        <div class="checkbox-wrapper-33 main-box"
+                                                            title="{{'CreateAlert.smsAlerttitlehover' | translate}}">
                                                             <label class="checkbox">
                                                                 <div *ngIf="AlertChannelDetails.sms">
                                                                     <input type="checkbox"
-                                                                    class="checkbox__trigger visuallyhidden"
-                                                                    id="msgchannelsms-alert" name="msgchannelsms_alert"
-                                                                    formControlName="sms_alert"
-                                                                    [(ngModel)]="DefaultSettingList.sms">
+                                                                        class="checkbox__trigger visuallyhidden"
+                                                                        id="msgchannelsms-alert"
+                                                                        name="msgchannelsms_alert"
+                                                                        formControlName="sms_alert"
+                                                                        [(ngModel)]="DefaultSettingList.sms">
                                                                     <span class="checkbox__symbol">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                            viewBox="0 0 28 28" height="28px" width="28px"
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            version="1" viewBox="0 0 28 28"
+                                                                            height="28px" width="28px"
                                                                             class="icon-checkbox" aria-hidden="true">
                                                                             <path d="M4 14l8 7L24 7"></path>
                                                                         </svg>
                                                                     </span>
                                                                 </div>
-                                                               
+
 
                                                                 <div *ngIf="!AlertChannelDetails.sms">
                                                                     <span class="checkbox__symbol" title="test">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                            viewBox="0 0 28 28" height="28px" width="28px"
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            version="1" viewBox="0 0 28 28"
+                                                                            height="28px" width="28px"
                                                                             class="icon-checkbox" aria-hidden="true">
                                                                             <path d="M4 14l8 7L24 7"></path>
                                                                         </svg>
@@ -3081,7 +3210,8 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-md-4">
-                                                    <div class="checkbox-wrapper-33 main-box" title=" {{'CreateAlert.texttocalltitlehover' | translate}}">
+                                                    <div class="checkbox-wrapper-33 main-box"
+                                                        title=" {{'CreateAlert.texttocalltitlehover' | translate}}">
                                                         <label class="checkbox">
                                                             <input type="checkbox"
                                                                 class="checkbox__trigger visuallyhidden"
@@ -3102,7 +3232,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <div class="checkbox-wrapper-33 main-box" title=" {{'CreateAlert.scrollingTickerMessageChannelEmailAlertDangerText' | translate}}">
+                                                    <div class="checkbox-wrapper-33 main-box"
+                                                        title=" {{'CreateAlert.scrollingTickerMessageChannelEmailAlertDangerText' | translate}}">
                                                         <label class="checkbox">
                                                             <input type="checkbox"
                                                                 class="checkbox__trigger visuallyhidden"
@@ -3128,7 +3259,8 @@
                                                     </div> -->
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <div class="checkbox-wrapper-33 main-box" title=" {{'CreateAlert.smsAlerttitlehover' | translate}}">
+                                                    <div class="checkbox-wrapper-33 main-box"
+                                                        title=" {{'CreateAlert.smsAlerttitlehover' | translate}}">
                                                         <label class="checkbox">
                                                             <input type="checkbox"
                                                                 class="checkbox__trigger visuallyhidden"
@@ -4956,8 +5088,9 @@
                             <div>
                                 <div class="row" style="display: flex;">
                                     <div class="col-md-10 header-center">
-                                        <div >
-                                            <img src="assets/img/2blogo.png" alt="Logo" height="auto" width="100%" class="logo-skin">
+                                        <div>
+                                            <img src="assets/img/2blogo.png" alt="Logo" height="auto" width="100%"
+                                                class="logo-skin">
                                         </div>
                                     </div>
                                     <div class="col-md-2">
@@ -4968,9 +5101,17 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="">
-                                            <div class="row mt-3 mb-3">
-                                                <div class="col-md-7">
-                                                    {{skin.white_skin_message_body}}
+                                            <div class="row">
+                                                <div class="col-md-7 skin-message">
+                                                    <h2 style="color: black;"
+                                                        *ngIf="skin.name === 'White'">
+                                                         {{skin.white_skin_message_body}}
+                                                    </h2>
+                                                    <h2 class="text-white"
+                                                        *ngIf="skin.name !== 'White'">
+                                                         {{skin.white_skin_message_body}}
+                                                    </h2>
+                                                   
                                                 </div>
                                             </div>
 
@@ -5374,7 +5515,8 @@
                             <div class="row" style="display: flex; padding: 0px 0px;">
                                 <div class="col-md-10" style="width: 100%">
                                     <div style="display: flex;">
-                                        <img src="assets/img/2blogo.png" alt="Logo" height="auto" width="100%" class="logo-ticker-skin">
+                                        <img src="assets/img/2blogo.png" alt="Logo" height="auto" width="100%"
+                                            class="logo-ticker-skin">
                                         <!-- <img src="/assets/img/2blogo.png" alt="Skin pic" style="background: #fff; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
                                         padding: 2px;" width="50px" height="auto"> -->
                                     </div>
