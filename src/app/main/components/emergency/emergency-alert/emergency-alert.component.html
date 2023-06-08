@@ -142,7 +142,7 @@
                                     <div class="cursor" *ngIf="SkinId || SkinList.length" data-bs-toggle="modal"
                                         data-bs-target="#SkinPreviewEmergencyModal">
                                         <div class="row" *ngIf="IsColorValue">
-                                            <div class="col-md-12" style="padding: 3rem;">
+                                            <div class="col-md-12">
                                                 <div [ngStyle]="{'background-color': AlertBgColor}">
                                                     <div class="alert-change"
                                                         [ngStyle]="{'border': Think + 'px solid' + HeaderBorder}">
@@ -238,7 +238,7 @@
                                                                 <div style=" overflow-x: hidden; overflow-y: auto;">
                                                                     <h3 [innerHTML]="AlertEditBodyPreview"
                                                                         [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#fff'}"
-                                                                        style="font-family: 'Dubai-Bold', sans-serif !important; word-wrap: break-word; height: 150px;">
+                                                                        style="font-family: 'Dubai-Bold', sans-serif !important; word-wrap: break-word; height: 100px;">
                                                                         <!-- {{AlertEditBodyPreview}} -->
                                                                     </h3>
                                                                 </div>
@@ -599,7 +599,7 @@
                                         </div>
                                         <div class="card-body line-space">
                                             <div class="row">
-                                                <div class="col-md-6 m-t-2 size">
+                                                <div class="col-md-5 m-t-2 size">
                                                     <strong>{{'CreateAlert.rsvpAlertAppearanceSize' |
                                                         translate}} </strong> <br>
                                                     <input type="radio" formControlName="fullscreen"
