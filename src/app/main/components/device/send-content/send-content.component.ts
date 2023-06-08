@@ -29,6 +29,7 @@ export class SendContentComponent implements OnInit {
   public HeaderFontSize: any = '';
   public HeaderBgColor: any = '';
   public AlertBgColor: any = '';
+  public WhiteSkinMessage: any;
 
   public FooterImageUrl: any = '/assets/img/dewa-lines.png';
   public FooterLogo: any = 'left';
@@ -208,6 +209,7 @@ export class SendContentComponent implements OnInit {
     this.HeaderTextImgTicker = environment.apiUrl + res.team_image;
     this.AlertBgColor = res.alert_background_color;
     this.HeaderBgColor = res.header_background_color;
+    this.WhiteSkinMessage = res.white_skin_message_body;
     this.HeaderTitle = res.header_custom_message;
     this.HeaderTitleCheck = res.header_custom_message;
     this.HeaderFontSize = res.header_custom_message_font_color;

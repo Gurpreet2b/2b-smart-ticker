@@ -1812,8 +1812,17 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="">
-                                            <div class="row mt-3 mb-3">
-                                                <div class="col-md-7">
+                                            <div class="row">
+                                                <div class="col-md-12 skin-message">
+                                                    <h2 style="color: black;"
+                                                        *ngIf="skin.name === 'White'">
+                                                         {{skin.white_skin_message_body}}
+                                                    </h2>
+                                                    <h2 class="text-white"
+                                                        *ngIf="skin.name !== 'White'">
+                                                         {{skin.white_skin_message_body}}
+                                                    </h2>
+                                                   
                                                 </div>
                                             </div>
 

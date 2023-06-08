@@ -1,7 +1,8 @@
 .right-side {
     background: #f5f5f5;
     height: 25.5rem;
-    margin: 1.5rem 0.5rem 1rem 1rem;
+    margin-left:  1.2rem !important;
+    margin: 1.5rem 0 0 0;
     border-radius: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
@@ -19,21 +20,24 @@
     margin: 0.5rem;
 }
 
-.col-md-6 {
+/* .col-md-6 {
     flex: 0 0 50%;
     max-width: 48%;
-}
-.col-md-4 {
+} */
+/* .col-md-4 {
     -ms-flex: 0 0 33.333333%;
     flex: 0 0 33.333333%;
     max-width: 31.333333%;
-}
+} */
 .alert-appearance-size{
     border: 1px solid #dddbdb;
     background: #f7f7f7;
     color: #676b84;
     padding: 10px;
-    margin-left: 0.55rem;
+    margin: 0.5rem 0px 0.5rem 1rem;
+    /* margin: 1rem; */
+    /* margin-left: 1rem; */
+    /* margin-left: 0.55rem; */
 }
 .alert-bar-size{
     border: 1px solid #dddbdb;
@@ -43,26 +47,40 @@
     margin: 0 !important;
 }
 
+.bar-visualization-rsvp{
+    border: 1px solid #dddbdb;
+    background: #f7f7f7;
+    color: #676b84;
+    padding: 10px;
+       margin: 0.5rem 0.5rem 0.5rem 0.8rem
+}
+.bar-visualization-alert{
+    border: 1px solid #dddbdb;
+    background: #f7f7f7;
+    color: #676b84;
+    padding: 10px;
+       margin: 0.5rem 0.5rem 0.5rem 0.8rem
+}
 .bar-visualization{
     border: 1px solid #dddbdb;
     background: #f7f7f7;
     color: #676b84;
     padding: 10px;
-   margin: 0 4px 0 7px;
+   margin: 0 4px 0 1.4rem;
 }
 .bar-visualization-speed{
     border: 1px solid #dddbdb;
     background: #f7f7f7;
     color: #676b84;
     padding: 10px;
-   margin: 0 4px 0 7px;
+   margin: 0 4px 0 1.4rem;
 }
 .bar-visualization-direction{
     border: 1px solid #dddbdb;
     background: #f7f7f7;
     color: #676b84;
     padding: 10px;
-   margin: 0 4px 0 7px;
+   margin: 0 4px 0 1.4rem;
 }
 hr {
     margin-top: 0 !important;
@@ -92,7 +110,8 @@ hr {
     min-height: 326px;
 }
 .alert-setting-card {
-    margin-top: 0.5rem;
+    margin: 1.5rem 0 0 0;
+    /* margin-top: 0.5rem; */
     /* padding: 20px; */
     border: 1px solid #ddd;
     border-radius: 10px;

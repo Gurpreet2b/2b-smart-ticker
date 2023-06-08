@@ -31,7 +31,7 @@ export class CreateSurveyComponent implements OnInit {
 
   public FooterImageUrl: any = '/assets/img/dewa-lines.png';
   public HeaderLogo: any;
-  public HeaderTextImg: any = '/assets/img/deva-logo.png';
+  public HeaderTextImg: any = '/assets/img/2blogo.png';
   public FooterLogo: any;
   public FooterBgColor: any;
   public footerColor: any;
