@@ -1423,6 +1423,7 @@
         "systemConfigTab": "System Configuration",
         "defaultSettingsTab": "Default Settings",
         "alertLanguageTab": "Alert Languages",
+        "profileTab": "Profile",
         "consoleInterfaceTab": "Console Interface",
         "consoleControlPanel": "The modifications will take effect once the control panel page is completely refreshed.",
         "consoleEnableHelp": "Enable Help",

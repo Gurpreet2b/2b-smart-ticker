@@ -5,7 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { HttpService, AuthService } from 'src/app/core/services';
 import { TranslateService } from '@ngx-translate/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ConfirmedValidator } from '../profile/confirmed.validator';
+import { ConfirmedValidator } from './confirmed.validator';
 
 @Component({
   selector: 'app-settings-list',
@@ -26,22 +26,23 @@ export class SettingsListComponent implements OnInit {
   public SMTPLogsFile: any = [];
   public ClientFile: File | undefined;
   public filledpass = ''
-  public actualpass = 'ESDtgqa0123';
-  public submitted = false;
-  public ProfileDetails: any = {};
+  public actualpass = 'ESDtgqa0123'
+
   public form: FormGroup = new FormGroup({});
+  public ProfileDetails: any = {};
   public Permission: any = [];
   public RoleName: any;
   public RoleAssign: any = [];
+  public submitted = false;
 
   constructor(private http: HttpService,
-    private toastr: ToastrService,
+    private toastr: ToastrService, public fb: FormBuilder,
     private activeRoute: ActivatedRoute, private router: Router,
     private dtPipe: DatePipe, public translate: TranslateService,
-    public fb: FormBuilder,
     private authService: AuthService) {
     translate.addLangs(['en', 'en']);
     translate.setDefaultLang(authService.currentLanguage);
+    
     this.form = fb.group({
       old_password: new FormControl('', [Validators.required]),
       new_password: new FormControl('', [Validators.required]),
@@ -53,14 +54,16 @@ export class SettingsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.authService.SetRestaurantName(`Settings`);
+    this.authService.SetRestaurantName(`Common Settings`);
+
     this.Permission = this.authService.getPermission();
     this.RoleAssign = JSON.parse(this.Permission.access_control_list);
     this.RoleName = this.Permission.role;
-    this.GetProfileDetails();
+
     this.GetDefaultSettings();
     this.GetLanguageSettings();
     this.GetCommonSettings();
+    this.GetProfileDetails();
   }
 
   GetProfileDetails() {
@@ -94,7 +97,8 @@ export class SettingsListComponent implements OnInit {
       }
     })
   }
- 
+
+
   OnSubmit(): any {
     this.submitted = true;
     this.form.markAllAsTouched();
@@ -128,15 +132,9 @@ export class SettingsListComponent implements OnInit {
       } else if(error.status === 403) {
         this.toastr.error("Forbidden Error");
       } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
+        this.toastr.error("Server not Found");
       } else if(error.status === 500) {
         this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
       } else {
         this.toastr.error("Server not reachable");
         this.loading = false;
@@ -152,6 +150,7 @@ export class SettingsListComponent implements OnInit {
     $("body").removeClass("modal-open");
     $("body").addClass("modal-overflow");
   }
+
   OnChangeClose(event: any) {
     if (event.target.checked === true) {
       this.DefaultSettingList.autoclose_boolean = true;
@@ -210,15 +209,9 @@ export class SettingsListComponent implements OnInit {
       } else if(error.status === 403) {
         this.toastr.error("Forbidden Error");
       } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
+        this.toastr.error("Server not Found");
       } else if(error.status === 500) {
         this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
       } else {
         this.toastr.error("Server not reachable");
         this.loading = false;
@@ -334,15 +327,9 @@ export class SettingsListComponent implements OnInit {
       } else if(error.status === 403) {
         this.toastr.error("Forbidden Error");
       } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
+        this.toastr.error("Server not Found");
       } else if(error.status === 500) {
         this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
       } else {
         this.toastr.error("Server not reachable");
         this.loading = false;
@@ -382,15 +369,9 @@ export class SettingsListComponent implements OnInit {
       } else if(error.status === 403) {
         this.toastr.error("Forbidden Error");
       } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
+        this.toastr.error("Server not Found");
       } else if(error.status === 500) {
         this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
       } else {
         this.toastr.error("Server not reachable");
         this.loading = false;
@@ -431,15 +412,9 @@ export class SettingsListComponent implements OnInit {
       } else if(error.status === 403) {
         this.toastr.error("Forbidden Error");
       } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
+        this.toastr.error("Server not Found");
       } else if(error.status === 500) {
         this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
       } else {
         this.toastr.error("Server not reachable");
         this.loading = false;
@@ -479,15 +454,9 @@ export class SettingsListComponent implements OnInit {
       } else if(error.status === 403) {
         this.toastr.error("Forbidden Error");
       } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
+        this.toastr.error("Server not Found");
       } else if(error.status === 500) {
         this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
       } else {
         this.toastr.error("Server not reachable");
         this.loading = false;
@@ -521,15 +490,9 @@ export class SettingsListComponent implements OnInit {
       } else if(error.status === 403) {
         this.toastr.error("Forbidden Error");
       } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
+        this.toastr.error("Server not Found");
       } else if(error.status === 500) {
         this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
       } else {
         this.toastr.error("Server not reachable");
         this.loading = false;
@@ -563,15 +526,9 @@ export class SettingsListComponent implements OnInit {
       } else if(error.status === 403) {
         this.toastr.error("Forbidden Error");
       } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
+        this.toastr.error("Server not Found");
       } else if(error.status === 500) {
         this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
       } else {
         this.toastr.error("Server not reachable");
         this.loading = false;
@@ -603,15 +560,9 @@ export class SettingsListComponent implements OnInit {
       } else if(error.status === 403) {
         this.toastr.error("Forbidden Error");
       } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
+        this.toastr.error("Server not Found");
       } else if(error.status === 500) {
         this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
       } else {
         this.toastr.error("Server not reachable");
         this.loading = false;
@@ -669,15 +620,9 @@ export class SettingsListComponent implements OnInit {
       } else if(error.status === 403) {
         this.toastr.error("Forbidden Error");
       } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
+        this.toastr.error("Server not Found");
       } else if(error.status === 500) {
         this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
       } else {
         this.toastr.error("Server not reachable");
         this.loading = false;
@@ -709,15 +654,9 @@ export class SettingsListComponent implements OnInit {
       } else if(error.status === 403) {
         this.toastr.error("Forbidden Error");
       } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
+        this.toastr.error("Server not Found");
       } else if(error.status === 500) {
         this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
       } else {
         this.toastr.error("Server not reachable");
         this.loading = false;
@@ -747,15 +686,9 @@ export class SettingsListComponent implements OnInit {
       } else if(error.status === 403) {
         this.toastr.error("Forbidden Error");
       } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
+        this.toastr.error("Server not Found");
       } else if(error.status === 500) {
         this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
       } else {
         this.toastr.error("Server not reachable");
         this.loading = false;
@@ -805,15 +738,9 @@ export class SettingsListComponent implements OnInit {
       } else if(error.status === 403) {
         this.toastr.error("Forbidden Error");
       } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
+        this.toastr.error("Server not Found");
       } else if(error.status === 500) {
         this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
       } else {
         this.toastr.error("Server not reachable");
         this.loading = false;

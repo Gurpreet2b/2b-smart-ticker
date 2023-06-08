@@ -1423,6 +1423,7 @@
         "systemConfigTab": "تكوين النظام",
         "defaultSettingsTab": "الإعدادات الافتراضية",
         "alertLanguageTab": "لغات التنبيه",
+        "profileTab": "حساب تعريفي",
         "consoleInterfaceTab": "واجهة وحدة التحكم",
         "consoleControlPanel": "سيتم تطبيق التغييرات بعد التحديث الكامل لصفحة لوحة التحكم",
         "consoleEnableHelp": "تمكين التعليمات",
