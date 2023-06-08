@@ -57,7 +57,8 @@ export class CreateAlertComponent implements OnInit {
   show_alert_title: boolean;
   ShowFooter: boolean;
   public IsCheckPreview: any = false;
-  public SkinListLocal: any
+  public SkinListLocal: any;
+  public WhiteSkinMessage: any;
 
   constructor(private http: HttpService,
     public toastr: ToastrService, private router: Router,
@@ -293,6 +294,7 @@ export class CreateAlertComponent implements OnInit {
     this.HeaderTextImgTicker = environment.apiUrl + res.team_image;
     this.AlertBgColor = res.alert_background_color;
     this.HeaderBgColor = res.header_background_color;
+    this.WhiteSkinMessage = res.white_skin_message_body;
     this.HeaderTitle = res.header_custom_message;
     this.HeaderTitleCheck = res.header_custom_message;
     this.HeaderFontSize = res.header_custom_message_font_color;
