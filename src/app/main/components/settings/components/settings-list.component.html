@@ -5,30 +5,32 @@
                 <div class="row mb_30">
                     <div class="col-md-12">
                         <ul class="nav nav-tabs dash-tabs" role="tablist">
-                            <li class="nav-item active">
+                            <li class="nav-item active" *ngIf="RoleName === 'administrator'">
                                 <a class="nav-link active accord" data-bs-toggle="tab" href="#system" role="tab">
                                     {{'Settings.systemConfigTab' | translate}}
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item" *ngIf="RoleName === 'administrator'">
                                 <a class="nav-link accord" data-bs-toggle="tab" href="#default" role="tab">
                                     {{'Settings.defaultSettingsTab' | translate}}
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item" *ngIf="RoleName === 'administrator'">
                                 <a class="nav-link accord" data-bs-toggle="tab" href="#alert" role="tab">
                                     {{'Settings.alertLanguageTab' | translate}}
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link accord" data-bs-toggle="tab" href="#profile" role="tab">
-                                    {{'Settings.profileSettings' | translate}}
+
+                            <li class="nav-item" [ngClass]="{'active': RoleName !== 'administrator'}">
+                                <a class="nav-link accord" data-bs-toggle="tab" href="#profile" role="tab"
+                                [ngClass]="{'active': RoleName !== 'administrator'}">
+                                {{'Settings.profileTab' | translate}}
                                 </a>
                             </li>
                         </ul>
 
                         <div class="tab-content" style="width: 100%;">
-                            <div class="tab-pane active" id="system" role="tabpanel">
+                            <div class="tab-pane active" id="system" role="tabpanel" *ngIf="RoleName === 'administrator'">
                                 <!-- <h2 class="mt-2"> {{'Settings.systemConfigTab' | translate}}</h2> -->
                                 <div class="row">
                                     <div class="col-lg-12">
@@ -36,9 +38,9 @@
                                             <div class="accordion" id="faq">
                                                 <div class="card">
                                                     <div class="card-header" id="headingOne">
-                                                        <a href="#" class="btn btn-header-link"
-                                                            data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                                            aria-expanded="true" aria-controls="collapseOne">
+                                                        <a href="#" class="btn btn-header-link" data-bs-toggle="collapse"
+                                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                                            aria-controls="collapseOne">
                                                             {{'Settings.consoleInterfaceTab' | translate}}
                                                         </a>
                                                     </div>
@@ -47,14 +49,18 @@
                                                         <div class="card-body line-space">
                                                             <label> {{'Settings.consoleControlPanel' | translate}}
                                                             </label> <br>
+                                                            <!-- <input type="checkbox"
+                                                                [(ngModel)]="CommonSettingList.get_help"
+                                                                [ngModelOptions]="{standalone: true}">
+                                                            {{'Settings.consoleEnableHelp' | translate}} <br> -->
 
-                                                            <!-- <div class="checkbox-wrapper-33 main-box">
+                                                            <div class="checkbox-wrapper-33 main-box">
                                                                 <label class="checkbox">
-                                                                    <input type="checkbox" 
+                                                                    <input type="checkbox"
                                                                         class="checkbox__trigger visuallyhidden"
-                                                                        id="msgchannel-alert" name="msgchannel_alert"
-                                                                        formControlName="call_alert"
-                                                                        [(ngModel)]="CommonSettingList.get_help">
+                                                                        id="orglist" name="orglist-aud"
+                                                                        [(ngModel)]="CommonSettingList.get_help"
+                                                                        [ngModelOptions]="{standalone: true}">
                                                                     <span class="checkbox__symbol">
                                                                         <svg xmlns="http://www.w3.org/2000/svg" version="1"
                                                                             viewBox="0 0 28 28" height="28px" width="28px"
@@ -62,15 +68,8 @@
                                                                             <path d="M4 14l8 7L24 7"></path>
                                                                         </svg>
                                                                     </span>
-                                                                    <label for="msgchannel-alert">
-                                                                        {{'Settings.consoleEnableHelp' |
-                                                                        translate}}</label>
                                                                 </label>
-                                                            </div> -->
-                                                            <input type="checkbox"
-                                                                [(ngModel)]="CommonSettingList.get_help"
-                                                                [ngModelOptions]="{standalone: true}">
-                                                            {{'Settings.consoleEnableHelp' | translate}} <br>
+                                                            </div>
 
                                                             <!-- <input type="checkbox"
                                                             [(ngModel)]="CommonSettingList.simple_group_sending"
@@ -162,7 +161,7 @@
                                                     </div>
                                                 </div>
                                             </div> -->
-                                                <!-- <div class="card">
+                                                <div class="card">
                                                     <div class="card-header" id="headingFour">
                                                         <h5 class="mb-0">
                                                             <a href="#" class="btn btn-header-link collapsed"
@@ -218,7 +217,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div> -->
+                                                </div>
                                                 <div class="card">
                                                     <div class="card-header" id="headingFive ">
                                                         <h5 class="mb-0">
@@ -235,15 +234,14 @@
                                                             <div class="row">
                                                                 <div class="col-lg-5">
                                                                     <div class="form-group">
-                                                                        <label> {{'Settings.apiSelect' |
-                                                                            translate}}</label>
+                                                                        <label> {{'Settings.apiSelect' | translate}}</label>
                                                                         <input type="text" class="form-control"
-                                                                            placeholder="51be43b9-a300-428c-8403-4f352c11t" />
-                                                                        <label><u>{{'Settings.apiRegenerate' |
-                                                                                translate}}</u> </label>
+                                                                        placeholder="51be43b9-a300-428c-8403-4f352c11t" />
+                                                                        <label><u>{{'Settings.apiRegenerate' | translate}}</u> </label>
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            
                                                         </div>
                                                     </div>
                                                 </div>
@@ -283,9 +281,8 @@
                                                     <div class="card-header" id="headingSeven">
                                                         <h5 class="mb-0">
                                                             <a href="#" class="btn btn-header-link collapsed"
-                                                                data-bs-toggle="collapse"
-                                                                data-bs-target="#collapseSeven" aria-expanded="false"
-                                                                aria-controls="collapseSeven">
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseSeven"
+                                                                aria-expanded="false" aria-controls="collapseSeven">
                                                                 {{'Settings.date_timeTab' | translate}}
                                                             </a>
                                                         </h5>
@@ -362,9 +359,8 @@
                                                     <div class="card-header" id="headingEight">
                                                         <h5 class="mb-0">
                                                             <a href="#" class="btn btn-header-link collapsed"
-                                                                data-bs-toggle="collapse"
-                                                                data-bs-target="#collapseEight" aria-expanded="false"
-                                                                aria-controls="collapseEight">
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseEight"
+                                                                aria-expanded="false" aria-controls="collapseEight">
                                                                 {{'Settings.smptSettings' | translate}}
                                                             </a>
                                                         </h5>
@@ -393,26 +389,9 @@
                                                                     <div class="form-group">
                                                                         <label>{{'Settings.smptUsingSsl' |
                                                                             translate}}</label>
-                                                                            <div class="checkbox-wrapper-33 main-box">
-                                                                                <label class="checkbox">
-                                                                                    <input type="checkbox"
-                                                                                        class="checkbox__trigger visuallyhidden"
-                                                                                        id="highpriority" name="highpriority_alert"
-                                                                                        formControlName="high_priority"
-                                                                                        [(ngModel)]="CommonSettingList.smtp_use_ssl">
-                                                                                    <span class="checkbox__symbol">
-                                                                                        <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                            viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                            class="icon-checkbox" aria-hidden="true">
-                                                                                            <path d="M4 14l8 7L24 7"></path>
-                                                                                        </svg>
-                                                                                    </span>
-                                                                                    
-                                                                                </label>
-                                                                            </div>
-                                                                        <!-- <input type="checkbox" class="form-control"
+                                                                        <input type="checkbox" class="form-control"
                                                                             style="width: 20px;"
-                                                                            [(ngModel)]="CommonSettingList.smtp_use_ssl"> -->
+                                                                            [(ngModel)]="CommonSettingList.smtp_use_ssl">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -437,22 +416,9 @@
                                                                     <div class="form-group">
                                                                         <label>{{'Settings.smptAuthentication' |
                                                                             translate}}</label>
-                                                                            <div class="checkbox-wrapper-33 main-box">
-                                                                                <label class="checkbox">
-                                                                                    <input type="checkbox"
-                                                                                        class="checkbox__trigger visuallyhidden"
-                                                                                        id="smptauth" name="smptauth-use"
-                                                                                        formControlName="high_priority"
-                                                                                        [(ngModel)]="CommonSettingList.smtp_use_authentication">
-                                                                                    <span class="checkbox__symbol">
-                                                                                        <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                            viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                            class="icon-checkbox" aria-hidden="true">
-                                                                                            <path d="M4 14l8 7L24 7"></path>
-                                                                                        </svg>
-                                                                                    </span>
-                                                                                </label>
-                                                                            </div>
+                                                                        <input type="checkbox" class="form-control"
+                                                                            style="width: 20px;"
+                                                                            [(ngModel)]="CommonSettingList.smtp_use_authentication">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -469,44 +435,18 @@
                                                                     <div class="form-group">
                                                                         <label>{{'Settings.smptLogging' |
                                                                             translate}}</label>
-                                                                            <div class="checkbox-wrapper-33 main-box">
-                                                                                <label class="checkbox">
-                                                                                    <input type="checkbox"
-                                                                                        class="checkbox__trigger visuallyhidden"
-                                                                                        id="highpriority" name="highpriority_alert"
-                                                                                        [(ngModel)]="CommonSettingList.smtp_logging">
-                                                                                    <span class="checkbox__symbol">
-                                                                                        <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                            viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                            class="icon-checkbox" aria-hidden="true">
-                                                                                            <path d="M4 14l8 7L24 7"></path>
-                                                                                        </svg>
-                                                                                    </span>
-                                                                                 
-                                                                                </label>
-                                                                            </div>
+                                                                        <input type="checkbox" class="form-control"
+                                                                            style="width: 20px;"
+                                                                            [(ngModel)]="CommonSettingList.smtp_logging">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
                                                                         <label>{{'Settings.smptUsingTLS' |
                                                                             translate}}</label>
-                                                                            <div class="checkbox-wrapper-33 main-box">
-                                                                                <label class="checkbox">
-                                                                                    <input type="checkbox"
-                                                                                        class="checkbox__trigger visuallyhidden"
-                                                                                        id="highpriority" name="highpriority_alert"
-                                                                                        formControlName="high_priority"
-                                                                                        [(ngModel)]="CommonSettingList.smtp_use_tls">
-                                                                                    <span class="checkbox__symbol">
-                                                                                        <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                            viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                            class="icon-checkbox" aria-hidden="true">
-                                                                                            <path d="M4 14l8 7L24 7"></path>
-                                                                                        </svg>
-                                                                                    </span>
-                                                                                </label>
-                                                                            </div>
+                                                                        <input type="checkbox" class="form-control"
+                                                                            style="width: 20px;"
+                                                                            [(ngModel)]="CommonSettingList.smtp_use_tls">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -514,35 +454,26 @@
                                                             <div class="row">
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <button type="button"
-                                                                            class="btn btn-outline-secondary"
-                                                                            data-bs-toggle="modal"
-                                                                            data-bs-target="#OpenSMTPFileModal">
-                                                                            {{'Settings.smptLoginFile'|
-                                                                            translate}}</button>
+                                                                        <button type="button" class="btn btn-outline-secondary"
+                                                                        data-bs-toggle="modal" data-bs-target="#OpenSMTPFileModal">
+                                                                            {{'Settings.smptLoginFile'| translate}}</button>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <button type="button"
-                                                                            class="btn btn-outline-secondary"
+                                                                        <button type="button" class="btn btn-outline-secondary"
                                                                             (click)="OnServerConnectivity()">
-                                                                            {{'Settings.smptUsingServerConnectivity' |
-                                                                            translate}}
+                                                                            {{'Settings.smptUsingServerConnectivity' | translate}}
                                                                         </button>
-                                                                        <img src="../../../../../../assets/img/loader.gif"
-                                                                            *ngIf="loadingServer">
+                                                                        <img src="../../../../../../assets/img/loader.gif" *ngIf="loadingServer">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <button type="button"
-                                                                            class="btn btn-outline-secondary"
-                                                                            (click)="OnSendEmail()">
-                                                                            {{'Settings.smptUsingTestEmail' |
-                                                                            translate}}</button>
-                                                                        <img src="../../../../../../assets/img/loader.gif"
-                                                                            *ngIf="loadingEmail">
+                                                                        <button type="button" class="btn btn-outline-secondary"
+                                                                        (click)="OnSendEmail()">
+                                                                            {{'Settings.smptUsingTestEmail' | translate}}</button>
+                                                                            <img src="../../../../../../assets/img/loader.gif" *ngIf="loadingEmail">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -574,9 +505,8 @@
                                                                             </a>
                                                                         </li>
                                                                         <li class="nav-item">
-                                                                            <a class="nav-link accord"
-                                                                                data-bs-toggle="tab" href="#test"
-                                                                                role="tab">
+                                                                            <a class="nav-link accord" data-bs-toggle="tab"
+                                                                                href="#test" role="tab">
                                                                                 {{'Settings.textToCall' | translate}}
                                                                             </a>
                                                                         </li>
@@ -587,28 +517,23 @@
 
                                                                             <div class="row mt-2">
                                                                                 <div class="col-lg-12">
-                                                                                    <label>{{'Settings.SmsGlobalVendor'
-                                                                                        | translate}}</label>
+                                                                                    <label>{{'Settings.SmsGlobalVendor' | translate}}</label>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="row">
                                                                                 <div class="col-lg-4">
                                                                                     <div class="form-group">
-                                                                                        <label>{{'Settings.SmsGlobalUserName'
-                                                                                            |
+                                                                                        <label>{{'Settings.SmsGlobalUserName' |
                                                                                             translate}}</label>
-                                                                                        <input type="text"
-                                                                                            class="form-control"
+                                                                                        <input type="text" class="form-control"
                                                                                             [(ngModel)]="CommonSettingList.sms_username">
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-lg-4">
                                                                                     <div class="form-group">
-                                                                                        <label>{{'Settings.SmsGlobalPassword'
-                                                                                            |
+                                                                                        <label>{{'Settings.SmsGlobalPassword' |
                                                                                             translate}}</label>
-                                                                                        <input type="password"
-                                                                                            class="form-control"
+                                                                                        <input type="password" class="form-control"
                                                                                             [(ngModel)]="CommonSettingList.sms_password">
                                                                                     </div>
                                                                                 </div>
@@ -616,11 +541,9 @@
                                                                             <div class="row">
                                                                                 <div class="col-lg-4">
                                                                                     <div class="form-group">
-                                                                                        <button type="button"
-                                                                                            class="btn btn-outline-secondary mt-2"
-                                                                                            (click)="OnSendSMS()">
-                                                                                            {{'Settings.sendSmsButton' |
-                                                                                            translate}} </button>
+                                                                                        <button type="button" class="btn btn-outline-secondary mt-2"
+                                                                                        (click)="OnSendSMS()">
+                                                                                        {{'Settings.sendSmsButton' | translate}} </button>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -630,21 +553,17 @@
                                                                             <div class="row">
                                                                                 <div class="col-lg-4">
                                                                                     <div class="form-group">
-                                                                                        <label>{{'Settings.textTabUserName'
-                                                                                            |
+                                                                                        <label>{{'Settings.textTabUserName' |
                                                                                             translate}}</label>
-                                                                                        <input type="text"
-                                                                                            class="form-control"
+                                                                                        <input type="text" class="form-control"
                                                                                             [(ngModel)]="CommonSettingList.voice_username">
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-lg-4">
                                                                                     <div class="form-group">
-                                                                                        <label>{{'Settings.textTabApiNumber'
-                                                                                            |
+                                                                                        <label>{{'Settings.textTabApiNumber' |
                                                                                             translate}}</label>
-                                                                                        <input type="text"
-                                                                                            class="form-control"
+                                                                                        <input type="text" class="form-control"
                                                                                             [(ngModel)]="CommonSettingList.voice_api_key">
                                                                                     </div>
                                                                                 </div>
@@ -652,11 +571,9 @@
                                                                             <div class="row">
                                                                                 <div class="col-lg-4">
                                                                                     <div class="form-group">
-                                                                                        <button type="button"
-                                                                                            class="btn btn-outline-secondary mt-2"
-                                                                                            (click)="OnSendToCall()">
-                                                                                            {{'Settings.sendTextButton'
-                                                                                            | translate}} </button>
+                                                                                        <button type="button" class="btn btn-outline-secondary mt-2"
+                                                                                        (click)="OnSendToCall()">
+                                                                                        {{'Settings.sendTextButton' | translate}} </button>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -712,9 +629,8 @@
                                                     <div class="card-header" id="headingEleven">
                                                         <h5 class="mb-0">
                                                             <a href="#" class="btn btn-header-link collapsed"
-                                                                data-bs-toggle="collapse"
-                                                                data-bs-target="#collapseEleven" aria-expanded="false"
-                                                                aria-controls="collapseEleven">
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseEleven"
+                                                                aria-expanded="false" aria-controls="collapseEleven">
                                                                 {{'Settings.sessionConfigTab' | translate}}
                                                             </a>
                                                         </h5>
@@ -727,60 +643,18 @@
                                                             <div class="row">
                                                                 <div class="col-lg-5">
                                                                     <div class="form-group">
-                                                                        <div class="checkbox-wrapper-33 main-box">
-                                                                            <label class="checkbox">
-                                                                                <input type="checkbox"
-                                                                                    class="checkbox__trigger visuallyhidden"
-                                                                                    id="highpriority" name="highpriority_alert"
-                                                                                    formControlName="high_priority"
-                                                                                    [(ngModel)]="CommonSettingList.maximum_sessions_boolean"
-                                                                                    (click)="IsMaximumServer($event)">
-                                                                                <span class="checkbox__symbol">
-                                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                        viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                        class="icon-checkbox" aria-hidden="true">
-                                                                                        <path d="M4 14l8 7L24 7"></path>
-                                                                                    </svg>
-                                                                                </span>
-                                                                                <label for="highpriority"> {{
-                                                                                    'Settings.serverSession' | translate}}</label>
-                                                                            </label>
-                                                                        </div>
-                                                                        <!-- <input type="checkbox" class="mr-1"
-                                                                            [(ngModel)]="CommonSettingList.maximum_sessions_boolean"
-                                                                            (click)="IsMaximumServer($event)">
-                                                                        <label>{{'Settings.serverSession' |
-                                                                            translate}}</label> -->
+                                                                        <input type="checkbox" class="mr-1" [(ngModel)]="CommonSettingList.maximum_sessions_boolean"
+                                                                        (click)="IsMaximumServer($event)">
+                                                                        <label>{{'Settings.serverSession' | translate}}</label>
                                                                         <input type="number" class="form-control"
                                                                             [(ngModel)]="CommonSettingList.maximum_sessions_count">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-5">
                                                                     <div class="form-group">
-                                                                        <div class="checkbox-wrapper-33 main-box">
-                                                                            <label class="checkbox">
-                                                                                <input type="checkbox"
-                                                                                    class="checkbox__trigger visuallyhidden"
-                                                                                    id="publishersession" name="publisher-settings"
-                                                                                    formControlName="high_priority"
-                                                                                    (click)="IsMaximumPublisher($event)"
-                                                                            [(ngModel)]="CommonSettingList.maximum_sessions_per_user_boolean">
-                                                                                <span class="checkbox__symbol">
-                                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                        viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                        class="icon-checkbox" aria-hidden="true">
-                                                                                        <path d="M4 14l8 7L24 7"></path>
-                                                                                    </svg>
-                                                                                </span>
-                                                                                <label for="publishersession"> {{
-                                                                                    'Settings.publisherSession' | translate}}</label>
-                                                                            </label>
-                                                                        </div>
-                                                                        <!-- <input type="checkbox" class="mr-1"
-                                                                            (click)="IsMaximumPublisher($event)"
-                                                                            [(ngModel)]="CommonSettingList.maximum_sessions_per_user_boolean">
-                                                                        <label>{{'Settings.publisherSession' |
-                                                                            translate}}</label> -->
+                                                                        <input type="checkbox" class="mr-1" (click)="IsMaximumPublisher($event)"
+                                                                        [(ngModel)]="CommonSettingList.maximum_sessions_per_user_boolean">
+                                                                        <label>{{'Settings.publisherSession' | translate}}</label>
                                                                         <input type="number" class="form-control"
                                                                             [(ngModel)]="CommonSettingList.maximum_sessions_per_user_count">
                                                                     </div>
@@ -791,11 +665,9 @@
                                                             <div class="row">
                                                                 <div class="col-lg-5">
                                                                     <div class="form-group">
-                                                                        <input type="checkbox" class="mr-1"
-                                                                            [(ngModel)]="CommonSettingList.expiration_time_minute_boolean"
-                                                                            (click)="IsExpireTime($event)" disabled>
-                                                                        <label>{{'Settings.sessionExpirationTime' |
-                                                                            translate}}</label>
+                                                                        <input type="checkbox" class="mr-1" [(ngModel)]="CommonSettingList.expiration_time_minute_boolean"
+                                                                        (click)="IsExpireTime($event)" disabled>
+                                                                        <label>{{'Settings.sessionExpirationTime' | translate}}</label>
                                                                         <input type="number" class="form-control"
                                                                             [(ngModel)]="CommonSettingList.expiration_time_minute">
                                                                     </div>
@@ -875,7 +747,7 @@
                                                         </div>
                                                     </div>
                                                 </div> -->
-                                                <!-- <div class="card">
+                                                <div class="card">
                                                     <div class="card-header" id="headingFor">
                                                         <h5 class="mb-0">
                                                             <a href="#" class="btn btn-header-link collapsed"
@@ -965,14 +837,13 @@
 
                                                         </div>
                                                     </div>
-                                                </div> -->
+                                                </div>
                                                 <div class="card">
                                                     <div class="card-header" id="headingFifth">
                                                         <h5 class="mb-0">
                                                             <a href="#" class="btn btn-header-link collapsed"
-                                                                data-bs-toggle="collapse"
-                                                                data-bs-target="#collapseFifth" aria-expanded="false"
-                                                                aria-controls="collapseFifth">
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseFifth"
+                                                                aria-expanded="false" aria-controls="collapseFifth">
                                                                 {{'Settings.passwordPolicyTab' | translate}}
                                                             </a>
                                                         </h5>
@@ -983,40 +854,21 @@
                                                             <div class="row">
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <label>{{'Settings.passwordComplexity' |
-                                                                            translate}}</label> <br>
-                                                                            <div class="checkbox-wrapper-33 main-box">
-                                                                                <label class="checkbox">
-                                                                                    <input type="checkbox"
-                                                                                        class="checkbox__trigger visuallyhidden"
-                                                                                        id="password" name="password-policy"
-                                                                                        formControlName="high_priority"
-                                                                                        [(ngModel)]="CommonSettingList.password_policy_enabled">
-                                                                                    <span class="checkbox__symbol">
-                                                                                        <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                            viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                            class="icon-checkbox" aria-hidden="true">
-                                                                                            <path d="M4 14l8 7L24 7"></path>
-                                                                                        </svg>
-                                                                                    </span>
-                                                                                </label>
-                                                                            </div>
-                                                                        <!-- <input type="checkbox"
-                                                                            [(ngModel)]="CommonSettingList.password_policy_enabled"> -->
+                                                                        <label>{{'Settings.passwordComplexity' | translate}}</label> <br>
+                                                                        <input type="checkbox" 
+                                                                            [(ngModel)]="CommonSettingList.password_policy_enabled">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <label>{{'Settings.minPasswordLength' |
-                                                                            translate}}</label>
+                                                                        <label>{{'Settings.minPasswordLength' | translate}}</label>
                                                                         <input type="number" class="form-control"
                                                                             [(ngModel)]="CommonSettingList.password_policy_min_length">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <label>{{'Settings.maxPasswordLength' |
-                                                                            translate}}</label>
+                                                                        <label>{{'Settings.maxPasswordLength' | translate}}</label>
                                                                         <input type="number" class="form-control"
                                                                             [(ngModel)]="CommonSettingList.password_policy_max_length">
                                                                     </div>
@@ -1026,24 +878,21 @@
                                                             <div class="row">
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <label>{{'Settings.minimumNumberOfLowercase' |
-                                                                            translate}}</label>
+                                                                        <label>{{'Settings.minimumNumberOfLowercase' | translate}}</label>
                                                                         <input type="number" class="form-control"
                                                                             [(ngModel)]="CommonSettingList.password_policy_min_lower_case">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <label>{{'Settings.minimumNumberOfUppercase' |
-                                                                            translate}}</label>
+                                                                        <label>{{'Settings.minimumNumberOfUppercase' | translate}}</label>
                                                                         <input type="number" class="form-control"
                                                                             [(ngModel)]="CommonSettingList.password_policy_min_upper_case">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <label>{{'Settings.minimumNumberOfDigits' |
-                                                                            translate}}</label>
+                                                                        <label>{{'Settings.minimumNumberOfDigits' | translate}}</label>
                                                                         <input type="number" class="form-control"
                                                                             [(ngModel)]="CommonSettingList.password_policy_min_digit">
                                                                     </div>
@@ -1054,41 +903,22 @@
 
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <label>{{'Settings.passwordExpiry' |
-                                                                            translate}}</label> <br>
-                                                                            <div class="checkbox-wrapper-33 main-box">
-                                                                                <label class="checkbox">
-                                                                                    <input type="checkbox"
-                                                                                        class="checkbox__trigger visuallyhidden"
-                                                                                        id="passwordexpiry" name="password-expiry-date"
-                                                                                        formControlName="high_priority"
-                                                                                        [(ngModel)]="CommonSettingList.password_expiry_days">
-                                                                                    <span class="checkbox__symbol">
-                                                                                        <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                            viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                            class="icon-checkbox" aria-hidden="true">
-                                                                                            <path d="M4 14l8 7L24 7"></path>
-                                                                                        </svg>
-                                                                                    </span>
-                                                                                </label>
-                                                                            </div>
-                                                                        <!-- <input type="checkbox"
-                                                                            [(ngModel)]="CommonSettingList.password_expiry_days"> -->
+                                                                        <label>{{'Settings.passwordExpiry' | translate}}</label> <br>
+                                                                        <input type="checkbox"
+                                                                            [(ngModel)]="CommonSettingList.password_expiry_days">
                                                                     </div>
                                                                 </div>
-
+                                                            
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <label>{{'Settings.minimumNumberOfSymbol' |
-                                                                            translate}}</label>
+                                                                        <label>{{'Settings.minimumNumberOfSymbol' | translate}}</label>
                                                                         <input type="number" class="form-control"
                                                                             [(ngModel)]="CommonSettingList.password_policy_min_symbol">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <label>{{'Settings.passwordExpiryDays' |
-                                                                            translate}}</label>
+                                                                        <label>{{'Settings.passwordExpiryDays' | translate}}</label>
                                                                         <input type="number" class="form-control"
                                                                             [(ngModel)]="CommonSettingList.password_expiry_enabled">
                                                                     </div>
@@ -1098,82 +928,44 @@
                                                             <div class="row">
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <label>{{'Settings.passwordrecoveryFeature' |
-                                                                            translate}}</label><br>
-                                                                            <div class="checkbox-wrapper-33 main-box">
-                                                                                <label class="checkbox">
-                                                                                    <input type="checkbox"
-                                                                                        class="checkbox__trigger visuallyhidden"
-                                                                                        id="passwordrecovery" name="password-recovery-date"
-                                                                                        formControlName="high_priority"
-                                                                                        [(ngModel)]="CommonSettingList.password_recovery_on_lockscreen">
-                                                                                    <span class="checkbox__symbol">
-                                                                                        <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                            viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                            class="icon-checkbox" aria-hidden="true">
-                                                                                            <path d="M4 14l8 7L24 7"></path>
-                                                                                        </svg>
-                                                                                    </span>
-                                                                                </label>
-                                                                            </div>
-                                                                        <!-- <input type="checkbox"
-                                                                            [(ngModel)]="CommonSettingList.password_recovery_on_lockscreen"> -->
+                                                                        <label>{{'Settings.passwordrecoveryFeature' | translate}}</label><br>
+                                                                        <input type="checkbox"
+                                                                            [(ngModel)]="CommonSettingList.password_recovery_on_lockscreen">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <label>{{'Settings.passwordChange' |
-                                                                            translate}}</label><br>
-                                                                        <input type="number" class="form-control"
+                                                                        <label>{{'Settings.passwordChange' | translate}}</label><br>
+                                                                        <input type="number"  class="form-control"
                                                                             [(ngModel)]="CommonSettingList.password_expiry_change_password_days">
                                                                     </div>
-                                                                </div>
+                                                                </div> 
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <label>{{'Settings.maximumNumberOfAttempts' |
-                                                                            translate}}</label>
+                                                                        <label>{{'Settings.maximumNumberOfAttempts' | translate}}</label>
                                                                         <input type="number" class="form-control"
                                                                             [(ngModel)]="CommonSettingList.attemps_count_before_lockup">
                                                                     </div>
-                                                                </div>
+                                                                </div> 
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <label>{{'Settings.accountLockout' |
-                                                                            translate}}</label> <br>
-                                                                            <div class="checkbox-wrapper-33 main-box">
-                                                                                <label class="checkbox">
-                                                                                    <input type="checkbox"
-                                                                                        class="checkbox__trigger visuallyhidden"
-                                                                                        id="accountlockup" name="account-lock-date"
-                                                                                        formControlName="high_priority"
-                                                                                        [(ngModel)]="CommonSettingList.account_lockup_enabled">
-                                                                                    <span class="checkbox__symbol">
-                                                                                        <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                            viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                            class="icon-checkbox" aria-hidden="true">
-                                                                                            <path d="M4 14l8 7L24 7"></path>
-                                                                                        </svg>
-                                                                                    </span>
-                                                                                </label>
-                                                                            </div>
-                                                                        <!-- <input type="checkbox"
-                                                                            [(ngModel)]="CommonSettingList.account_lockup_enabled"> -->
+                                                                        <label>{{'Settings.accountLockout' | translate}}</label> <br>
+                                                                        <input type="checkbox"
+                                                                            [(ngModel)]="CommonSettingList.account_lockup_enabled">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <label>{{'Settings.publisherLockedOut' |
-                                                                            translate}}</label>
+                                                                        <label>{{'Settings.publisherLockedOut' | translate}}</label>
                                                                         <input type="number" class="form-control"
                                                                             [(ngModel)]="CommonSettingList.time_to_keep_locked_up">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
-                                                                        <label>{{'Settings.lockoutNotificationText' |
-                                                                            translate}}</label>
+                                                                        <label>{{'Settings.lockoutNotificationText' | translate}}</label>
                                                                         <input type="text" class="form-control"
                                                                             [(ngModel)]="CommonSettingList.lockup_message">
                                                                     </div>
@@ -1187,9 +979,8 @@
                                                     <div class="card-header" id="headingSixth">
                                                         <h5 class="mb-0">
                                                             <a href="#" class="btn btn-header-link collapsed"
-                                                                data-bs-toggle="collapse"
-                                                                data-bs-target="#collapseSixth" aria-expanded="false"
-                                                                aria-controls="collapseSixth">
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseSixth"
+                                                                aria-expanded="false" aria-controls="collapseSixth">
                                                                 Client Polling Interval
                                                             </a>
                                                         </h5>
@@ -1201,8 +992,7 @@
                                                                 <div class="col-lg-4">
                                                                     <div class="form-group">
                                                                         <label>Client Polling Interval (Seconds)</label>
-                                                                        <input type="number" class="form-control"
-                                                                            min="0"
+                                                                        <input type="number" class="form-control" min="0"
                                                                             [(ngModel)]="CommonSettingList.client_polling_interval"
                                                                             onkeyup="if(this.value<0){this.value= this.value * -1}">
                                                                     </div>
@@ -1350,7 +1140,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="default" role="tabpanel">
+                            <div class="tab-pane" id="default" role="tabpanel" *ngIf="RoleName === 'administrator'">
                                 <!-- <h2 class="mt-2">{{'Settings.defaultSettingsTab' | translate}}</h2> -->
                                 <div class="">
                                     <div class="row">
@@ -1368,25 +1158,8 @@
                                                         <div id="collapseOnce" class="collapse"
                                                             aria-labelledby="headingOnce" data-parent="#faq">
                                                             <div class="card-body line-space">
-                                                                <div class="checkbox-wrapper-33 main-box">
-                                                                    <label class="checkbox">
-                                                                        <input type="checkbox"
-                                                                            class="checkbox__trigger visuallyhidden"
-                                                                            checked>
-                                                                        <span class="checkbox__symbol">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                version="1" viewBox="0 0 28 28"
-                                                                                height="28px" width="28px"
-                                                                                class="icon-checkbox"
-                                                                                aria-hidden="true">
-                                                                                <path d="M4 14l8 7L24 7"></path>
-                                                                            </svg>
-                                                                        </span>
-                                                                        <label for="msgchannel-alert">
-                                                                            {{'Settings.settingsValidMobileAlert' |
-                                                                            translate}}</label>
-                                                                    </label>
-                                                                </div>
+                                                                <input type="checkbox" checked>
+                                                                {{'Settings.settingsValidMobileAlert' | translate}} <br>
                                                                 <input type="radio" class="ml-4"
                                                                     [(ngModel)]="DefaultSettingList.alerts_default_page"
                                                                     [ngModelOptions]="{standalone: true}" value="popup">
@@ -1404,68 +1177,20 @@
                                                                 {{'Settings.alertRsvp' | translate}}
                                                                 <br>
 
-                                                                <div class="checkbox-wrapper-33 main-box">
-                                                                    <label class="checkbox">
-                                                                        <input type="checkbox"
-                                                                            class="checkbox__trigger visuallyhidden"
-                                                                            [(ngModel)]="DefaultSettingList.email"
-                                                                            [ngModelOptions]="{standalone: true}">
-                                                                        <span class="checkbox__symbol">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                version="1" viewBox="0 0 28 28"
-                                                                                height="28px" width="28px"
-                                                                                class="icon-checkbox"
-                                                                                aria-hidden="true">
-                                                                                <path d="M4 14l8 7L24 7"></path>
-                                                                            </svg>
-                                                                        </span>
-                                                                        <label for="msgchannel-alert">
-                                                                            {{'Settings.alertEmail' |
-                                                                            translate}}</label>
-                                                                    </label>
-                                                                </div>
+                                                                <input type="checkbox"
+                                                                    [(ngModel)]="DefaultSettingList.email"
+                                                                    [ngModelOptions]="{standalone: true}">
+                                                                {{'Settings.alertEmail' | translate}} <br>
 
-                                                                <div class="checkbox-wrapper-33 main-box">
-                                                                    <label class="checkbox">
-                                                                        <input type="checkbox"
-                                                                            class="checkbox__trigger visuallyhidden"
-                                                                            [(ngModel)]="DefaultSettingList.sms"
-                                                                            [ngModelOptions]="{standalone: true}">
-                                                                        <span class="checkbox__symbol">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                version="1" viewBox="0 0 28 28"
-                                                                                height="28px" width="28px"
-                                                                                class="icon-checkbox"
-                                                                                aria-hidden="true">
-                                                                                <path d="M4 14l8 7L24 7"></path>
-                                                                            </svg>
-                                                                        </span>
-                                                                        <label for="msgchannel-alert">
-                                                                            {{'Settings.alertSms' |
-                                                                            translate}}</label>
-                                                                    </label>
-                                                                </div>
+                                                                <input type="checkbox"
+                                                                    [(ngModel)]="DefaultSettingList.sms"
+                                                                    [ngModelOptions]="{standalone: true}">
+                                                                {{'Settings.alertSms' | translate}} <br>
 
-                                                                <div class="checkbox-wrapper-33 main-box">
-                                                                    <label class="checkbox">
-                                                                        <input type="checkbox"
-                                                                            class="checkbox__trigger visuallyhidden"
-                                                                            [(ngModel)]="DefaultSettingList.text_to_call"
-                                                                            [ngModelOptions]="{standalone: true}">
-                                                                        <span class="checkbox__symbol">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                version="1" viewBox="0 0 28 28"
-                                                                                height="28px" width="28px"
-                                                                                class="icon-checkbox"
-                                                                                aria-hidden="true">
-                                                                                <path d="M4 14l8 7L24 7"></path>
-                                                                            </svg>
-                                                                        </span>
-                                                                        <label for="msgchannel-alert">
-                                                                            {{'Settings.alertTextToCall' |
-                                                                            translate}}</label>
-                                                                    </label>
-                                                                </div>
+                                                                <input type="checkbox"
+                                                                    [(ngModel)]="DefaultSettingList.text_to_call"
+                                                                    [ngModelOptions]="{standalone: true}">
+                                                                {{'Settings.alertTextToCall' | translate}} <br>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1473,110 +1198,13 @@
                                                         <div class="card-header" id="headingTwice">
                                                             <h5 class="mb-0">
                                                                 <a href="#" class="btn btn-header-link collapsed"
-                                                                    data-bs-toggle="collapse"
-                                                                    data-bs-target="#collapseTwice"
+                                                                    data-bs-toggle="collapse" data-bs-target="#collapseTwice"
                                                                     aria-expanded="false" aria-controls="collapseTwice">
                                                                     {{'Settings.popupAppearanceTab' | translate}}
                                                                 </a>
                                                             </h5>
                                                         </div>
                                                         <div id="collapseTwice" class="collapse"
-                                                            aria-labelledby="headingTwice" data-parent="#faq">
-                                                            <div class="row m-l-0">
-                                                                <div class="col-md-2 size mr-3">
-                                                                    <input type="radio" checked class="mr-2"
-                                                                        [(ngModel)]="DefaultSettingList.windowed_fullscreen"
-                                                                        [ngModelOptions]="{standalone: true}"
-                                                                        name="windowed_fullscreen" value="window">
-                                                                    {{'Settings.popupAppearanceWindow' | translate}}
-                                                                    <br>
-                                                                    <label class="ml-3">
-                                                                        {{'Settings.popupAppearanceWindowWidth' |
-                                                                        translate}}</label> &nbsp;
-                                                                    <input type="number" class="input-collape ml-2"
-                                                                        placeholder="400" style="width: 50px;"
-                                                                        [(ngModel)]="DefaultSettingList.width"
-                                                                        [ngModelOptions]="{standalone: true}" />
-                                                                    {{'Settings.popupAppearanceWindowWidthPx' |
-                                                                    translate}} <br>
-                                                                    <label class="ml-3">
-                                                                        {{'Settings.popupAppearanceWindowHeight' |
-                                                                        translate}}</label>
-                                                                    <input type="number" class="input-collape ml-3"
-                                                                        placeholder="400" style="width: 50px;"
-                                                                        [(ngModel)]="DefaultSettingList.height"
-                                                                        [ngModelOptions]="{standalone: true}" />
-                                                                    {{'Settings.popupAppearanceWindowHeightPx' |
-                                                                    translate}} <br>
-                                                                    <input type="radio"
-                                                                        [(ngModel)]="DefaultSettingList.windowed_fullscreen"
-                                                                        [ngModelOptions]="{standalone: true}"
-                                                                        name="windowed_fullscreen" value="fullscreen">
-                                                                    {{'Settings.popupAppearanceFullscreen' |
-                                                                    translate}}
-                                                                </div>
-                                                                <div class="col-md-2 size">
-                                                                    <h3>{{'Settings.popupAppearancePosition' |
-                                                                        translate}} </h3>
-                                                                    <div class="row mt-3">
-                                                                        <div class="col-md-10">
-                                                                            <input type="radio" name="alert_position"
-                                                                                [(ngModel)]="DefaultSettingList.alert_position"
-                                                                                [ngModelOptions]="{standalone: true}"
-                                                                                value="top-left">
-                                                                        </div>
-                                                                        <div class="col-md-2">
-                                                                            <input type="radio" name="alert_position"
-                                                                                [(ngModel)]="DefaultSettingList.alert_position"
-                                                                                [ngModelOptions]="{standalone: true}"
-                                                                                value="top-right">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-md-5">
-                                                                        </div>
-                                                                        <div class="col-md-6">
-                                                                            <input type="radio" name="alert_position"
-                                                                                [(ngModel)]="DefaultSettingList.alert_position"
-                                                                                [ngModelOptions]="{standalone: true}"
-                                                                                value="center">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-md-10">
-                                                                            <input type="radio" name="alert_position"
-                                                                                [(ngModel)]="DefaultSettingList.alert_position"
-                                                                                [ngModelOptions]="{standalone: true}"
-                                                                                value="bottom-left">
-                                                                        </div>
-                                                                        <div class="col-md-2">
-                                                                            <input type="radio" name="alert_position"
-                                                                                [(ngModel)]="DefaultSettingList.alert_position"
-                                                                                [ngModelOptions]="{standalone: true}"
-                                                                                value="bottom-right">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-2 size ml-3">
-                                                                    <h3>{{'Settings.popupAppearanceTickerPosition' |
-                                                                        translate}}</h3> <br>
-                                                                    <input type="radio" class="mt-2 mr-2"
-                                                                        [(ngModel)]="DefaultSettingList.ticker_position"
-                                                                        [ngModelOptions]="{standalone: true}"
-                                                                        name="ticker_position" value="top">
-                                                                    {{'Settings.popupAppearanceTickerPositionTop' |
-                                                                    translate}} <br>
-
-                                                                    <input type="radio" checked class="mt-2 mr-2"
-                                                                        [(ngModel)]="DefaultSettingList.ticker_position"
-                                                                        [ngModelOptions]="{standalone: true}"
-                                                                        name="ticker_position" value="bottom">
-                                                                    {{'Settings.popupAppearanceTickerPositionBottom'
-                                                                    | translate}}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- <div id="collapseTwice" class="collapse"
                                                             aria-labelledby="headingTwice" data-parent="#faq">
                                                             <div class="card-body line-space">
                                                                 <input type="radio" checked class="mr-2"
@@ -1678,14 +1306,13 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div> -->
+                                                        </div>
                                                     </div>
                                                     <div class="card">
                                                         <div class="card-header" id="headingThrice">
                                                             <h5 class="mb-0">
                                                                 <a href="#" class="btn btn-header-link collapsed"
-                                                                    data-bs-toggle="collapse"
-                                                                    data-bs-target="#collapseThrice"
+                                                                    data-bs-toggle="collapse" data-bs-target="#collapseThrice"
                                                                     aria-expanded="false"
                                                                     aria-controls="collapseThrice">
                                                                     {{'Settings.desktopAlertTab' | translate}}
@@ -1695,190 +1322,53 @@
                                                         <div id="collapseThrice" class="collapse"
                                                             aria-labelledby="headingThrice" data-parent="#faq">
                                                             <div class="card-body line-space">
-                                                                <div class="checkbox-wrapper-33 main-box">
-                                                                    <label class="checkbox">
-                                                                        <input type="checkbox"
-                                                                            class="checkbox__trigger visuallyhidden"
-                                                                            id="msgchannel-alert"
-                                                                            name="msgchannel_alert"
-                                                                            formControlName="call_alert"
-                                                                            [(ngModel)]="DefaultSettingList.high_priority_alert">
-                                                                        <span class="checkbox__symbol">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                version="1" viewBox="0 0 28 28"
-                                                                                height="28px" width="28px"
-                                                                                class="icon-checkbox"
-                                                                                aria-hidden="true">
-                                                                                <path d="M4 14l8 7L24 7"></path>
-                                                                            </svg>
-                                                                        </span>
-                                                                        <label for="msgchannel-alert">
-                                                                            {{'Settings.high_priority_alert' |
-                                                                            translate}}</label>
-                                                                    </label>
-                                                                </div>
-                                                                <!-- <input type="checkbox"
+                                                                <input type="checkbox"
                                                                     [(ngModel)]="DefaultSettingList.high_priority_alert"
                                                                     [ngModelOptions]="{standalone: true}">
-                                                                {{'Settings.high_priority_alert' | translate}}<br> -->
+                                                                {{'Settings.high_priority_alert' | translate}}<br>
 
-                                                                <div class="checkbox-wrapper-33 main-box">
-                                                                    <label class="checkbox">
-                                                                        <input type="checkbox"
-                                                                            class="checkbox__trigger visuallyhidden"
-                                                                            id="msgchannel-alert"
-                                                                            name="msgchannel_alert"
-                                                                            formControlName="call_alert"
-                                                                            [(ngModel)]="DefaultSettingList.acknowledgement_required">
-                                                                        <span class="checkbox__symbol">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                version="1" viewBox="0 0 28 28"
-                                                                                height="28px" width="28px"
-                                                                                class="icon-checkbox"
-                                                                                aria-hidden="true">
-                                                                                <path d="M4 14l8 7L24 7"></path>
-                                                                            </svg>
-                                                                        </span>
-                                                                        <label for="msgchannel-alert">
-                                                                            {{'Settings.acknowledgement' |
-                                                                            translate}}</label>
-                                                                    </label>
-                                                                </div>
-
-                                                                <!-- <input type="checkbox"
+                                                                <input type="checkbox"
                                                                     [(ngModel)]="DefaultSettingList.acknowledgement_required"
                                                                     [ngModelOptions]="{standalone: true}">
                                                                 {{'Settings.acknowledgement' | translate}}
-                                                                <br> -->
+                                                                <br>
 
-                                                                <div class="checkbox-wrapper-33 main-box">
-                                                                    <label class="checkbox">
-                                                                        <input type="checkbox"
-                                                                            class="checkbox__trigger visuallyhidden"
-                                                                            id="msgchannel-alert"
-                                                                            name="msgchannel_alert"
-                                                                            formControlName="call_alert"
-                                                                            [(ngModel)]="DefaultSettingList.self_destructing_alert">
-                                                                        <span class="checkbox__symbol">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                version="1" viewBox="0 0 28 28"
-                                                                                height="28px" width="28px"
-                                                                                class="icon-checkbox"
-                                                                                aria-hidden="true">
-                                                                                <path d="M4 14l8 7L24 7"></path>
-                                                                            </svg>
-                                                                        </span>
-                                                                        <label for="msgchannel-alert">
-                                                                            {{'Settings.selfDestructingAlert' |
-                                                                            translate}}</label>
-                                                                    </label>
-                                                                </div>
-
-                                                                <!-- <input type="checkbox"
+                                                                <input type="checkbox"
                                                                     [(ngModel)]="DefaultSettingList.self_destructing_alert"
                                                                     [ngModelOptions]="{standalone: true}">
-                                                                {{'Settings.selfDestructingAlert' | translate}} <br> -->
+                                                                {{'Settings.selfDestructingAlert' | translate}} <br>
 
-                                                                <div class="checkbox-wrapper-33 main-box">
-                                                                    <label class="checkbox">
-                                                                        <input type="checkbox"
-                                                                            class="checkbox__trigger visuallyhidden"
-                                                                            id="msgchannel-alert"
-                                                                            name="msgchannel_alert"
-                                                                            formControlName="call_alert"
-                                                                            (change)="IsAutoClose($event)"
-                                                                            [(ngModel)]="DefaultSettingList.autoclose_boolean">
-                                                                        <span class="checkbox__symbol">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                version="1" viewBox="0 0 28 28"
-                                                                                height="28px" width="28px"
-                                                                                class="icon-checkbox"
-                                                                                aria-hidden="true">
-                                                                                <path d="M4 14l8 7L24 7"></path>
-                                                                            </svg>
-                                                                        </span>
-                                                                        <label for="msgchannel-alert">
-                                                                            {{'Settings.autoClose' |
-                                                                            translate}}</label>
-                                                                            <input type="number" class="input-collape ml-2 mr-2"
-                                                                            placeholder="1"
-                                                                            [(ngModel)]="DefaultSettingList.autoclose_time_seconds"
-                                                                            [ngModelOptions]="{standalone: true}"
-                                                                            style="width: 50px;" />
-                                                                        {{'Settings.autoCloseMinOption' | translate}} <br>
-                                                                    </label>
-                                                                </div>
-
-                                                                <!-- <input type="checkbox" (change)="IsAutoClose($event)"
+                                                                <input type="checkbox" (change)="IsAutoClose($event)"
                                                                     [(ngModel)]="DefaultSettingList.autoclose_boolean"
                                                                     [ngModelOptions]="{standalone: true}">
-                                                                {{'Settings.autoClose' | translate}} -->
+                                                                {{'Settings.autoClose' | translate}}
 
-                                                                <div class="checkbox-wrapper-33 main-box">
-                                                                    <label class="checkbox">
-                                                                        <input type="checkbox"
-                                                                            class="checkbox__trigger visuallyhidden"
-                                                                            id="msgchannel-alert" name="msgchannel_alert"
-                                                                            formControlName="call_alert"
-                                                                            (change)="OnChangeClose($event)"
-                                                                            [(ngModel)]="DefaultSettingList.allow_manual_close">
-                                                                        <span class="checkbox__symbol">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                class="icon-checkbox" aria-hidden="true">
-                                                                                <path d="M4 14l8 7L24 7"></path>
-                                                                            </svg>
-                                                                        </span>
-                                                                        <label for="msgchannel-alert">
-                                                                            {{'Settings.allowManual' |
-                                                                            translate}}</label>
-                                                                    </label>
-                                                                </div>
-                                                               
+                                                                <input type="number" class="input-collape ml-1" placeholder="1"
+                                                                    [(ngModel)]="DefaultSettingList.autoclose_time_seconds"
+                                                                    [ngModelOptions]="{standalone: true}" style="width: 50px;" />
+                                                                {{'Settings.autoCloseMinOption' | translate}} <br>
 
-                                                                <!-- <input type="checkbox" (change)="OnChangeClose($event)"
+                                                                <input type="checkbox" (change)="OnChangeClose($event)"
                                                                     [(ngModel)]="DefaultSettingList.allow_manual_close"
                                                                     [ngModelOptions]="{standalone: true}">
-                                                                {{'Settings.allowManual' | translate}} <br> -->
+                                                                {{'Settings.allowManual' | translate}} <br>
 
-                                                                <div class="checkbox-wrapper-33 main-box">
-                                                                    <label class="checkbox">
-                                                                        <input type="checkbox"
-                                                                            class="checkbox__trigger visuallyhidden"
-                                                                            id="msgchannel-alert" name="msgchannel_alert"
-                                                                            formControlName="call_alert"
-                                                                            [(ngModel)]="DefaultSettingList.schedule_alert">
-                                                                        <span class="checkbox__symbol">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                class="icon-checkbox" aria-hidden="true">
-                                                                                <path d="M4 14l8 7L24 7"></path>
-                                                                            </svg>
-                                                                        </span>
-                                                                        <label for="msgchannel-alert">
-                                                                            {{'Settings.scheduleAlert' |
-                                                                            translate}}</label>
-                                                                    </label>
-                                                                </div>
-
-                                                                <!-- <input type="checkbox"
+                                                                <input type="checkbox"
                                                                     [(ngModel)]="DefaultSettingList.schedule_alert"
                                                                     [ngModelOptions]="{standalone: true}">
-                                                                {{'Settings.scheduleAlert' | translate}} <br> -->
+                                                                {{'Settings.scheduleAlert' | translate}} <br>
 
                                                                 <!-- <input type="checkbox" [(ngModel)]="DefaultSettingList.lifetime_choice"
                                                                 [ngModelOptions]="{standalone: true}">  -->
 
                                                                 {{'Settings.lifetime' | translate}} <input type="number"
-                                                                    class="input-collape mr-1" placeholder="1"
-                                                                    style="width: 50px;"
+                                                                    class="input-collape mr-1" placeholder="1" style="width: 50px;"
                                                                     [(ngModel)]="DefaultSettingList.lifetime_count"
                                                                     [ngModelOptions]="{standalone: true}" />
 
                                                                 <select class="input-collape"
                                                                     [(ngModel)]="DefaultSettingList.lifetime_choice"
-                                                                    [ngModelOptions]="{standalone: true}"
-                                                                    style="width: 6rem; height: 35px;">
+                                                                    [ngModelOptions]="{standalone: true}" style="width: 6rem; height: 35px;">
                                                                     <option value="day">{{'Settings.lifetimeDayOption' |
                                                                         translate}}</option>
                                                                     <option value="hours">
@@ -1924,29 +1414,26 @@
                                                         <div class="card-header" id="headingFix">
                                                             <h5 class="mb-0">
                                                                 <a href="#" class="btn btn-header-link collapsed"
-                                                                    data-bs-toggle="collapse"
-                                                                    data-bs-target="#collapseFix" aria-expanded="false"
-                                                                    aria-controls="collapseFix">
+                                                                    data-bs-toggle="collapse" data-bs-target="#collapseFix"
+                                                                    aria-expanded="false" aria-controls="collapseFix">
                                                                     {{'Settings.AddressSettings' | translate}}
                                                                 </a>
                                                             </h5>
                                                         </div>
-                                                        <div id="collapseFix" class="collapse"
-                                                            aria-labelledby="headingFix" data-parent="#faq">
+                                                        <div id="collapseFix" class="collapse" aria-labelledby="headingFix"
+                                                            data-parent="#faq">
                                                             <div class="card-body line-space">
                                                                 <div class="row">
                                                                     <div class="col-lg-6">
                                                                         <div class="form-group">
-                                                                            <label>{{'Settings.EmailDefaultAddress' |
-                                                                                translate}}</label>
+                                                                            <label>{{'Settings.EmailDefaultAddress' | translate}}</label>
                                                                             <input type="text" class="form-control"
                                                                                 [(ngModel)]="DefaultSettingList.default_email">
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-6">
                                                                         <div class="form-group">
-                                                                            <label>{{'Settings.SMSDefaultAddress' |
-                                                                                translate}}</label>
+                                                                            <label>{{'Settings.SMSDefaultAddress' | translate}}</label>
                                                                             <input type="text" class="form-control"
                                                                                 [(ngModel)]="DefaultSettingList.default_sms_number">
                                                                         </div>
@@ -1955,16 +1442,14 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-6">
                                                                         <div class="form-group">
-                                                                            <label>{{'Settings.TeamsDefaultAddress' |
-                                                                                translate}}</label>
+                                                                            <label>{{'Settings.TeamsDefaultAddress' | translate}}</label>
                                                                             <input type="text" class="form-control"
                                                                                 [(ngModel)]="DefaultSettingList.default_teams_address">
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-6">
                                                                         <div class="form-group">
-                                                                            <label>{{'Settings.CallDefaultAddress' |
-                                                                                translate}}</label>
+                                                                            <label>{{'Settings.CallDefaultAddress' | translate}}</label>
                                                                             <input type="text" class="form-control"
                                                                                 [(ngModel)]="DefaultSettingList.default_text_to_call_number">
                                                                         </div>
@@ -2006,7 +1491,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="alert" role="tabpanel">
+                            <div class="tab-pane" id="alert" role="tabpanel" *ngIf="RoleName === 'administrator'">
                                 <div class="mt-4">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -2065,14 +1550,12 @@
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#CreateLanguageModal"
                                                                             (click)="onEditLanguage(lang.id)">
-                                                                            <img src="assets/img/sent-alert-action/edit-popup.png"
+                                                                            <img src="assets/img/sent-alert-action/duplicate.png"
                                                                                 alt="">
                                                                         </span>
                                                                         <span class="text-danger cursor"
                                                                             (click)="delete(lang.id)">
-                                                                            <img src="assets/img/sent-alert-action/delete.png"
-                                                                                alt="">
-                                                                            <!-- <i class="far fa-trash-alt"></i> -->
+                                                                            <i class="far fa-trash-alt"></i>
                                                                         </span>
                                                                     </td>
                                                                 </tr>
@@ -2097,101 +1580,82 @@
                                 </div> -->
                             </div>
 
-                            <div class="tab-pane" id="profile" role="tabpanel">
-                                <div class="mt-4">
-                                    <div class="row">
-                                        <!-- <div class="row"> -->
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label> {{'ProfileSettings.profileName' | translate}}</label>
-                                                    <input type="text" placeholder="{{'ProfileSettings.profileAdmin' | translate}}" class="form-control"
-                                                    [(ngModel)]="ProfileDetails.username" disabled>
+                            <div class="tab-pane" id="profile" role="tabpanel"
+                            [ngClass]="{'active': RoleName !== 'administrator'}">
+                                <div class="container-fluid plr_30 pt_30">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-12">
+                                            <div class="white_box">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label> {{'ProfileSettings.profileName' | translate}}</label>
+                                                            <input type="text" placeholder="{{'ProfileSettings.profileAdmin' | translate}}" class="form-control"
+                                                            [(ngModel)]="ProfileDetails.username" disabled>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <button type="button" class="btn btn-outline-secondary mr-1"
                                                 data-bs-toggle="modal" data-bs-target="#ChangePasswordModal" >{{'ProfileSettings.changePasswordButton' | translate}}</button>
-                                            </div>
-                                        <!-- </div> -->
-                                       
-                                        
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 mt-2">
-                                            <div class="form-group">
-                                                <label>{{'ProfileSettings.interfaceLanguage' | translate}}</label>
-                                                <select class="form-control" [(ngModel)]="ProfileDetails.interface_language">
-                                                    <option value="en">English</option>
-                                                    <option value="ar">{{'ProfileSettings.arabicLanguage' | translate}} </option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 mt-2">
-                                            <div class="form-group">
-                                                <label>{{'ProfileSettings.startPage' | translate}}  </label>
-                                                <select class="form-control"  [(ngModel)]="ProfileDetails.start_page" *ngIf="RoleName === 'administrator'">
-                                                    <option value="" selected>{{'ProfileSettings.chooseStartPage' | translate}}  </option>
-                                                    <option value="dashboard">{{'ProfileSettings.dashboardPage' | translate}}</option>
-                                                    <option value="create-alerts">{{'ProfileSettings.createAlertPage' | translate}}</option>
-                                                    <!-- <option value="create-alerts/multiple">{{'ProfileSettings.multipleAlertPage' | translate}}</option> -->
-                                                    <option value="create-alerts/sent">{{'ProfileSettings.sentAlertPage' | translate}}</option>
-                                                    <!-- <option value="draft">Alert.Draft</option> -->
-                                                    <option value="message">{{'ProfileSettings.messageTemplatePage' | translate}}</option>
-                                                    <option value="device">{{'ProfileSettings.DevicePage' | translate}}</option>
-                                                    <option value="create-survey"> {{'ProfileSettings.createSurveyPage' | translate}}</option>
-                                                    <option value="create-survey/active"> {{'ProfileSettings.ActiveSurveyPage' | translate}} </option>
-                                                    <option value="create-survey/survey-template"> {{'ProfileSettings.surveyTemplatesPage' | translate}}  </option>
-                                                    <!-- <option value="screensaver/add"> {{'ProfileSettings.createScreensaverPage' | translate}} </option>
-                                                    <option value="screensaver"> {{'ProfileSettings.screensaverListPage' | translate}} </option> -->
-                                                    <!-- <option value="video-alerts"> {{'ProfileSettings.videoAlertPage' | translate}}  </option>
-                                                    <option value="video-alerts/list"> {{'ProfileSettings.videoListPage' | translate}} </option> -->
-                                                    <!-- <option value="wallpaper/add"> {{'ProfileSettings.createWallpaperPage' | translate}} </option>
-                                                    <option value="wallpaper">{{'ProfileSettings.wallpaperListPage' | translate}}  </option>
-                                                    <option value="lockscreen/add"> {{'ProfileSettings.createLockscreenPage' | translate}} </option>
-                                                    <option value="lockscreen">{{'ProfileSettings.lockscreenListPage' | translate}} </option> -->
-                                                    <!-- <option value="skin-list/add">{{'ProfileSettings.createSkinPage' | translate}}</option>
-                                                    <option value="skin-list"> {{'ProfileSettings.skinListPage' | translate}} </option> --> -->
-                                                    <option value="domains"> {{'ProfileSettings.domainsPage' | translate}} </option>
-                                                    <option value="synchronizations">{{'ProfileSettings.synchronizationPage' | translate}} </option>
-                                                    <option value="organization"> {{'ProfileSettings.organization/AudiencePage' | translate}} </option>
-                                                    <option value="emergency"> {{'ProfileSettings.colorCodeListPage' | translate}} </option>
-                                                    <option value="emergency/emergency">  {{'ProfileSettings.emergencyAlertPage' | translate}} </option>
-                                                    <option value="publisher-list"> {{'ProfileSettings.PublishersPage' | translate}} </option>
-                                                    <option value="policies">{{'ProfileSettings.PoliciesPage' | translate}} </option>
-                                                    <!-- <option value="ipgroup"> {{'ProfileSettings.ipGroupPage' | translate}}</option> -->
-                                                    <option value="reports"> {{'ProfileSettings.ReportsPage' | translate}} </option>
-                                                    <!-- <option value="approval"> {{'ProfileSettings.ApprovalPage' | translate}} </option> -->
-                                                </select>
-                                                
-                                                <select class="form-control"  [(ngModel)]="ProfileDetails.start_page" *ngIf="RoleName === 'publisher'">
-                                                    <option value="" selected>{{'ProfileSettings.chooseStartPage' | translate}}  </option>
-                                                    <option value="dashboard">{{'ProfileSettings.dashboardPage' | translate}}</option>
-                                                    <option value="create-alerts" *ngIf="RoleAssign[0].view || RoleAssign[0].create">{{'ProfileSettings.createAlertPage' | translate}}</option>
-                                                    <option value="create-alerts/sent" *ngIf="RoleAssign[0].create">{{'ProfileSettings.sentAlertPage' | translate}}</option>
-                                                    <option value="message" *ngIf="RoleAssign[7].view">{{'ProfileSettings.messageTemplatePage' | translate}}</option>
-                                                    <option value="create-survey" *ngIf="RoleAssign[4].create"> {{'ProfileSettings.createSurveyPage' | translate}}</option>
-                                                    <option value="create-survey/active" *ngIf="RoleAssign[4].view"> {{'ProfileSettings.ActiveSurveyPage' | translate}} </option>
-                                                    <option value="create-survey/survey-template" *ngIf="RoleAssign[11].view"> {{'ProfileSettings.surveyTemplatesPage' | translate}}  </option>
-                                                    <option value="emergency" *ngIf="RoleAssign[9].view"> {{'ProfileSettings.colorCodeListPage' | translate}} </option>
-                                                    <option value="emergency/emergency" *ngIf="RoleAssign[9].view">  {{'ProfileSettings.emergencyAlertPage' | translate}} </option>
-                                                    <option value="reports"  *ngIf="RoleAssign[8].view"> {{'ProfileSettings.ReportsPage' | translate}} </option>
-                                                </select>
-                    
-                                                <br>
-                                                <button type="button" class="btn btn-success"
-                                                (click)="UpdateProfileDetails()"> {{'ProfileSettings.saveButton' | translate}} </button>
+                                                <div class="row">
+                                                    <div class="col-md-4 mt-2">
+                                                        <div class="form-group">
+                                                            <label>{{'ProfileSettings.interfaceLanguage' | translate}}</label>
+                                                            <select class="form-control" [(ngModel)]="ProfileDetails.interface_language">
+                                                                <option value="en">English</option>
+                                                                <option value="ar">{{'ProfileSettings.arabicLanguage' | translate}} </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4 mt-2">
+                                                        <div class="form-group">
+                                                            <label>{{'ProfileSettings.startPage' | translate}}  </label>
+                                                            <select class="form-control"  [(ngModel)]="ProfileDetails.start_page" *ngIf="RoleName === 'administrator'">
+                                                                <option value="" selected>{{'ProfileSettings.chooseStartPage' | translate}}  </option>
+                                                                <option value="dashboard">{{'ProfileSettings.dashboardPage' | translate}}</option>
+                                                                <option value="create-alerts">{{'ProfileSettings.createAlertPage' | translate}}</option>
+                                                                <option value="create-alerts/sent">{{'ProfileSettings.sentAlertPage' | translate}}</option>
+                                                                <option value="message">{{'ProfileSettings.messageTemplatePage' | translate}}</option>
+                                                                <option value="device">{{'ProfileSettings.DevicePage' | translate}}</option>
+                                                                <option value="create-survey"> {{'ProfileSettings.createSurveyPage' | translate}}</option>
+                                                                <option value="create-survey/active"> {{'ProfileSettings.ActiveSurveyPage' | translate}} </option>
+                                                                <option value="create-survey/survey-template"> {{'ProfileSettings.surveyTemplatesPage' | translate}}  </option>
+                                                                <option value="domains"> {{'ProfileSettings.domainsPage' | translate}} </option>
+                                                                <option value="synchronizations">{{'ProfileSettings.synchronizationPage' | translate}} </option>
+                                                                <option value="organization"> {{'ProfileSettings.organization/AudiencePage' | translate}} </option>
+                                                                <option value="emergency"> {{'ProfileSettings.colorCodeListPage' | translate}} </option>
+                                                                <option value="emergency/emergency">  {{'ProfileSettings.emergencyAlertPage' | translate}} </option>
+                                                                <option value="publisher-list"> {{'ProfileSettings.PublishersPage' | translate}} </option>
+                                                                <option value="policies">{{'ProfileSettings.PoliciesPage' | translate}} </option>
+                                                                <option value="reports"> {{'ProfileSettings.ReportsPage' | translate}} </option>
+                                                            </select>
+                                                            
+                                                            <select class="form-control"  [(ngModel)]="ProfileDetails.start_page" *ngIf="RoleName === 'publisher'">
+                                                                <option value="" selected>{{'ProfileSettings.chooseStartPage' | translate}}  </option>
+                                                                <option value="dashboard">{{'ProfileSettings.dashboardPage' | translate}}</option>
+                                                                <option value="create-alerts" *ngIf="RoleAssign[0].view || RoleAssign[0].create">{{'ProfileSettings.createAlertPage' | translate}}</option>
+                                                                <option value="create-alerts/sent" *ngIf="RoleAssign[0].create">{{'ProfileSettings.sentAlertPage' | translate}}</option>
+                                                                <option value="message" *ngIf="RoleAssign[7].view">{{'ProfileSettings.messageTemplatePage' | translate}}</option>
+                                                                <option value="create-survey" *ngIf="RoleAssign[4].create"> {{'ProfileSettings.createSurveyPage' | translate}}</option>
+                                                                <option value="create-survey/active" *ngIf="RoleAssign[4].view"> {{'ProfileSettings.ActiveSurveyPage' | translate}} </option>
+                                                                <option value="create-survey/survey-template" *ngIf="RoleAssign[11].view"> {{'ProfileSettings.surveyTemplatesPage' | translate}}  </option>
+                                                                <option value="emergency" *ngIf="RoleAssign[9].view"> {{'ProfileSettings.colorCodeListPage' | translate}} </option>
+                                                                <option value="emergency/emergency" *ngIf="RoleAssign[9].view">  {{'ProfileSettings.emergencyAlertPage' | translate}} </option>
+                                                                <option value="reports"  *ngIf="RoleAssign[8].view"> {{'ProfileSettings.ReportsPage' | translate}} </option>
+                                                            </select>
+                                
+                                                            <br>
+                                                            <button type="button" class="btn btn-success"
+                                                            (click)="UpdateProfileDetails()"> {{'ProfileSettings.saveButton' | translate}} </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="row mt-3">
-                                    <div class="col-md-12">
-                                        <div class="bbpt-4 text-right">
-                                            <button type="button" class="btn btn-success">{{'Settings.saveButton' |
-                                                translate}}</button>
-                                        </div>
-                                    </div>
-                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -2199,8 +1663,41 @@
             </div>
         </div>
     </div>
+
+<div class="modal" id="CreateLanguageModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">{{'Settings.alertLanguageTab' | translate}}</h4>
+                <button type="button" class="close text-white" data-bs-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <app-create-settings [languageId]="languageId" (valueChange)='ValueChanged($event)'>
+                </app-create-settings>
+            </div>
+        </div>
+    </div>
 </div>
 
+<div class="modal" id="OpenSMTPFileModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">SMTP Logs</h4>
+                <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div *ngFor="let logsFile of SMTPLogsFile">
+                    {{logsFile}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="modal" id="ChangePasswordModal">
     <div class="modal-dialog">
@@ -2275,40 +1772,5 @@
         </div>
       </div>
       </div>
-    </div>
-</div>
-
-<div class="modal" id="CreateLanguageModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">{{'Settings.alertLanguageTab' | translate}}</h4>
-                <button type="button" class="close text-white" data-bs-dismiss="modal">&times;</button>
-            </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-                <app-create-settings [languageId]="languageId" (valueChange)='ValueChanged($event)'>
-                </app-create-settings>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal" id="OpenSMTPFileModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">SMTP Logs</h4>
-                <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
-            </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-                <div *ngFor="let logsFile of SMTPLogsFile">
-                    {{logsFile}}
-                </div>
-            </div>
-        </div>
     </div>
 </div>
