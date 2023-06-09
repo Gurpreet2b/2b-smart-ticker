@@ -54,3 +54,6 @@
     font-size: large;
 }
 
+.w-pub-icon img{
+    width: 8% !important;
+}

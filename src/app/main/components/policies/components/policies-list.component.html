@@ -57,16 +57,16 @@
                                         </td>
                                         <td>{{policies.user_count}}</td>
                                         <td>
-                                            <span class="mr-2 cursor" title="Edit Policy"
+                                            <span class="mr-2 cursor w-pub-icon" title="Edit Policy"
                                                 [routerLink]="['/policies/add', policies.id]">
                                                 <img src="assets/img/sent-alert-action/edit-popup.png" alt="Edit">
                                                 <!-- <i class='far fa-edit'> </i> -->
                                             </span>
-                                            <span class="mr-2 cursor" title="Duplicate Policy"
+                                            <span class="mr-2 cursor w-pub-icon" title="Duplicate Policy"
                                                 (click)="GetPolicyDuplicate(policies.id)">
                                                 <img src="assets/img/sent-alert-action/duplicate.png" alt="">
                                             </span>
-                                            <span class="text-danger cursor" title="Delete Policy" (click)="delete(policies.id)">
+                                            <span class="text-danger cursor w-pub-icon" title="Delete Policy" (click)="delete(policies.id)">
                                                 <img src="assets/img/sent-alert-action/delete.png" alt="">
                                                 <!-- <i class="far fa-trash-alt"></i> -->
                                             </span>

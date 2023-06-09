@@ -427,3 +427,7 @@ p {
   .form-control:focus {
     border: 2.5px solid #00838f !important;
 }
+
+.cursor img{
+    width: 13%;
+}

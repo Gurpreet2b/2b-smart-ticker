@@ -87,17 +87,17 @@
                                             {{publishers.number_of_failed_logins}}
                                         </td>
                                         <td>
-                                            <span class="mr-2 cursor" title="Edit Publisher" data-bs-toggle="modal"
+                                            <span class="mr-2 cursor w-pub-icon" title="Edit Publisher" data-bs-toggle="modal"
                                                 data-bs-target="#CreatePublisherModal"
                                                 (click)="onEditPublishers(publishers.id)">
                                                 <img src="assets/img/sent-alert-action/edit-popup.png" alt="Edit">
                                                 <!-- <i class='far fa-edit'> </i> -->
                                             </span>
-                                            <span class="mr-2 cursor" *ngIf="!publishers.enabled" title="Enabled Alert"
+                                            <span class="mr-2 cursor w-pub-icon" *ngIf="!publishers.enabled" title="Enabled Alert"
                                                 (click)="GetPublisherEnable(publishers.id, 'Enabled')">
                                                 <img src="assets/img/sent-alert-action/start.png" alt="">
                                             </span>
-                                            <span class="mr-2 cursor" *ngIf="publishers.enabled" title="Disabled Alert"
+                                            <span class="mr-2 cursor w-pub-icon" *ngIf="publishers.enabled" title="Disabled Alert"
                                                 (click)="GetPublisherEnable(publishers.id, 'Disabled')">
                                                 <img src="assets/img/sent-alert-action/stop.png" alt="">
                                             </span>
