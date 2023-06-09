@@ -588,7 +588,7 @@ export class CreateSurveyComponent implements OnInit {
     // document.getElementById("survey-Survey-border").style.border = `${this.Think}px solid ${this.HeaderBorder}`;
     document.getElementById("Header-Survey-img").style.textAlign = `${this.HeaderLogo}`;
 
-    document.getElementById("header-Survey-img").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo">`;
+    document.getElementById("header-Survey-img").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="180">`;
     document.getElementById("header-Survey-text").innerHTML = `${this.SurveyTitle}`;
 
     document.getElementById("footer-Survey-align").style.textAlign = `${this.FooterLogo}`;
