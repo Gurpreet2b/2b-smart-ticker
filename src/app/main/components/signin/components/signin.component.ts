@@ -75,8 +75,8 @@ export class SigninComponent implements OnInit {
       }
       this.loading = false;
     },error => {
-      this.toastr.error("Server not reachable");
       this.loading = false;
+      this.authService.GetErrorCode(error);
     });
   }
 

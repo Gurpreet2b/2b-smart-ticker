@@ -136,14 +136,13 @@
                                                             <td>
 
                                                                 <div class="checkbox-wrapper-33 main-box">
-                                                                    <label class="checkbox">
+                                                                    <label class="checkbox" *ngIf="control.create !== null">
                                                                         <input type="checkbox"
                                                                             class="checkbox__trigger visuallyhidden"
                                                                             id="schedule-header-alert"
                                                                             name="schedule-header_alert"
                                                                             [(ngModel)]="control.create"
-                                                                            [ngModelOptions]="{standalone: true}"
-                                                                            *ngIf="control.create !== null">
+                                                                            [ngModelOptions]="{standalone: true}">
                                                                         <span class="checkbox__symbol">
                                                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                                                 version="1" viewBox="0 0 28 28"
@@ -158,13 +157,12 @@
                                                                 </div>
                                                             </td>
                                                             <td>
-                                                                <div class="checkbox-wrapper-33 main-box">
+                                                                <div class="checkbox-wrapper-33 main-box" *ngIf="control.edit !== null">
                                                                     <label class="checkbox">
                                                                         <input type="checkbox" class="checkbox__trigger visuallyhidden"
                                                                             id="edit-input" name="edit-input"
                                                                             [(ngModel)]="control.edit"
-                                                                    [ngModelOptions]="{standalone: true}"
-                                                                    *ngIf="control.edit !== null">
+                                                                    [ngModelOptions]="{standalone: true}">
                                                                         <span class="checkbox__symbol">
                                                                             <svg xmlns="http://www.w3.org/2000/svg" version="1"
                                                                                 viewBox="0 0 28 28" height="25px" width="25px"
@@ -177,13 +175,12 @@
                                                             </td>
                                                             <td>
 
-                                                                <div class="checkbox-wrapper-33 main-box">
+                                                                <div class="checkbox-wrapper-33 main-box" *ngIf="control.delete !== null">
                                                                     <label class="checkbox">
                                                                         <input type="checkbox" class="checkbox__trigger visuallyhidden"
                                                                             id="delete-input" name="delete-input"
                                                                             [(ngModel)]="control.delete"
-                                                                    [ngModelOptions]="{standalone: true}"
-                                                                    *ngIf="control.delete !== null">
+                                                                    [ngModelOptions]="{standalone: true}">
                                                                         <span class="checkbox__symbol">
                                                                             <svg xmlns="http://www.w3.org/2000/svg" version="1"
                                                                                 viewBox="0 0 28 28" height="25px" width="25px"
@@ -196,12 +193,11 @@
                                                             </td>
                                                             <td>
                                                                 <div class="checkbox-wrapper-33 main-box">
-                                                                    <label class="checkbox">
+                                                                    <label class="checkbox" *ngIf="control.send !== null">
                                                                         <input type="checkbox" class="checkbox__trigger visuallyhidden"
                                                                             id="send-input" name="send-input"
                                                                             [(ngModel)]="control.send"
-                                                                            [ngModelOptions]="{standalone: true}"
-                                                                            *ngIf="control.send !== null">
+                                                                            [ngModelOptions]="{standalone: true}">
                                                                         <span class="checkbox__symbol">
                                                                             <svg xmlns="http://www.w3.org/2000/svg" version="1"
                                                                                 viewBox="0 0 28 28" height="25px" width="25px"
@@ -214,12 +210,11 @@
                                                             </td>
                                                             <td>
                                                                 <div class="checkbox-wrapper-33 main-box">
-                                                                    <label class="checkbox">
+                                                                    <label class="checkbox" *ngIf="control.view !== null">
                                                                         <input type="checkbox" class="checkbox__trigger visuallyhidden"
                                                                             id="view-input" name="view-input"
                                                                             [(ngModel)]="control.view"
-                                                                            [ngModelOptions]="{standalone: true}"
-                                                                            *ngIf="control.view !== null">
+                                                                            [ngModelOptions]="{standalone: true}">
                                                                         <span class="checkbox__symbol">
                                                                             <svg xmlns="http://www.w3.org/2000/svg" version="1"
                                                                                 viewBox="0 0 28 28" height="25px" width="25px"
@@ -232,12 +227,11 @@
                                                             </td>
                                                             <td>
                                                                 <div class="checkbox-wrapper-33 main-box">
-                                                                    <label class="checkbox">
+                                                                    <label class="checkbox" *ngIf="control.stop !== null">
                                                                         <input type="checkbox" class="checkbox__trigger visuallyhidden"
                                                                             id="stop-input" name="stop-input"
                                                                             [(ngModel)]="control.stop"
-                                                                            [ngModelOptions]="{standalone: true}"
-                                                                            *ngIf="control.stop !== null">
+                                                                            [ngModelOptions]="{standalone: true}">
                                                                         <span class="checkbox__symbol">
                                                                             <svg xmlns="http://www.w3.org/2000/svg" version="1"
                                                                                 viewBox="0 0 28 28" height="25px" width="25px"
@@ -250,12 +244,11 @@
                                                             </td>
                                                             <td>
                                                                 <div class="checkbox-wrapper-33 main-box">
-                                                                    <label class="checkbox">
+                                                                    <label class="checkbox" *ngIf="control.approve !== null">
                                                                         <input type="checkbox" class="checkbox__trigger visuallyhidden"
                                                                             id="approve-input" name="approve-input"
                                                                             [(ngModel)]="control.approve"
-                                                                            [ngModelOptions]="{standalone: true}"
-                                                                            *ngIf="control.approve !== null">
+                                                                            [ngModelOptions]="{standalone: true}">
                                                                         <span class="checkbox__symbol">
                                                                             <svg xmlns="http://www.w3.org/2000/svg" version="1"
                                                                                 viewBox="0 0 28 28" height="25px" width="25px"
