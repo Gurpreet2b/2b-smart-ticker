@@ -158,29 +158,7 @@ export class SentAlertComponent implements OnInit {
       }
     }, error => {
       this.loading = false;
-      if (error.error.code === 'token_not_valid') {
-        this.authService.logout();
-        this.router.navigate(['/signin']);
-        this.loading = false;
-        
-      } else if(error.status === 400) {
-        this.toastr.error("Server Bad Request");
-      } else if(error.status === 403) {
-        this.toastr.error("Forbidden Error");
-      } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
-      } else if(error.status === 500) {
-        this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
-      } else {
-        this.toastr.error("Server not reachable");
-        this.loading = false;
-      }
+      this.authService.GetErrorCode(error);
     });
   }
 
@@ -214,29 +192,7 @@ export class SentAlertComponent implements OnInit {
       }
     }, error => {
       this.loading = false;
-      if (error.error.code === 'token_not_valid') {
-        this.authService.logout();
-        this.router.navigate(['/signin']);
-        this.loading = false;
-        
-      } else if(error.status === 400) {
-        this.toastr.error("Server Bad Request");
-      } else if(error.status === 403) {
-        this.toastr.error("Forbidden Error");
-      } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
-      } else if(error.status === 500) {
-        this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
-      } else {
-        this.toastr.error("Server not reachable");
-        this.loading = false;
-      }
+      this.authService.GetErrorCode(error);
     });
   }
 
@@ -284,29 +240,7 @@ export class SentAlertComponent implements OnInit {
       }
     }, error => {
       this.loading = false;
-      if (error.error.code === 'token_not_valid') {
-        this.authService.logout();
-        this.router.navigate(['/signin']);
-        this.loading = false;
-        
-      } else if(error.status === 400) {
-        this.toastr.error("Server Bad Request");
-      } else if(error.status === 403) {
-        this.toastr.error("Forbidden Error");
-      } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
-      } else if(error.status === 500) {
-        this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
-      } else {
-        this.toastr.error("Server not reachable");
-        this.loading = false;
-      }
+      this.authService.GetErrorCode(error);
     });
   }
 
@@ -333,29 +267,7 @@ export class SentAlertComponent implements OnInit {
       }
     }, error => {
       this.loading = false;
-      if (error.error.code === 'token_not_valid') {
-        this.authService.logout();
-        this.router.navigate(['/signin']);
-        this.loading = false;
-        
-      } else if(error.status === 400) {
-        this.toastr.error("Server Bad Request");
-      } else if(error.status === 403) {
-        this.toastr.error("Forbidden Error");
-      } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
-      } else if(error.status === 500) {
-        this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
-      } else {
-        this.toastr.error("Server not reachable");
-        this.loading = false;
-      }
+      this.authService.GetErrorCode(error);
     });
   }
 
@@ -374,29 +286,7 @@ export class SentAlertComponent implements OnInit {
       }
     }, error => {
       this.loading = false;
-      if (error.error.code === 'token_not_valid') {
-        this.authService.logout();
-        this.router.navigate(['/signin']);
-        this.loading = false;
-        
-      } else if(error.status === 400) {
-        this.toastr.error("Server Bad Request");
-      } else if(error.status === 403) {
-        this.toastr.error("Forbidden Error");
-      } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
-      } else if(error.status === 500) {
-        this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
-      } else {
-        this.toastr.error("Server not reachable");
-        this.loading = false;
-      }
+      this.authService.GetErrorCode(error);
     });
   }
 
@@ -468,29 +358,7 @@ export class SentAlertComponent implements OnInit {
       }
     }, error => {
       this.loading = false;
-      if (error.error.code === 'token_not_valid') {
-        this.authService.logout();
-        this.router.navigate(['/signin']);
-        this.loading = false;
-        
-      } else if(error.status === 400) {
-        this.toastr.error("Server Bad Request");
-      } else if(error.status === 403) {
-        this.toastr.error("Forbidden Error");
-      } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
-      } else if(error.status === 500) {
-        this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
-      } else {
-        this.toastr.error("Server not reachable");
-        this.loading = false;
-      }
+      this.authService.GetErrorCode(error);
     });
   }
 
@@ -754,29 +622,7 @@ export class SentAlertComponent implements OnInit {
       }
     }, error => {
       this.loading = false;
-      if (error.error.code === 'token_not_valid') {
-        this.authService.logout();
-        this.router.navigate(['/signin']);
-        this.loading = false;
-        
-      } else if(error.status === 400) {
-        this.toastr.error("Server Bad Request");
-      } else if(error.status === 403) {
-        this.toastr.error("Forbidden Error");
-      } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
-      } else if(error.status === 500) {
-        this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
-      } else {
-        this.toastr.error("Server not reachable");
-        this.loading = false;
-      }
+      this.authService.GetErrorCode(error);
     });
   }
 
@@ -813,29 +659,7 @@ export class SentAlertComponent implements OnInit {
       }
     }, error => {
       this.loading = false;
-      if (error.error.code === 'token_not_valid') {
-        this.authService.logout();
-        this.router.navigate(['/signin']);
-        this.loading = false;
-        
-      } else if(error.status === 400) {
-        this.toastr.error("Server Bad Request");
-      } else if(error.status === 403) {
-        this.toastr.error("Forbidden Error");
-      } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
-      } else if(error.status === 500) {
-        this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
-      } else {
-        this.toastr.error("Server not reachable");
-        this.loading = false;
-      }
+      this.authService.GetErrorCode(error);
     });
   }
 
@@ -889,29 +713,7 @@ export class SentAlertComponent implements OnInit {
       }
     }, error => {
       this.loading = false;
-      if (error.error.code === 'token_not_valid') {
-        this.authService.logout();
-        this.router.navigate(['/signin']);
-        this.loading = false;
-        
-      } else if(error.status === 400) {
-        this.toastr.error("Server Bad Request");
-      } else if(error.status === 403) {
-        this.toastr.error("Forbidden Error");
-      } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
-      } else if(error.status === 500) {
-        this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
-      } else {
-        this.toastr.error("Server not reachable");
-        this.loading = false;
-      }
+      this.authService.GetErrorCode(error);
     });
   }
 
@@ -925,7 +727,7 @@ export class SentAlertComponent implements OnInit {
 
   RSVPdownloadCSV() {
     var options = {
-      title: 'RSVP Alert Question Details',
+      title: 'Opinion Alert Question Details',
       fieldSeparator: ',',
       quoteStrings: '"',
       decimalseparator: '.',

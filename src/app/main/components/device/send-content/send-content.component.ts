@@ -511,7 +511,7 @@ export class SendContentComponent implements OnInit {
       this.http.post('signage_popup/', formData).subscribe((res: any) => {
         if (res.status === true) {
           const responseData = res.data;
-          this.toastr.success("Alert Added Successfully !!");
+          this.toastr.success("Alert Box Added Successfully !!");
           this.alertForm.reset();
           this.router.navigate([`/device/send-user/${responseData.id}/${responseData.alert_type}`]);
           this.loading = false;
@@ -522,30 +522,14 @@ export class SendContentComponent implements OnInit {
         }
       }, error => {
         this.loading = false;
-        if (error.error.code === 'token_not_valid') {
-          this.authService.logout();
-          this.router.navigate(['/signin']);
-          this.loading = false;
-          
-        } else if(error.status === 400) {
-          this.toastr.error("Server Bad Request");
-        } else if(error.status === 403) {
-          this.toastr.error("Forbidden Error");
-        } else if(error.status === 404) {
-          this.toastr.error("Server not Found");
-        } else if(error.status === 500) {
-          this.toastr.error("Internal Server Error");
-        } else {
-          this.toastr.error("Server not reachable");
-          this.loading = false;
-        }
+        this.authService.GetErrorCode(error);
       });
     } else {
       this.http.patch(`signage_popup/${this.popupAlertId}/`, formData).subscribe((res: any) => {
         if (res.status === true) {
           this.loading = false;
           const responseData = res.data;
-          this.toastr.success("Alert Updated Successfully !!");
+          this.toastr.success("Alert Box Updated Successfully !!");
           this.alertForm.reset();
           this.router.navigate([`/device/send-user/${responseData.id}/${responseData.alert_type}`]);
           this.authService.setCurrentUser({ token: res.token });
@@ -555,23 +539,7 @@ export class SendContentComponent implements OnInit {
         }
       }, error => {
         this.loading = false;
-        if (error.error.code === 'token_not_valid') {
-          this.authService.logout();
-          this.router.navigate(['/signin']);
-          this.loading = false;
-          
-        } else if(error.status === 400) {
-          this.toastr.error("Server Bad Request");
-        } else if(error.status === 403) {
-          this.toastr.error("Forbidden Error");
-        } else if(error.status === 404) {
-          this.toastr.error("Server not Found");
-        } else if(error.status === 500) {
-          this.toastr.error("Internal Server Error");
-        } else {
-          this.toastr.error("Server not reachable");
-          this.loading = false;
-        }
+        this.authService.GetErrorCode(error);
       });
     }
 
@@ -616,29 +584,7 @@ export class SendContentComponent implements OnInit {
       }
     }, error => {
       this.loading = false;
-      if (error.error.code === 'token_not_valid') {
-        this.authService.logout();
-        this.router.navigate(['/signin']);
-        this.loading = false;
-        
-      } else if(error.status === 400) {
-        this.toastr.error("Server Bad Request");
-      } else if(error.status === 403) {
-        this.toastr.error("Forbidden Error");
-      } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
-      } else if(error.status === 500) {
-        this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
-      } else {
-        this.toastr.error("Server not reachable");
-        this.loading = false;
-      }
+      this.authService.GetErrorCode(error);
     });
   }
 
@@ -846,7 +792,7 @@ export class SendContentComponent implements OnInit {
       this.http.post('signage_ticker/', formData).subscribe((res: any) => {
         if (res.status === true) {
           const responseData = res.data;
-          this.toastr.success("Scrolling Ticker Added Successfully !!");
+          this.toastr.success("Alert Bar Added Successfully !!");
           this.router.navigate([`/device/send-user/${responseData.id}/${responseData.alert_type}`]);
           this.tickerForm.reset();
           this.loading = false;
@@ -857,29 +803,13 @@ export class SendContentComponent implements OnInit {
         }
       }, error => {
         this.loading = false;
-        if (error.error.code === 'token_not_valid') {
-          this.authService.logout();
-          this.router.navigate(['/signin']);
-          this.loading = false;
-          
-        } else if(error.status === 400) {
-          this.toastr.error("Server Bad Request");
-        } else if(error.status === 403) {
-          this.toastr.error("Forbidden Error");
-        } else if(error.status === 404) {
-          this.toastr.error("Server not Found");
-        } else if(error.status === 500) {
-          this.toastr.error("Internal Server Error");
-        } else {
-          this.toastr.error("Server not reachable");
-          this.loading = false;
-        }
+        this.authService.GetErrorCode(error);
       });
     } else {
       this.http.patch(`tickeralert/${this.TickerAlertId}/`, formData).subscribe((res: any) => {
         if (res.status === true) {
           const responseData = res.data;
-          this.toastr.success("Scrolling Ticker Updated Successfully !!");
+          this.toastr.success("Alert Bar Updated Successfully !!");
           this.router.navigate([`/device/send-user/${responseData.id}/${responseData.alert_type}`]);
           this.tickerForm.reset();
           this.loading = false;
@@ -890,23 +820,7 @@ export class SendContentComponent implements OnInit {
         }
       }, error => {
         this.loading = false;
-        if (error.error.code === 'token_not_valid') {
-          this.authService.logout();
-          this.router.navigate(['/signin']);
-          this.loading = false;
-          
-        } else if(error.status === 400) {
-          this.toastr.error("Server Bad Request");
-        } else if(error.status === 403) {
-          this.toastr.error("Forbidden Error");
-        } else if(error.status === 404) {
-          this.toastr.error("Server not Found");
-        } else if(error.status === 500) {
-          this.toastr.error("Internal Server Error");
-        } else {
-          this.toastr.error("Server not reachable");
-          this.loading = false;
-        }
+        this.authService.GetErrorCode(error);
       });
     }
   }
@@ -946,29 +860,7 @@ export class SendContentComponent implements OnInit {
       }
     }, error => {
       this.loading = false;
-      if (error.error.code === 'token_not_valid') {
-        this.authService.logout();
-        this.router.navigate(['/signin']);
-        this.loading = false;
-        
-      } else if(error.status === 400) {
-        this.toastr.error("Server Bad Request");
-      } else if(error.status === 403) {
-        this.toastr.error("Forbidden Error");
-      } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
-      } else if(error.status === 500) {
-        this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
-      } else {
-        this.toastr.error("Server not reachable");
-        this.loading = false;
-      }
+      this.authService.GetErrorCode(error);
     });
   }
 
@@ -989,29 +881,7 @@ export class SendContentComponent implements OnInit {
       }
     }, error => {
       this.loading = false;
-      if (error.error.code === 'token_not_valid') {
-        this.authService.logout();
-        this.router.navigate(['/signin']);
-        this.loading = false;
-        
-      } else if(error.status === 400) {
-        this.toastr.error("Server Bad Request");
-      } else if(error.status === 403) {
-        this.toastr.error("Forbidden Error");
-      } else if(error.status === 404) {
-        this.toastr.error("Page not Found");
-      } else if(error.status === 500) {
-        this.toastr.error("Internal Server Error");
-      } else if(error.status === 504) {
-        this.toastr.error("Server Gateway Timeout");
-      } else if(error.status === 413) {
-        this.toastr.error("Data Limit Exceeded");
-      } else if(error.status === 408) {
-        this.toastr.error("Request Timeout");
-      } else {
-        this.toastr.error("Server not reachable");
-        this.loading = false;
-      }
+      this.authService.GetErrorCode(error);
     });
   }
 

@@ -10,7 +10,7 @@
                             <span></span>
                         </div>
                                 <div class="row">
-                                    <div class="col-md-4 alert-setting-card" *ngFor="let emergency of EmergencyList  | paginate: { itemsPerPage: 12, currentPage: currentPage, totalItems: totalItems }; let i=index">
+                                    <div class="col-md-3 alert-setting-card m-r-0" *ngFor="let emergency of EmergencyList  | paginate: { itemsPerPage: 12, currentPage: currentPage, totalItems: totalItems }; let i=index">
                                         <h3> {{ 'CreateShortcutEmergency.shortcutMessageSelect' | translate}}</h3>
                                         <div class="create-shortcut-alert">
                                             <div class="header-emergency">{{emergency.name | slice:0:15}}<span *ngIf="emergency.name.length > 15">...</span></div>
@@ -18,7 +18,7 @@
                                             (click)="DownloadHtml(emergency)"
                                             [ngStyle]="{'background-color': emergency.color_code}">
                                             
-                                            <div class="footer-emergency">
+                                            <div class="footer-emergency w-icons">
                                                 <span *ngIf="RoleAssign[9].view">
                                                     <span *ngIf="emergency.alert_type === 'EmergencyPopupAlert'"
                                                         class="marg-right cursor" title="Preview Alert"

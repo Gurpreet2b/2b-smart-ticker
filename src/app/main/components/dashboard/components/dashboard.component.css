@@ -266,10 +266,10 @@
     box-sizing: border-box;
 }
 
-.table thead th {
+/* .table thead th {
     background: #f3f6f9;;
     color: white;
-}
+} */
 
 .close-button {
     float: right;

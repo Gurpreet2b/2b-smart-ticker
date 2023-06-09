@@ -1385,7 +1385,7 @@ export class CreateAlertComponent implements OnInit {
         this.StopTimeLoading = true;
         if (res.status === true) {
           const responseData = res.data;
-          this.toastr.success("Alert Added Successfully !!");
+          this.toastr.success("Alert Box Added Successfully !!");
           if (val === 'next') {
             this.router.navigate([`/create-alerts/send-user/${responseData.id}/${responseData.alert_type}`]);
           } else {
@@ -1412,7 +1412,7 @@ export class CreateAlertComponent implements OnInit {
           this.loading = false;
           this.PopupAlertLoading = false;
           const responseData = res.data;
-          this.toastr.success("Alert Updated Successfully !!");
+          this.toastr.success("Alert Box Updated Successfully !!");
           if (val === 'next') {
             this.router.navigate([`/create-alerts/send-user/${responseData.id}/${responseData.alert_type}`]);
           } else {
@@ -1865,7 +1865,7 @@ export class CreateAlertComponent implements OnInit {
         this.StopTimeLoading = true;
         if (res.status === true) {
           const responseData = res.data;
-          this.toastr.success("Scrolling Ticker Added Successfully !!");
+          this.toastr.success("Alert Bar Added Successfully !!");
           if (val === 'next') {
             this.router.navigate([`/create-alerts/send-user/${responseData.id}/${responseData.alert_type}`]);
           } else {
@@ -1891,7 +1891,7 @@ export class CreateAlertComponent implements OnInit {
         this.StopTimeLoading = true;
         if (res.status === true) {
           const responseData = res.data;
-          this.toastr.success("Scrolling Ticker Updated Successfully !!");
+          this.toastr.success("Alert Bar Updated Successfully !!");
           // this.router.navigate([`/create-alerts/send-user/${responseData.id}/${responseData.alert_type}`]);
           if (val === 'next') {
             this.router.navigate([`/create-alerts/send-user/${responseData.id}/${responseData.alert_type}`]);
@@ -2224,7 +2224,7 @@ export class CreateAlertComponent implements OnInit {
         this.StopTimeLoading = true;
         if (res.status === true) {
           const responseData = res.data;
-          this.toastr.success("RSVP Added Successfully !!");
+          this.toastr.success("Opinion alert Added Successfully !!");
           if (val === 'next') {
             this.router.navigate([`/create-alerts/send-user/${responseData.id}/${responseData.alert_type}`]);
           } else {
@@ -2250,7 +2250,7 @@ export class CreateAlertComponent implements OnInit {
         this.StopTimeLoading = true;
         if (res.status === true) {
           const responseData = res.data;
-          this.toastr.success("RSVP Updated Successfully !!");
+          this.toastr.success("Opinion alert Updated Successfully !!");
           if (val === 'next') {
             this.router.navigate([`/create-alerts/send-user/${responseData.id}/${responseData.alert_type}`]);
           } else {

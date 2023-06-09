@@ -22,6 +22,9 @@
     margin-right: 3rem !important;
 }
 
+.m-r-0{
+    margin-right: 0.5rem;
+}
 
 
 .emergency-scroll::-webkit-scrollbar {

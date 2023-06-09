@@ -595,23 +595,7 @@ export class EmergencyAlertComponent implements OnInit {
       }
     }, error => {
       this.loading = false;
-      if (error.error.code === 'token_not_valid') {
-        this.authService.logout();
-        this.router.navigate(['/signin']);
-        this.loading = false;
-        
-      } else if (error.status === 400) {
-        this.toastr.error("Server Bad Request");
-      } else if (error.status === 403) {
-        this.toastr.error("Forbidden Error");
-      } else if (error.status === 404) {
-        this.toastr.error("Server not Found");
-      } else if (error.status === 500) {
-        this.toastr.error("Internal Server Error");
-      } else {
-        this.toastr.error("Server not reachable");
-        this.loading = false;
-      }
+      this.authService.GetErrorCode(error);
     });
   }
 
@@ -1022,7 +1006,7 @@ export class EmergencyAlertComponent implements OnInit {
       this.http.post('emergency_popup/', formData).subscribe((res: any) => {
         if (res.status === true) {
           const responseData = res.data;
-          this.toastr.success("Emergency Alert Added Successfully !!");
+          this.toastr.success("Emergency Alert Box Added Successfully !!");
           this.alertForm.reset();
           this.router.navigate([`/emergency/send-user/${responseData.id}/${responseData.alert_type}`]);
           this.loading = false;
@@ -1033,30 +1017,14 @@ export class EmergencyAlertComponent implements OnInit {
         }
       }, error => {
         this.loading = false;
-        if (error.error.code === 'token_not_valid') {
-          this.authService.logout();
-          this.router.navigate(['/signin']);
-          this.loading = false;
-          
-        } else if (error.status === 400) {
-          this.toastr.error("Server Bad Request");
-        } else if (error.status === 403) {
-          this.toastr.error("Forbidden Error");
-        } else if (error.status === 404) {
-          this.toastr.error("Server not Found");
-        } else if (error.status === 500) {
-          this.toastr.error("Internal Server Error");
-        } else {
-          this.toastr.error("Server not reachable");
-          this.loading = false;
-        }
+        this.authService.GetErrorCode(error);
       });
     } else {
       this.http.patch(`emergency_popup/${this.popupAlertId}/`, formData).subscribe((res: any) => {
         if (res.status === true) {
           this.loading = false;
           const responseData = res.data;
-          this.toastr.success("Emergency Alert Updated Successfully !!");
+          this.toastr.success("Emergency Alert Box Updated Successfully !!");
           this.alertForm.reset();
           this.router.navigate([`/emergency/send-user/${responseData.id}/${responseData.alert_type}`]);
           this.authService.setCurrentUser({ token: res.token });
@@ -1066,23 +1034,7 @@ export class EmergencyAlertComponent implements OnInit {
         }
       }, error => {
         this.loading = false;
-        if (error.error.code === 'token_not_valid') {
-          this.authService.logout();
-          this.router.navigate(['/signin']);
-          this.loading = false;
-          
-        } else if (error.status === 400) {
-          this.toastr.error("Server Bad Request");
-        } else if (error.status === 403) {
-          this.toastr.error("Forbidden Error");
-        } else if (error.status === 404) {
-          this.toastr.error("Server not Found");
-        } else if (error.status === 500) {
-          this.toastr.error("Internal Server Error");
-        } else {
-          this.toastr.error("Server not reachable");
-          this.loading = false;
-        }
+        this.authService.GetErrorCode(error);
       });
     }
 
@@ -1159,23 +1111,7 @@ export class EmergencyAlertComponent implements OnInit {
       }
     }, error => {
       this.loading = false;
-      if (error.error.code === 'token_not_valid') {
-        this.authService.logout();
-        this.router.navigate(['/signin']);
-        this.loading = false;
-        
-      } else if (error.status === 400) {
-        this.toastr.error("Server Bad Request");
-      } else if (error.status === 403) {
-        this.toastr.error("Forbidden Error");
-      } else if (error.status === 404) {
-        this.toastr.error("Server not Found");
-      } else if (error.status === 500) {
-        this.toastr.error("Internal Server Error");
-      } else {
-        this.toastr.error("Server not reachable");
-        this.loading = false;
-      }
+      this.authService.GetErrorCode(error);
     });
   }
 
@@ -1395,7 +1331,7 @@ export class EmergencyAlertComponent implements OnInit {
       this.http.post('emergency_ticker/', formData).subscribe((res: any) => {
         if (res.status === true) {
           const responseData = res.data;
-          this.toastr.success("Emergency Scrolling Ticker Added Successfully !!");
+          this.toastr.success("Emergency Alert Bar Added Successfully !!");
           this.router.navigate([`/emergency/send-user/${responseData.id}/${responseData.alert_type}`]);
           this.tickerForm.reset();
           this.onDismiss();
@@ -1407,29 +1343,13 @@ export class EmergencyAlertComponent implements OnInit {
         }
       }, error => {
         this.loading = false;
-        if (error.error.code === 'token_not_valid') {
-          this.authService.logout();
-          this.router.navigate(['/signin']);
-          this.loading = false;
-          
-        } else if (error.status === 400) {
-          this.toastr.error("Server Bad Request");
-        } else if (error.status === 403) {
-          this.toastr.error("Forbidden Error");
-        } else if (error.status === 404) {
-          this.toastr.error("Server not Found");
-        } else if (error.status === 500) {
-          this.toastr.error("Internal Server Error");
-        } else {
-          this.toastr.error("Server not reachable");
-          this.loading = false;
-        }
+        this.authService.GetErrorCode(error);
       });
     } else {
       this.http.patch(`emergency_ticker/${this.TickerAlertId}/`, formData).subscribe((res: any) => {
         if (res.status === true) {
           const responseData = res.data;
-          this.toastr.success("Emergency Scrolling Ticker Updated Successfully !!");
+          this.toastr.success("Emergency Alert Bar Updated Successfully !!");
           this.router.navigate([`/emergency/send-user/${responseData.id}/${responseData.alert_type}`]);
           this.tickerForm.reset();
           this.onDismiss();
@@ -1441,23 +1361,7 @@ export class EmergencyAlertComponent implements OnInit {
         }
       }, error => {
         this.loading = false;
-        if (error.error.code === 'token_not_valid') {
-          this.authService.logout();
-          this.router.navigate(['/signin']);
-          this.loading = false;
-          
-        } else if (error.status === 400) {
-          this.toastr.error("Server Bad Request");
-        } else if (error.status === 403) {
-          this.toastr.error("Forbidden Error");
-        } else if (error.status === 404) {
-          this.toastr.error("Server not Found");
-        } else if (error.status === 500) {
-          this.toastr.error("Internal Server Error");
-        } else {
-          this.toastr.error("Server not reachable");
-          this.loading = false;
-        }
+        this.authService.GetErrorCode(error);
       });
     }
   }
@@ -1523,23 +1427,7 @@ export class EmergencyAlertComponent implements OnInit {
       }
     }, error => {
       this.loading = false;
-      if (error.error.code === 'token_not_valid') {
-        this.authService.logout();
-        this.router.navigate(['/signin']);
-        this.loading = false;
-        
-      } else if (error.status === 400) {
-        this.toastr.error("Server Bad Request");
-      } else if (error.status === 403) {
-        this.toastr.error("Forbidden Error");
-      } else if (error.status === 404) {
-        this.toastr.error("Server not Found");
-      } else if (error.status === 500) {
-        this.toastr.error("Internal Server Error");
-      } else {
-        this.toastr.error("Server not reachable");
-        this.loading = false;
-      }
+      this.authService.GetErrorCode(error);
     });
   }
 
@@ -1569,23 +1457,7 @@ export class EmergencyAlertComponent implements OnInit {
       }
     }, error => {
       this.loading = false;
-      if (error.error.code === 'token_not_valid') {
-        this.authService.logout();
-        this.router.navigate(['/signin']);
-        this.loading = false;
-        
-      } else if (error.status === 400) {
-        this.toastr.error("Server Bad Request");
-      } else if (error.status === 403) {
-        this.toastr.error("Forbidden Error");
-      } else if (error.status === 404) {
-        this.toastr.error("Server not Found");
-      } else if (error.status === 500) {
-        this.toastr.error("Internal Server Error");
-      } else {
-        this.toastr.error("Server not reachable");
-        this.loading = false;
-      }
+      this.authService.GetErrorCode(error);
     });
   }
   OnColorCodeChange() {
@@ -1601,23 +1473,7 @@ export class EmergencyAlertComponent implements OnInit {
       }
     }, error => {
       this.loading = false;
-      if (error.error.code === 'token_not_valid') {
-        this.authService.logout();
-        this.router.navigate(['/signin']);
-        this.loading = false;
-        
-      } else if (error.status === 400) {
-        this.toastr.error("Server Bad Request");
-      } else if (error.status === 403) {
-        this.toastr.error("Forbidden Error");
-      } else if (error.status === 404) {
-        this.toastr.error("Server not Found");
-      } else if (error.status === 500) {
-        this.toastr.error("Internal Server Error");
-      } else {
-        this.toastr.error("Server not reachable");
-        this.loading = false;
-      }
+      this.authService.GetErrorCode(error);
     });
   }
 

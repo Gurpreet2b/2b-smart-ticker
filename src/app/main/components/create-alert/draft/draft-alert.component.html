@@ -96,7 +96,7 @@
                                             </td>
                                             <!-- <td> {{draft.scheduled}}</td> -->
                                             <td> {{draft.created_by?.username}} </td>
-                                            <td class="marg">
+                                            <td class="marg w-icons">
                                                 <span class="mr-2 cursor" title="Edit Alert" *ngIf="RoleAssign[0].edit"
                                                 [routerLink]="['/create-alerts', draft.id, draft.alert_type, 'Alert', 'EditDraft']">
                                                 <img src="assets/img/sent-alert-action/edit-popup.png" alt="">

@@ -7,8 +7,9 @@
     max-width: 500px;
     margin: 1.75rem auto;
 }
-
-
+.w-icons-sent img{
+    width: 8%;
+}
 .scrol {
     width: 800px;
     height: 600px;

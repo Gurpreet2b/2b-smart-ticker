@@ -34,7 +34,7 @@
     background: #f7f7f7;
     color: #676b84;
     padding: 10px;
-    margin: 0.5rem 0px 0.5rem 1rem;
+    margin: 0.5rem 0px 0.5rem 1.5rem;
     /* margin: 1rem; */
     /* margin-left: 1rem; */
     /* margin-left: 0.55rem; */
@@ -52,7 +52,7 @@
     background: #f7f7f7;
     color: #676b84;
     padding: 10px;
-       margin: 0.5rem 0.5rem 0.5rem 0.8rem
+    margin: 0.5rem 0.5rem 0.5rem 1.2rem
 }
 .bar-visualization-alert{
     border: 1px solid #dddbdb;

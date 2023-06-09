@@ -12,7 +12,7 @@
                             <div>
                                 <!-- <h3>Emergency Alerts </h3> -->
                                 <div class="row">
-                                    <div class="col-md-3 mb-3 alert-setting-card" 
+                                    <div class="col-md-3 mb-3 alert-setting-card m-r-0" 
                                     *ngFor="let emergency of EmergencyList | paginate: { itemsPerPage: 10, currentPage: currentPage, totalItems: totalItems }; let i=index">
                                     <div class="sent-emergency-alert">
                                         <div class="header-emergency">{{emergency.name | slice:0:15}}<span *ngIf="emergency.name.length > 15">...</span> </div>
@@ -23,7 +23,7 @@
                                         <img class="img-emergency" src="assets/img/send_big_white.png" alt=""
                                         [ngStyle]="{'background-color': emergency.color_code}" *ngIf="!RoleAssign[9].send">
 
-                                        <div class="footer-emergency">
+                                        <div class="footer-emergency w-icons">
                                             <span *ngIf="RoleAssign[9].view">
                                                 <span *ngIf="emergency.alert_type === 'EmergencyPopupAlert'"
                                                     class="ml-3 mr-2 cursor" title="Preview Alert"
