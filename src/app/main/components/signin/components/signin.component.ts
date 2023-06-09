@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { HttpService, AuthService } from 'src/app/core/services';
 
@@ -16,12 +16,20 @@ export class SigninComponent implements OnInit {
   });
   Permission: any;
   public loading = false;
+  public GetCurrentUrl: any;
 
   constructor(
     private router: Router,
     private http: HttpService,private toastr: ToastrService,
     private authService: AuthService
-  ) { }
+  ) { 
+    router.events.subscribe(val => {
+      if (val instanceof NavigationEnd) {
+        console.log(val.url);
+        this.GetCurrentUrl = val.url;
+      }
+    });
+  }
 
   ngOnInit(): void {
     // this.http.get('login/', null).subscribe((res: any) => {
@@ -66,9 +74,15 @@ export class SigninComponent implements OnInit {
         this.Permission = res.policy;
         localStorage.setItem(btoa("Permission"), btoa(JSON.stringify(this.Permission)));
         localStorage.setItem(btoa("SkinIdList"), btoa(JSON.stringify(res.skin_id_lists)));
-        setInterval(() => {
-          window.location.reload(); 
-          }, 500);
+        if (this.GetCurrentUrl !== '/signin') {
+          window.location.reload();
+        }
+        // if (this.GetCurrentUrl !== '/signin') {
+        //   setInterval(() => {
+        //     window.location.reload(); 
+        //     }, 1000);
+        // }
+        
       } else {
         this.loading = false;
         this.toastr.warning(res.message);
