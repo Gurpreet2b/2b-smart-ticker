@@ -25,7 +25,7 @@ export class SigninComponent implements OnInit {
   ) { 
     router.events.subscribe(val => {
       if (val instanceof NavigationEnd) {
-        console.log(val.url);
+        // console.log(val.url);
         this.GetCurrentUrl = val.url;
       }
     });
