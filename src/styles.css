@@ -9,10 +9,10 @@ p {
     position: relative;
     margin: 0 auto;
 }
-
+/* 
 #sidebar_menu{
     overflow-x: unset !important;
-}
+} */
 
 .dot-opacity-loader span {
     display: inline-block;
@@ -429,7 +429,7 @@ p {
 }
 
 .cursor img{
-    width: 13%;
+    width: 10%;
 }
 .checkbox label {
     margin-bottom: 0;

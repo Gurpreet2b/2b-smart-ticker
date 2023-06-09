@@ -85,7 +85,7 @@
 .sidebar_content {
     display: block;
     overflow-x: hidden;
-    max-height: 700px;
+    max-height: 900px;
     width: 100%;
     margin-top: 4px
 }

@@ -4,3 +4,7 @@
     letter-spacing: 10px;
 
 }
+
+.w-pub-icon img{
+    width: 5% !important;
+}

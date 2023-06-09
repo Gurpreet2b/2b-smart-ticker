@@ -258,9 +258,26 @@
                                             </div>
                                             <div class="col-md-3 user">
                                                 <div class="form-group">
-                                                    <input type="checkbox" [(ngModel)]="option.selectedVal"
+                                                    <div class="checkbox-wrapper-33 main-box">
+                                                        <label class="checkbox" *ngIf="IsCheckedSurvey === 'quiz'">
+                                                            <input type="checkbox"
+                                                                class="checkbox__trigger visuallyhidden mr-1"
+                                                                [(ngModel)]="option.selectedVal"
+                                                        [ngModelOptions]="{standalone: true}"
+                                                         title="Correct Option" >
+                                                            <span class="checkbox__symbol">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                    viewBox="0 0 28 28" height="28px" width="28px"
+                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                    <path d="M4 14l8 7L24 7"></path>
+                                                                </svg>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <!-- <input type="checkbox" [(ngModel)]="option.selectedVal"
                                                         [ngModelOptions]="{standalone: true}" class="mr-1"
                                                         *ngIf="IsCheckedSurvey === 'quiz'" title="Correct Option" />
+                                                         -->
                                                     <span>
                                                         <!-- <i class='far fa-file-alt cursor mt-2' style='font-size:20px'
                                                             data-bs-toggle="modal" data-bs-target="#FileUploadSurveyImageModal"
@@ -268,7 +285,7 @@
                                                         </i> -->
 
                                                         <!-- <i class='far fa-file-alt cursor' style='font-size:20px'
-                                                            href="javascript:void(0)" (click)="file.click()"></i>
+                                                            href="javascript:void(0)" (click)="file.click()"></i>B
                                                         <input type="file" #file (change)="onFileChange($event, IR, i)"
                                                             style="display:none" /> -->
                                                     </span>
@@ -315,7 +332,7 @@
                                                     <input class="form-control" type="checkbox" disabled value="" id="">
                                                 </div>
                                             </div>
-                                            <div class="col-md-8">
+                                            <div class="col-md-7">
                                                 <div class="form-group">
                                                     <input type="text"
                                                         placeholder="{{ 'Survey.surveyAnsText' | translate}}"
@@ -326,11 +343,27 @@
                                                 <img *ngIf="option.Url" src="{{option.Url}}" alt=""
                                                     style="width: 60px; height: 60px;">
                                             </div>
-                                            <div class="col-md-3 user">
+                                            <div class="col-md-4 user">
                                                 <div class="form-group">
-                                                    <input type="checkbox" [(ngModel)]="option.selectedVal"
+                                                    <div class="checkbox-wrapper-33 main-box">
+                                                        <label class="checkbox" *ngIf="IsCheckedSurvey === 'quiz'">
+                                                            <input type="checkbox"
+                                                                class="checkbox__trigger visuallyhidden"
+                                                                id="sunday-day" name="sunday-day-week"
+                                                                [(ngModel)]="option.selectedVal"
+                                                        [ngModelOptions]="{standalone: true}" title="Correct Option">
+                                                            <span class="checkbox__symbol">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                    viewBox="0 0 28 28" height="28px" width="28px"
+                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                    <path d="M4 14l8 7L24 7"></path>
+                                                                </svg>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <!-- <input type="checkbox" [(ngModel)]="option.selectedVal"
                                                         [ngModelOptions]="{standalone: true}" class="mr-1"
-                                                        *ngIf="IsCheckedSurvey === 'quiz'" title="Correct Option" />
+                                                        *ngIf="IsCheckedSurvey === 'quiz'" title="Correct Option" /> -->
                                                     <span>
                                                         <i class='far fa-file-alt cursor' style='font-size:20px'
                                                             data-bs-toggle="modal"

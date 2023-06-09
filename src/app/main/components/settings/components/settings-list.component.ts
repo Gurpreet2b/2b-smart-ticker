@@ -54,7 +54,7 @@ export class SettingsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.authService.SetRestaurantName(`Common Settings`);
+    this.authService.SetRestaurantName(`Settings`);
 
     this.Permission = this.authService.getPermission();
     this.RoleAssign = JSON.parse(this.Permission.access_control_list);
