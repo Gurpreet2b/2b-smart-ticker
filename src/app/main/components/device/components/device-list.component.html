@@ -82,11 +82,11 @@
                                             {{device.refresh_time}} {{device.refresh_time_choice}}
                                         </td>
                                         <td class="w-icons">
-                                            <span class="mr-2 cursor" (click)="onEditDevice(device.id)"
+                                            <span class="mr-2 cursor" (click)="onEditDevice(device.id)" title="Edit"
                                             data-bs-toggle="modal" data-bs-target="#DeviceModal">
                                             <img src="assets/img/sent-alert-action/edit-popup.png" alt="">
                                             </span>
-                                            <span class="text-danger cursor" (click)="delete(device.id)">
+                                            <span class="text-danger cursor" (click)="delete(device.id)" title="Delete">
                                                 <img src="assets/img/sent-alert-action/delete.png" alt="">
                                             </span>
                                         </td>

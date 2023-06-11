@@ -2,13 +2,12 @@
     letter-spacing: 8px;
 }
 
-
 .alert-static {
     max-width: 500px;
     margin: 1.75rem auto;
 }
 .w-icons-sent img{
-    width: 8%;
+    width: 10%;
 }
 .scrol {
     width: 800px;

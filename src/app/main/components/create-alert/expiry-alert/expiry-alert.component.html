@@ -99,7 +99,7 @@
                                             <span *ngIf="sent.alert_type === 'TickerAlert'" title="Alert Bar">
                                                 <img src="assets/img/sent-alert-action/ticker.png" alt="">
                                             </span>
-                                            <span *ngIf="sent.alert_type === 'RsvpAlert'" title="RSVP">
+                                            <span *ngIf="sent.alert_type === 'RsvpAlert'" title="Opinion Alert">
                                                 <img src="assets/img/sent-alert-action/rsvp.png" alt="">
                                             </span>
                                         </td>
@@ -139,19 +139,19 @@
 
                                             <span *ngIf="sent.is_parent === false">
                                                 <span *ngIf="sent.alert_type === 'PopupAlert'" class="mr-2 cursor"
-                                                    title="Popup Alert Details" data-bs-toggle="modal"
+                                                    title="Alert Box" data-bs-toggle="modal"
                                                     data-bs-target="#ColumnChartModal"
                                                     (click)="GetGraphStats(sent, 'alert')">
                                                     <img src="assets/img/sent-alert-action/graph.png" alt="">
                                                 </span>
                                                 <span *ngIf="sent.alert_type === 'TickerAlert'" class="mr-2 cursor"
-                                                    title="Ticker Alert Details" data-bs-toggle="modal"
+                                                    title="Alert Bar" data-bs-toggle="modal"
                                                     data-bs-target="#ColumnChartModal"
                                                     (click)="GetGraphStats(sent, 'alert')">
                                                     <img src="assets/img/sent-alert-action/graph.png" alt="">
                                                 </span>
                                                 <span *ngIf="sent.alert_type === 'RsvpAlert'" class="mr-2 cursor"
-                                                    title="RSVP Alert Details" data-bs-toggle="modal"
+                                                    title="Opinion Alert" data-bs-toggle="modal"
                                                     data-bs-target="#RSVPPieChartModal"
                                                     (click)="GetGraphStats(sent, 'RSVP')">
                                                     <img src="assets/img/sent-alert-action/graph.png" alt="">

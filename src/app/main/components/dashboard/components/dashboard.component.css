@@ -43,7 +43,6 @@
 .last-scroll thead th {
     position: sticky;
     top: 0;
-    z-index: 1;
 }
 
 
@@ -72,7 +71,6 @@
 .user-scroll thead th {
     position: sticky;
     top: 0;
-    z-index: 1;
 }
 
 
@@ -266,10 +264,10 @@
     box-sizing: border-box;
 }
 
-/* .table thead th {
+.table thead th {
     background: #f3f6f9;;
     color: white;
-} */
+}
 
 .close-button {
     float: right;

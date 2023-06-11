@@ -54,7 +54,7 @@
                                             <span *ngIf="reject.alert_type === 'TickerAlert'" title="Alert Bar">
                                                 <img src="assets/img/sent-alert-action/ticker.png" alt="">
                                             </span>
-                                            <span *ngIf="reject.alert_type === 'RsvpAlert'" title="RSVP">
+                                            <span *ngIf="reject.alert_type === 'RsvpAlert'" title="Opinion Alert">
                                                 <img src="assets/img/sent-alert-action/rsvp.png" alt="">
                                             </span>
                                             <span *ngIf="reject.alert_type === 'WallpaperAlert'"
@@ -76,7 +76,7 @@
                                                     [routerLink]="['/create-alerts', reject.id, reject.alert_type, 'Alert', 'Edit']">
                                                     <img src="assets/img/sent-alert-action/duplicate.png" alt="">
                                                 </span>
-                                                <span *ngIf="reject.alert_type === 'RsvpAlert'" title="RSVP"
+                                                <span *ngIf="reject.alert_type === 'RsvpAlert'" title="Opinion Alert"
                                                     [routerLink]="['/create-alerts', reject.id, reject.alert_type, 'Alert', 'Edit']">
                                                     <img src="assets/img/sent-alert-action/duplicate.png" alt="">
                                                 </span>

@@ -12,7 +12,7 @@
                             <div>
                                 <!-- <h3>Emergency Alerts </h3> -->
                                 <div class="row">
-                                    <div class="col-md-3 mb-3 alert-setting-card m-r-0" 
+                                    <div class="col-md-3 mb-3 alert-setting-card m-r-0 justify-content-center d-flex" 
                                     *ngFor="let emergency of EmergencyList | paginate: { itemsPerPage: 10, currentPage: currentPage, totalItems: totalItems }; let i=index">
                                     <div class="sent-emergency-alert">
                                         <div class="header-emergency">{{emergency.name | slice:0:15}}<span *ngIf="emergency.name.length > 15">...</span> </div>

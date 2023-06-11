@@ -86,8 +86,23 @@
                                         </thead>
                                         <tbody>
                                             <tr *ngFor="let org of OrganizationList | paginate: { itemsPerPage: 10, currentPage: currentPage, totalItems: totalItems }; let i=index">
-                                                <td>
-                                                    <input type="checkbox" (change)="IsSelectedOrgList($event, org)" />
+                                                <td class="justify-content-center d-flex">
+                                                    <div class="checkbox-wrapper-33 main-box">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" class="checkbox__trigger visuallyhidden"
+                                                                id="deviceselect-alert" name="communicationMethod"
+                                                                formControlName="high_priority"
+                                                                (change)="IsSelectedOrgList($event, org)">
+                                                            <span class="checkbox__symbol">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                    viewBox="0 0 28 28" height="28px" width="28px"
+                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                    <path d="M4 14l8 7L24 7"></path>
+                                                                </svg>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <!-- <input type="checkbox" (change)="IsSelectedOrgList($event, org)" /> -->
                                                 </td>
                                                 <td>
                                                     {{org.name}}

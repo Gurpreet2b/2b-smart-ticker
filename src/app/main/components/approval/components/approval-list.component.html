@@ -57,7 +57,7 @@
                                             <span *ngIf="approval.alert_type === 'TickerAlert'" title="Alert Bar">
                                                 <img src="assets/img/sent-alert-action/ticker.png" alt="">
                                             </span>
-                                            <span *ngIf="approval.alert_type === 'RsvpAlert'" title="RSVP">
+                                            <span *ngIf="approval.alert_type === 'RsvpAlert'" title="Opinion Bar">
                                                 <img src="assets/img/sent-alert-action/rsvp.png" alt="">
                                             </span>
                                             <span *ngIf="approval.alert_type === 'SurveyAlert'"
@@ -109,7 +109,7 @@
                                                     [routerLink]="['/create-alerts', approval.id, approval.alert_type, 'Alert', 'Edit']">
                                                     <img src="assets/img/sent-alert-action/duplicate.png" alt="">
                                                 </span>
-                                                <span *ngIf="approval.alert_type === 'RsvpAlert'" title="RSVP"
+                                                <span *ngIf="approval.alert_type === 'RsvpAlert'" title="Opinion Alert"
                                                     [routerLink]="['/create-alerts', approval.id, approval.alert_type, 'Alert', 'Edit']">
                                                     <img src="assets/img/sent-alert-action/duplicate.png" alt="">
                                                 </span>

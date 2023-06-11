@@ -2,6 +2,10 @@
     letter-spacing: 8px;
 }
 
+.w-icons img {
+    width: 20% !important;
+}
+
 .alert-static {
     max-width: 500px;
     margin: 1.75rem auto;
