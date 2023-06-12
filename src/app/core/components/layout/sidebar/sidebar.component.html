@@ -226,9 +226,9 @@
                         <li><a routerLink="/emergency" [ngClass]="{'active': authService.TitleName === 'Color Codes'}"><i
                                     class='fas fa-caret-right image'></i>{{'Sidebar.colorCodes' |
                                 translate}}</a></li>
-                        <li><a routerLink="/emergency/shortcut" routerLinkActive="active"><i
+                        <!-- <li><a routerLink="/emergency/shortcut" routerLinkActive="active"><i
                                     class='fas fa-caret-right image'></i>{{'Sidebar.createShortcut' | translate}}</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </li>
@@ -407,10 +407,10 @@
                                     class='fas fa-caret-right emergency_icon'></i>{{'Sidebar.colorCodes' |
                                 translate}}</a>
                         </li>
-                        <li *ngIf="RoleAssign[9].view">
+                        <!-- <li *ngIf="RoleAssign[9].view">
                             <a routerLink="/emergency/shortcut" routerLinkActive="active"><i
                                     class='fas fa-caret-right emergency_icon'></i>{{'Sidebar.createShortcut' | translate}}</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </li>
