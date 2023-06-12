@@ -72,6 +72,7 @@ export class SigninComponent implements OnInit {
           this.router.navigate(['/dashboard']);
         }
         this.Permission = res.policy;
+        debugger;
         localStorage.setItem(btoa("Permission"), btoa(JSON.stringify(this.Permission)));
         localStorage.setItem(btoa("SkinIdList"), btoa(JSON.stringify(res.skin_id_lists)));
         setInterval(() => {

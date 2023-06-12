@@ -37,7 +37,7 @@
                                 <label>{{'CreatePublisher.publisherPolicy' | translate}} </label>
                                 <select class="form-control" [ngClass]="{'error': submitted && myPublishersForm.policy_id.errors}"
                                 formControlName="policy_id">
-                                    <option [value]="null" selected> {{'CreatePublisher.selectUser' | translate}}</option>
+                                    <option [value]="null" hidden> {{'CreatePublisher.selectUser' | translate}}</option>
                                     <option *ngFor="let policy of PolicyList" [value]="policy.id">
                                         {{policy.name}}
                                     </option>

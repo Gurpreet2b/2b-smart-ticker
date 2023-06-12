@@ -61,11 +61,24 @@ export class CreatePoliciesComponent implements OnInit {
         checked: true
     },
     {
+      name: "Print button",
+      value:"Print button",
+      checked: true
+    },
+    {
         name: "Self-destructing",
         value:"Delete From Clients History",
         checked: true
+    },
+    {
+      name: "Unobtrusive",
+      value:"Unobtrusive",
+      checked: true
     }
   ]
+
+  
+  
   public UserType: any = 'users';
 
   public items: any;
