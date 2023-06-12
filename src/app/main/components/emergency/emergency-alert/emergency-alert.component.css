@@ -12,6 +12,15 @@
     max-width: 39.666667%;
 } */
 
+.header-img-skin{
+    height: 80px;
+    width: 80px;
+    background-color: #fff;
+    padding: 2%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    object-fit: contain;
+}
+
 .alert-change {
     border: 4px solid #00838f;
     padding: 5px;

@@ -171,12 +171,12 @@
                                                 <div [ngStyle]="{'background-color': AlertBgColor}">
                                                     <div class=""
                                                         [ngStyle]="{'border': Think + 'px solid' + HeaderBorder}">
-                                                        <div class="row m-0"
+                                                        <div class="row"
                                                             [ngStyle]="{'background-color': HeaderBgColor}">
                                                             <div class="col-md-12 text-right">
                                                                 <div [ngStyle]="{'text-align': HeaderLogo}">
-                                                                    <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}"
-                                                                        alt="Skin pic" style="width: 70px;">
+                                                                    <img *ngIf="HeaderTextImg" class="header-img-skin"  src="{{HeaderTextImg}}"
+                                                                        alt="Skin pic">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -754,7 +754,7 @@
                         <div style="position: relative;">
                             <div>
                                 <div class="row"
-                                    style="display: flex; padding: 1px 7px; justify-content: space-between;">
+                                    style="display: flex; justify-content: space-between;">
                                     <!-- <div class="col-md-5" style="width: 100%; display: inline-flex;">
                                         <div id="header-text-skin" style="font-family: system-ui; display: flex; align-items: center;
                                             font-size: 16px; font-weight: bold; color: #7e7e7e;letter-spacing: 2px;">

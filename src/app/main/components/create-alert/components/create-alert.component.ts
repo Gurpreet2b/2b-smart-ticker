@@ -914,7 +914,7 @@ export class CreateAlertComponent implements OnInit {
       }
     } else {
       if (document.getElementById("header-text-img-white") !== null || document.getElementById("footer-img") !== null) {
-        document.getElementById("header-text-img-white").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="110" height="auto">`;
+        document.getElementById("header-text-img-white").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="80" height="80" style="background-color:#fff; object-fit: contain; padding:3%;">`;
         document.getElementById("footer-img").innerHTML = `<img src="${this.FooterImgUrl}" alt="Logo" width="50%" height="auto" style="float:right;">`;
       }
     }
@@ -1168,7 +1168,7 @@ export class CreateAlertComponent implements OnInit {
     } 
     else if (document.getElementById("footer-RSVP-img") !== null || document.getElementById("header-RSVP-text-img") !== null) {
       document.getElementById("footer-RSVP-img").innerHTML = `<img src="${this.FooterImgUrl}" alt="Logo" width="35%" height="auto" style="background-color:#ffffff00; float:right;">`;
-      document.getElementById("header-RSVP-text-img").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="100" height="auto" style="padding: 3px;">`;
+      document.getElementById("header-RSVP-text-img").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="80" height="80" style="background-color:#fff; object-fit: contain; padding:3%;">`;
     }
 
     if (this.RSVPForm.value.fullscreen === 'fullscreen') {

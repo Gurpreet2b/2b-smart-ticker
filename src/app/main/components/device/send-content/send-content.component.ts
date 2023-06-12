@@ -354,7 +354,7 @@ export class SendContentComponent implements OnInit {
       }
     } else {
       if (document.getElementById("header-text-img-white") !== null || document.getElementById("footer-img") !== null) {
-        document.getElementById("header-text-img-white").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="110" height="auto">`;
+        document.getElementById("header-text-img-white").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="80" height="80" style="background-color:#fff; object-fit: contain; padding:3%;">`;
         document.getElementById("footer-img").innerHTML = `<img src="${this.FooterImgUrl}" alt="Logo" width="35%" height="auto" style="float:right;">`;
       }
     }
