@@ -597,10 +597,10 @@
                                                         {{HeaderTitle}}
                                                     </div> -->
                                                 </div>
-                                                <div class="col-md-7">
+                                                <div class="col-md-9">
                                                     <div [ngStyle]="{'text-align': HeaderLogo}">
                                                         <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}"
-                                                            alt="Skin pic" style="margin-left: -14px; width: 180px;">
+                                                            alt="Skin pic" style="width: 180px;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -613,8 +613,8 @@
                                                     </h6>
                                                 </div>
                                             </div>
-                                            <div class="row pt-1 pb-1 m-0"
-                                                [ngStyle]="{'background-color': FooterBgColor}">
+                                            <div class="row m-0"
+                                                [ngStyle]="{'background-color': FooterBgColor}" style="position: absolute; bottom: 15px; width: 88%;">
                                                 <div class="col-md-5" style="padding-left: 0;">
                                                     <div [ngStyle]="{'text-align': FooterLogo}">
                                                         <img *ngIf="FooterImageUrl" src="{{FooterImageUrl}}"
@@ -623,7 +623,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-7" [ngStyle]="{'color': footerColor}">
-                                                    <div [ngStyle]="{'font-size': FooterFontSize + 'px'}" class="mt-2">
+                                                    <div [ngStyle]="{'font-size': FooterFontSize + 'px'}" class="mt-2" style="text-align: end;">
                                                         {{FooterText}}
                                                     </div>
                                                 </div>

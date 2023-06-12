@@ -71,7 +71,7 @@ export class ArchivedAlertComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.authService.SetRestaurantName(`Archived Surveys`);
+    this.authService.SetRestaurantName(`Archived Feedback Alerts`);
     this.Permission = this.authService.getPermission();
     this.RoleName = this.Permission.role;
     this.RoleAssign = JSON.parse(this.Permission.access_control_list);

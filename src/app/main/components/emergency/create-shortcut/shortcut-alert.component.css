@@ -4,6 +4,10 @@
     padding: 8px;
 }
 
+.create-shortcut-alert{
+    display: grid;
+}
+
 .header-emergency {
     background: gray;
     width: 250px;
@@ -13,7 +17,8 @@
 }
 
 .m-r-0{
-    margin-right: 0.5rem;
+    margin-right: 3rem;
+    margin-bottom: 1rem;
 }
 
 .img-emergency {

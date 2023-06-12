@@ -81,7 +81,7 @@ export class ActiveAlertComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.authService.SetRestaurantName(`Active Surveys`);
+    this.authService.SetRestaurantName(`Active Feedback Alerts`);
     this.Permission = this.authService.getPermission();
     this.RoleName = this.Permission.role;
     this.RoleAssign = JSON.parse(this.Permission.access_control_list);
