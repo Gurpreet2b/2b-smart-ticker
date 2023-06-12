@@ -118,6 +118,9 @@
                                             <option *ngFor="let message of MessageTemplateList" [value]="message.id">
                                                 {{message.name}}
                                             </option>
+                                            <option *ngIf="MessageTemplateList.length === 0" disabled>
+                                                No Templates Available !!
+                                            </option>
                                         </select>
                                     </div>
                                 </div>
