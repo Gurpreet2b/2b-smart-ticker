@@ -37,36 +37,35 @@ export class CreatePoliciesComponent implements OnInit {
   public OrgList: any = [];
   public OrganizationList: any = [];
   public OrganizationTopList: any = [];
+
+  
   public AlertSettingList: any = [
     {
-      name: "Acknowledgement",
-      checked: true
+        name: "Acknowledgement",
+        value:"Alert Acknowledgement",
+        checked: true
     },
     {
-      name: "Full screen",
-      checked: true
+        name: "Full screen",
+        value:"Full screen",
+        checked: true
     },
     {
-      name: "Auto-close",
-      checked: true
+        name: "Auto-close",
+        value:"Auto-close",
+        checked: true
     },
     {
-      name: "High-priority",
-      checked: true
+        name: "High-priority",
+        value:"Critical Alert",
+        checked: true
     },
     {
-      name: "Print button",
-      checked: true
-    },
-    {
-      name: "Self-destructing",
-      checked: true
-    },
-    // {
-    //   name: "Unobtrusive",
-    //   checked: true
-    // },
-  ];
+        name: "Self-destructing",
+        value:"Delete From Clients History",
+        checked: true
+    }
+  ]
   public UserType: any = 'users';
 
   public items: any;

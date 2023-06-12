@@ -23,12 +23,12 @@ export class SigninComponent implements OnInit {
     private http: HttpService,private toastr: ToastrService,
     private authService: AuthService
   ) { 
-    router.events.subscribe(val => {
-      if (val instanceof NavigationEnd) {
-        // console.log(val.url);
-        this.GetCurrentUrl = val.url;
-      }
-    });
+    // router.events.subscribe(val => {
+    //   if (val instanceof NavigationEnd) {
+    //     console.log(val.url);
+    //     this.GetCurrentUrl = val.url;
+    //   }
+    // });
   }
 
   ngOnInit(): void {
@@ -74,9 +74,12 @@ export class SigninComponent implements OnInit {
         this.Permission = res.policy;
         localStorage.setItem(btoa("Permission"), btoa(JSON.stringify(this.Permission)));
         localStorage.setItem(btoa("SkinIdList"), btoa(JSON.stringify(res.skin_id_lists)));
-        if (this.GetCurrentUrl !== '/signin') {
-          window.location.reload();
-        }
+        setInterval(() => {
+          window.location.reload(); 
+        }, 1500);
+        // if (this.GetCurrentUrl !== '/signin') {
+        //   window.location.reload();
+        // }
         // if (this.GetCurrentUrl !== '/signin') {
         //   setInterval(() => {
         //     window.location.reload(); 
