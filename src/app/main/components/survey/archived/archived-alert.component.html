@@ -76,7 +76,7 @@
                                     <tr
                                         *ngFor="let active of ActiveList  | paginate: { itemsPerPage: 10, currentPage: currentPage, totalItems: totalItems }; let i=index">
                                         <td>
-                                            <span *ngIf="active.type === 'classic_survey'" title="Survey">
+                                            <span *ngIf="active.type === 'classic_survey'" title="Feedback">
                                                 <img src="assets/img/sent-alert-action/survey.png" alt="">
                                             </span>
                                             <span *ngIf="active.type === 'quiz'" title="Quiz">

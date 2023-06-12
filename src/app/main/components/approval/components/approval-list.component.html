@@ -61,8 +61,8 @@
                                                 <img src="assets/img/sent-alert-action/rsvp.png" alt="">
                                             </span>
                                             <span *ngIf="approval.alert_type === 'SurveyAlert'"
-                                                title="Survey Alert">
-                                                <img src="assets/img/sent-alert-action/survey (1).png" alt="">
+                                                title="Feedback Alert">
+                                                <img src="assets/img/sent-alert-action/survey.png" alt="">
                                             </span>
                                             <span *ngIf="approval.alert_type === 'WallpaperAlert'"
                                                 title="Wallpaper Alert">
@@ -129,7 +129,7 @@
                                                         [routerLink]="['/screensaver', approval.id, approval.content_type, 'Alert', 'Edit']">
                                                 </span>
                                                 <span *ngIf="approval.alert_type === 'SurveyAlert'"
-                                                    title="Survey Alert">
+                                                    title="Feedback Alert">
                                                     <img src="assets/img/sent-alert-action/duplicate.png" alt=""
                                                     [routerLink]="['/create-survey', approval.id, 'SurveyAlert', 'Alert', 'Edit']">
                                                 </span>

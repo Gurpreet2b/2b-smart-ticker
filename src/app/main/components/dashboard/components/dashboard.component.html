@@ -189,8 +189,8 @@
                                                         <img src="assets/img/sent-alert-action/rsvp.png" alt="">
                                                     </span>
                                                     <span *ngIf="sent.alert_type === 'SurveyAlert'"
-                                                        title="Survey Alert">
-                                                        <img src="assets/img/sent-alert-action/survey (1).png" alt="">
+                                                        title="Feedback Alert">
+                                                        <img src="assets/img/sent-alert-action/survey.png" alt="">
                                                     </span>
                                                     <!-- <span *ngIf="sent.alert_type === 'WallpaperAlert'"
                                                         title="Wallpaper Alert">
@@ -271,7 +271,7 @@
                                                         <img src="assets/img/sent-alert-action/graph.png" alt="">
                                                     </span>
                                                     <span *ngIf="sent.alert_type === 'SurveyAlert'" class="mr-2 cursor"
-                                                        title="Survey Alert Details" data-bs-toggle="modal"
+                                                        title="Feedback Alert Details" data-bs-toggle="modal"
                                                         data-bs-target="#SurveyChartModal"
                                                         (click)="GetGraphStatsSurvey(sent.id, sent)">
                                                         <img src="assets/img/sent-alert-action/graph.png" alt="">
@@ -1457,7 +1457,7 @@
 
                                                     <div *ngIf="preview.choice === 'Submitted'">
                                                         <div style="text-align: center;">
-                                                            Your survey was submitted
+                                                            Your Feedback was submitted
                                                         </div>
                                                         <div style="text-align: center; margin-top: 20px;">
                                                             <button
@@ -1507,7 +1507,7 @@
         <div class="modal-content" style="margin-left: 3rem; width: 990px;">
             <div class="scroll p-3">
                 <div class="modal-header">
-                    <h4 class="modal-title">Survey Alert Details - {{AlertName}}</h4>
+                    <h4 class="modal-title">Feedback Alert Details - {{AlertName}}</h4>
                     <div class="col-md-2 right-side">
                         <button type="button" class="close-button" data-bs-dismiss="modal" style="background-color: transparent;
                     border: 0; font-size: 40px;">&times;</button>
@@ -1631,7 +1631,7 @@
                         <div *ngIf="i === showChart">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <b>Survey Results:</b>
+                                    <b>Feedback Results:</b>
                                 </div>
                             </div>
                             <div class="row">

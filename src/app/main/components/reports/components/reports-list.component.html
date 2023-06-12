@@ -860,7 +860,7 @@
                                                         *ngFor="let surveys of SurveysList | paginate: { id:'sixth', itemsPerPage: 10, currentPage: currentPageSurveys, totalItems: totalItemsSurveys }; let i=index">
                                                         <td>
                                                             <span *ngIf="surveys.alert_type === 'SurveyAlert'"
-                                                                title="Survey Alert">
+                                                                title="Feedback Alert">
                                                                 <img src="assets/img/sent-alert-action/survey.png" alt="">
                                                             </span>
                                                         </td>
