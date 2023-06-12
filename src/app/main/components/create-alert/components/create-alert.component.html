@@ -2717,7 +2717,7 @@
                                                                         [ngModelOptions]="{standalone: true}">
                                                                 </div>
                                                             </div>
-                                                            <div class="col-lg-6">
+                                                            <!-- <div class="col-lg-6">
                                                                 <div class="form-group">
                                                                     <div class="checkbox-wrapper-33 main-box">
                                                                         <label class="checkbox">
@@ -2735,12 +2735,12 @@
                                                                             <label>{{'CreateAlert.addReminder' | translate}}</label>
                                                                         </label>
                                                                     </div>
-                                                                    <!-- <input type="checkbox" name="reminder"
+                                                                    <input type="checkbox" name="reminder"
                                                                         formControlName="reminder"> {{
-                                                                    'CreateAlert.addReminder' | translate}} -->
+                                                                    'CreateAlert.addReminder' | translate}}
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-lg-6">
+                                                            </div> -->
+                                                            <!-- <div class="col-lg-6">
                                                                 <label>
                                                                     {{
                                                                     'CreateAlert.minuteBeforeStartDateAndTime' |
@@ -2768,13 +2768,13 @@
                                                                     <option value="95">95</option>
                                                                     <option value="100">100</option>
                                                                 </select>
-                                                            </div>
-                                                            <div class="col-lg-12 text-right">
+                                                            </div> -->
+                                                            <!-- <div class="col-lg-12 text-right">
                                                                 <div class="bbpt-4">
                                                                     <button type="button"
                                                                         class="btn btn-outline-success">Save</button>
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
                                                         </div>
 
                                                         <div class="row" *ngIf="IsDailySchedule">
@@ -3461,7 +3461,8 @@
                                                     <div class="checkbox-wrapper-33 main-box"
                                                         title=" {{'CreateAlert.smsAlerttitlehover' | translate}}">
                                                         <label class="checkbox">
-                                                            <input type="checkbox"
+                                                            <div *ngIf="AlertChannelDetails?.sms">
+                                                                <input type="checkbox"
                                                                 class="checkbox__trigger visuallyhidden"
                                                                 id="messagebar-channel" name="channel-bar"
                                                                 formControlName="sms_alert"
@@ -3473,6 +3474,17 @@
                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                 </svg>
                                                             </span>
+                                                            </div>
+                                                            <div *ngIf="!AlertChannelDetails?.sms">
+                                                            <span class="checkbox__symbol">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                    viewBox="0 0 28 28" height="28px" width="28px"
+                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                    <path d="M4 14l8 7L24 7"></path>
+                                                                </svg>
+                                                            </span>
+                                                            </div>
+                                                         
                                                             <label for="messagebar-channel">
                                                                 {{'CreateAlert.scrollingTickerMessageChannelSmsAlert'
                                                                 | translate}}</label>
