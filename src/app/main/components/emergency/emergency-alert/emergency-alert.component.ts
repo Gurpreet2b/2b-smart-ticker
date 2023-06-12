@@ -64,7 +64,8 @@ export class EmergencyAlertComponent implements OnInit {
   FooterImgUrl: any;
   public MessageId: any
   public SkinIdListLocalStorge: any = [];
-  public SkinListLocal: any
+  public SkinListLocal: any;
+  public AlertChannelDetails: any;
 
   constructor(private http: HttpService,
     private toastr: ToastrService, public translate: TranslateService,
@@ -472,6 +473,7 @@ export class EmergencyAlertComponent implements OnInit {
     this.GetDefaultSettings();
     this.OnColorCodeChange();
     this.GetMessageList();
+    this.GetAlertChannelDetails();
 
     this.SkinIdListLocalStorge = this.authService.getSkinIdList();
     if (this.SkinIdListLocalStorge.length > 0) {
@@ -489,6 +491,23 @@ export class EmergencyAlertComponent implements OnInit {
     } else {
       this.IsActivePopupAlert = true;
     }
+  }
+
+  GetAlertChannelDetails() {
+    this.loading = true;
+    this.http.get(`settings/get_alert_channels_details/`, null).subscribe((res: any) => {
+      if (res.status === true) {
+        this.AlertChannelDetails = res.data;
+        this.loading = false;
+        this.authService.setCurrentUser({ token: res.token });
+      } else {
+        this.loading = false;
+        this.toastr.warning(res.message);
+      }
+    }, error => {
+      this.loading = false;
+      this.authService.GetErrorCode(error);
+    });
   }
 
   IsOnLoadCompleted: any = false;
@@ -826,7 +845,7 @@ export class EmergencyAlertComponent implements OnInit {
       }
     } else {
       if (document.getElementById("header-text-img-white") !== null || document.getElementById("footer-img") !== null) {
-        document.getElementById("header-text-img-white").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="15%" height="15%" style="background-color:#fff; object-fit: contain; padding:3%;">`;
+        document.getElementById("header-text-img-white").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="18%" height="18%" style="background-color:#fff; object-fit: contain; padding:3%;">`;
         document.getElementById("footer-img").innerHTML = `<img src="${this.FooterImgUrl}" alt="Logo" width="50%" height="auto" style="float:right;">`;
       }
     }

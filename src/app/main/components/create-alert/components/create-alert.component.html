@@ -156,7 +156,7 @@
                                         
                                         </div> -->
 
-                                        <div class="cursor" *ngIf="SkinId || SkinList.length" data-bs-toggle="modal"
+                                    <div class="cursor" *ngIf="SkinId || SkinList.length" data-bs-toggle="modal"
                                         data-bs-target="#SkinPreviewModal">
                                         <!-- <div class="row" *ngIf="IsColorValue">
                                             <div class="col-md-12" style="padding: 3rem;">
@@ -232,8 +232,8 @@
                                                             [ngStyle]="{'background-color': HeaderBgColor}">
                                                             <div class="col-md-12 text-right">
                                                                 <div [ngStyle]="{'text-align': HeaderLogo}">
-                                                                    <img *ngIf="HeaderTextImg" class="header-img-skin" src="{{HeaderTextImg}}"
-                                                                        alt="Skin pic">
+                                                                    <img *ngIf="HeaderTextImg" class="header-img-skin"
+                                                                        src="{{HeaderTextImg}}" alt="Skin pic">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -244,8 +244,8 @@
                                                                     [ngClass]="{'colorChange': IsWhiteColor === true}"
                                                                     class="alertTitle-scroll"
                                                                     style="color: #fff; word-wrap: break-word; max-height: 50px; overflow-x: auto;">
-                                                                   
-                                                            
+
+
                                                                 </h3>
                                                             </div>
                                                         </div>
@@ -255,7 +255,7 @@
                                                                 <h6 [innerHTML]="AlertEditBodyPreview"
                                                                     [ngClass]="{'colorChange': IsWhiteColor === true}"
                                                                     style="height: 130px; color: #fff; overflow: auto; word-wrap: break-word;">
-                                                                   
+
                                                                 </h6>
                                                             </div>
                                                         </div>
@@ -734,18 +734,20 @@
                                                                                 class="checkbox__trigger visuallyhidden"
                                                                                 id="sunday" name="sunday-week"
                                                                                 [(ngModel)]="WeeklyDay.Sunday"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                                [ngModelOptions]="{standalone: true}">
                                                                             <span class="checkbox__symbol">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                    viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    version="1" viewBox="0 0 28 28"
+                                                                                    height="28px" width="28px"
+                                                                                    class="icon-checkbox"
+                                                                                    aria-hidden="true">
                                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                                 </svg>
                                                                             </span>
                                                                             <label>Sunday</label>
                                                                         </label>
                                                                     </div>
-    
+
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-3">
@@ -756,11 +758,13 @@
                                                                                 class="checkbox__trigger visuallyhidden"
                                                                                 id="monday" name="monday-week"
                                                                                 [(ngModel)]="WeeklyDay.Monday"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                                [ngModelOptions]="{standalone: true}">
                                                                             <span class="checkbox__symbol">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                    viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    version="1" viewBox="0 0 28 28"
+                                                                                    height="28px" width="28px"
+                                                                                    class="icon-checkbox"
+                                                                                    aria-hidden="true">
                                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                                 </svg>
                                                                             </span>
@@ -777,11 +781,13 @@
                                                                                 class="checkbox__trigger visuallyhidden"
                                                                                 id="Tuesday" name="Tuesday-week"
                                                                                 [(ngModel)]="WeeklyDay.Tuesday"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                                [ngModelOptions]="{standalone: true}">
                                                                             <span class="checkbox__symbol">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                    viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    version="1" viewBox="0 0 28 28"
+                                                                                    height="28px" width="28px"
+                                                                                    class="icon-checkbox"
+                                                                                    aria-hidden="true">
                                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                                 </svg>
                                                                             </span>
@@ -798,11 +804,13 @@
                                                                                 class="checkbox__trigger visuallyhidden"
                                                                                 id="Wednesday" name="Wednesday-week"
                                                                                 [(ngModel)]="WeeklyDay.Wednesday"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                                [ngModelOptions]="{standalone: true}">
                                                                             <span class="checkbox__symbol">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                    viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    version="1" viewBox="0 0 28 28"
+                                                                                    height="28px" width="28px"
+                                                                                    class="icon-checkbox"
+                                                                                    aria-hidden="true">
                                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                                 </svg>
                                                                             </span>
@@ -819,11 +827,13 @@
                                                                                 class="checkbox__trigger visuallyhidden"
                                                                                 id="Thursday" name="Thursday-week"
                                                                                 [(ngModel)]="WeeklyDay.Thursday"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                                [ngModelOptions]="{standalone: true}">
                                                                             <span class="checkbox__symbol">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                    viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    version="1" viewBox="0 0 28 28"
+                                                                                    height="28px" width="28px"
+                                                                                    class="icon-checkbox"
+                                                                                    aria-hidden="true">
                                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                                 </svg>
                                                                             </span>
@@ -840,11 +850,13 @@
                                                                                 class="checkbox__trigger visuallyhidden"
                                                                                 id="friday" name="friday-week"
                                                                                 [(ngModel)]="WeeklyDay.Friday"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                                [ngModelOptions]="{standalone: true}">
                                                                             <span class="checkbox__symbol">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                    viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    version="1" viewBox="0 0 28 28"
+                                                                                    height="28px" width="28px"
+                                                                                    class="icon-checkbox"
+                                                                                    aria-hidden="true">
                                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                                 </svg>
                                                                             </span>
@@ -861,11 +873,13 @@
                                                                                 class="checkbox__trigger visuallyhidden"
                                                                                 id="saturday" name="saturday-week"
                                                                                 [(ngModel)]="WeeklyDay.Saturday"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                                [ngModelOptions]="{standalone: true}">
                                                                             <span class="checkbox__symbol">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                    viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    version="1" viewBox="0 0 28 28"
+                                                                                    height="28px" width="28px"
+                                                                                    class="icon-checkbox"
+                                                                                    aria-hidden="true">
                                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                                 </svg>
                                                                             </span>
@@ -2849,11 +2863,13 @@
                                                                                 class="checkbox__trigger visuallyhidden"
                                                                                 id="sunday" name="sunday-week"
                                                                                 [(ngModel)]="WeeklyDay.Sunday"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                                [ngModelOptions]="{standalone: true}">
                                                                             <span class="checkbox__symbol">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                    viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    version="1" viewBox="0 0 28 28"
+                                                                                    height="28px" width="28px"
+                                                                                    class="icon-checkbox"
+                                                                                    aria-hidden="true">
                                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                                 </svg>
                                                                             </span>
@@ -2870,11 +2886,13 @@
                                                                                 class="checkbox__trigger visuallyhidden"
                                                                                 id="monday" name="monday-week"
                                                                                 [(ngModel)]="WeeklyDay.Monday"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                                [ngModelOptions]="{standalone: true}">
                                                                             <span class="checkbox__symbol">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                    viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    version="1" viewBox="0 0 28 28"
+                                                                                    height="28px" width="28px"
+                                                                                    class="icon-checkbox"
+                                                                                    aria-hidden="true">
                                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                                 </svg>
                                                                             </span>
@@ -2893,9 +2911,11 @@
                                                                                 [(ngModel)]="WeeklyDay.Tuesday"
                                                                                 [ngModelOptions]="{standalone: true}">
                                                                             <span class="checkbox__symbol">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                    viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    version="1" viewBox="0 0 28 28"
+                                                                                    height="28px" width="28px"
+                                                                                    class="icon-checkbox"
+                                                                                    aria-hidden="true">
                                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                                 </svg>
                                                                             </span>
@@ -2912,11 +2932,13 @@
                                                                                 class="checkbox__trigger visuallyhidden"
                                                                                 id="wednesday" name="wednesday-week"
                                                                                 [(ngModel)]="WeeklyDay.Wednesday"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                                [ngModelOptions]="{standalone: true}">
                                                                             <span class="checkbox__symbol">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                    viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    version="1" viewBox="0 0 28 28"
+                                                                                    height="28px" width="28px"
+                                                                                    class="icon-checkbox"
+                                                                                    aria-hidden="true">
                                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                                 </svg>
                                                                             </span>
@@ -2933,11 +2955,13 @@
                                                                                 class="checkbox__trigger visuallyhidden"
                                                                                 id="thursday" name="thursday-week"
                                                                                 [(ngModel)]="WeeklyDay.Thursday"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                                [ngModelOptions]="{standalone: true}">
                                                                             <span class="checkbox__symbol">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                    viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    version="1" viewBox="0 0 28 28"
+                                                                                    height="28px" width="28px"
+                                                                                    class="icon-checkbox"
+                                                                                    aria-hidden="true">
                                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                                 </svg>
                                                                             </span>
@@ -2954,11 +2978,13 @@
                                                                                 class="checkbox__trigger visuallyhidden"
                                                                                 id="friday" name="friday-week"
                                                                                 [(ngModel)]="WeeklyDay.Friday"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                                [ngModelOptions]="{standalone: true}">
                                                                             <span class="checkbox__symbol">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                    viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    version="1" viewBox="0 0 28 28"
+                                                                                    height="28px" width="28px"
+                                                                                    class="icon-checkbox"
+                                                                                    aria-hidden="true">
                                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                                 </svg>
                                                                             </span>
@@ -2973,13 +2999,16 @@
                                                                         <label class="checkbox">
                                                                             <input type="checkbox"
                                                                                 class="checkbox__trigger visuallyhidden"
-                                                                                id="weeklySaturday" name="weeklySaturday-week"
+                                                                                id="weeklySaturday"
+                                                                                name="weeklySaturday-week"
                                                                                 [(ngModel)]="WeeklyDay.Saturday"
                                                                                 [ngModelOptions]="{standalone: true}">
                                                                             <span class="checkbox__symbol">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                    viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    version="1" viewBox="0 0 28 28"
+                                                                                    height="28px" width="28px"
+                                                                                    class="icon-checkbox"
+                                                                                    aria-hidden="true">
                                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                                 </svg>
                                                                             </span>
@@ -3412,7 +3441,8 @@
                                                     <div class="checkbox-wrapper-33 main-box"
                                                         title=" {{'CreateAlert.texttocalltitlehover' | translate}}">
                                                         <label class="checkbox">
-                                                            <input type="checkbox"
+                                                            <div *ngIf="AlertChannelDetails?.voice">
+                                                                <input type="checkbox"
                                                                 class="checkbox__trigger visuallyhidden"
                                                                 id="messagebar-ticker" name="communicationMethod"
                                                                 formControlName="call_alert"
@@ -3424,6 +3454,28 @@
                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                 </svg>
                                                             </span>
+                                                            </div>
+                                                            <div *ngIf="!AlertChannelDetails?.voice">
+                                                                <span class="checkbox__symbol">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                        viewBox="0 0 28 28" height="28px" width="28px"
+                                                                        class="icon-checkbox" aria-hidden="true">
+                                                                        <path d="M4 14l8 7L24 7"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                            <!-- <input type="checkbox"
+                                                                class="checkbox__trigger visuallyhidden"
+                                                                id="messagebar-ticker" name="communicationMethod"
+                                                                formControlName="call_alert"
+                                                                [(ngModel)]="DefaultSettingList.text_to_call">
+                                                            <span class="checkbox__symbol">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                    viewBox="0 0 28 28" height="28px" width="28px"
+                                                                    class="icon-checkbox" aria-hidden="true">
+                                                                    <path d="M4 14l8 7L24 7"></path>
+                                                                </svg>
+                                                            </span> -->
                                                             <label for="messagebar-ticker">
                                                                 {{'CreateAlert.scrollingTickerMessageChannelTextToCall'
                                                                 | translate}}</label>
@@ -3434,7 +3486,8 @@
                                                     <div class="checkbox-wrapper-33 main-box"
                                                         title=" {{'CreateAlert.scrollingTickerMessageChannelEmailAlertDangerText' | translate}}">
                                                         <label class="checkbox">
-                                                            <input type="checkbox"
+                                                            <div *ngIf="AlertChannelDetails?.email">
+                                                                <input type="checkbox"
                                                                 class="checkbox__trigger visuallyhidden"
                                                                 id="messagebar-ticker" name="communicationMethod"
                                                                 formControlName="email_alert"
@@ -3446,6 +3499,16 @@
                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                 </svg>
                                                             </span>
+                                                            </div>
+                                                            <div *ngIf="!AlertChannelDetails?.email">
+                                                                <span class="checkbox__symbol">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                        viewBox="0 0 28 28" height="28px" width="28px"
+                                                                        class="icon-checkbox" aria-hidden="true">
+                                                                        <path d="M4 14l8 7L24 7"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
                                                             <label for="messagebar-ticker">
                                                                 {{'CreateAlert.scrollingTickerMessageChannelEmailAlert'
                                                                 | translate}}</label>
@@ -3463,28 +3526,28 @@
                                                         <label class="checkbox">
                                                             <div *ngIf="AlertChannelDetails?.sms">
                                                                 <input type="checkbox"
-                                                                class="checkbox__trigger visuallyhidden"
-                                                                id="messagebar-channel" name="channel-bar"
-                                                                formControlName="sms_alert"
-                                                                [(ngModel)]="DefaultSettingList.sms">
-                                                            <span class="checkbox__symbol">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                    viewBox="0 0 28 28" height="28px" width="28px"
-                                                                    class="icon-checkbox" aria-hidden="true">
-                                                                    <path d="M4 14l8 7L24 7"></path>
-                                                                </svg>
-                                                            </span>
+                                                                    class="checkbox__trigger visuallyhidden"
+                                                                    id="messagebar-channel" name="channel-bar"
+                                                                    formControlName="sms_alert"
+                                                                    [(ngModel)]="DefaultSettingList.sms">
+                                                                <span class="checkbox__symbol">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                        viewBox="0 0 28 28" height="28px" width="28px"
+                                                                        class="icon-checkbox" aria-hidden="true">
+                                                                        <path d="M4 14l8 7L24 7"></path>
+                                                                    </svg>
+                                                                </span>
                                                             </div>
                                                             <div *ngIf="!AlertChannelDetails?.sms">
-                                                            <span class="checkbox__symbol">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                    viewBox="0 0 28 28" height="28px" width="28px"
-                                                                    class="icon-checkbox" aria-hidden="true">
-                                                                    <path d="M4 14l8 7L24 7"></path>
-                                                                </svg>
-                                                            </span>
+                                                                <span class="checkbox__symbol">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                        viewBox="0 0 28 28" height="28px" width="28px"
+                                                                        class="icon-checkbox" aria-hidden="true">
+                                                                        <path d="M4 14l8 7L24 7"></path>
+                                                                    </svg>
+                                                                </span>
                                                             </div>
-                                                         
+
                                                             <label for="messagebar-channel">
                                                                 {{'CreateAlert.scrollingTickerMessageChannelSmsAlert'
                                                                 | translate}}</label>
@@ -3740,8 +3803,8 @@
                                                             </div> -->
                                                             <div class="col-md-12">
                                                                 <div [ngStyle]="{'text-align': HeaderLogo}">
-                                                                    <img *ngIf="HeaderTextImg" class="header-img-skin"  src="{{HeaderTextImg}}"
-                                                                        alt="Skin pic">
+                                                                    <img *ngIf="HeaderTextImg" class="header-img-skin"
+                                                                        src="{{HeaderTextImg}}" alt="Skin pic">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4166,13 +4229,16 @@
                                                                             <label class="checkbox">
                                                                                 <input type="checkbox"
                                                                                     class="checkbox__trigger visuallyhidden"
-                                                                                    id="sunday-day" name="sunday-day-week"
+                                                                                    id="sunday-day"
+                                                                                    name="sunday-day-week"
                                                                                     [(ngModel)]="WeeklyDay.Sunday"
-                                                                            [ngModelOptions]="{standalone: true}">
+                                                                                    [ngModelOptions]="{standalone: true}">
                                                                                 <span class="checkbox__symbol">
-                                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                        viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                        class="icon-checkbox" aria-hidden="true">
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                        version="1" viewBox="0 0 28 28"
+                                                                                        height="28px" width="28px"
+                                                                                        class="icon-checkbox"
+                                                                                        aria-hidden="true">
                                                                                         <path d="M4 14l8 7L24 7"></path>
                                                                                     </svg>
                                                                                 </span>
@@ -4187,13 +4253,16 @@
                                                                             <label class="checkbox">
                                                                                 <input type="checkbox"
                                                                                     class="checkbox__trigger visuallyhidden"
-                                                                                    id="monday-day" name="monday-day-week"
+                                                                                    id="monday-day"
+                                                                                    name="monday-day-week"
                                                                                     [(ngModel)]="WeeklyDay.Monday"
-                                                                            [ngModelOptions]="{standalone: true}">
+                                                                                    [ngModelOptions]="{standalone: true}">
                                                                                 <span class="checkbox__symbol">
-                                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                        viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                        class="icon-checkbox" aria-hidden="true">
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                        version="1" viewBox="0 0 28 28"
+                                                                                        height="28px" width="28px"
+                                                                                        class="icon-checkbox"
+                                                                                        aria-hidden="true">
                                                                                         <path d="M4 14l8 7L24 7"></path>
                                                                                     </svg>
                                                                                 </span>
@@ -4208,13 +4277,16 @@
                                                                             <label class="checkbox">
                                                                                 <input type="checkbox"
                                                                                     class="checkbox__trigger visuallyhidden"
-                                                                                    id="tuesday-day" name="tuesday-day-week"
+                                                                                    id="tuesday-day"
+                                                                                    name="tuesday-day-week"
                                                                                     [(ngModel)]="WeeklyDay.Tuesday"
-                                                                            [ngModelOptions]="{standalone: true}">
+                                                                                    [ngModelOptions]="{standalone: true}">
                                                                                 <span class="checkbox__symbol">
-                                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                        viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                        class="icon-checkbox" aria-hidden="true">
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                        version="1" viewBox="0 0 28 28"
+                                                                                        height="28px" width="28px"
+                                                                                        class="icon-checkbox"
+                                                                                        aria-hidden="true">
                                                                                         <path d="M4 14l8 7L24 7"></path>
                                                                                     </svg>
                                                                                 </span>
@@ -4231,11 +4303,13 @@
                                                                                     class="checkbox__trigger visuallyhidden"
                                                                                     id="wednesday" name="wednesday-week"
                                                                                     [(ngModel)]="WeeklyDay.Wednesday"
-                                                                            [ngModelOptions]="{standalone: true}">
+                                                                                    [ngModelOptions]="{standalone: true}">
                                                                                 <span class="checkbox__symbol">
-                                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                        viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                        class="icon-checkbox" aria-hidden="true">
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                        version="1" viewBox="0 0 28 28"
+                                                                                        height="28px" width="28px"
+                                                                                        class="icon-checkbox"
+                                                                                        aria-hidden="true">
                                                                                         <path d="M4 14l8 7L24 7"></path>
                                                                                     </svg>
                                                                                 </span>
@@ -4252,11 +4326,13 @@
                                                                                     class="checkbox__trigger visuallyhidden"
                                                                                     id="thursday" name="thursday-week"
                                                                                     [(ngModel)]="WeeklyDay.Thursday"
-                                                                            [ngModelOptions]="{standalone: true}">
+                                                                                    [ngModelOptions]="{standalone: true}">
                                                                                 <span class="checkbox__symbol">
-                                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                        viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                        class="icon-checkbox" aria-hidden="true">
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                        version="1" viewBox="0 0 28 28"
+                                                                                        height="28px" width="28px"
+                                                                                        class="icon-checkbox"
+                                                                                        aria-hidden="true">
                                                                                         <path d="M4 14l8 7L24 7"></path>
                                                                                     </svg>
                                                                                 </span>
@@ -4271,13 +4347,16 @@
                                                                             <label class="checkbox">
                                                                                 <input type="checkbox"
                                                                                     class="checkbox__trigger visuallyhidden"
-                                                                                    id="friday-day" name="friday-day-week"
+                                                                                    id="friday-day"
+                                                                                    name="friday-day-week"
                                                                                     [(ngModel)]="WeeklyDay.Friday"
-                                                                            [ngModelOptions]="{standalone: true}">
+                                                                                    [ngModelOptions]="{standalone: true}">
                                                                                 <span class="checkbox__symbol">
-                                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                        viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                        class="icon-checkbox" aria-hidden="true">
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                        version="1" viewBox="0 0 28 28"
+                                                                                        height="28px" width="28px"
+                                                                                        class="icon-checkbox"
+                                                                                        aria-hidden="true">
                                                                                         <path d="M4 14l8 7L24 7"></path>
                                                                                     </svg>
                                                                                 </span>
@@ -4294,11 +4373,13 @@
                                                                                     class="checkbox__trigger visuallyhidden"
                                                                                     id="saturday" name="saturday-week"
                                                                                     [(ngModel)]="WeeklyDay.Saturday"
-                                                                            [ngModelOptions]="{standalone: true}">
+                                                                                    [ngModelOptions]="{standalone: true}">
                                                                                 <span class="checkbox__symbol">
-                                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                                        viewBox="0 0 28 28" height="28px" width="28px"
-                                                                                        class="icon-checkbox" aria-hidden="true">
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                        version="1" viewBox="0 0 28 28"
+                                                                                        height="28px" width="28px"
+                                                                                        class="icon-checkbox"
+                                                                                        aria-hidden="true">
                                                                                         <path d="M4 14l8 7L24 7"></path>
                                                                                     </svg>
                                                                                 </span>
@@ -4946,8 +5027,7 @@
                     <div class="" style="border: 0;">
                         <div style="position: relative;">
                             <div>
-                                <div class="row"
-                                    style="display: flex; justify-content: space-between;">
+                                <div class="row" style="display: flex; justify-content: space-between;">
                                     <!-- <div class="col-md-5" style="width: 100%; display: inline-flex;">
                                         <div id="header-text-skin" style="font-family: system-ui; display: flex; align-items: center;
                                             font-size: 16px; font-weight: bold; color: #7e7e7e;letter-spacing: 2px;">
@@ -5183,8 +5263,7 @@
                     <div class="" style="border: 0;">
                         <div style="position: relative;">
                             <div>
-                                <div class="row"
-                                    style="display: flex; justify-content: space-between;">
+                                <div class="row" style="display: flex; justify-content: space-between;">
                                     <div class="col-md-11">
                                         <div>
                                             <span id="header-RSVP-text-img"></span>
@@ -5405,15 +5484,13 @@
                                         <div class="">
                                             <div class="row">
                                                 <div class="col-md-12 skin-message">
-                                                    <h2 style="color: black;"
-                                                        *ngIf="skin.name === 'White'">
-                                                         {{skin.white_skin_message_body}}
+                                                    <h2 style="color: black;" *ngIf="skin.name === 'White'">
+                                                        {{skin.white_skin_message_body}}
                                                     </h2>
-                                                    <h2 class="text-white"
-                                                        *ngIf="skin.name !== 'White'">
-                                                         {{skin.white_skin_message_body}}
+                                                    <h2 class="text-white" *ngIf="skin.name !== 'White'">
+                                                        {{skin.white_skin_message_body}}
                                                     </h2>
-                                                   
+
                                                 </div>
                                             </div>
 

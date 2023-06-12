@@ -684,7 +684,8 @@
                                                 <div class="col-md-4">
                                                     <div class="checkbox-wrapper-33 main-box" title=" {{'CreateAlert.texttocalltitlehover' | translate}}">
                                                         <label class="checkbox">
-                                                            <input type="checkbox"
+                                                            <div *ngIf="AlertChannelDetails?.voice">
+                                                                <input type="checkbox"
                                                                 class="checkbox__trigger visuallyhidden"
                                                                 id="msgchannel-alert" name="msgchannel_alert"
                                                                 [(ngModel)]="DefaultSettingList.text_to_call"
@@ -696,6 +697,16 @@
                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                 </svg>
                                                             </span>
+                                                            </div>
+                                                            <div *ngIf="!AlertChannelDetails?.voice">
+                                                                <span class="checkbox__symbol">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                        viewBox="0 0 28 28" height="28px" width="28px"
+                                                                        class="icon-checkbox" aria-hidden="true">
+                                                                        <path d="M4 14l8 7L24 7"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
                                                             <label for="msgchannel-alert">
                                                                 {{'EmergencyAlert.messagingChannelTextToCall' |
                                                                 translate}}</label>
@@ -705,7 +716,8 @@
                                                 <div class="col-md-4">
                                                     <div class="checkbox-wrapper-33 main-box" title=" {{'CreateAlert.scrollingTickerMessageChannelEmailAlertDangerText' | translate}}">
                                                         <label class="checkbox">
-                                                            <input type="checkbox"
+                                                            <div *ngIf="AlertChannelDetails?.email">
+                                                                <input type="checkbox"
                                                                 class="checkbox__trigger visuallyhidden"
                                                                 id="msgchannel-email" name="msgchannel_email"
                                                                 [(ngModel)]="DefaultSettingList.email"
@@ -717,6 +729,16 @@
                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                 </svg>
                                                             </span>
+                                                            </div>
+                                                            <div *ngIf="!AlertChannelDetails?.email">
+                                                                <span class="checkbox__symbol">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                        viewBox="0 0 28 28" height="28px" width="28px"
+                                                                        class="icon-checkbox" aria-hidden="true">
+                                                                        <path d="M4 14l8 7L24 7"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
                                                             <label for="msgchannel-email">
                                                                 {{'EmergencyAlert.messagingChannelEmailAlert' |
                                                                 translate}}</label>
@@ -726,7 +748,8 @@
                                                 <div class="col-md-4">
                                                     <div class="checkbox-wrapper-33 main-box" title=" {{'CreateAlert.smsAlerttitlehover' | translate}}">
                                                         <label class="checkbox">
-                                                            <input type="checkbox"
+                                                            <div *ngIf="AlertChannelDetails?.sms">
+                                                                <input type="checkbox"
                                                                 class="checkbox__trigger visuallyhidden"
                                                                 id="msgchannel-smsAlert" name="msgchannel_alert"
                                                                 [(ngModel)]="DefaultSettingList.sms"
@@ -738,6 +761,16 @@
                                                                     <path d="M4 14l8 7L24 7"></path>
                                                                 </svg>
                                                             </span>
+                                                            </div>
+                                                            <div *ngIf="!AlertChannelDetails?.sms">
+                                                                <span class="checkbox__symbol">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                        viewBox="0 0 28 28" height="28px" width="28px"
+                                                                        class="icon-checkbox" aria-hidden="true">
+                                                                        <path d="M4 14l8 7L24 7"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
                                                             <label for="msgchannel-smsAlert">
                                                                 {{'EmergencyAlert.messagingChannelSmsAlert' |
                                                                 translate}}</label>
@@ -1266,7 +1299,8 @@
                                                     <div class="col-md-4">
                                                         <div class="checkbox-wrapper-33 main-box" title=" {{'CreateAlert.texttocalltitlehover' | translate}}">
                                                             <label class="checkbox">
-                                                                <input type="checkbox"
+                                                                <div *ngIf="AlertChannelDetails?.voice">
+                                                                    <input type="checkbox"
                                                                     class="checkbox__trigger visuallyhidden"
                                                                     id="msgchannel-texttocall" name="msgchannel_alert"
                                                                     [(ngModel)]="DefaultSettingList.text_to_call"
@@ -1277,7 +1311,17 @@
                                                                         class="icon-checkbox" aria-hidden="true">
                                                                         <path d="M4 14l8 7L24 7"></path>
                                                                     </svg>
-                                                                </span>
+                                                                </span> 
+                                                                </div>
+                                                                <div *ngIf="!AlertChannelDetails?.voice">
+                                                                    <span class="checkbox__symbol">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                            viewBox="0 0 28 28" height="28px" width="28px"
+                                                                            class="icon-checkbox" aria-hidden="true">
+                                                                            <path d="M4 14l8 7L24 7"></path>
+                                                                        </svg>
+                                                                    </span> 
+                                                                </div>
                                                                 <label for="msgchannel-texttocall">
                                                                     {{'EmergencyAlert.messagingChannelTextToCall' |
                                                         translate}}</label>
@@ -1289,7 +1333,8 @@
 
                                                         <div class="checkbox-wrapper-33 main-box">
                                                             <label class="checkbox">
-                                                                <input type="checkbox"
+                                                                <div *ngIf="AlertChannelDetails?.email">
+                                                                    <input type="checkbox"
                                                                     class="checkbox__trigger visuallyhidden"
                                                                     id="msgchannel-alertemail" name="msgchannel_email-alert"
                                                                     [(ngModel)]="DefaultSettingList.email"
@@ -1301,6 +1346,16 @@
                                                                         <path d="M4 14l8 7L24 7"></path>
                                                                     </svg>
                                                                 </span>
+                                                                </div>
+                                                                <div *ngIf="!AlertChannelDetails?.email">
+                                                                    <span class="checkbox__symbol">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                            viewBox="0 0 28 28" height="28px" width="28px"
+                                                                            class="icon-checkbox" aria-hidden="true">
+                                                                            <path d="M4 14l8 7L24 7"></path>
+                                                                        </svg>
+                                                                    </span>
+                                                                </div>
                                                                 <label for="msgchannel-alertemail">
                                                                     {{'EmergencyAlert.messagingChannelEmailAlert' |
                                                                     translate}}</label>
@@ -1312,7 +1367,8 @@
 
                                                         <div class="checkbox-wrapper-33 main-box" title=" {{'CreateAlert.smsAlerttitlehover' | translate}}">
                                                             <label class="checkbox">
-                                                                <input type="checkbox"
+                                                                <div *ngIf="AlertChannelDetails?.sms">
+                                                                    <input type="checkbox"
                                                                     class="checkbox__trigger visuallyhidden"
                                                                     id="msgchannel-sms" name="msgchannel_smsalert"
                                                                     [(ngModel)]="DefaultSettingList.sms"
@@ -1324,6 +1380,16 @@
                                                                         <path d="M4 14l8 7L24 7"></path>
                                                                     </svg>
                                                                 </span>
+                                                                </div>
+                                                                <div *ngIf="!AlertChannelDetails?.sms">
+                                                                    <span class="checkbox__symbol">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                            viewBox="0 0 28 28" height="28px" width="28px"
+                                                                            class="icon-checkbox" aria-hidden="true">
+                                                                            <path d="M4 14l8 7L24 7"></path>
+                                                                        </svg>
+                                                                    </span>
+                                                                </div>
                                                                 <label for="msgchannel-sms">
                                                                     {{'EmergencyAlert.messagingChannelSmsAlert' |
                                                                     translate}}</label>
