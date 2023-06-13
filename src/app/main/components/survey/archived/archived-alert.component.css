@@ -32,7 +32,7 @@
 .purple-box{
     width: 20px;
     height: 20px;
-    background-color:#a27ea8;
+    background-color:rgb(122, 163, 229);;
     border-radius: 3px;
 }
 .aqua-box{
@@ -64,7 +64,7 @@
 .not-voted-box{
     width: 20px;
     height: 20px;
-    background-color:#a95963;
+    background-color:rgb(173, 205, 237);
     border-radius: 3px;
 }
 

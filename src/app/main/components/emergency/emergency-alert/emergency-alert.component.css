@@ -11,13 +11,16 @@
     flex: 0 0 41.666667%;
     max-width: 39.666667%;
 } */
+.modal-content {
+    border: none !important;
+}
 
 .header-img-skin{
     height: 80px;
     width: 80px;
-    background-color: #fff;
+    /* background-color: #fff; */
     padding: 2%;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
     object-fit: contain;
 }
 
@@ -30,18 +33,18 @@
 .logo-skin{
     height: 80px;
     width: 80px;
-    background-color: #fff;
+    /* background-color: #fff; */
     padding: 5%;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
     object-fit: contain;
 }
 
 .logo-ticker-skin{
     height: 57px;
     width: 63px;
-    background-color: #fff;
+    /* background-color: #fff; */
     padding: 4%;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
     object-fit: contain;
 }
 /* .col-md-6 {

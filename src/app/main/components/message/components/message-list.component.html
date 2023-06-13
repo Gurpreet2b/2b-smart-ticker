@@ -37,7 +37,7 @@
                             <table class="table table-hover">
                                 <thead class="thead-dark">
                                     <tr>
-                                        <th class="text-left">
+                                        <th>
                                             {{ 'MessageTemplate.messageListName' | translate}}
                                         </th>
                                         <th>
@@ -49,7 +49,7 @@
                                     <tr
                                         *ngFor="let message of MessageList | paginate: { itemsPerPage: 10, currentPage: currentPage, totalItems: totalItems }; let i=index">
 
-                                        <td class="text-left">
+                                        <td>
                                             {{message.name}}
                                         </td>
                                         <td>
