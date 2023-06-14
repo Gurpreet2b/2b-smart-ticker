@@ -433,6 +433,7 @@ export class CreateAlertComponent implements OnInit {
           teams_alert: false,
         });
         this.AlertEditTitlePreview = res.data.name;
+        this.AlertEditTitlePreviewName = res.data.name;
         await new Promise(f => setTimeout(f, 2000));
         this.IsScript();
         this.authService.setCurrentUser({ token: res.token });

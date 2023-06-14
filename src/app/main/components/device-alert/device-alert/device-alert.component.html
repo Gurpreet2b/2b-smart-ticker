@@ -12,10 +12,11 @@
     </div>
     <div class="row m-0">
         <div *ngFor="let digital of DigitalAlertList" style="margin: 0 10px;">
-            <div class="white_box p-2 mb_30" [ngStyle]="{'border': digital.skin?.border_thickness + 'px solid' + digital.skin?.border_color,
-            'background-color': digital.skin?.alert_background_color, 'height': digital.height + 'px', 'width': digital.width + 'px'}"
+            <div class="white_box p-2 mb_30" [ngStyle]="{'background-color': digital.skin?.alert_background_color, 
+            'height': digital.height + 'px', 'width': digital.width + 'px'}"
             style="min-width: 500px; min-height: 400px; position: relative;">
-                <div *ngIf="digital.skin.show_alert_footer === true">
+            
+                <!-- <div *ngIf="digital.skin.show_alert_footer === true">
                     <div class="row" style="display: flex; padding: 3px 1px; margin: 0;"
                     [ngStyle]="{'background-color': digital.skin?.header_background_color}">
                         <div class="col-md-6 mt-2">
@@ -52,7 +53,6 @@
                                                 <div class="col-md-12">
                                                     <h6 class="text-white footer_body_text"
                                                     [innerHtml]="digital.body">
-                                                        <!-- {{digital.body_text}} -->
                                                     </h6>
                                                 </div>
                                             </div>
@@ -84,15 +84,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div *ngIf="digital.skin.show_alert_footer === false">
-                    <div class="row" style="display: flex; padding: 3px 1px; margin: 0;"
-                    [ngStyle]="{'background-color': digital.skin?.header_background_color}">
+                <div>
+                    <div class="row" style="display: flex; padding: 3px 1px; margin: 0;">
                         <div class="col-md-12 p-0">
                             <div [ngStyle]="{'text-align': digital.skin?.team_image_align}">
                                 <span>
-                                    <img *ngIf="digital.skin?.team_image" src="{{digital.skin?.team_image}}" alt="Logo" height="auto" width="110">
+                                    <img src="{{digital.skin?.new_logo}}" alt="Logo" height="auto" width="110">
                                 </span>
                                 <button type="button" class="close text-right mb-2" data-bs-dismiss="modal" style="background-color: transparent;
                                     border: 0; font-size: 40px; padding-left: 10px; margin-right: 1px;" (click)="onCloseAlert(digital)">&times;</button>
@@ -140,10 +139,10 @@
                     </div>
 
                     <div class="device_FooterText" style="position: absolute; bottom: 8px; left: 8px; right: 0px;">
-                        <div class="row" [ngStyle]="{'background-color': digital.skin?.footer_background_color}" style="margin: 0px;">
+                        <div class="row" style="margin: 0px;">
                             <div class="col-md-12 text-right" style="padding: 0;">
                                 <div>
-                                    <img *ngIf="digital.skin?.footer_background_image" src="{{digital.skin?.footer_background_image}}"
+                                    <img src="{{digital.skin?.new_footer_image}}"
                                         alt="alert pic"
                                         style="width: 75%; height: auto;">
                                 </div>
@@ -154,6 +153,7 @@
 
             </div>
         </div>
+
         <div class="col-lg-12" *ngFor="let alertTicker of DigitalAlertTicker"  style="min-height: 90px; position: relative;">
             <div class="" [ngStyle]="{'border': alertTicker.skin?.border_thickness + 'px solid' + alertTicker.skin?.border_color,
             'background-color': alertTicker.skin?.alert_background_color}" style="border-radius: 8px;">
