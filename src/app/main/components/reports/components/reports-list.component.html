@@ -2203,18 +2203,18 @@ border: 0; font-size: 40px;">&times;</button>
                     <div class="mt-3"
                         *ngFor="let ques of TotalQuestionList; let i=index; let first = first; let last = last;">
                         <div *ngIf="i === showChart">
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-md-12">
                                     <b> {{'Reports.surveyResult' | translate}}</b>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="row">
                                 <div class="col-md-6">
                                     <b> {{'Reports.questionText' | translate}} {{ques.question_text}}
                                     </b>
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    <b> {{'Reports.sentTotalQuestion' | translate}}
+                                    <b> {{'Reports.sentTotalQuestion' | translate}} 
                                         {{TotalQuestion}} </b>
                                 </div>
                             </div>
