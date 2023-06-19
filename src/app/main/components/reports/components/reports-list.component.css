@@ -96,7 +96,8 @@
 }
 
 .client_pie_chart{
-    margin-left: -10px;
+    display: grid;
+    justify-content: center;
 }
 .alert-scroll {
     display: block;
@@ -117,7 +118,8 @@
 }
 
 .userStat_pie_chart {
-    margin-left: 4rem;
+    display: flex;
+    justify-content: center;
 }
 
 /* Last Alert Functionality all Css  */

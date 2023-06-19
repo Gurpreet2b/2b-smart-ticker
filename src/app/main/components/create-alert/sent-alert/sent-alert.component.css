@@ -2,6 +2,10 @@
     letter-spacing: 8px;
 }
 
+.modal-content{
+    border: none !important;
+}
+
 .alert-static {
     max-width: 500px;
     margin: 1.75rem auto;

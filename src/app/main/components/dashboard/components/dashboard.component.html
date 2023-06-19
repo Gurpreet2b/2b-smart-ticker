@@ -607,14 +607,14 @@
                                                             <div class="purple-box square ">
                                                                 <div class="col-auto ml-3">
                                                                     <label>
-                                                                        {{ 'Dashboard.DISABLED' | translate}}
+                                                                        Never Connected
                                                                       
                                                                     </label>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-7 text-right">
-                                                            <label>0</label>
+                                                            <label>{{UserStats[2]?.value}}</label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -638,7 +638,7 @@
                                     </div>
                                     <hr>
                                     <div class="row">
-                                        <div class="col-md-6 client_pie_chart">
+                                        <div class="col-md-12 client_pie_chart">
                                             <ngx-charts-pie-chart [results]="clientStats" [view]="[500, 300]">
                                             </ngx-charts-pie-chart>
                                         </div>

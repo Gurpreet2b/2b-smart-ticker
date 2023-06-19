@@ -174,18 +174,17 @@
                 [ngStyle]="{'background-color': AlertBgColor, 'border': Think + 'px solid' + HeaderBorder}">
                 <!-- Modal Header -->
                 <div class="">
-                    <div class="row" style="display: flex; padding: 0; margin: 8px;"
-                        [ngStyle]="{'background-color': HeaderBgColor}">
-                        <div class="col-md-5" [ngStyle]="{'color': footerColor}">
+                    <div class="row" style="display: flex;">
+                        <!-- <div class="col-md-5" [ngStyle]="{'color': footerColor}">
                             <div [ngStyle]="{'font-size': HeaderFontSize + 'px'}" class="mt-2"
                                 style="font-family: system-ui; font-weight: bold; color: #7e7e7e;">
                                 {{HeaderTitle}}
                             </div>
-                        </div>
-                        <div class="col-md-6">
+                        </div> -->
+                        <div class="col-md-11">
                             <div [ngStyle]="{'text-align': HeaderLogo}">
                                 <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}" class="mt-2" alt="Skin pic"
-                                    style="width: 150px; height: auto;">
+                                    style="width: 70px; height: auto;">
                             </div>
                         </div>
                         <div class="col-md-1">

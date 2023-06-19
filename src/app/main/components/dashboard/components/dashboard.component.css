@@ -88,7 +88,8 @@
 }
 
 .client_pie_chart{
-    margin-left: 1rem;
+    display: grid;
+    justify-content: center;
 }
 
 .alert-scroll {
@@ -110,7 +111,8 @@
 }
 
 .userStat_pie_chart {
-    margin-left: 1rem;
+ display: flex;
+ justify-content: center;
 }
 
 .uss_client{

@@ -845,7 +845,7 @@ export class EmergencyAlertComponent implements OnInit {
       }
     } else {
       if (document.getElementById("header-text-img-white") !== null || document.getElementById("footer-img") !== null) {
-        document.getElementById("header-text-img-white").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="18%" height="18%" style="background-color:#ffffff00; object-fit: contain; padding:3%; margin:3px;">`;
+        document.getElementById("header-text-img-white").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="18%" height="18%" style="background-color:#ffffff00; object-fit: contain; margin:3px;">`;
         document.getElementById("footer-img").innerHTML = `<img src="${this.FooterImgUrl}" alt="Logo" width="65%" height="auto" style="float:right;">`;
       }
     }

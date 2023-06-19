@@ -400,7 +400,7 @@ export class SentAlertComponent implements OnInit {
       this.HeaderBgColor = item.skin_id.header_background_color;
       this.HeaderTitle = item.skin_id.header_custom_message;
       this.HeaderFontSize = item.skin_id.header_custom_message_font_color;
-      this.FooterImageUrl = item.skin_id.footer_background_image;
+      this.FooterImageUrl = item.skin_id.new_footer_image;
       this.FooterImgUrl = item.skin_id.alternate_footer_image;
 
       
@@ -442,7 +442,7 @@ export class SentAlertComponent implements OnInit {
       } else {
         this.AlertWidth = '700px';
         this.AlertHeight = '700px';
-        this.AlertBodyHeight = '460px'
+        this.AlertBodyHeight = '440px'
       }
       this.TextTitle = item.rsvp_alert.name;
       // this.TextBody = item.rsvp_alert.body_text;
@@ -463,7 +463,7 @@ export class SentAlertComponent implements OnInit {
       this.HeaderBgColor = item.skin_id.header_background_color;
       this.HeaderTitle = item.skin_id.header_custom_message;
       this.HeaderFontSize = item.skin_id.header_custom_message_font_color;
-      this.FooterImageUrl = item.skin_id.footer_background_image;
+      this.FooterImageUrl = item.skin_id.new_footer_image;
       this.IsRSVPClose = item.rsvp_alert.auto_close;
       this.questionSelected2RSVP = item.rsvp_alert.question_2_selected;
       this.questionSelectedOptn = item.rsvp_alert.question1_option_1;

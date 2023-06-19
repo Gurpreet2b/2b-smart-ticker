@@ -522,6 +522,7 @@ export class ReportsListComponent implements OnInit {
         this.UserStats = [
           { name: "Online", value: UserStats.online_users },
           { name: "Offline", value: UserStats.offline_users },
+          { name: "NeverConnected", value: UserStats.not_connected_users },
           // { name: "Disabled", value: 15000 },
         ];
         this.loading = false;

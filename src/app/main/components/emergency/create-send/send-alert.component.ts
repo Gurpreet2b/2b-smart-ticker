@@ -173,7 +173,7 @@ export class SendNowAlertComponent implements OnInit {
       this.HeaderBgColor = item.skin.header_background_color;
       this.HeaderTitle = item.skin.header_custom_message;
       this.HeaderFontSize = item.skin.header_custom_message_font_color;
-      this.FooterImageUrl = item.skin.footer_background_image;
+      this.FooterImageUrl = item.skin.new_footer_image;
 
       await new Promise(f => setTimeout(f, 100));
 
