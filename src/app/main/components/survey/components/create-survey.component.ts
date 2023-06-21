@@ -446,10 +446,10 @@ export class CreateSurveyComponent implements OnInit {
         this.HeaderTitle = res.data.header_custom_message;
         this.HeaderFontSize = res.data.header_custom_message_font_color;
 
-        this.FooterImageUrl = res.data.new_footer_image;
+        this.FooterImageUrl = res.data.footer_background_image;
 
         this.FooterLogo = res.data.footer_align;
-        // this.FooterBgColor = res.data.footer_background_color;
+        this.FooterBgColor = res.data.footer_background_color;
         this.footerColor = res.data.footer_text_color;
         this.FooterFontSize = res.data.footer_font_size;
         this.FooterText = res.data.footer_text;
@@ -485,9 +485,9 @@ export class CreateSurveyComponent implements OnInit {
     // let MaxHeight = Number(this.surveyForm.value.height) - 250;
     // document.getElementById("survey-max-height").style.maxHeight = `${MaxHeight}px`;
     document.getElementById("survey-Bg-color").style.backgroundColor = `${this.AlertBgColor}`;
-    // document.getElementById("survey-header-Bg-color").style.backgroundColor = `${this.HeaderBgColor}`
-    // document.getElementById("survey-header-text-skin").innerHTML = `${this.HeaderTitle}`;;
-    document.getElementById("survey-footer-img").innerHTML = `<img src="${this.FooterImageUrl}" alt="Logo" width="350px" height= "65px">`;
+    document.getElementById("survey-header-Bg-color").style.backgroundColor = `${this.HeaderBgColor}`
+    document.getElementById("survey-header-text-skin").innerHTML = `${this.HeaderTitle}`;;
+    document.getElementById("survey-footer-img").innerHTML = `<img src="${this.FooterImageUrl}" alt="Logo" width="200px" height= "60px">`;
 
     // document.getElementById("survey-Survey-border").style.border = `${this.Think}px solid ${this.HeaderBorder}`;
     document.getElementById("Header-Survey-img").style.textAlign = `${this.HeaderLogo}`;

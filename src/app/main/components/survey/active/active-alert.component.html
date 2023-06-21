@@ -166,7 +166,7 @@
 </div>
 
 
-<div class="modal" id="PreviewSurveyAlertModal">
+<div class="modal" id="PreviewSurveyAlertModal" data-bs-backdrop="static">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <div class="modal-dialog alert-static">
         <div style="padding: 16px;" *ngIf="ShowFooter === true">
@@ -174,23 +174,24 @@
                 [ngStyle]="{'background-color': AlertBgColor, 'border': Think + 'px solid' + HeaderBorder}">
                 <!-- Modal Header -->
                 <div class="">
-                    <div class="row" style="display: flex;">
-                        <!-- <div class="col-md-5" [ngStyle]="{'color': footerColor}">
-                            <div [ngStyle]="{'font-size': HeaderFontSize + 'px'}" class="mt-2"
+                    <div class="row" style="display: flex; padding: 0; margin: 8px;"
+                    [ngStyle]="{'background-color': HeaderBgColor}">
+                        <div class="col-md-9" [ngStyle]="{'color': footerColor}">
+                            <div [ngStyle]="{'font-size': HeaderFontSize + 'px'}"
                                 style="font-family: system-ui; font-weight: bold; color: #7e7e7e;">
                                 {{HeaderTitle}}
                             </div>
-                        </div> -->
-                        <div class="col-md-11">
+                        </div>
+                        <div class="col-md-3">
                             <div [ngStyle]="{'text-align': HeaderLogo}">
-                                <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}" class="mt-2" alt="Skin pic"
+                                <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}" alt="Skin pic"
                                     style="width: 70px; height: auto;">
                             </div>
                         </div>
-                        <div class="col-md-1">
+                        <!-- <div class="col-md-1">
                             <button type="button" class="close" data-bs-dismiss="modal" style="background-color: transparent;
                             border: 0; font-size: 40px;">&times;</button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -211,18 +212,18 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div
-                                            style="height: 180px; overflow: auto; border: 1px solid #fff; padding: 5px;">
+                                            style="height: 180px; overflow: auto; border: 1px solid #fff; padding: 5px; background-color: #fff;">
                                             <div
                                                 *ngFor="let preview of AddNewRow; let i=index; let first = first; let last = last;">
                                                 <div *ngIf="i === show">
-                                                    <b style="color: #fff;">{{preview.question}}</b>
+                                                    <b style="color: #000;">{{preview.question}}</b>
                                                     <img *ngIf="preview.UrlQuestion" src="{{preview.UrlQuestion}}"
                                                         alt="" style="width: 60px; height: 60px;">
                                                     <hr *ngIf="preview.choice !== 'Submitted'">
                                                     <div *ngFor="let ans of preview.rowAns; let ansIndex=index">
                                                         <span *ngIf="preview.choice === 'single-choice'">
                                                             <input type="radio" />
-                                                            <span style="color: #fff;"> {{ans.answer1}} </span>
+                                                            <span style="color: #000;"> {{ans.answer1}} </span>
                                                             <img *ngIf="ans.Url" src="{{ans.Url}}" alt=""
                                                                 style="width: 60px; height: 60px;">
                                                         </span>
@@ -257,11 +258,12 @@
                                                                 <!-- Your survey was submitted -->
                                                             </div>
                                                             <div style="text-align: center; margin-top: 20px;">
+                                                                <h5>  Thank you for your participation! </h5> 
+                                                                <p> Please click the button below to exit</p>
                                                                 <button
                                                                     style="border: 1px solid #e1dcdc; margin-right: 5px;"
                                                                     data-bs-dismiss="modal">
-                                                                    {{ 'ActiveSurvey.activePreviewSurveyCloseButton' |
-                                                                    translate}}
+                                                                   Submit and Exit
                                                                 </button>
                                                             </div>
                                                         </div>
@@ -323,18 +325,18 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-12" style="padding-left: 0; display: flex; justify-content: end;">
+                <div class="row" style="margin: 8px;" [ngStyle]="{'background-color': FooterBgColor}">
+                    <div class="col-md-5" style="padding-left: 0;">
                         <div [ngStyle]="{'text-align': FooterLogo}">
                             <img *ngIf="FooterImageUrl" src="{{FooterImageUrl}}" alt="skin pic"
-                                style="width: 250px; height: 50px;" class="mr-2">
+                                style="width: 230px; height: auto;" class="mr-2">
                         </div>
                     </div>
-                    <!-- <div class="col-md-7 text-right" [ngStyle]="{'color': footerColor}">
-                        <div [ngStyle]="{'font-size': FooterFontSize + 'px'}" class="mt-2">
+                    <div class="col-md-7 text-right" [ngStyle]="{'color': footerColor}">
+                        <div [ngStyle]="{'font-size': FooterFontSize + 'px'}" class="mt-3">
                             {{FooterText}}
                         </div>
-                    </div> -->
+                    </div>
                 </div>
 
             </div>

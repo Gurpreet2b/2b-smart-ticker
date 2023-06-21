@@ -247,7 +247,7 @@ export class ActiveAlertComponent implements OnInit {
     this.FooterBgColor = item.skin.footer_background_color;
     this.footerColor = item.skin.footer_text_color;
     this.FooterFontSize = item.skin.footer_font_size;
-    // this.FooterText = item.skin.footer_text;
+    this.FooterText = item.skin.footer_text;
     this.AlertBgColor = item.skin.alert_background_color;
     this.AlertBgImg = item.skin.alert_background_image;
     this.BorderClr = item.skin.border_color;
@@ -258,7 +258,7 @@ export class ActiveAlertComponent implements OnInit {
     this.HeaderTitle = item.skin.header_custom_message;
     this.ShowFooter = item.skin.show_alert_footer;
     this.HeaderFontSize = item.skin.header_custom_message_font_color;
-    this.FooterImageUrl = item.skin.new_footer_image;
+    this.FooterImageUrl = item.skin.footer_background_image;
 
     this.AddNewRow = JSON.parse(item.survey_alert.questions);
     this.AddNewRow.splice(this.AddNewRow.length - 1, 1);
