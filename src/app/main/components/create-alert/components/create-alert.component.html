@@ -559,7 +559,8 @@
                                                                 <option value="day">{{ 'CreateAlert.optionDay' |
                                                                     translate}}
                                                                 </option>
-                                                            </select>&nbsp; {{ 'CreateAlert.alertWillExpire' | translate}}
+                                                            </select>&nbsp; {{ 'CreateAlert.alertWillExpire' |
+                                                            translate}}
                                                             <br>
                                                         </label>
                                                     </div>
@@ -590,30 +591,33 @@
                                             <hr>
 
                                             <div class="card-body line-space">
-                                                <!-- <div class="row">
-                                                    <div class="col-lg-6"> -->
-                                                <div class="checkbox-wrapper-33 main-box">
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" class="checkbox__trigger visuallyhidden"
-                                                            id="schedule-header-alert" name="schedule-header_alert"
-                                                            (change)="SechduleEnabled($event)"
-                                                            [(ngModel)]="SechduleData.enabled"
-                                                            [ngModelOptions]="{standalone: true}">
-                                                        <span class="checkbox__symbol">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                viewBox="0 0 28 28" height="25px" width="25px"
-                                                                class="icon-checkbox" aria-hidden="true">
-                                                                <path d="M4 14l8 7L24 7"></path>
-                                                            </svg>
-                                                        </span>
-                                                        <label for="schedule-header-alert" class="card-header-text">
-                                                            {{'CreateAlert.scheduleAlertHeading' |
-                                                            translate}}</label>
-                                                    </label>
-                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <div class="checkbox-wrapper-33 main-box">
+                                                            <label class="checkbox">
+                                                                <input type="checkbox"
+                                                                    class="checkbox__trigger visuallyhidden"
+                                                                    id="schedule-header-alert"
+                                                                    name="schedule-header_alert"
+                                                                    (change)="SechduleEnabled($event)"
+                                                                    [(ngModel)]="SechduleData.enabled"
+                                                                    [ngModelOptions]="{standalone: true}">
+                                                                <span class="checkbox__symbol">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                        viewBox="0 0 28 28" height="25px" width="25px"
+                                                                        class="icon-checkbox" aria-hidden="true">
+                                                                        <path d="M4 14l8 7L24 7"></path>
+                                                                    </svg>
+                                                                </span>
+                                                                <label for="schedule-header-alert"
+                                                                    class="card-header-text">
+                                                                    {{'CreateAlert.scheduleAlertHeading' |
+                                                                    translate}}</label>
+                                                            </label>
+                                                        </div>
 
-                                                <!-- </div>
-                                                </div> -->
+                                                    </div>
+                                                </div>
                                                 <div class="row size" *ngIf="IsSechduleEnabled">
                                                     <div class="col-lg-3">
                                                         <div class="form-group">
@@ -3446,17 +3450,17 @@
                                                         <label class="checkbox">
                                                             <div *ngIf="AlertChannelDetails?.voice">
                                                                 <input type="checkbox"
-                                                                class="checkbox__trigger visuallyhidden"
-                                                                id="messagebar-ticker" name="communicationMethod"
-                                                                formControlName="call_alert"
-                                                                [(ngModel)]="DefaultSettingList.text_to_call">
-                                                            <span class="checkbox__symbol">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                    viewBox="0 0 28 28" height="28px" width="28px"
-                                                                    class="icon-checkbox" aria-hidden="true">
-                                                                    <path d="M4 14l8 7L24 7"></path>
-                                                                </svg>
-                                                            </span>
+                                                                    class="checkbox__trigger visuallyhidden"
+                                                                    id="messagebar-ticker" name="communicationMethod"
+                                                                    formControlName="call_alert"
+                                                                    [(ngModel)]="DefaultSettingList.text_to_call">
+                                                                <span class="checkbox__symbol">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                        viewBox="0 0 28 28" height="28px" width="28px"
+                                                                        class="icon-checkbox" aria-hidden="true">
+                                                                        <path d="M4 14l8 7L24 7"></path>
+                                                                    </svg>
+                                                                </span>
                                                             </div>
                                                             <div *ngIf="!AlertChannelDetails?.voice">
                                                                 <span class="checkbox__symbol">
@@ -3491,17 +3495,17 @@
                                                         <label class="checkbox">
                                                             <div *ngIf="AlertChannelDetails?.email">
                                                                 <input type="checkbox"
-                                                                class="checkbox__trigger visuallyhidden"
-                                                                id="messagebar-ticker" name="communicationMethod"
-                                                                formControlName="email_alert"
-                                                                [(ngModel)]="DefaultSettingList.email">
-                                                            <span class="checkbox__symbol">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" version="1"
-                                                                    viewBox="0 0 28 28" height="28px" width="28px"
-                                                                    class="icon-checkbox" aria-hidden="true">
-                                                                    <path d="M4 14l8 7L24 7"></path>
-                                                                </svg>
-                                                            </span>
+                                                                    class="checkbox__trigger visuallyhidden"
+                                                                    id="messagebar-ticker" name="communicationMethod"
+                                                                    formControlName="email_alert"
+                                                                    [(ngModel)]="DefaultSettingList.email">
+                                                                <span class="checkbox__symbol">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" version="1"
+                                                                        viewBox="0 0 28 28" height="28px" width="28px"
+                                                                        class="icon-checkbox" aria-hidden="true">
+                                                                        <path d="M4 14l8 7L24 7"></path>
+                                                                    </svg>
+                                                                </span>
                                                             </div>
                                                             <div *ngIf="!AlertChannelDetails?.email">
                                                                 <span class="checkbox__symbol">
@@ -4051,7 +4055,8 @@
                                                                     <option value="hours">{{'CreateAlert.rsvpOptionHour'
                                                                         |
                                                                         translate}} </option>
-                                                                </select>&nbsp; {{'CreateAlert.rsvpOptionAlertWillExpire' |
+                                                                </select>&nbsp;
+                                                                {{'CreateAlert.rsvpOptionAlertWillExpire' |
                                                                 translate}} <br>
                                                             </label>
                                                         </div>

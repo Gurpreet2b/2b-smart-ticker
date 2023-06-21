@@ -613,21 +613,21 @@
                                                 </div>
                                             </div>
 
-                                            <div class="row m-0" [ngStyle]="{'background-color': FooterBgColor}"
-                                                style="position: absolute; bottom: 15px; width: 89%;">
-                                                <div class="col-md-5" style="padding-left: 0;">
+                                            <div class="row m-0"
+                                                style="position: absolute; bottom: 15px; width: 94%;">
+                                                <div class="col-md-12" style="padding-left: 0; display: flex; justify-content: end;">
                                                     <div [ngStyle]="{'text-align': FooterLogo}">
                                                         <img *ngIf="FooterImageUrl" src="{{FooterImageUrl}}"
-                                                            alt="Wallpaper pic" style="width: 220px; height: auto;"
+                                                            alt="Wallpaper pic" style="width: 350px; height: auto;"
                                                             class="mr-2">
                                                     </div>
                                                 </div>
-                                                <div class="col-md-7" [ngStyle]="{'color': footerColor}">
+                                                <!-- <div class="col-md-7" [ngStyle]="{'color': footerColor}" style="letter-spacing: 3px; margin-top: 5px;">
                                                     <div [ngStyle]="{'font-size': FooterFontSize + 'px'}" class="mt-2"
                                                         style="text-align: end;">
                                                         {{FooterText}}
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div>
 
                                         </div>
@@ -786,19 +786,21 @@
                         <!-- Modal Header -->
                         <div style="position: relative;">
                             <div id="survey-header-Bg-color">
-                                <div class="row"
-                                    style="display: flex; padding: 3px 15px; justify-content: space-between; align-items: center;">
+                                <div class="row">
 
-                                    <div class="col-md-5" style="width: 100%; display: inline-flex;">
-                                        <div id="survey-header-text-skin" style="font-family: system-ui; display: flex; align-items: center;
-                                            font-size: 16px; font-weight: bold; color: #7e7e7e;letter-spacing: 2px;">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-11" style="width: 100%; display: inline-flex;">
                                         <div id="Header-Survey-img" style="text-align: right;">
                                             <span id="header-Survey-img"></span>
                                         </div>
+                                        <!-- <div id="survey-header-text-skin" style="font-family: system-ui; display: flex; align-items: center;
+                                            font-size: 16px; font-weight: bold; color: #7e7e7e;letter-spacing: 2px;">
+                                        </div> -->
                                     </div>
+                                    <!-- <div class="col-md-6">
+                                        <div id="Header-Survey-img" style="text-align: right;">
+                                            <span id="header-Survey-img"></span>
+                                        </div>
+                                    </div> -->
                                     <div class="col-md-1">
                                         <button type="button" class="close" data-bs-dismiss="modal" style="background-color: transparent; border: 0; font-size: 30px; cursor: pointer;
                                             font-weight: 300;">&times;</button>
@@ -901,18 +903,16 @@
                     </div>
                     <div style="position: absolute; bottom: 1rem; right: 1rem; left: 1rem;">
                         <div class="row">
-                            <div class="col-md-12" id="footer-Survey-align" [ngStyle]="{'text-align': FooterLogo}">
-                                <div id="footer-Survey-BgColor" [ngStyle]="{'background-color': FooterBgColor}" style="display: flex;  background-color: rgb(255, 255, 255); 
-                                    justify-content: space-between; align-items: center;">
+                            <div class="col-md-12" id="footer-Survey-align" [ngStyle]="{'text-align': FooterLogo}" style="margin: -10px; padding: 0;">
+                                <div id="footer-Survey-BgColor" style="display: flex; justify-content: end;">
                                     <div id="survey-footer-img"></div>
-                                    <p id="footer-Survey-color" [ngStyle]="{'color': footerColor}"
-                                        style="padding: 0 1rem;">
+                                    <!-- <p id="footer-Survey-color" [ngStyle]="{'color': footerColor}">
                                         <span id="footer-Survey-fontSize"
                                             [ngStyle]="{'font-size': FooterFontSize + 'px'}"
                                             style="font-size: 17px; font-family: sans-serif; letter-spacing: 3px;  color: #555;">
                                             {{FooterText}}
                                         </span>
-                                    </p>
+                                    </p> -->
                                 </div>
                             </div>
                         </div>
