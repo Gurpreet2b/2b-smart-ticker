@@ -91,6 +91,12 @@ export class ReportsListComponent implements OnInit {
   loading_SurveyDetails: boolean;
   // PopupAlertepltable: any;
 
+  
+  disableDate() {
+    return false;
+  }
+
+
   constructor(private http: HttpService,
     private toastr: ToastrService, private router: Router,
     private activeRoute: ActivatedRoute, public translate: TranslateService,

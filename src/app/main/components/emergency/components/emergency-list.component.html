@@ -54,7 +54,7 @@
                                         <td>
                                             {{color.name}}
                                         </td>
-                                        <td> <input type="color" [(ngModel)]="color.code" /></td>
+                                        <td> <input type="color" [(ngModel)]="color.code" [disabled]="true" /></td>
                                         <td>
                                             <span class="mr-2 cursor" *ngIf="RoleAssign[10].edit" title="Edit">
                                                 <img src="assets/img/sent-alert-action/edit-popup.png" alt="Edit" data-bs-toggle="modal"

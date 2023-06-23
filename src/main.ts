@@ -7,7 +7,7 @@ import { environment } from './environments/environment';
 if (environment.production) {
 
   //For Demo Purpose (On Site POC)
-  if(true){
+  if(false){
     console.log('Main file');
     let currentUrl = window.location.href;
     let slices = currentUrl.split(':');

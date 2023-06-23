@@ -60,6 +60,10 @@ export class CreateAlertComponent implements OnInit {
   public SkinListLocal: any;
   public WhiteSkinMessage: any;
 
+  disableDate() {
+    return false;
+  }
+
   constructor(private http: HttpService,
     public toastr: ToastrService, private router: Router,
     private activeRoute: ActivatedRoute, public translate: TranslateService,
@@ -99,18 +103,18 @@ export class CreateAlertComponent implements OnInit {
       image_caption: true,
       autoresize_bottom_margin: 20,
 
-      file_picker_callback: function(cb, value, meta) {
+      file_picker_callback: function (cb, value, meta) {
         const input = document.createElement("input");
         input.setAttribute("type", "file");
         input.setAttribute("accept", "image/*");
         input.onchange = () => {
           const file = input.files[0];
-          if(file.size > 1048576){
+          if (file.size > 1048576) {
             alert('File size cannot be larger than 1MB!')
             return;
           } else {
             const reader = new FileReader();
-            reader.onload = function() {
+            reader.onload = function () {
               const id = "blobid" + new Date().getTime();
               const blobCache = tinymce.activeEditor.editorUpload.blobCache;
               const base64 = (<string>reader.result).split(",")[1];
@@ -120,7 +124,7 @@ export class CreateAlertComponent implements OnInit {
             };
             reader.readAsDataURL(file);
           }
-          
+
         };
         input.click();
       }
@@ -128,7 +132,7 @@ export class CreateAlertComponent implements OnInit {
   }
 
   OnDropImage(event: any) {
-    if(event.event.dataTransfer.files[0].size > 1048576){
+    if (event.event.dataTransfer.files[0].size > 1048576) {
       this.toastr.warning('File size cannot be larger than 1MB!')
       event.event.preventDefault();
       return;
@@ -201,6 +205,8 @@ export class CreateAlertComponent implements OnInit {
       this.SkinListLocal = SkinData;
       this.GetLocalSkinList(this.SkinListLocal);
     }
+
+
 
     if (this.AlertEdit === 'Edit') {
       if (this.AlertType === 'PopupAlert') {
@@ -371,19 +377,19 @@ export class CreateAlertComponent implements OnInit {
   }
 
   IsOnLoadCompleted: any = false;
-  OnLoadAllApiResponseCheck(){
+  OnLoadAllApiResponseCheck() {
     if (this.IsMessageRes === true && this.IsDefaultSettingsRes === true) {
       this.IsOnLoadCompleted = true;
     }
   }
 
-  OnLoadAllApiResponseCheckEdit(){
+  OnLoadAllApiResponseCheckEdit() {
     if (this.IsMessageRes === true && this.IsDefaultSettingsRes === true || this.IsPopupAlertByIdRes === true || this.IsPopupAlertDraftByIdRes === true) {
       this.IsOnLoadCompleted = true;
     }
   }
 
-  OnLoadAllApiResponseCheckEditTicker(){
+  OnLoadAllApiResponseCheckEditTicker() {
     if (this.IsMessageRes === true && this.IsDefaultSettingsRes === true || this.IsTickerAlertByIdRes === true || this.IsTickerAlertDraftByIdRes === true) {
       this.IsOnLoadCompleted = true;
       console.log("IsOnLoadCompleted Edit");
@@ -397,7 +403,7 @@ export class CreateAlertComponent implements OnInit {
 
   GetMessageListById() {
     this.loading = true;
-    this.http.get(`templates/${this.MessageId}/`).subscribe( async (res: any) => {
+    this.http.get(`templates/${this.MessageId}/`).subscribe(async (res: any) => {
       if (res.status === true) {
         this.loading = false;
         await new Promise(f => setTimeout(f, 2000));
@@ -461,19 +467,19 @@ export class CreateAlertComponent implements OnInit {
       this.dayCount = 2;
     } else if (numberData === 'every-3rd-day') {
       this.dayCount = 3;
-    }else if (numberData === 'every-4th-day') {
+    } else if (numberData === 'every-4th-day') {
       this.dayCount = 4;
-    }else if (numberData === 'every-5th-day') {
+    } else if (numberData === 'every-5th-day') {
       this.dayCount = 5;
-    }else if (numberData === 'every-6th-day') {
+    } else if (numberData === 'every-6th-day') {
       this.dayCount = 6;
-    }else if (numberData === 'every-7th-day') {
+    } else if (numberData === 'every-7th-day') {
       this.dayCount = 7;
-    }else if (numberData === 'every-8th-day') {
+    } else if (numberData === 'every-8th-day') {
       this.dayCount = 8;
-    }else if (numberData === 'every-9th-day') {
+    } else if (numberData === 'every-9th-day') {
       this.dayCount = 9;
-    }else if (numberData === 'every-10th-day') {
+    } else if (numberData === 'every-10th-day') {
       this.dayCount = 10;
     }
     const date = new Date();
@@ -490,19 +496,19 @@ export class CreateAlertComponent implements OnInit {
       this.weekCount = 14;
     } else if (numberData === 'every-3rd-weekly') {
       this.weekCount = 21;
-    }else if (numberData === 'every-4th-weekly') {
+    } else if (numberData === 'every-4th-weekly') {
       this.weekCount = 28;
-    }else if (numberData === 'every-5th-weekly') {
+    } else if (numberData === 'every-5th-weekly') {
       this.weekCount = 35;
-    }else if (numberData === 'every-6th-weekly') {
+    } else if (numberData === 'every-6th-weekly') {
       this.weekCount = 42;
-    }else if (numberData === 'every-7th-weekly') {
+    } else if (numberData === 'every-7th-weekly') {
       this.weekCount = 49;
-    }else if (numberData === 'every-8th-weekly') {
+    } else if (numberData === 'every-8th-weekly') {
       this.weekCount = 56;
-    }else if (numberData === 'every-9th-weekly') {
+    } else if (numberData === 'every-9th-weekly') {
       this.weekCount = 63;
-    }else if (numberData === 'every-10th-weekly') {
+    } else if (numberData === 'every-10th-weekly') {
       this.weekCount = 70;
     }
     const date = new Date();
@@ -593,7 +599,7 @@ export class CreateAlertComponent implements OnInit {
       date.setDate(date.getDate() + this.dayCount);
       this.SechduleData.end_after_date = this.dtPipe.transform(date, 'yyyy-MM-dd');
     }
-     else if (item === 'weekly') {
+    else if (item === 'weekly') {
       this.IsShowSchedule = true;
       this.IsWeeklySchedule = true;
       this.IsOnceSchedule = false;
@@ -648,14 +654,14 @@ export class CreateAlertComponent implements OnInit {
     formData.append('weekly_day', JSON.stringify(this.WeeklyDay));
     formData.append('monthly_choice', this.SechduleData.monthly_choice);
     formData.append('monthly_date', this.SechduleData.monthly_date);
-    formData.append('month_count_date', this.SechduleData.month_count_date);
+    formData.append('month_count_by_date', this.SechduleData.month_count_date);
     formData.append('monthly_day_count', this.SechduleData.monthly_day_count);
     formData.append('monthly_day_choice', this.SechduleData.monthly_day_choice);
-    formData.append('month_count_day', this.SechduleData.month_count_day);
+    formData.append('month_count_by_day', this.SechduleData.month_count_day);
     formData.append('yearly_choice', this.SechduleData.yearly_choice);
     formData.append('yearly_date', this.SechduleData.yearly_date);
     formData.append('yearly_month_date', this.SechduleData.yearly_month_date);
-    formData.append('yearly_choice', this.SechduleData.yearly_choice);
+    // formData.append('yearly_choice', this.SechduleData.yearly_choice);
     formData.append('yearly_day', this.SechduleData.yearly_day);
     formData.append('yearly_day_count', this.SechduleData.yearly_day_count);
     formData.append('yearly_month_day', this.SechduleData.yearly_month_day);
@@ -703,10 +709,10 @@ export class CreateAlertComponent implements OnInit {
     } else {
       this.AlertEditTitlePreview = this._sanitizer.sanitize(SecurityContext.HTML, this.AlertEditTitlePreview);
     }
-    
+
     this.AlertEditTitle = this.alertForm.value.title;
     this.IsCheckPreview = false;
-    
+
     await new Promise(f => setTimeout(f, 2000));
     this.IsScript();
   }
@@ -720,7 +726,7 @@ export class CreateAlertComponent implements OnInit {
     } else {
       this.AlertEditBodyPreview = this._sanitizer.sanitize(SecurityContext.HTML, this.AlertEditBodyPreview);
     }
-    
+
     this.AlertEditBody = this.alertForm.value.body;
     this.IsCheckPreview = false;
     await new Promise(f => setTimeout(f, 2000));
@@ -880,7 +886,7 @@ export class CreateAlertComponent implements OnInit {
         document.getElementById("alert-width").style.width = `${this.alertForm.value.width}px`;
         document.getElementById("alert-width").style.height = `${this.alertForm.value.height}px`;
       }
-  
+
       document.getElementById("alert-width").style.boxShadow = `0 0 0 ${this.Think}px ${this.HeaderBorder} inset`;
       document.getElementById("alert-width").style.backgroundColor = `${this.AlertBgColor}`;
     }
@@ -939,12 +945,12 @@ export class CreateAlertComponent implements OnInit {
           let MaxHeight = Number(this.alertForm.value.height) - 270;
           document.getElementById("alert-max-height-check").style.maxHeight = `${MaxHeight}px`;
         }
-        
+
       }
     } else {
       if (document.getElementById("alert-max-height-check") !== null) {
         let MaxHeight = Number(100) - 40;
-        document.getElementById("alert-max-height-check").style.maxHeight = `${MaxHeight}vh`; 
+        document.getElementById("alert-max-height-check").style.maxHeight = `${MaxHeight}vh`;
       }
     }
 
@@ -1102,7 +1108,7 @@ export class CreateAlertComponent implements OnInit {
   // RSVP Alert Preview Script css and img Function Start
   IsRSVPScript() {
     let RSVPContainer = <HTMLElement>document.querySelector("#RSVPHtmlModal");
-    if (document.getElementById("alert-RSVP-width") !== null) { 
+    if (document.getElementById("alert-RSVP-width") !== null) {
       if (this.RSVPForm.value.fullscreen === 'fullscreen') {
         document.getElementById("alert-RSVP-width").style.width = `100vw`;
         document.getElementById("alert-RSVP-width").style.height = `99vh`;
@@ -1122,7 +1128,7 @@ export class CreateAlertComponent implements OnInit {
       document.getElementById("alert-RSVP-width").style.backgroundColor = `${this.AlertBgColor}`;
       // document.getElementById("alert-RSVP-width").style.border = `${this.Think}px solid ${this.HeaderBorder}`;
     }
-    
+
     if (this.ShowFooter === true || this.ShowFooter === null) {
       if (document.getElementById("alert-RSVP-border") !== null || document.getElementById("Header-RSVP-img") !== null || document.getElementById("header-RSVP-Bg-color") !== null) {
         document.getElementById("alert-RSVP-border").style.backgroundColor = `${this.AlertBgColor}`;
@@ -1138,7 +1144,7 @@ export class CreateAlertComponent implements OnInit {
         document.getElementById("header-RSVP-text-img").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="180" height="auto">`;
       }
 
-     
+
       if (this.questionSelected2RSVP) {
         document.getElementById("ques2-RSVP").innerHTML = `${this.question2RSVP}`;
       } else {
@@ -1154,7 +1160,7 @@ export class CreateAlertComponent implements OnInit {
       document.getElementById("body-RSVP-text").innerHTML = `${this.AlertRSVPEditBody}`;
     }
     if (document.getElementById("ques1-RSVP") !== null || document.getElementById("quesOption1-RSVP") !== null || document.getElementById("quesOption2-RSVP") !== null) {
-     document.getElementById("ques1-RSVP").innerHTML = `${this.question1RSVP}`;
+      document.getElementById("ques1-RSVP").innerHTML = `${this.question1RSVP}`;
       document.getElementById("quesOption1-RSVP").innerHTML = `${this.questionOption1RSVP}`;
       document.getElementById("quesOption2-RSVP").innerHTML = `${this.questionOption2RSVP}`;
 
@@ -1168,7 +1174,7 @@ export class CreateAlertComponent implements OnInit {
       document.getElementById("footer-RSVP-color").style.color = `${this.footerColor}`;
       document.getElementById("footer-RSVP-fontSize").style.fontSize = `${this.FooterFontSize}`;
       document.getElementById("footer-RSVP-text").innerHTML = `${this.FooterText}`;
-    } 
+    }
     else if (document.getElementById("footer-RSVP-img") !== null || document.getElementById("header-RSVP-text-img") !== null) {
       document.getElementById("footer-RSVP-img").innerHTML = `<img src="${this.FooterImgUrl}" alt="Logo" width="50%" height="auto" style="background-color:#ffffff00; float:right;">`;
       document.getElementById("header-RSVP-text-img").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="80" height="80" style="background-color:#ffffff00; object-fit: contain; margin:3px;">`;
@@ -1321,7 +1327,7 @@ export class CreateAlertComponent implements OnInit {
   StopTimeLoading: any = false;
   startTimer() {
     this.interval = setInterval(() => {
-      if(this.timeLeft > 0) {
+      if (this.timeLeft > 0) {
         this.timeLeft--;
       } else {
         this.timeLeft = 15;
@@ -1336,20 +1342,20 @@ export class CreateAlertComponent implements OnInit {
           return;
         }
       }
-    },1000)
+    }, 1000)
   }
 
   OnSubmit(val: any) {
-    if (this.DefaultSettingList.autoclose_time_seconds === 0 ) {
+    if (this.DefaultSettingList.autoclose_time_seconds === 0) {
       this.toastr.warning("Auto Close should be greater than 1");
       return;
     }
     if (this.DefaultSettingList.autoclose_time_seconds > 999) {
       this.toastr.warning("Auto close should be less than 999 minutes");
       return;
-    } 
+    }
     if (this.SechduleData.enabled) {
-      if (this.SechduleData.end_after_occurrence === 0 ) {
+      if (this.SechduleData.end_after_occurrence === 0) {
         this.toastr.warning("Schedule End After occurrence count  cannot be less than 1");
         return;
       }
@@ -1359,13 +1365,13 @@ export class CreateAlertComponent implements OnInit {
       }
     }
 
-    
+
     this.submitted = true;
     this.alertForm.markAllAsTouched();
     if (!this.alertForm.valid) {
       return;
     }
-    
+
     this.startTimer();
 
     const dataToSubmit = { ...this.alertForm.value };
@@ -1514,6 +1520,13 @@ export class CreateAlertComponent implements OnInit {
           this.SechduleData.end_after_occurrence = res.data.popup_alert.scheduled_data.end_after_occurrence;
           this.SechduleData.end_after_date = res.data.popup_alert.scheduled_data.end_after_date;
           this.SechduleData.alert_start_time = res.data.popup_alert.scheduled_data.alert_start_time;
+          this.SechduleData.monthly_day_choice = res.data.popup_alert.scheduled_data.monthly_day_choice;
+          this.SechduleData.month_count_date = res.data.popup_alert.scheduled_data.month_count_by_date;
+          this.SechduleData.monthly_day_count = res.data.popup_alert.scheduled_data.monthly_day_count;
+          this.SechduleData.monthly_choice = res.data.popup_alert.scheduled_data.monthly_choice;
+          this.SechduleData.yearly_choice = res.data.popup_alert.scheduled_data.yearly_choice;
+          this.SechduleData.monthly_date = res.data.popup_alert.scheduled_data.monthly_date;
+          this.SechduleData.month_count_day = res.data.popup_alert.scheduled_data.month_count_by_day;
           this.SechduleData.alert_end_time = res.data.popup_alert.scheduled_data.alert_end_time;
         }
 
@@ -1525,7 +1538,7 @@ export class CreateAlertComponent implements OnInit {
           this.IsClose = true;
           this.IsRSVPClose = true;
         }
-        
+
         this.authService.setCurrentUser({ token: res.token });
         if (this.SkinId) {
           // this.GetSkinListById();
@@ -1617,6 +1630,7 @@ export class CreateAlertComponent implements OnInit {
           this.SechduleData.end_after_date = res.data.scheduled_data.end_after_date;
           this.SechduleData.alert_start_time = res.data.scheduled_data.alert_start_time;
           this.SechduleData.alert_end_time = res.data.scheduled_data.alert_end_time;
+         
         }
 
         if (!this.PolicyAlertSetting[2].checked) {
@@ -1820,16 +1834,16 @@ export class CreateAlertComponent implements OnInit {
   }
 
   OnTickerSubmit(val: any) {
-    if (this.DefaultSettingList.autoclose_time_seconds === 0 ) {
+    if (this.DefaultSettingList.autoclose_time_seconds === 0) {
       this.toastr.warning("Auto Close should be greater than 1");
       return;
     }
     if (this.DefaultSettingList.autoclose_time_seconds > 999) {
       this.toastr.warning("Auto close should be less than 999 minutes");
       return;
-    } 
+    }
     if (this.SechduleData.enabled) {
-      if (this.SechduleData.end_after_occurrence === 0 ) {
+      if (this.SechduleData.end_after_occurrence === 0) {
         this.toastr.warning("Schedule End After occurrence count  cannot be less than 1");
         return;
       }
@@ -1838,7 +1852,7 @@ export class CreateAlertComponent implements OnInit {
         return;
       }
     }
-    
+
 
     this.submitted = true;
     this.tickerForm.markAllAsTouched();
@@ -1992,6 +2006,13 @@ export class CreateAlertComponent implements OnInit {
           this.SechduleData.end_after_date = res.data.ticker_alert.scheduled_data.end_after_date;
           this.SechduleData.alert_start_time = res.data.ticker_alert.scheduled_data.alert_start_time;
           this.SechduleData.alert_end_time = res.data.ticker_alert.scheduled_data.alert_end_time;
+
+          this.SechduleData.monthly_date = res.data.ticker_alert.scheduled_data.monthly_date;
+          this.SechduleData.month_count_date = res.data.ticker_alert.scheduled_data.month_count_by_date;
+          this.SechduleData.month_count_day = res.data.ticker_alert.scheduled_data.month_count_by_day;
+          this.SechduleData.monthly_day_choice = res.data.ticker_alert.scheduled_data.monthly_day_choice;
+          this.SechduleData.monthly_day_count = res.data.ticker_alert.scheduled_data.monthly_day_count;
+          this.SechduleData.monthly_choice = res.data.ticker_alert.scheduled_data.monthly_choice;
         }
 
         if (!this.PolicyAlertSetting[2].checked) {
@@ -2092,6 +2113,7 @@ export class CreateAlertComponent implements OnInit {
           this.SechduleData.end_after_date = res.data.scheduled_data.end_after_date;
           this.SechduleData.alert_start_time = res.data.scheduled_data.alert_start_time;
           this.SechduleData.alert_end_time = res.data.scheduled_data.alert_end_time;
+          // data.ticker_alert.scheduled_data.monthly_date
         }
 
         if (!this.PolicyAlertSetting[2].checked) {
@@ -2179,16 +2201,16 @@ export class CreateAlertComponent implements OnInit {
   }
 
   OnRSVPSubmit(val: any) {
-    if (this.DefaultSettingList.autoclose_time_seconds === 0 ) {
+    if (this.DefaultSettingList.autoclose_time_seconds === 0) {
       this.toastr.warning("Auto Close should be greater than 1");
       return;
     }
     if (this.DefaultSettingList.autoclose_time_seconds > 999) {
       this.toastr.warning("Auto close should be less than 999 minutes");
       return;
-    } 
+    }
     if (this.SechduleData.enabled) {
-      if (this.SechduleData.end_after_occurrence === 0 ) {
+      if (this.SechduleData.end_after_occurrence === 0) {
         this.toastr.warning("Schedule End After occurrence count  cannot be less than 1");
         return;
       }
@@ -2197,7 +2219,7 @@ export class CreateAlertComponent implements OnInit {
         return;
       }
     }
-    
+
     this.IsRSVPScript();
     this.submitted = true;
     this.RSVPForm.markAllAsTouched();
@@ -2348,6 +2370,12 @@ export class CreateAlertComponent implements OnInit {
           this.SechduleData.end_after_date = res.data.rsvp_alert.scheduled_data.end_after_date;
           this.SechduleData.alert_start_time = res.data.rsvp_alert.scheduled_data.alert_start_time;
           this.SechduleData.alert_end_time = res.data.rsvp_alert.scheduled_data.alert_end_time;
+          this.SechduleData.monthly_date = res.data.rsvp_alert.scheduled_data.monthly_date;
+          this.SechduleData.month_count_date = res.data.rsvp_alert.scheduled_data.month_count_by_date;
+          this.SechduleData.month_count_day = res.data.rsvp_alert.scheduled_data.month_count_by_day;
+          this.SechduleData.monthly_day_choice = res.data.rsvp_alert.scheduled_data.monthly_day_choice;
+          this.SechduleData.monthly_day_count = res.data.rsvp_alert.scheduled_data.monthly_day_count;
+          this.SechduleData.monthly_choice = res.data.rsvp_alert.scheduled_data.monthly_choice;
         }
 
         if (!this.PolicyAlertSetting[2].checked) {
@@ -2422,7 +2450,7 @@ export class CreateAlertComponent implements OnInit {
         });
         this.SkinId = res.data.skin.id;
         this.AlertRSVPEditTitlePreview = res.data.name;
-        
+
         this.AlertRSVPEditTitlePreviewName = res.data.name;
         this.AlertRSVPEditBodyPreview = res.data.body_text;
 

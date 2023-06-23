@@ -51,6 +51,12 @@ export class CreateSurveyComponent implements OnInit {
   public RoleAssign: any = [];
   public RoleName: any;
 
+  
+  disableDate() {
+    return false;
+  }
+
+
   constructor(private http: HttpService,
     private toastr: ToastrService, private router: Router,
     private activeRoute: ActivatedRoute, public translate: TranslateService,

@@ -4,13 +4,12 @@
             <div class="white_box mb_30">
                 <div class="row mb_30">
                     <div class="col-md-12">
-                        <ul class="nav nav-tabs dash-tabs" role="tablist" *ngIf="AlertType">
+                        <!-- <ul class="nav nav-tabs dash-tabs" role="tablist" *ngIf="AlertType">
                             <li class="nav-item" *ngIf="AlertType === 'PopupAlert'"
                                 [ngClass]="{'active': IsActivePopupAlert === true}">
                                 <a class="nav-link accord" data-bs-toggle="tab" href="#alert" role="tab"
                                     [ngClass]="{'active': IsActivePopupAlert === true}"> {{ 'CreateAlert.popUPAlertTab'
                                     | translate }}
-                                    <!-- Pop-up alert -->
                                 </a>
                             </li>
                             <li class="nav-item active" *ngIf="AlertType === 'TickerAlert'"
@@ -18,7 +17,7 @@
                                 <a class="nav-link accord active" data-bs-toggle="tab" href="#ticker" role="tab"
                                     [ngClass]="{'active': IsActiveTickerAlert === true}"> {{
                                     'CreateAlert.scrollingTickerTab' | translate}}
-                                    <!-- Scrolling Ticker -->
+                                 
                                 </a>
                             </li>
                             <li class="nav-item active" *ngIf="AlertType === 'RsvpAlert'"
@@ -28,23 +27,25 @@
                                     translate}}
                                 </a>
                             </li>
-                        </ul>
+                        </ul> -->
                         <ul class="nav nav-tabs dash-tabs" role="tablist" *ngIf="!AlertType">
                             <li class="nav-item active" (click)="OnAlertTabChange('popup')">
-                                <a class="nav-link active accord" data-bs-toggle="tab" href="#alert" role="tab"> {{
+                                <a class="nav-link active accord" data-bs-toggle="tab" href="#alert" role="tab"
+                                    (click)="OnShowSchedule('once')"> {{
                                     'CreateAlert.popUPAlertTab' | translate}}
-                                    <!-- Pop-up
-                                    alert -->
+
                                 </a>
                             </li>
                             <li class="nav-item" (click)="OnAlertTabChange('ticker')">
-                                <a class="nav-link accord" data-bs-toggle="tab" href="#ticker" role="tab"> {{
+                                <a class="nav-link accord" data-bs-toggle="tab" href="#ticker" role="tab"
+                                    (click)="OnShowSchedule('once')"> {{
                                     'CreateAlert.scrollingTickerTab' | translate}}
                                     <!-- Scrolling Ticker -->
                                 </a>
                             </li>
                             <li class="nav-item" (click)="OnAlertTabChange('popup')">
-                                <a class="nav-link accord" data-bs-toggle="tab" href="#RSVP" role="tab"> {{
+                                <a class="nav-link accord" data-bs-toggle="tab" href="#RSVP" role="tab"
+                                    (click)="OnShowSchedule('once')"> {{
                                     'CreateAlert.rsvpTab' | translate}}
                                 </a>
                             </li>
@@ -618,7 +619,7 @@
 
                                                     </div>
                                                 </div>
-                                                <div class="row size" *ngIf="IsSechduleEnabled">
+                                                <div class="row size br-10" *ngIf="IsSechduleEnabled">
                                                     <div class="col-lg-3">
                                                         <div class="form-group">
                                                             <input type="radio" value="once"
@@ -657,7 +658,8 @@
                                                                     <input type="datetime-local" name=""
                                                                         class="form-control"
                                                                         [(ngModel)]="SechduleData.once_start_date"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                        [ngModelOptions]="{standalone: true}"
+                                                                        (keydown)="disableDate()">
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
@@ -666,7 +668,8 @@
                                                                     <input type="datetime-local" name=""
                                                                         class="form-control"
                                                                         [(ngModel)]="SechduleData.once_end_date"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                        [ngModelOptions]="{standalone: true}"
+                                                                        (keydown)="disableDate()">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -898,142 +901,150 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="row" *ngIf="IsMonthlySchedule">
-                                                            <div class="col-lg-3 mt-2 mr-4"
-                                                                style="display: -webkit-inline-box;">
-                                                                <input type="radio" value="bydate" name=""
-                                                                    [(ngModel)]="SechduleData.monthly_choice"
-                                                                    [ngModelOptions]="{standalone: true}"> On
-                                                                <select class="form-control ml-2"
-                                                                    [(ngModel)]="SechduleData.monthly_date"
-                                                                    [ngModelOptions]="{standalone: true}">
-                                                                    <option value="1">1</option>
-                                                                    <option value="2">2</option>
-                                                                    <option value="3">3</option>
-                                                                    <option value="4">4</option>
-                                                                    <option value="5">5</option>
-                                                                    <option value="6">6</option>
-                                                                    <option value="7">7</option>
-                                                                    <option value="8">8</option>
-                                                                    <option value="9">9</option>
-                                                                    <option value="10">10</option>
-                                                                    <option value="11">11</option>
-                                                                    <option value="12">12</option>
-                                                                    <option value="13">13</option>
-                                                                    <option value="14">14</option>
-                                                                    <option value="15">15</option>
-                                                                    <option value="16">16</option>
-                                                                    <option value="17">17</option>
-                                                                    <option value="18">18</option>
-                                                                    <option value="19">19</option>
-                                                                    <option value="20">20</option>
-                                                                    <option value="21">21</option>
-                                                                    <option value="22">22</option>
-                                                                    <option value="23">23</option>
-                                                                    <option value="24">24</option>
-                                                                    <option value="25">25</option>
-                                                                    <option value="26">26</option>
-                                                                    <option value="27">27</option>
-                                                                    <option value="28">28</option>
-                                                                    <option value="29">29</option>
-                                                                    <option value="30">30</option>
-                                                                    <option value="31">31</option>
-                                                                    <option value="last">last</option>
-                                                                </select>
-                                                            </div>
-                                                            <span class="ScheduleOf ml-3">of</span>
-                                                            <div class="col-lg-4 mt-2">
-                                                                <div class="form-group">
-                                                                    <select class="form-control"
-                                                                        [(ngModel)]="SechduleData.month_count_date"
+                                                        <div *ngIf="IsMonthlySchedule">
+                                                            <div class="row">
+                                                                <div class="col-lg-3 mt-2 mr-4"
+                                                                    style="display: -webkit-inline-box;">
+                                                                    <input type="radio" value="bydate" name="bydate"
+                                                                        id="bydate"
+                                                                        [(ngModel)]="SechduleData.monthly_choice"
+                                                                        [ngModelOptions]="{standalone: true}"> On
+                                                                    <select class="form-control ml-2"
+                                                                        [(ngModel)]="SechduleData.monthly_date"
                                                                         [ngModelOptions]="{standalone: true}">
-                                                                        <option value="every-1st-month">Every
-                                                                            1st month</option>
-                                                                        <option value="every-2nd-month">Every
-                                                                            2nd month</option>
-                                                                        <option value="every-3rd-month">Every
-                                                                            3rd month</option>
-                                                                        <option value="every-4th-month">Every
-                                                                            4th month</option>
-                                                                        <option value="every-5th-month">Every
-                                                                            5th month</option>
-                                                                        <option value="every-6th-month">Every
-                                                                            6th month</option>
-                                                                        <option value="every-7th-month">Every
-                                                                            7th month</option>
-                                                                        <option value="every-8th-month">Every
-                                                                            8th month</option>
-                                                                        <option value="every-9th-month">Every
-                                                                            9th month</option>
-                                                                        <option value="every-10th-month">Every
-                                                                            10th month</option>
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="3">3</option>
+                                                                        <option value="4">4</option>
+                                                                        <option value="5">5</option>
+                                                                        <option value="6">6</option>
+                                                                        <option value="7">7</option>
+                                                                        <option value="8">8</option>
+                                                                        <option value="9">9</option>
+                                                                        <option value="10">10</option>
+                                                                        <option value="11">11</option>
+                                                                        <option value="12">12</option>
+                                                                        <option value="13">13</option>
+                                                                        <option value="14">14</option>
+                                                                        <option value="15">15</option>
+                                                                        <option value="16">16</option>
+                                                                        <option value="17">17</option>
+                                                                        <option value="18">18</option>
+                                                                        <option value="19">19</option>
+                                                                        <option value="20">20</option>
+                                                                        <option value="21">21</option>
+                                                                        <option value="22">22</option>
+                                                                        <option value="23">23</option>
+                                                                        <option value="24">24</option>
+                                                                        <option value="25">25</option>
+                                                                        <option value="26">26</option>
+                                                                        <option value="27">27</option>
+                                                                        <option value="28">28</option>
+                                                                        <option value="29">29</option>
+                                                                        <option value="30">30</option>
+                                                                        <option value="31">31</option>
+                                                                        <option value="last">last</option>
                                                                     </select>
                                                                 </div>
+                                                                <span class="ScheduleOf ml-3">of</span>
+                                                                <div class="col-lg-4 mt-2">
+                                                                    <div class="form-group">
+                                                                        <select class="form-control"
+                                                                            [(ngModel)]="SechduleData.month_count_date"
+                                                                            [ngModelOptions]="{standalone: true}">
+                                                                            <option value="every-1st-month">Every
+                                                                                month</option>
+                                                                            <option value="every-2nd-month">Every
+                                                                                2nd month</option>
+                                                                            <option value="every-3rd-month">Every
+                                                                                3rd month</option>
+                                                                            <option value="every-4th-month">Every
+                                                                                4th month</option>
+                                                                            <option value="every-5th-month">Every
+                                                                                5th month</option>
+                                                                            <option value="every-6th-month">Every
+                                                                                6th month</option>
+                                                                            <option value="every-7th-month">Every
+                                                                                7th month</option>
+                                                                            <option value="every-8th-month">Every
+                                                                                8th month</option>
+                                                                            <option value="every-9th-month">Every
+                                                                                9th month</option>
+                                                                            <option value="every-10th-month">Every
+                                                                                10th month</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-4 mt-2"></div>
                                                             </div>
-                                                            <div class="col-lg-4 mt-2"></div>
 
-                                                            <div class="col-lg-3 mt-2 mr-4"
-                                                                style="display: -webkit-inline-box;">
-                                                                <input type="radio" name="" value="byday"
-                                                                    [(ngModel)]="SechduleData.monthly_choice"
-                                                                    [ngModelOptions]="{standalone: true}"> On
-                                                                <select class="form-control ml-2"
-                                                                    [(ngModel)]="SechduleData.monthly_day_count"
-                                                                    [ngModelOptions]="{standalone: true}">
-                                                                    <option value="1st">1st</option>
-                                                                    <option value="2nd">2nd</option>
-                                                                    <option value="3rd">3rd</option>
-                                                                    <option value="4th">4th</option>
-                                                                    <option value="last">last</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-lg-4 mt-2">
-                                                                <div class="form-group">
-                                                                    <select class="form-control"
-                                                                        [(ngModel)]="SechduleData.monthly_day_choice"
+
+                                                            <div class="row">
+                                                                <div class="col-lg-3 mt-2 mr-4"
+                                                                    style="display: -webkit-inline-box;">
+                                                                    <input type="radio" name="byday" value="byday"
+                                                                        id="byday"
+                                                                        [(ngModel)]="SechduleData.monthly_choice"
+                                                                        [ngModelOptions]="{standalone: true}"> On
+                                                                    <select class="form-control ml-2"
+                                                                        [(ngModel)]="SechduleData.monthly_day_count"
                                                                         [ngModelOptions]="{standalone: true}">
-                                                                        <option value="Sunday">Sunday</option>
-                                                                        <option value="Monday">Monday</option>
-                                                                        <option value="Tuesday">Tuesday</option>
-                                                                        <option value="Wednesday">Wednesday
-                                                                        </option>
-                                                                        <option value="Thursday">Thursday
-                                                                        </option>
-                                                                        <option value="Friday">Friday</option>
-                                                                        <option value="Saturday">Saturday
-                                                                        </option>
+                                                                        <option value="1st">1st</option>
+                                                                        <option value="2nd">2nd</option>
+                                                                        <option value="3rd">3rd</option>
+                                                                        <option value="4th">4th</option>
+                                                                        <option value="last">last</option>
                                                                     </select>
                                                                 </div>
-                                                            </div>
-                                                            <span class="ScheduleOf">of</span>
-                                                            <div class="col-lg-4 mt-2">
-                                                                <div class="form-group">
-                                                                    <select class="form-control"
-                                                                        [(ngModel)]="SechduleData.month_count_day"
-                                                                        [ngModelOptions]="{standalone: true}">
-                                                                        <option value="every-1st-month">Every
-                                                                            1st month</option>
-                                                                        <option value="every-2nd-month">Every
-                                                                            2nd month</option>
-                                                                        <option value="every-3rd-month">Every
-                                                                            3rd month</option>
-                                                                        <option value="every-4th-month">Every
-                                                                            4th month</option>
-                                                                        <option value="every-5th-month">Every
-                                                                            5th month</option>
-                                                                        <option value="every-6th-month">Every
-                                                                            6th month</option>
-                                                                        <option value="every-7th-month">Every
-                                                                            7th month</option>
-                                                                        <option value="every-8th-month">Every
-                                                                            8th month</option>
-                                                                        <option value="every-9th-month">Every
-                                                                            9th month</option>
-                                                                        <option value="every-10th-month">Every
-                                                                            10th month</option>
-                                                                    </select>
+                                                                <div class="col-lg-4 mt-2">
+                                                                    <div class="form-group">
+                                                                        <select class="form-control"
+                                                                            [(ngModel)]="SechduleData.monthly_day_choice"
+                                                                            [ngModelOptions]="{standalone: true}">
+                                                                            <option value="Sunday">Sunday</option>
+                                                                            <option value="Monday">Monday</option>
+                                                                            <option value="Tuesday">Tuesday</option>
+                                                                            <option value="Wednesday">Wednesday
+                                                                            </option>
+                                                                            <option value="Thursday">Thursday
+                                                                            </option>
+                                                                            <option value="Friday">Friday</option>
+                                                                            <option value="Saturday">Saturday
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <span class="ScheduleOf">of</span>
+                                                                <div class="col-lg-4 mt-2">
+                                                                    <div class="form-group">
+                                                                        <select class="form-control"
+                                                                            [(ngModel)]="SechduleData.month_count_day"
+                                                                            [ngModelOptions]="{standalone: true}">
+                                                                            <option value="every-1st-month">Every
+                                                                                month</option>
+                                                                            <option value="every-2nd-month">Every
+                                                                                2nd month</option>
+                                                                            <option value="every-3rd-month">Every
+                                                                                3rd month</option>
+                                                                            <option value="every-4th-month">Every
+                                                                                4th month</option>
+                                                                            <option value="every-5th-month">Every
+                                                                                5th month</option>
+                                                                            <option value="every-6th-month">Every
+                                                                                6th month</option>
+                                                                            <option value="every-7th-month">Every
+                                                                                7th month</option>
+                                                                            <option value="every-8th-month">Every
+                                                                                8th month</option>
+                                                                            <option value="every-9th-month">Every
+                                                                                9th month</option>
+                                                                            <option value="every-10th-month">Every
+                                                                                10th month</option>
+                                                                        </select>
+                                                                    </div>
                                                                 </div>
                                                             </div>
+
                                                         </div>
 
                                                         <div class="row" *ngIf="IsYearlySchedule">
@@ -1107,8 +1118,8 @@
 
                                                             <div class="col-lg-3 mt-2 mr-4"
                                                                 style="display: -webkit-inline-box;">
-                                                                <input type="radio" name="" value="byday"
-                                                                    [(ngModel)]="SechduleData.yearly_choice"
+                                                                <input type="radio" name="byday" value="byday"
+                                                                    id="byday" [(ngModel)]="SechduleData.yearly_choice"
                                                                     [ngModelOptions]="{standalone: true}"> On
                                                                 <div class="form-group">
                                                                     <select class="form-control ml-2"
@@ -1169,7 +1180,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="row size mt-4" *ngIf="IsShowSchedule">
+                                                <div class="row size mt-4 br-10" *ngIf="IsShowSchedule">
                                                     <div class="col-lg-12">
                                                         <div class="row">
                                                             <div class="col-lg-5">
@@ -1177,7 +1188,8 @@
                                                                     Start On
                                                                     <input type="date" name="" class="form-control"
                                                                         [(ngModel)]="SechduleData.schedule_date_start"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                        [ngModelOptions]="{standalone: true}"
+                                                                        (keydown)="disableDate()">
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
@@ -1199,7 +1211,7 @@
                                                                         [ngModelOptions]="{standalone: true}">
                                                                     End After
 
-                                                                    <input type="number" name="" min="1"
+                                                                    <input type="number" name="" min="1" value="1"
                                                                         [(ngModel)]="SechduleData.end_after_occurrence"
                                                                         [ngModelOptions]="{standalone: true}"
                                                                         onkeyup="if(this.value<0){this.value= this.value * -1}">
@@ -1216,7 +1228,8 @@
 
                                                                     <input type="date" name="" class="form-control ml-2"
                                                                         [(ngModel)]="SechduleData.end_after_date"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                        [ngModelOptions]="{standalone: true}"
+                                                                        (keydown)="disableDate()">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1224,7 +1237,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="row size mt-4" *ngIf="IsShowSchedule">
+                                                <div class="row size mt-4 br-10" *ngIf="IsShowSchedule">
                                                     <label style="margin: 0 16px 0">Alert times of day</label>
                                                     <div class="col-lg-12">
                                                         <div class="row">
@@ -1266,7 +1279,7 @@
                                         <div>
                                             <div class="line-space">
                                                 <div class="row">
-                                                    <div class="col-md-5 alert-appearance-size">
+                                                    <div class="col-md-5 alert-appearance-size br-10">
                                                         <strong>{{'CreateAlert.rsvpAlertAppearanceSize' |
                                                             translate}} </strong> <br>
                                                         <input type="radio" formControlName="fullscreen"
@@ -1301,7 +1314,7 @@
                                                         </span>
 
                                                     </div>
-                                                    <div class="col-md-5 alert-appearance-size">
+                                                    <div class="col-md-5 alert-appearance-size br-10">
                                                         <strong>{{'CreateAlert.rsvpAlertAppearancePosition' |
                                                             translate}} </strong> <br>
                                                         <div class="row mt-3">
@@ -2689,7 +2702,7 @@
 
                                             <div class="line-space">
 
-                                                <div class="row alert-bar-size" *ngIf="IsSechduleEnabledTicker">
+                                                <div class="row alert-bar-size br-10" *ngIf="IsSechduleEnabledTicker">
                                                     <div class="col-lg-2">
                                                         <div class="form-group">
                                                             <input type="radio" value="once"
@@ -2728,7 +2741,8 @@
                                                                     <input type="datetime-local" name=""
                                                                         class="form-control"
                                                                         [(ngModel)]="SechduleData.once_start_date"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                        [ngModelOptions]="{standalone: true}"
+                                                                        (keydown)="disableDate()">
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
@@ -2737,7 +2751,8 @@
                                                                     <input type="datetime-local" name=""
                                                                         class="form-control"
                                                                         [(ngModel)]="SechduleData.once_end_date"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                        [ngModelOptions]="{standalone: true}"
+                                                                        (keydown)="disableDate()">
                                                                 </div>
                                                             </div>
                                                             <!-- <div class="col-lg-6">
@@ -3028,140 +3043,151 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="row" *ngIf="IsMonthlySchedule">
-                                                            <div class="col-lg-3 mt-2 mr-4"
-                                                                style="display: -webkit-inline-box;">
-                                                                <input type="radio" value="bydate" name=""
-                                                                    [(ngModel)]="SechduleData.monthly_choice"
-                                                                    [ngModelOptions]="{standalone: true}"> On
-                                                                <select class="form-control ml-2"
-                                                                    [(ngModel)]="SechduleData.monthly_date"
-                                                                    [ngModelOptions]="{standalone: true}">
-                                                                    <option value="1">1</option>
-                                                                    <option value="2">2</option>
-                                                                    <option value="3">3</option>
-                                                                    <option value="4">4</option>
-                                                                    <option value="5">5</option>
-                                                                    <option value="6">6</option>
-                                                                    <option value="7">7</option>
-                                                                    <option value="8">8</option>
-                                                                    <option value="9">9</option>
-                                                                    <option value="10">10</option>
-                                                                    <option value="11">11</option>
-                                                                    <option value="12">12</option>
-                                                                    <option value="13">13</option>
-                                                                    <option value="14">14</option>
-                                                                    <option value="15">15</option>
-                                                                    <option value="16">16</option>
-                                                                    <option value="17">17</option>
-                                                                    <option value="18">18</option>
-                                                                    <option value="19">19</option>
-                                                                    <option value="20">20</option>
-                                                                    <option value="21">21</option>
-                                                                    <option value="22">22</option>
-                                                                    <option value="23">23</option>
-                                                                    <option value="24">24</option>
-                                                                    <option value="25">25</option>
-                                                                    <option value="26">26</option>
-                                                                    <option value="27">27</option>
-                                                                    <option value="28">28</option>
-                                                                    <option value="29">29</option>
-                                                                    <option value="30">30</option>
-                                                                    <option value="31">31</option>
-                                                                    <option value="last">last</option>
-                                                                </select>
-                                                            </div>
-                                                            <span class="ScheduleOf ml-3">of</span>
-                                                            <div class="col-lg-4 mt-2">
-                                                                <div class="form-group">
-                                                                    <select class="form-control"
-                                                                        [(ngModel)]="SechduleData.month_count_date"
+                                                        <div *ngIf="IsMonthlySchedule">
+                                                            <div class="row">
+                                                                <div class="col-lg-3 mt-2 mr-4"
+                                                                    style="display: -webkit-inline-box;">
+                                                                    <input type="radio" name="bydate" value="bydate"
+                                                                        id="bydate"
+                                                                        [(ngModel)]="SechduleData.monthly_choice"
+                                                                        [ngModelOptions]="{standalone: true}"> On
+                                                                    <select class="form-control ml-2"
+                                                                        [(ngModel)]="SechduleData.monthly_date"
                                                                         [ngModelOptions]="{standalone: true}">
-                                                                        <option value="every-1st-month">Every
-                                                                            1st month</option>
-                                                                        <option value="every-2nd-month">Every
-                                                                            2nd month</option>
-                                                                        <option value="every-3rd-month">Every
-                                                                            3rd month</option>
-                                                                        <option value="every-4th-month">Every
-                                                                            4th month</option>
-                                                                        <option value="every-5th-month">Every
-                                                                            5th month</option>
-                                                                        <option value="every-6th-month">Every
-                                                                            6th month</option>
-                                                                        <option value="every-7th-month">Every
-                                                                            7th month</option>
-                                                                        <option value="every-8th-month">Every
-                                                                            8th month</option>
-                                                                        <option value="every-9th-month">Every
-                                                                            9th month</option>
-                                                                        <option value="every-10th-month">Every
-                                                                            10th month</option>
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="3">3</option>
+                                                                        <option value="4">4</option>
+                                                                        <option value="5">5</option>
+                                                                        <option value="6">6</option>
+                                                                        <option value="7">7</option>
+                                                                        <option value="8">8</option>
+                                                                        <option value="9">9</option>
+                                                                        <option value="10">10</option>
+                                                                        <option value="11">11</option>
+                                                                        <option value="12">12</option>
+                                                                        <option value="13">13</option>
+                                                                        <option value="14">14</option>
+                                                                        <option value="15">15</option>
+                                                                        <option value="16">16</option>
+                                                                        <option value="17">17</option>
+                                                                        <option value="18">18</option>
+                                                                        <option value="19">19</option>
+                                                                        <option value="20">20</option>
+                                                                        <option value="21">21</option>
+                                                                        <option value="22">22</option>
+                                                                        <option value="23">23</option>
+                                                                        <option value="24">24</option>
+                                                                        <option value="25">25</option>
+                                                                        <option value="26">26</option>
+                                                                        <option value="27">27</option>
+                                                                        <option value="28">28</option>
+                                                                        <option value="29">29</option>
+                                                                        <option value="30">30</option>
+                                                                        <option value="31">31</option>
+                                                                        <option value="last">last</option>
                                                                     </select>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-lg-4 mt-2"></div>
+                                                                <span class="ScheduleOf ml-3">of</span>
+                                                                <div class="col-lg-4 mt-2">
+                                                                    <div class="form-group">
+                                                                        <select class="form-control"
+                                                                            [(ngModel)]="SechduleData.month_count_date"
+                                                                            [ngModelOptions]="{standalone: true}">
+                                                                            <option value="every-1st-month">Every
+                                                                                month</option>
+                                                                            <option value="every-2nd-month">Every
+                                                                                2nd month</option>
+                                                                            <option value="every-3rd-month">Every
+                                                                                3rd month</option>
+                                                                            <option value="every-4th-month">Every
+                                                                                4th month</option>
+                                                                            <option value="every-5th-month">Every
+                                                                                5th month</option>
+                                                                            <option value="every-6th-month">Every
+                                                                                6th month</option>
+                                                                            <option value="every-7th-month">Every
+                                                                                7th month</option>
+                                                                            <option value="every-8th-month">Every
+                                                                                8th month</option>
+                                                                            <option value="every-9th-month">Every
+                                                                                9th month</option>
+                                                                            <option value="every-10th-month">Every
+                                                                                10th month</option>
+                                                                        </select>
 
-                                                            <div class="col-lg-3 mt-2 mr-4"
-                                                                style="display: -webkit-inline-box;">
-                                                                <input type="radio" name="" value="byday"
-                                                                    [(ngModel)]="SechduleData.monthly_day_count"
-                                                                    [ngModelOptions]="{standalone: true}"> On
-                                                                <select class="form-control ml-2">
-                                                                    <option value="1st">1st</option>
-                                                                    <option value="2nd">2nd</option>
-                                                                    <option value="3rd">3rd</option>
-                                                                    <option value="4th">4th</option>
-                                                                    <option value="last">last</option>
-                                                                </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-4 mt-2"></div>
                                                             </div>
-                                                            <div class="col-lg-4 mt-2">
-                                                                <div class="form-group">
-                                                                    <select class="form-control"
-                                                                        [(ngModel)]="SechduleData.monthly_day_choice"
+
+
+                                                            <div class="row">
+                                                                <div class="col-lg-3 mt-2 mr-4"
+                                                                    style="display: -webkit-inline-box;">
+                                                                    <input type="radio" name="byday" value="byday"
+                                                                        id="byday"
+                                                                        [(ngModel)]="SechduleData.monthly_choice"
+                                                                        [ngModelOptions]="{standalone: true}"> On
+                                                                    <select class="form-control ml-2"
+                                                                        [(ngModel)]="SechduleData.monthly_day_count"
                                                                         [ngModelOptions]="{standalone: true}">
-                                                                        <option value="Sunday">Sunday</option>
-                                                                        <option value="Monday">Monday</option>
-                                                                        <option value="Tuesday">Tuesday</option>
-                                                                        <option value="Wednesday">Wednesday
-                                                                        </option>
-                                                                        <option value="Thursday">Thursday
-                                                                        </option>
-                                                                        <option value="Friday">Friday</option>
-                                                                        <option value="Saturday">Saturday
-                                                                        </option>
+                                                                        <option value="1st">1st</option>
+                                                                        <option value="2nd">2nd</option>
+                                                                        <option value="3rd">3rd</option>
+                                                                        <option value="4th">4th</option>
+                                                                        <option value="last">last</option>
                                                                     </select>
                                                                 </div>
-                                                            </div>
-                                                            <span class="ScheduleOf">of</span>
-                                                            <div class="col-lg-4 mt-2">
-                                                                <div class="form-group">
-                                                                    <select class="form-control"
-                                                                        [(ngModel)]="SechduleData.month_count_day"
-                                                                        [ngModelOptions]="{standalone: true}">
-                                                                        <option value="every-1st-month">Every
-                                                                            1st month</option>
-                                                                        <option value="every-2nd-month">Every
-                                                                            2nd month</option>
-                                                                        <option value="every-3rd-month">Every
-                                                                            3rd month</option>
-                                                                        <option value="every-4th-month">Every
-                                                                            4th month</option>
-                                                                        <option value="every-5th-month">Every
-                                                                            5th month</option>
-                                                                        <option value="every-6th-month">Every
-                                                                            6th month</option>
-                                                                        <option value="every-7th-month">Every
-                                                                            7th month</option>
-                                                                        <option value="every-8th-month">Every
-                                                                            8th month</option>
-                                                                        <option value="every-9th-month">Every
-                                                                            9th month</option>
-                                                                        <option value="every-10th-month">Every
-                                                                            10th month</option>
-                                                                    </select>
+                                                                <div class="col-lg-4 mt-2">
+                                                                    <div class="form-group">
+                                                                        <select class="form-control"
+                                                                            [(ngModel)]="SechduleData.monthly_day_choice"
+                                                                            [ngModelOptions]="{standalone: true}">
+                                                                            <option value="Sunday">Sunday</option>
+                                                                            <option value="Monday">Monday</option>
+                                                                            <option value="Tuesday">Tuesday</option>
+                                                                            <option value="Wednesday">Wednesday
+                                                                            </option>
+                                                                            <option value="Thursday">Thursday
+                                                                            </option>
+                                                                            <option value="Friday">Friday</option>
+                                                                            <option value="Saturday">Saturday
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <span class="ScheduleOf">of</span>
+                                                                <div class="col-lg-4 mt-2">
+                                                                    <div class="form-group">
+                                                                        <select class="form-control"
+                                                                            [(ngModel)]="SechduleData.month_count_day"
+                                                                            [ngModelOptions]="{standalone: true}">
+                                                                            <option value="every-1st-month">Every
+                                                                                month</option>
+                                                                            <option value="every-2nd-month">Every
+                                                                                2nd month</option>
+                                                                            <option value="every-3rd-month">Every
+                                                                                3rd month</option>
+                                                                            <option value="every-4th-month">Every
+                                                                                4th month</option>
+                                                                            <option value="every-5th-month">Every
+                                                                                5th month</option>
+                                                                            <option value="every-6th-month">Every
+                                                                                6th month</option>
+                                                                            <option value="every-7th-month">Every
+                                                                                7th month</option>
+                                                                            <option value="every-8th-month">Every
+                                                                                8th month</option>
+                                                                            <option value="every-9th-month">Every
+                                                                                9th month</option>
+                                                                            <option value="every-10th-month">Every
+                                                                                10th month</option>
+                                                                        </select>
+                                                                    </div>
                                                                 </div>
                                                             </div>
+
                                                         </div>
 
                                                         <div class="row" *ngIf="IsYearlySchedule">
@@ -3235,7 +3261,7 @@
 
                                                             <div class="col-lg-3 mt-2 mr-4"
                                                                 style="display: -webkit-inline-box;">
-                                                                <input type="radio" name="" value="byday"
+                                                                <input type="radio" name="" value="bydate"
                                                                     [(ngModel)]="SechduleData.yearly_choice"
                                                                     [ngModelOptions]="{standalone: true}"> On
                                                                 <div class="form-group">
@@ -3297,7 +3323,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="row size mt-4" *ngIf="IsShowSchedule">
+                                                <div class="row size mt-4 br-10" *ngIf="IsShowSchedule">
                                                     <div class="col-lg-12">
                                                         <div class="row">
                                                             <div class="col-lg-5">
@@ -3305,7 +3331,8 @@
                                                                     Start On
                                                                     <input type="date" name="" class="form-control"
                                                                         [(ngModel)]="SechduleData.schedule_date_start"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                        [ngModelOptions]="{standalone: true}"
+                                                                        (keydown)="disableDate()">
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
@@ -3344,7 +3371,8 @@
 
                                                                     <input type="date" name="" class="form-control ml-2"
                                                                         [(ngModel)]="SechduleData.end_after_date"
-                                                                        [ngModelOptions]="{standalone: true}">
+                                                                        [ngModelOptions]="{standalone: true}"
+                                                                        (keydown)="disableDate()">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3352,7 +3380,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="row size mt-4" *ngIf="IsShowSchedule">
+                                                <div class="row size mt-4 br-10" *ngIf="IsShowSchedule">
                                                     <label style="margin: 0px 16px 0;">Alert times of
                                                         day</label>
                                                     <div class="col-lg-12">
@@ -3393,7 +3421,7 @@
                                         </div>
                                         <div class="card-body line-space">
                                             <div class="row">
-                                                <div class="col-md-3 bar-visualization">
+                                                <div class="col-md-3 bar-visualization br-10">
                                                     <strong>{{'CreateAlert.scrollingTickerAlertAppearancePosition'
                                                         | translate}} </strong> <br>
                                                     <input type="radio" value="top" formControlName="position"
@@ -3407,7 +3435,7 @@
                                                     <br>
                                                 </div>
 
-                                                <div class="col-md-3 bar-visualization-direction">
+                                                <div class="col-md-3 bar-visualization-direction br-10">
                                                     <strong> Scrolling Direction </strong> <br>
                                                     <input type="radio" value="left"
                                                         (change)="OnChangeDirection('left')"
@@ -3419,7 +3447,7 @@
                                                     <br>
                                                 </div>
 
-                                                <div class="col-md-3 bar-visualization-speed">
+                                                <div class="col-md-3 bar-visualization-speed br-10">
                                                     <strong> Speed </strong> <br>
                                                     <input type="radio" value="10" (change)="OnChangeSpeed('10')"
                                                         formControlName="speed"> Slow
@@ -4116,7 +4144,7 @@
                                                 </div>
 
                                                 <div class="line-space">
-                                                    <div class="row size" *ngIf="IsSechduleEnabledRSVP">
+                                                    <div class="row size br-10" *ngIf="IsSechduleEnabledRSVP">
                                                         <div class="col-lg-3">
                                                             <div class="form-group">
                                                                 <input type="radio" value="once"
@@ -4135,10 +4163,10 @@
                                                                     [ngModelOptions]="{standalone: true}"> {{
                                                                 'CreateAlert.scheduleWeekly' | translate}} <br>
                                                                 <input type="radio" value="monthly"
-                                                                (change)="OnShowSchedule('monthly')"
-                                                                [(ngModel)]="SechduleData.schedule_choice"
-                                                                [ngModelOptions]="{standalone: true}"> {{
-                                                            'CreateAlert.scheduleMonthly' | translate}} <br> 
+                                                                    (change)="OnShowSchedule('monthly')"
+                                                                    [(ngModel)]="SechduleData.schedule_choice"
+                                                                    [ngModelOptions]="{standalone: true}"> {{
+                                                                'CreateAlert.scheduleMonthly' | translate}} <br>
                                                                 <!---->
                                                                 <!-- <input type="radio" value="yearly"
                                                                     (change)="OnShowSchedule('yearly')"
@@ -4155,7 +4183,8 @@
                                                                         <input type="datetime-local" name=""
                                                                             class="form-control"
                                                                             [(ngModel)]="SechduleData.once_start_date"
-                                                                            [ngModelOptions]="{standalone: true}">
+                                                                            [ngModelOptions]="{standalone: true}"
+                                                                            (keydown)="disableDate()">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-6">
@@ -4164,7 +4193,8 @@
                                                                         <input type="datetime-local" name=""
                                                                             class="form-control"
                                                                             [(ngModel)]="SechduleData.once_end_date"
-                                                                            [ngModelOptions]="{standalone: true}">
+                                                                            [ngModelOptions]="{standalone: true}"
+                                                                            (keydown)="disableDate()">
                                                                     </div>
                                                                 </div>
 
@@ -4401,140 +4431,150 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="row" *ngIf="IsMonthlySchedule">
-                                                                <div class="col-lg-3 mt-2 mr-4"
-                                                                    style="display: -webkit-inline-box;">
-                                                                    <input type="radio" value="bydate" name=""
-                                                                        [(ngModel)]="SechduleData.monthly_choice"
-                                                                        [ngModelOptions]="{standalone: true}"> On
-                                                                    <select class="form-control ml-2"
-                                                                        [(ngModel)]="SechduleData.monthly_date"
-                                                                        [ngModelOptions]="{standalone: true}">
-                                                                        <option value="1">1</option>
-                                                                        <option value="2">2</option>
-                                                                        <option value="3">3</option>
-                                                                        <option value="4">4</option>
-                                                                        <option value="5">5</option>
-                                                                        <option value="6">6</option>
-                                                                        <option value="7">7</option>
-                                                                        <option value="8">8</option>
-                                                                        <option value="9">9</option>
-                                                                        <option value="10">10</option>
-                                                                        <option value="11">11</option>
-                                                                        <option value="12">12</option>
-                                                                        <option value="13">13</option>
-                                                                        <option value="14">14</option>
-                                                                        <option value="15">15</option>
-                                                                        <option value="16">16</option>
-                                                                        <option value="17">17</option>
-                                                                        <option value="18">18</option>
-                                                                        <option value="19">19</option>
-                                                                        <option value="20">20</option>
-                                                                        <option value="21">21</option>
-                                                                        <option value="22">22</option>
-                                                                        <option value="23">23</option>
-                                                                        <option value="24">24</option>
-                                                                        <option value="25">25</option>
-                                                                        <option value="26">26</option>
-                                                                        <option value="27">27</option>
-                                                                        <option value="28">28</option>
-                                                                        <option value="29">29</option>
-                                                                        <option value="30">30</option>
-                                                                        <option value="31">31</option>
-                                                                        <option value="last">last</option>
-                                                                    </select>
-                                                                </div>
-                                                                <span class="ScheduleOf ml-3">of</span>
-                                                                <div class="col-lg-4 mt-2">
-                                                                    <div class="form-group">
-                                                                        <select class="form-control"
-                                                                            [(ngModel)]="SechduleData.month_count_date"
+                                                            <div *ngIf="IsMonthlySchedule">
+                                                                <div class="row">
+                                                                    <div class="col-lg-3 mt-2 mr-4"
+                                                                        style="display: -webkit-inline-box;">
+                                                                        <input type="radio" name="bydate" value="bydate"
+                                                                            id="bydate"
+                                                                            [(ngModel)]="SechduleData.monthly_choice"
+                                                                            [ngModelOptions]="{standalone: true}"> On
+                                                                        <select class="form-control ml-2"
+                                                                            [(ngModel)]="SechduleData.monthly_date"
                                                                             [ngModelOptions]="{standalone: true}">
-                                                                            <option value="every-1st-month">Every
-                                                                                1st month</option>
-                                                                            <option value="every-2nd-month">Every
-                                                                                2nd month</option>
-                                                                            <option value="every-3rd-month">Every
-                                                                                3rd month</option>
-                                                                            <option value="every-4th-month">Every
-                                                                                4th month</option>
-                                                                            <option value="every-5th-month">Every
-                                                                                5th month</option>
-                                                                            <option value="every-6th-month">Every
-                                                                                6th month</option>
-                                                                            <option value="every-7th-month">Every
-                                                                                7th month</option>
-                                                                            <option value="every-8th-month">Every
-                                                                                8th month</option>
-                                                                            <option value="every-9th-month">Every
-                                                                                9th month</option>
-                                                                            <option value="every-10th-month">Every
-                                                                                10th month</option>
+                                                                            <option value="1">1</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="4">4</option>
+                                                                            <option value="5">5</option>
+                                                                            <option value="6">6</option>
+                                                                            <option value="7">7</option>
+                                                                            <option value="8">8</option>
+                                                                            <option value="9">9</option>
+                                                                            <option value="10">10</option>
+                                                                            <option value="11">11</option>
+                                                                            <option value="12">12</option>
+                                                                            <option value="13">13</option>
+                                                                            <option value="14">14</option>
+                                                                            <option value="15">15</option>
+                                                                            <option value="16">16</option>
+                                                                            <option value="17">17</option>
+                                                                            <option value="18">18</option>
+                                                                            <option value="19">19</option>
+                                                                            <option value="20">20</option>
+                                                                            <option value="21">21</option>
+                                                                            <option value="22">22</option>
+                                                                            <option value="23">23</option>
+                                                                            <option value="24">24</option>
+                                                                            <option value="25">25</option>
+                                                                            <option value="26">26</option>
+                                                                            <option value="27">27</option>
+                                                                            <option value="28">28</option>
+                                                                            <option value="29">29</option>
+                                                                            <option value="30">30</option>
+                                                                            <option value="31">31</option>
+                                                                            <option value="last">last</option>
                                                                         </select>
                                                                     </div>
+                                                                    <span class="ScheduleOf ml-3">of</span>
+                                                                    <div class="col-lg-4 mt-2">
+                                                                        <div class="form-group">
+                                                                            <select class="form-control"
+                                                                                [(ngModel)]="SechduleData.month_count_date"
+                                                                                [ngModelOptions]="{standalone: true}">
+                                                                                <option value="every-1st-month">Every
+                                                                                    month</option>
+                                                                                <option value="every-2nd-month">Every
+                                                                                    2nd month</option>
+                                                                                <option value="every-3rd-month">Every
+                                                                                    3rd month</option>
+                                                                                <option value="every-4th-month">Every
+                                                                                    4th month</option>
+                                                                                <option value="every-5th-month">Every
+                                                                                    5th month</option>
+                                                                                <option value="every-6th-month">Every
+                                                                                    6th month</option>
+                                                                                <option value="every-7th-month">Every
+                                                                                    7th month</option>
+                                                                                <option value="every-8th-month">Every
+                                                                                    8th month</option>
+                                                                                <option value="every-9th-month">Every
+                                                                                    9th month</option>
+                                                                                <option value="every-10th-month">Every
+                                                                                    10th month</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-4 mt-2"></div>
                                                                 </div>
-                                                                <div class="col-lg-4 mt-2"></div>
 
-                                                                <div class="col-lg-3 mt-2 mr-4"
-                                                                    style="display: -webkit-inline-box;">
-                                                                    <input type="radio" name="" value="byday"
-                                                                        [(ngModel)]="SechduleData.monthly_day_count"
-                                                                        [ngModelOptions]="{standalone: true}"> On
-                                                                    <select class="form-control ml-2">
-                                                                        <option value="1st">1st</option>
-                                                                        <option value="2nd">2nd</option>
-                                                                        <option value="3rd">3rd</option>
-                                                                        <option value="4th">4th</option>
-                                                                        <option value="last">last</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-lg-4 mt-2">
-                                                                    <div class="form-group">
-                                                                        <select class="form-control"
-                                                                            [(ngModel)]="SechduleData.monthly_day_choice"
+
+                                                                <div class="row">
+                                                                    <div class="col-lg-3 mt-2 mr-4"
+                                                                        style="display: -webkit-inline-box;">
+                                                                        <input type="radio" name="byday" value="byday"
+                                                                            id="byday"
+                                                                            [(ngModel)]="SechduleData.monthly_choice"
+                                                                            [ngModelOptions]="{standalone: true}"> On
+                                                                        <select class="form-control ml-2"
+                                                                            [(ngModel)]="SechduleData.monthly_day_count"
                                                                             [ngModelOptions]="{standalone: true}">
-                                                                            <option value="Sunday">Sunday</option>
-                                                                            <option value="Monday">Monday</option>
-                                                                            <option value="Tuesday">Tuesday</option>
-                                                                            <option value="Wednesday">Wednesday
-                                                                            </option>
-                                                                            <option value="Thursday">Thursday
-                                                                            </option>
-                                                                            <option value="Friday">Friday</option>
-                                                                            <option value="Saturday">Saturday
-                                                                            </option>
+                                                                            <option value="1st">1st</option>
+                                                                            <option value="2nd">2nd</option>
+                                                                            <option value="3rd">3rd</option>
+                                                                            <option value="4th">4th</option>
+                                                                            <option value="last">last</option>
                                                                         </select>
                                                                     </div>
-                                                                </div>
-                                                                <span class="ScheduleOf">of</span>
-                                                                <div class="col-lg-4 mt-2">
-                                                                    <div class="form-group">
-                                                                        <select class="form-control"
-                                                                            [(ngModel)]="SechduleData.month_count_day"
-                                                                            [ngModelOptions]="{standalone: true}">
-                                                                            <option value="every-1st-month">Every
-                                                                                1st month</option>
-                                                                            <option value="every-2nd-month">Every
-                                                                                2nd month</option>
-                                                                            <option value="every-3rd-month">Every
-                                                                                3rd month</option>
-                                                                            <option value="every-4th-month">Every
-                                                                                4th month</option>
-                                                                            <option value="every-5th-month">Every
-                                                                                5th month</option>
-                                                                            <option value="every-6th-month">Every
-                                                                                6th month</option>
-                                                                            <option value="every-7th-month">Every
-                                                                                7th month</option>
-                                                                            <option value="every-8th-month">Every
-                                                                                8th month</option>
-                                                                            <option value="every-9th-month">Every
-                                                                                9th month</option>
-                                                                            <option value="every-10th-month">Every
-                                                                                10th month</option>
-                                                                        </select>
+                                                                    <div class="col-lg-4 mt-2">
+                                                                        <div class="form-group">
+                                                                            <select class="form-control"
+                                                                                [(ngModel)]="SechduleData.monthly_day_choice"
+                                                                                [ngModelOptions]="{standalone: true}">
+                                                                                <option value="Sunday">Sunday</option>
+                                                                                <option value="Monday">Monday</option>
+                                                                                <option value="Tuesday">Tuesday</option>
+                                                                                <option value="Wednesday">Wednesday
+                                                                                </option>
+                                                                                <option value="Thursday">Thursday
+                                                                                </option>
+                                                                                <option value="Friday">Friday</option>
+                                                                                <option value="Saturday">Saturday
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <span class="ScheduleOf">of</span>
+                                                                    <div class="col-lg-4 mt-2">
+                                                                        <div class="form-group">
+                                                                            <select class="form-control"
+                                                                                [(ngModel)]="SechduleData.month_count_day"
+                                                                                [ngModelOptions]="{standalone: true}">
+                                                                                <option value="every-1st-month">Every
+                                                                                    month</option>
+                                                                                <option value="every-2nd-month">Every
+                                                                                    2nd month</option>
+                                                                                <option value="every-3rd-month">Every
+                                                                                    3rd month</option>
+                                                                                <option value="every-4th-month">Every
+                                                                                    4th month</option>
+                                                                                <option value="every-5th-month">Every
+                                                                                    5th month</option>
+                                                                                <option value="every-6th-month">Every
+                                                                                    6th month</option>
+                                                                                <option value="every-7th-month">Every
+                                                                                    7th month</option>
+                                                                                <option value="every-8th-month">Every
+                                                                                    8th month</option>
+                                                                                <option value="every-9th-month">Every
+                                                                                    9th month</option>
+                                                                                <option value="every-10th-month">Every
+                                                                                    10th month</option>
+                                                                            </select>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
+
                                                             </div>
 
                                                             <div class="row" *ngIf="IsYearlySchedule">
@@ -4608,7 +4648,8 @@
 
                                                                 <div class="col-lg-3 mt-2 mr-4"
                                                                     style="display: -webkit-inline-box;">
-                                                                    <input type="radio" name="" value="byday"
+                                                                    <input type="radio" name="bydate" value="bydate"
+                                                                        id="bydate"
                                                                         [(ngModel)]="SechduleData.yearly_choice"
                                                                         [ngModelOptions]="{standalone: true}"> On
                                                                     <div class="form-group">
@@ -4670,7 +4711,7 @@
 
                                                     </div>
 
-                                                    <div class="row size mt-4" *ngIf="IsShowSchedule">
+                                                    <div class="row size mt-4 br-10" *ngIf="IsShowSchedule">
                                                         <div class="col-lg-12">
                                                             <div class="row">
                                                                 <div class="col-lg-5">
@@ -4678,7 +4719,8 @@
                                                                         Start On
                                                                         <input type="date" name="" class="form-control"
                                                                             [(ngModel)]="SechduleData.schedule_date_start"
-                                                                            [ngModelOptions]="{standalone: true}">
+                                                                            [ngModelOptions]="{standalone: true}"
+                                                                            (keydown)="disableDate()">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-6">
@@ -4718,7 +4760,8 @@
                                                                         <input type="date" name=""
                                                                             class="form-control ml-2"
                                                                             [(ngModel)]="SechduleData.end_after_date"
-                                                                            [ngModelOptions]="{standalone: true}">
+                                                                            [ngModelOptions]="{standalone: true}"
+                                                                            (keydown)="disableDate()">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -4726,7 +4769,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="row size mt-4" *ngIf="IsShowSchedule">
+                                                    <div class="row size mt-4 br-10" *ngIf="IsShowSchedule">
                                                         <label style="margin: 0px 16px 0;">Alert times of
                                                             day</label>
                                                         <div class="col-lg-12">
@@ -4798,7 +4841,7 @@
                                         <div>
                                             <div class="line-space">
                                                 <div class="row">
-                                                    <div class="col-md-5 bar-visualization-rsvp">
+                                                    <div class="col-md-5 bar-visualization-rsvp br-10">
                                                         <strong>{{'CreateAlert.rsvpAlertAppearanceSize' |
                                                             translate}} </strong> <br>
                                                         <input type="radio" value="window" formControlName="fullscreen"
@@ -4833,7 +4876,7 @@
                                                         {{'CreateAlert.rsvpAlertAppearanceFullscreen' |
                                                         translate}}
                                                     </div>
-                                                    <div class="col-md-5 bar-visualization-alert">
+                                                    <div class="col-md-5 bar-visualization-alert br-10">
                                                         <strong>{{'CreateAlert.rsvpAlertAppearancePosition' |
                                                             translate}} </strong>
                                                         <div class="row mt-3">
@@ -5475,8 +5518,7 @@
                 <div class="row">
                     <div class="col-md-3 skin_PopupSet ticker-skin cursor" *ngFor="let skin of SkinList">
                         <div data-bs-dismiss="modal" (click)="IsColorChange(skin)"
-                            [ngStyle]="{'background-color': skin.alert_background_color}">
-
+                            [ngStyle]="{'border': skin.border_thickness + 'px solid' + skin.border_color, 'background-color': skin.alert_background_color}">
                             <div>
                                 <div class="row" style="display: flex;">
                                     <div class="col-md-10 header-center">
