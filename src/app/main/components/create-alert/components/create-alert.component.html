@@ -1183,7 +1183,7 @@
                                                 <div class="row size mt-4 br-10" *ngIf="IsShowSchedule">
                                                     <div class="col-lg-12">
                                                         <div class="row">
-                                                            <div class="col-lg-5">
+                                                            <div class="col-lg-6">
                                                                 <div class="form-group">
                                                                     Start On
                                                                     <input type="date" name="" class="form-control"
@@ -1203,19 +1203,20 @@
                                                         </div>
 
                                                         <div class="row">
-                                                            <div class="col-lg-5">
+                                                            <div class="col-lg-6">
                                                                 <div class="form-group">
                                                                     <input type="radio" name=""
                                                                         value="endafterOccurrences"
                                                                         [(ngModel)]="SechduleData.schedule_end_choice"
                                                                         [ngModelOptions]="{standalone: true}">
-                                                                    End After
+                                                                    End After 
 
                                                                     <input type="number" name="" min="1" value="1"
                                                                         [(ngModel)]="SechduleData.end_after_occurrence"
                                                                         [ngModelOptions]="{standalone: true}"
-                                                                        onkeyup="if(this.value<0){this.value= this.value * -1}">
-                                                                    Occurrences
+                                                                        onkeyup="if(this.value<0){this.value= this.value * -1}" style="width: 15%;">
+                                                                        Occurrences
+                                                                  
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
@@ -3326,7 +3327,7 @@
                                                 <div class="row size mt-4 br-10" *ngIf="IsShowSchedule">
                                                     <div class="col-lg-12">
                                                         <div class="row">
-                                                            <div class="col-lg-5">
+                                                            <div class="col-lg-6">
                                                                 <div class="form-group">
                                                                     Start On
                                                                     <input type="date" name="" class="form-control"
@@ -3346,7 +3347,7 @@
                                                         </div>
 
                                                         <div class="row">
-                                                            <div class="col-lg-5">
+                                                            <div class="col-lg-6">
                                                                 <div class="form-group">
                                                                     <input type="radio" name=""
                                                                         value="endafterOccurrences"
@@ -3357,7 +3358,7 @@
                                                                     <input type="number" name="" min="1"
                                                                         [(ngModel)]="SechduleData.end_after_occurrence"
                                                                         [ngModelOptions]="{standalone: true}"
-                                                                        onkeyup="if(this.value<0){this.value= this.value * -1}">
+                                                                        onkeyup="if(this.value<0){this.value= this.value * -1}" style="width: 15%;">
                                                                     Occurrences
                                                                 </div>
                                                             </div>
@@ -4714,7 +4715,7 @@
                                                     <div class="row size mt-4 br-10" *ngIf="IsShowSchedule">
                                                         <div class="col-lg-12">
                                                             <div class="row">
-                                                                <div class="col-lg-5">
+                                                                <div class="col-lg-6">
                                                                     <div class="form-group">
                                                                         Start On
                                                                         <input type="date" name="" class="form-control"
@@ -4734,7 +4735,7 @@
                                                             </div>
 
                                                             <div class="row">
-                                                                <div class="col-lg-5">
+                                                                <div class="col-lg-6">
                                                                     <div class="form-group">
                                                                         <input type="radio" name=""
                                                                             value="endafterOccurrences"
@@ -4745,7 +4746,7 @@
                                                                         <input type="number" name="" min="1"
                                                                             [(ngModel)]="SechduleData.end_after_occurrence"
                                                                             [ngModelOptions]="{standalone: true}"
-                                                                            onkeyup="if(this.value<0){this.value= this.value * -1}">
+                                                                            onkeyup="if(this.value<0){this.value= this.value * -1}" style="width: 15%;">
                                                                         Occurrences
                                                                     </div>
                                                                 </div>

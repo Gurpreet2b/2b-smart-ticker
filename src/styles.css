@@ -447,3 +447,21 @@ p {
 .br-10{
     border-radius: 10px;
 }
+
+.statistics {
+    color: var(--dk-gray-200);
+}
+
+.statistics .box {
+    background-color: var(--dk-dark-bg);
+}
+
+.statistics .box i {
+    width: 100px;
+    height: 60px;
+    line-height: 60px;
+}
+
+.statistics .box p {
+    color: var(--dk-gray-400);
+}

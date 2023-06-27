@@ -316,3 +316,26 @@
     border-radius: .25rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
+
+
+.add-widget-box{
+    /* margin: 1rem 0 0 0; */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: #fff;
+    color: #000 !important;
+}
+
+.add-w-box-size{
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .03) !important;
+    color: #000 !important;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 15px;
+}
+
+.bg-success{
+    border-radius: 5px;
+}

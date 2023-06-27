@@ -1,109 +1,114 @@
 <div class="container-fluid plr_30 ">
     <div class="row justify-content-center">
         <div class="col-lg-12">
-            <div class="white_box_dashboard mb_10">
-
-                <button (click)="AddWidget()" class="btn btn-info" type="checkbox"> {{ 'Dashboard.ADDWIDGET' | translate}}
+            <div class="white_box_dashboard mb_10 add-widget-box">
+                <button (click)="AddWidget()" class="btn btn-info" type="checkbox"> {{ 'Dashboard.ADDWIDGET' |
+                    translate}}
                 </button>
-
-                <!-- Add Widget -->
             </div>
-
-            <div *ngIf="IsWidget" class="container-fluid p-0" id="divshow">
-                <div class="row">
+            <div *ngIf="IsWidget" class="container-fluid p-0 add-widget-box" id="divshow">
+                <div class="row p-2">
                     <div class="col-md-3">
-                        <div class="card mb-3" style="max-width: 18rem;">
-                            <div class="card-header bg-transparent bg-success text-white ">{{ 'Dashboard.LAST' | translate}} </div>
+                        <div class="card mb-3 br-10" style="max-width: 18rem;">
+                            <div class="card-header bg-transparent add-w-box-size text-white ">{{ 'Dashboard.LAST' |
+                                translate}} </div>
                             <div class="card-body text-success text-center">
-                                <img src="assets/img/last-alert.png" class="float-start"
-                                    alt="mail" width="160" height="150"> <br>
+                                <img src="assets/img/last-alert.png" class="float-start" alt="mail" width="160"
+                                    height="150"> <br>
                             </div>
-                            <button (click)="lastAlert()" class="btn btn-outline-info"> {{ 'Dashboard.ADD' | translate}}
+                            <button (click)="lastAlert()" class="btn btn-success"> {{ 'Dashboard.ADD' | translate}}
                             </button>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="card mb-3" style="max-width: 18rem;">
-                            <div class="card-header bg-transparent bg-success text-white"> {{ 'Dashboard.EMERGENCY' | translate}} </div>
-                                
+                        <div class="card mb-3 br-10" style="max-width: 18rem;">
+                            <div class="card-header bg-transparent add-w-box-size text-white"> {{ 'Dashboard.EMERGENCY' |
+                                translate}} </div>
+
                             <div class="card-body text-success text-center">
-                                <img src="assets/img/emergency-alert.png" class="float-start"
-                                    alt="mail" width="160" height="150">
+                                <img src="assets/img/emergency-alert.png" class="float-start" alt="mail" width="160"
+                                    height="150">
                             </div>
-                            <button (click)="emergencyAlert()" class="btn btn-outline-info ">
+                            <button (click)="emergencyAlert()" class="btn btn-success ">
                                 {{ 'Dashboard.ADD1' | translate }} </button>
                         </div>
                     </div>
                     <div class="col-md-3 ">
-                        <div class="card mb-3" style="max-width: 18rem;">
-                            <div class="card-header bg-transparent bg-success text-white">{{ 'Dashboard.CREATE' | translate }}
+                        <div class="card mb-3 br-10" style="max-width: 18rem;">
+                            <div class="card-header bg-transparent add-w-box-size text-white">{{ 'Dashboard.CREATE' |
+                                translate }}
                             </div>
                             <div class="card-body text-success text-center">
-                                <img src="assets/img/create-alert.png" class="float-start"
-                                    alt="mail" width="160" height="150">
+                                <img src="assets/img/create-alert.png" class="float-start" alt="mail" width="160"
+                                    height="150">
                             </div>
-                            <button (click)="createAlert()" class="btn btn-outline-info ">
+                            <button (click)="createAlert()" class="btn btn-success ">
                                 {{ 'Dashboard.ADD2' | translate }} </button>
                         </div>
                     </div>
                     <div class="col-md-3 ">
-                        <div class="card mb-3" style="max-width: 18rem;">
-                            <div class="card-header bg-transparent bg-success text-white"> {{ 'Dashboard.USER' | translate}}
+                        <div class="card mb-3 br-10" style="max-width: 18rem;">
+                            <div class="card-header bg-transparent add-w-box-size text-white"> {{ 'Dashboard.USER' |
+                                translate}}
                             </div>
                             <div class="card-body text-success text-center">
-                                <img src="assets/img/user-details.png"
-                                    class="float-start" alt="mail" width="150" height="150">
+                                <img src="assets/img/user-details.png" class="float-start" alt="mail" width="150"
+                                    height="150">
                             </div>
-                            <button (click)="userDetails()" class="btn btn-outline-info ">
-                                {{ 'Dashboard.ADD3' | translate }}  </button>
+                            <button (click)="userDetails()" class="btn btn-success ">
+                                {{ 'Dashboard.ADD3' | translate }} </button>
                         </div>
                     </div>
                     <div class="col-md-3  mt-4">
-                        <div class="card mb-3" style="max-width: 18rem;">
-                            <div class="card-header bg-transparent bg-success text-white"> {{ 'Dashboard.STATS' | translate}}  </div>
-                                
+                        <div class="card mb-3 br-10" style="max-width: 18rem;">
+                            <div class="card-header bg-transparent add-w-box-size text-white"> {{ 'Dashboard.STATS' |
+                                translate}} </div>
+
                             <div class="card-body text-success text-center">
-                                <img src="assets/img/user-statistics.png" class="float-start"
-                                    alt="mail" width="160" height="150">
+                                <img src="assets/img/user-statistics.png" class="float-start" alt="mail" width="160"
+                                    height="150">
                             </div>
-                            <button (click)="userStatistics()" class="btn btn-outline-info ">
-                                {{ 'Dashboard.ADD4' | translate }}  </button>
+                            <button (click)="userStatistics()" class="btn btn-success ">
+                                {{ 'Dashboard.ADD4' | translate }} </button>
                         </div>
                     </div>
                     <div class="col-md-3 mt-4 ">
-                        <div class="card mb-3" style="max-width: 18rem;">
-                            <div class="card-header bg-transparent bg-success text-white"> {{ 'Dashboard.ALERT' | translate}}
+                        <div class="card mb-3 br-10" style="max-width: 18rem;">
+                            <div class="card-header bg-transparent add-w-box-size text-white"> {{ 'Dashboard.ALERT' |
+                                translate}}
                             </div>
                             <div class="card-body text-success text-center">
-                                <img src="assets/img/alert-details.png" class="float-start"
-                                    alt="mail" width="170" height="150">
+                                <img src="assets/img/alert-details.png" class="float-start" alt="mail" width="170"
+                                    height="150">
                             </div>
-                            <button (click)="alertDetails()" class="btn btn-outline-info ">
-                                {{ 'Dashboard.ADD5' | translate }}  </button>
+                            <button (click)="alertDetails()" class="btn btn-success ">
+                                {{ 'Dashboard.ADD5' | translate }} </button>
                         </div>
                     </div>
                     <div class="col-md-3 mt-4 ">
-                        <div class="card mb-3" style="max-width: 18rem;">
-                            <div class="card-header bg-transparent bg-success text-white"> {{ 'Dashboard.SURVEY' | translate}}
+                        <div class="card mb-3 br-10" style="max-width: 18rem;">
+                            <div class="card-header bg-transparent add-w-box-size text-white"> {{ 'Dashboard.SURVEY' |
+                                translate}}
                             </div>
                             <div class="card-body text-success text-center">
-                                <img src="assets/img/survey-details.png" class="float-start"
-                                    alt="mail" width="160" height="150">
+                                <img src="assets/img/survey-details.png" class="float-start" alt="mail" width="160"
+                                    height="150">
                             </div>
-                            <button (click)="surveyDetails()" class="btn btn-outline-info ">
-                                {{ 'Dashboard.ADD6' | translate }}  </button>
+                            <button (click)="surveyDetails()" class="btn btn-success ">
+                                {{ 'Dashboard.ADD6' | translate }} </button>
                         </div>
                     </div>
                     <div class="col-md-3 mt-4 ">
-                        <div class="card mb-3" style="max-width: 18rem;">
-                            <div class="card-header bg-transparent bg-success text-white"> {{ 'Dashboard.CLIENT' | translate}} </div>
-                               
+                        <div class="card mb-3 br-10" style="max-width: 18rem;">
+                            <div class="card-header bg-transparent add-w-box-size text-white"> {{ 'Dashboard.CLIENT' |
+                                translate}} </div>
+
                             <div class="card-body text-success text-center">
-                                <img src="assets/img/survey-details.png" class="float-start"
-                                    alt="mail" width="160" height="150">
+                                <img src="assets/img/survey-details.png" class="float-start" alt="mail" width="160"
+                                    height="150">
                             </div>
-                            <button (click)="clientVersions()" class="btn btn-outline-info ">
-                                {{ 'Dashboard.ADD7' | translate }}  </button>
+                            <button (click)="clientVersions()" class="btn btn-success ">
+                                {{ 'Dashboard.ADD7' | translate }} </button>
                         </div>
                     </div>
                 </div>
@@ -111,14 +116,15 @@
             <div *ngIf="!IsWidget">
                 <div class="row ">
                     <div class="col-md-6 form-group" *ngIf="isLastAlerts">
-                        <div class="card">
+                        <div class="card add-widget-box">
                             <div class="card-body">
                                 <div class="header-color">
 
                                     <button (click)="lastButton()" class="close-button " data-bs-dismiss="modal" style="background-color: transparent;
                                 border: 0; font-size: 40px;">&times;</button>
-                                    <h4 class="card-header text-left bg-success text-white"> {{ 'Dashboard.LASTALERT' | translate}} </h4>
-                                        
+                                    <h4 class="card-header text-left bg-success text-white br-10"> {{ 'Dashboard.LASTALERT' |
+                                        translate}} </h4>
+
                                     <!-- <h4 class="header-cursive header-size text-left ml-3">Last Alerts</h4> -->
 
                                 </div>
@@ -134,8 +140,8 @@
                                             <div class="input-group">
                                                 <div class="form-outline">
                                                     <input id="search-input" formControlName="search"
-                                                        placeholder="{{ 'Dashboard.LASTSEARCHERE1' | translate}}" type="search" id="form"
-                                                        class="form-control" />
+                                                        placeholder="{{ 'Dashboard.LASTSEARCHERE1' | translate}}"
+                                                        type="search" id="form" class="form-control" />
                                                 </div>
                                                 <button type="submit" class="btn btn-info ml-2">
                                                     {{ 'Dashboard.SEARCH' | translate }}
@@ -143,7 +149,7 @@
                                             </div>
                                         </form>
                                     </div>
-                                   
+
                                     <!-- <div class="col-md-2"></div> -->
                                     <div class="col-md-4 text-right">
                                         <select class="form-control" (change)="OnLastAlertChange($event)">
@@ -254,7 +260,7 @@
 
                                                     <span *ngIf="sent.alert_type === 'PopupAlert'" class="mr-2 cursor"
                                                         title="Box Alert Details" data-bs-toggle="modal"
-                                                        data-bs-target="#ColumnChartModal" 
+                                                        data-bs-target="#ColumnChartModal"
                                                         (click)="GetGraphStats(sent, 'alert')">
                                                         <img src="assets/img/sent-alert-action/graph.png" alt="">
                                                     </span>
@@ -337,12 +343,13 @@
                     </div>
 
                     <div class="col-md-6 form-group" *ngIf="isUserDetails">
-                        <div class="card">
+                        <div class="card add-widget-box">
                             <div class="card-body">
                                 <div class="header-color">
                                     <button (click)="userButton()" class="close-button" data-bs-dismiss="modal" style="background-color: transparent;
                             border: 0; font-size:  40px;">&times;</button>
-                                    <h4 class="card-header text-left bg-success text-white">  {{ 'Dashboard.USERS' |translate }} </h4>
+                                    <h4 class="card-header text-left bg-success text-white"> {{ 'Dashboard.USERS'
+                                        |translate }} </h4>
                                 </div>
                                 <hr>
                                 <div *ngIf="loading_userDetails" class="dot-opacity-loader">
@@ -354,8 +361,8 @@
                                     <div class="input-group mb-3">
                                         <div class="form-outline">
                                             <input id="search-input" formControlName="search"
-                                                placeholder="{{ 'Dashboard.USERSEARCHERE1' | translate}}" type="search" id="form"
-                                                class="form-control" style="padding: 17px; width: 200px;" />
+                                                placeholder="{{ 'Dashboard.USERSEARCHERE1' | translate}}" type="search"
+                                                id="form" class="form-control" style="padding: 17px; width: 200px;" />
                                         </div>
                                         <button type="submit" class="btn btn-info ml-3">
                                             {{ 'Dashboard.USERSEARCH' |translate }}
@@ -377,7 +384,8 @@
 
                                                     <td class="text-left">
                                                         <span class="cursor" (click)="IsUserDetailById(user)"
-                                                            data-bs-toggle="modal" data-bs-target="#UserDetailChartListModal">
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#UserDetailChartListModal">
                                                             <u>{{user.username}}</u>
                                                         </span>
                                                     </td>
@@ -408,12 +416,13 @@
                     </div>
 
                     <div class="col-md-6 form-group" *ngIf="isAlertDetails">
-                        <div class="card">
+                        <div class="card add-widget-box">
                             <div class="card-body">
                                 <div class="header-color">
                                     <button (click)="alertButton()" class="close-button" data-bs-dismiss="modal" style="background-color: transparent;
                                 border: 0; font-size:  40px;">&times;</button>
-                                    <h4 class="card-header text-left bg-success text-white"> {{ 'Dashboard.ALERT1' | translate}} </h4>
+                                    <h4 class="card-header text-left bg-success text-white"> {{ 'Dashboard.ALERT1' |
+                                        translate}} </h4>
                                 </div>
                                 <hr>
                                 <div *ngIf="loading_AlertDetails" class="dot-opacity-loader">
@@ -425,8 +434,8 @@
                                     <div class="input-group mb-3">
                                         <div class="form-outline">
                                             <input id="search-input" formControlName="search"
-                                                placeholder="  {{ 'Dashboard.SEARCHERE' | translate}} " type="search" id="form"
-                                                class="form-control" style="padding: 17px; width: 200px;" />
+                                                placeholder="  {{ 'Dashboard.SEARCHERE' | translate}} " type="search"
+                                                id="form" class="form-control" style="padding: 17px; width: 200px;" />
                                         </div>
                                         <button type="submit" class="btn btn-info ml-3">
                                             {{ 'Dashboard.ALERTSEARCH' | translate}}
@@ -481,12 +490,13 @@
                     </div>
 
                     <div class="col-md-6 form-group" *ngIf="isSurveyDetails">
-                        <div class="card">
+                        <div class="card add-widget-box">
                             <div class="card-body">
                                 <div class="header-color">
                                     <button (click)="surveyButton()" class="close-button" data-bs-dismiss="modal" style="background-color: transparent;
                                 border: 0; font-size:  40px;">&times;</button>
-                                    <h4 class="card-header text-left bg-success text-white"> {{ 'Dashboard.SURVEYDETAIL' | translate}}  </h4>
+                                    <h4 class="card-header text-left bg-success text-white"> {{ 'Dashboard.SURVEYDETAIL'
+                                        | translate}} </h4>
                                 </div>
                                 <hr>
                                 <div *ngIf="loading_SurveyDetails" class="dot-opacity-loader">
@@ -499,8 +509,8 @@
                                     <div class="input-group mb-3">
                                         <div class="form-outline">
                                             <input id="search-input" formControlName="search"
-                                                placeholder="{{ 'Dashboard.SEARCHERE1' | translate}}" type="search" id="form"
-                                                class="form-control" style="padding: 17.7px; width: 200px;" />
+                                                placeholder="{{ 'Dashboard.SEARCHERE1' | translate}}" type="search"
+                                                id="form" class="form-control" style="padding: 17.7px; width: 200px;" />
                                         </div>
                                         <button type="submit" class="btn btn-info ml-3">
                                             {{ 'Dashboard.SURVEYSEARCH' | translate}}
@@ -557,18 +567,19 @@
 
                     <div class="col-md-6 form-group" *ngIf="isUserStatistics">
 
-                        <div class="card">
+                        <div class="card add-widget-box">
                             <div class="card-body">
                                 <div class="form-group">
                                     <div class="header-color">
-                                        <button (click)="statisticsButton()" class="close-button" data-bs-dismiss="modal"
-                                            style="background-color: transparent;
+                                        <button (click)="statisticsButton()" class="close-button"
+                                            data-bs-dismiss="modal" style="background-color: transparent;
                                 border: 0; font-size:  40px;">&times;</button>
-                                        <h4 class="card-header text-left bg-success text-white"> {{ 'Dashboard.USERSTATS' | translate}} </h4>
+                                        <h4 class="card-header text-left bg-success text-white"> {{
+                                            'Dashboard.USERSTATS' | translate}} </h4>
                                     </div>
                                     <hr>
                                     <div class="row">
-                                        <div class="col-md-12 userStat_pie_chart">
+                                        <div class="col-md-12" style="display: flex; justify-content: center;">
                                             <ngx-charts-pie-chart [results]="UserStats" [view]="[400, 300]">
                                             </ngx-charts-pie-chart>
                                         </div>
@@ -579,7 +590,8 @@
                                                         <div class="col-md-4 uss">
                                                             <div class="maroon-box square">
                                                                 <div class="col-auto ml-3">
-                                                                    <span id="textExample2" class="form-text">  {{ 'Dashboard.ONLINE' | translate}}
+                                                                    <span id="textExample2" class="form-text"> {{
+                                                                        'Dashboard.ONLINE' | translate}}
                                                                     </span>
                                                                 </div>
                                                             </div>
@@ -608,7 +620,7 @@
                                                                 <div class="col-auto ml-3">
                                                                     <label>
                                                                         Never Connected
-                                                                      
+
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -627,18 +639,19 @@
                     </div>
 
                     <div class="col-md-6 form-group" *ngIf="isClientVersion">
-                        <div class="card">
+                        <div class="card add-widget-box">
                             <div class="card-body">
                                 <div class="table">
                                     <div class="header-color">
                                         <button (click)="clientButton()" class="close-button" data-bs-dismiss="modal"
                                             style="background-color: transparent;
                                 border: 0; font-size:  40px;">&times;</button>
-                                        <h4 class="card-header text-left bg-success text-white"> {{ 'Dashboard.CLIENTVERSION' | translate}} </h4>
+                                        <h4 class="card-header text-left bg-success text-white"> {{
+                                            'Dashboard.CLIENTVERSION' | translate}} </h4>
                                     </div>
                                     <hr>
                                     <div class="row">
-                                        <div class="col-md-12 client_pie_chart">
+                                        <div class="col-md-12" style="display: flex; justify-content: center;">
                                             <ngx-charts-pie-chart [results]="clientStats" [view]="[500, 300]">
                                             </ngx-charts-pie-chart>
                                         </div>
@@ -646,11 +659,12 @@
                                     <div class="">
                                         <div class="row">
                                             <!-- <div class="col-md-3"></div> -->
-                                            <div class="col-md-12 pl-5 pr-5 client-scroll">
+                                            <div class="col-md-12 pl-5 pr-5 stats-scroll">
                                                 <div class="bg-color-client">
                                                     <div class="row">
                                                         <div class="col-md-6 uss">
-                                                            <label><b>{{ 'Dashboard.CLIENTVERSIONS' | translate}}</b></label>
+                                                            <label><b>{{ 'Dashboard.CLIENTVERSIONS' |
+                                                                    translate}}</b></label>
                                                         </div>
                                                         <div class="col-md-6 text-right">
                                                             <label><b>{{ 'Dashboard.USERCOUNT' | translate}}</b></label>
@@ -666,7 +680,7 @@
                                                             <label>{{notinstall.count}}</label>
                                                         </div>
                                                     </div>
-                                                    
+
                                                 </div>
                                             </div>
 
@@ -678,40 +692,165 @@
                     </div>
 
                     <div class="col-md-6 form-group" *ngIf="isEmergencyAlert">
-                        <div class="card">
+                        <div class="card add-widget-box">
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <div class="header-color">
                                         <button (click)="emergencyButton()" class="close-button" data-bs-dismiss="modal"
                                             style="background-color: transparent;
                                     border: 0; font-size: 40px;">&times;</button>
-                                        <h4 class="card-header text-left bg-success text-white">{{ 'Dashboard.EMERGENCY1' | translate}} </h4>
+                                        <h4 class="card-header text-left bg-success text-white">{{
+                                            'Dashboard.EMERGENCY1' | translate}} </h4>
                                     </div>
                                     <hr>
+                                    <div class="container-fluid  plr_30 pt_30">
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-12">
+                                                <div>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div *ngIf="loading" class="dot-opacity-loader">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </div>
+                                                            <div class="emergency-scroll-box">
+                                                                <!-- <h3>Emergency Alerts </h3> -->
+                                                                <div class="row">
+                                                                    <div class="col-md-5 mb-3 alert-setting-card m-r-0 justify-content-center d-flex"
+                                                                        *ngFor="let emergency of EmergencyList | paginate: { itemsPerPage: 10, currentPage: currentPage, totalItems: totalItems }; let i=index">
+                                                                        <div class="sent-emergency-alert">
+                                                                            <div class="header-emergency">
+                                                                                {{emergency.name | slice:0:15}}<span
+                                                                                    *ngIf="emergency.name.length > 15">...</span>
+                                                                            </div>
+                                                                            <img class="img-emergency cursor"
+                                                                                src="assets/img/send_big_white.png"
+                                                                                alt=""
+                                                                                (click)="OnSubmitEmergency(emergency)"
+                                                                                *ngIf="RoleAssign[9].send"
+                                                                                [ngStyle]="{'background-color': emergency.color_code}">
 
-                                    <div class="alert-scroll">
+                                                                            <img class="img-emergency"
+                                                                                src="assets/img/send_big_white.png"
+                                                                                alt=""
+                                                                                [ngStyle]="{'background-color': emergency.color_code}"
+                                                                                *ngIf="!RoleAssign[9].send">
+
+                                                                            <div class="footer-emergency w-icons">
+                                                                                <span *ngIf="RoleAssign[9].view">
+                                                                                    <span
+                                                                                        *ngIf="emergency.alert_type === 'EmergencyPopupAlert'"
+                                                                                        class="ml-3 m-r-2 cursor"
+                                                                                        title="Preview Alert"
+                                                                                        (click)="GetSkinListByIdEmergency(emergency)"
+                                                                                        data-bs-toggle="modal"
+                                                                                        data-bs-target="#PreviewAlertSentModal">
+                                                                                        <img src="assets/img/sent-alert-action/preview.png"
+                                                                                            alt="">
+                                                                                    </span>
+                                                                                </span>
+
+                                                                                <span *ngIf="RoleAssign[9].view">
+                                                                                    <span
+                                                                                        *ngIf="emergency.alert_type === 'EmergencyTickerAlert'"
+                                                                                        class="m-r-2 cursor"
+                                                                                        title="Preview Alert"
+                                                                                        (click)="GetSkinListByIdEmergency(emergency)"
+                                                                                        data-bs-toggle="modal"
+                                                                                        data-bs-target="#PreviewScrollingModal">
+                                                                                        <img src="assets/img/sent-alert-action/preview.png"
+                                                                                            alt="">
+                                                                                    </span>
+                                                                                </span>
+
+                                                                                <span class="m-r-2 cursor" title="Edit"
+                                                                                    *ngIf="RoleAssign[9].edit"
+                                                                                    [routerLink]="['/emergency/emergency', emergency.id, emergency.alert_type, 'Alert', 'Edit']">
+                                                                                    <img src="assets/img/sent-alert-action/edit-popup.png"
+                                                                                        alt="">
+                                                                                    <!-- <i class='fas fa-edit cursor'></i> -->
+                                                                                </span>
+                                                                                <span class="text-danger cursor"
+                                                                                    title="Delete"
+                                                                                    (click)="delete(emergency)"
+                                                                                    *ngIf="RoleAssign[9].delete">
+                                                                                    <img src="assets/img/sent-alert-action/delete.png"
+                                                                                        alt="">
+                                                                                    <!-- <i class="far fa-trash-alt"></i> -->
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div *ngIf="EmergencyList.length === 0">
+                                                                        {{'Sent.sentNoRecordFound' |translate}}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row" style="width: 100%">
+                                                                <div class="col-md-10 text-right">
+                                                                    <pagination-controls
+                                                                        (pageChange)="onPageChange($event, '1')"></pagination-controls>
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <select id="PerPage" class="form-control"
+                                                                        (change)="onPageChange($event, '2')">
+                                                                        <option *ngFor="let item of PageTotalNumber"
+                                                                            [value]="item">
+                                                                            {{ item }}
+                                                                        </option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- <div class="alert-scroll">
                                         <img src="https://cdn-icons-png.flaticon.com/512/724/724827.png"
                                             class="emergency-icon-color cursor" alt="search" width="300" height="300"
                                             [routerLink]="['/emergency/send-now']">
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 form-group" *ngIf="isCreateAlert">
-                        <div class="card">
+                        <div class="card add-widget-box">
                             <div class="card-body ">
-                                <div class="table-responsive">
+                                <div>
                                     <div class="header-color">
                                         <button (click)="createButton()" class="close-button" data-bs-dismiss="modal"
                                             style="background-color: transparent;
                                     border: 0; font-size: 40px;">&times;</button>
-                                        <h4 class="card-header text-left bg-success text-white">{{ 'Dashboard.CREATEALERT1' | translate}}</h4>
+                                        <h4 class="card-header text-left bg-success text-white">{{
+                                            'Dashboard.CREATEALERT1' | translate}}</h4>
                                     </div>
                                     <hr>
+
+                                    <!-- <div class="row">
+                                        <div class="col-md-5 alert-appearance-size br-10">
+                                            <img src="/assets/img/sent-alert-action/alert.png" alt="Alert Box" height="70px" width="60px"> <br>
+                                            <label [routerLink]="['/create-alerts']" style="cursor: pointer;">Alert Box</label>
+                                        </div>
+                                        <div class="col-md-5 alert-appearance-size br-10">
+                                            <label [routerLink]="['/create-alerts']" style="cursor: pointer;">Alert Bar</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-5 alert-appearance-size br-10">
+                                            <label [routerLink]="['/create-alerts']" style="cursor: pointer;">Opinion Alert</label>
+                                        </div>
+                                    </div> -->
+
                                     <div class="alert-scroll">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/7273/7273908.png"
-                                            class="create-icon-color" alt="search" width="300" height="300"
+                                        <img src="/assets/img/createalert.png"
+                                           alt="search" width="300" height="300"
                                             [routerLink]="['/create-alerts']" style="cursor: pointer;">
                                     </div>
                                 </div>
@@ -856,7 +995,7 @@
                 <div class="modal-header">
                     <h4 class="modal-title mt-2">Sent Alert Details - {{AlertName}}</h4>
                     <div class="col-md-2 right-side">
-                        <button type="button" class="close_button" data-bs-dismiss="modal" style="background-color: transparent;
+                        <button type="button" class="close-button" data-bs-dismiss="modal" style="background-color: transparent;
                     border: 0; font-size: 40px;">&times;</button>
                     </div>
                 </div>
@@ -1059,8 +1198,8 @@
                                             <!-- {{alert.online}} -->
                                             <img src="assets/img/animation_500_l7srpppy.gif" alt="" width="20"
                                                 height="20" *ngIf="alert.online">
-                                            <img src="assets/img/31120-live-icon.gif" alt="" width="20"
-                                                height="20" *ngIf="!alert.online">
+                                            <img src="assets/img/31120-live-icon.gif" alt="" width="20" height="20"
+                                                *ngIf="!alert.online">
                                         </td>
                                     </tr>
                                     <tr *ngIf="AlertDetailList.length === 0">
@@ -1341,9 +1480,9 @@
                                             *ngIf="VariableData === 'total_recipients_list' || VariableData === 'not_recieved_users_list'">
                                             <!-- {{alert.online}} -->
                                             <img src="assets/img/animation_500_l7srpppy.gif" alt="" width="20"
-                                            height="20" *ngIf="alert.online">
-                                            <img src="assets/img/31120-live-icon.gif" alt="" width="20"
-                                                height="20" *ngIf="!alert.online">
+                                                height="20" *ngIf="alert.online">
+                                            <img src="assets/img/31120-live-icon.gif" alt="" width="20" height="20"
+                                                *ngIf="!alert.online">
                                         </td>
                                         <td *ngIf="VariableData === 'voted_users_list'">{{alert.first_answer}}</td>
                                         <td *ngIf="VariableData === 'voted_users_list'">{{alert.second_answer}}</td>
@@ -1783,8 +1922,8 @@
                                             <!-- {{alert.online}} -->
                                             <img src="assets/img/animation_500_l7srpppy.gif" alt="" width="20"
                                                 height="20" *ngIf="alert.online">
-                                            <img src="assets/img/31120-live-icon.gif" alt="" width="20"
-                                                height="20" *ngIf="!alert.online">
+                                            <img src="assets/img/31120-live-icon.gif" alt="" width="20" height="20"
+                                                *ngIf="!alert.online">
                                         </td>
                                         <td *ngIf="VariableDataSurvey === 'survey_voted_users_list' && IsQuiz === 'quiz'"
                                             data-bs-toggle="modal" data-bs-target="#SurveyQuizModal"
@@ -1820,14 +1959,15 @@
     </div>
 </div>
 
-<div class="modal fade bd-example-modal-lg" id="UserDetailChartListModal" data-bs-backdrop="static" data-bs-keyboard="false">
+<div class="modal fade bd-example-modal-lg" id="UserDetailChartListModal" data-bs-backdrop="static"
+    data-bs-keyboard="false">
     <div class="modal-dialog modal-lg">
         <div class="modal-content" style="margin-left: 9rem;">
             <div class="">
                 <div class="modal-header">
                     <h4 class="modal-title mt-2">User Details - {{UserName}} </h4>
                     <div class="col-md-2 right-side">
-                        <button type="button" class="close_button" data-bs-dismiss="modal" style="background-color: transparent;
+                        <button type="button" class="close-button" data-bs-dismiss="modal" style="background-color: transparent;
                     border: 0; font-size: 40px;">&times;</button>
                     </div>
                 </div>
@@ -1835,7 +1975,7 @@
                 <div class="modal-body" *ngIf="!IsUserDetailChartAndList">
                     <div class="row mb-2">
                         <div class="col-md-12 text-right">
-                            <b>Total number of recipients: <u class="cursor"
+                            <b>Total number of alerts: <u class="cursor"
                                     (click)="OnChangeUserDetailChartAndList('list','total_alerts')">{{TotalRecipients}}</u></b>
                         </div>
                     </div>
@@ -1973,3 +2113,256 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal" id="PreviewAlertSentModal">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="modal-dialog alert-static">
+        <div style="padding: 16px;" *ngIf="ShowFooter">
+            <div class="modal-content" [ngStyle]="{'background-color': AlertBgColor}">
+                <!-- Modal Header -->
+                <div class="">
+                    <div class="row" style="display: flex;">
+                        <!-- <div class="col-md-5" [ngStyle]="{'color': footerColor}">
+                            <div [ngStyle]="{'font-size': HeaderFontSize + 'px'}" class="mt-2"
+                                style="font-family: system-ui; font-weight: bold; color: #7e7e7e;">
+                                {{HeaderTitle}}
+                            </div>
+                        </div> -->
+                        <div class="col-md-11">
+                            <div [ngStyle]="{'text-align': HeaderLogo}">
+                                <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}" class="mt-2" alt="Skin pic"
+                                    style="width: 100px; height: auto;">
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button" class="close" data-bs-dismiss="modal" style="background-color: transparent;
+                            border: 0; font-size: 40px;">&times;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" style="padding: 10px; margin: 0;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h3
+                                            style="color: #fff; font-family: 'Dubai-Bold', sans-serif !important; word-wrap: break-word;">
+                                            {{TextTitle}}
+                                        </h3>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h6 style="height: 110px; overflow-x: hidden;">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h6 id="emergency-body-text"
+                                                        style="color: #fff; font-family: 'Dubai-Bold', sans-serif !important; word-wrap: break-word;">
+                                                        <!-- {{TextBody}} -->
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div style="display: flex;">
+                                    <div style="cursor: pointer;" *ngIf="AddPrint">
+                                        <i class="fa fa-print" aria-hidden="true"
+                                            style="font-size: 27px; margin-right: 15px; color: #fff;"></i>
+                                    </div>
+                                    <div style="cursor: pointer;" *ngIf="AllowFeedback">
+                                        <!-- <i class="fa fa-heart-o" style="font-size: 27px; margin-right: 25px;"></i> -->
+                                        <img src="https://img.icons8.com/external-those-icons-lineal-those-icons/50/000000/external-like-feedback-those-icons-lineal-those-icons.png"
+                                            style="width: 27px; height: 27px; margin-right: 25px; background-color: white;  border-radius: 50px;"
+                                            id="likebtn">
+                                    </div>
+
+                                    <div *ngIf="acknowledgementRequired" style="margin-left: 110px;">
+                                        <select
+                                            style="border: 1px solid #e1dcdc; background: #efefef; margin-right: 5px; height: 25px;">
+                                            <option value="1 Minute">1 Minute</option>
+                                            <option value="2 Minute">2 Minute</option>
+                                            <option value="5 Minute">5 Minute</option>
+                                            <option value="10 Minute">10 Minute</option>
+                                            <option value="15 Minute">15 Minute</option>
+                                            <option value="30 Minute">30 Minute</option>
+                                            <option value="45 Minute">45 Minute</option>
+                                        </select>
+
+                                        <button _type="button" style="border: 1px solid #e1dcdc; margin-right: 5px;">
+                                            {{'Sent.previewAlertPostponeButton' |translate}}</button>
+                                        <button type="button"
+                                            style="width: 70px; border: 1px solid #e1dcdc; margin-right: 5px;">{{'Sent.previewAlertOkButton'
+                                            |translate}}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12" style="padding-left: 0; display: flex; justify-content: end;">
+                        <div>
+                            <img *ngIf="FooterImageUrl" src="{{FooterImageUrl}}" alt="skin pic"
+                                style="width: 350px; height: auto;">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- <div class="row" style="margin: 4px;" [ngStyle]="{'background-color': FooterBgColor}">
+                    <div class="col-md-5" style="padding-left: 0;">
+                        <div [ngStyle]="{'text-align': FooterLogo}">
+                            <img *ngIf="FooterImageUrl" src="{{FooterImageUrl}}" alt="skin pic"
+                                style="width: 180px; height: 50px;" class="mr-2">
+                        </div>
+                    </div>
+                    <div class="col-md-7 text-right" [ngStyle]="{'color': footerColor}">
+                        <div [ngStyle]="{'font-size': FooterFontSize + 'px'}" class="mt-2">
+                            {{FooterText}}
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+
+        <div style="padding: 16px;" *ngIf="!ShowFooter">
+            <div class="modal-content"
+                [ngStyle]="{'background-color': AlertBgColor, 'border': Think + 'px solid' + HeaderBorder}">
+                <!-- Modal Header -->
+                <div class="">
+                    <div class="row" style="display: flex;" [ngStyle]="{'background-color': HeaderBgColor}">
+                        <div class="col-md-11">
+                            <div [ngStyle]="{'text-align': HeaderLogo}">
+                                <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}" alt="Skin pic"
+                                    style="width: 100px; height: auto; padding: 2px;">
+                            </div>
+                        </div>
+                        <div class="col-md-1" style="padding-right: 20px;">
+                            <button type="button" class="close" data-bs-dismiss="modal" style="background-color: transparent;
+                            border: 0; font-size: 40px;">&times;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" style="padding: 10px; margin: 0;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h3 class="emergency-scroll"
+                                            [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#fff'}"
+                                            style="overflow-x: auto; height: 95px;">
+                                            {{TextTitle}}
+                                        </h3>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h6 style="height: 110px; overflow-x: hidden;">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h6 [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#fff'}"
+                                                        id="emergency-body-text">
+                                                        <!-- {{TextBody}} -->
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div style="display: flex;">
+                                    <div style="cursor: pointer;" *ngIf="AddPrint">
+                                        <i class="fa fa-print" aria-hidden="true"
+                                            style="font-size: 27px; margin-right: 15px; color: #fff;"></i>
+                                    </div>
+                                    <div style="cursor: pointer;" *ngIf="AllowFeedback">
+                                        <img src="https://img.icons8.com/external-those-icons-lineal-those-icons/50/000000/external-like-feedback-those-icons-lineal-those-icons.png"
+                                            style="width: 27px; height: 27px; margin-right: 25px; background-color: white;  border-radius: 50px;"
+                                            id="likebtn">
+                                    </div>
+
+                                    <div *ngIf="acknowledgementRequired" style="margin-left: 8rem;">
+                                        <select
+                                            style="border: 1px solid #e1dcdc; background: #efefef; margin-right: 5px; height: 25px;">
+                                            <option value="1 Minute">1 Minute</option>
+                                            <option value="2 Minute">2 Minute</option>
+                                            <option value="5 Minute">5 Minute</option>
+                                            <option value="10 Minute">10 Minute</option>
+                                            <option value="15 Minute">15 Minute</option>
+                                            <option value="30 Minute">30 Minute</option>
+                                            <option value="45 Minute">45 Minute</option>
+                                        </select>
+
+                                        <button _type="button" style="border: 1px solid #e1dcdc; margin-right: 5px;">
+                                            {{'Sent.previewAlertPostponeButton' |translate}}</button>
+                                        <button type="button"
+                                            style="width: 70px; border: 1px solid #e1dcdc; margin-right: 5px;">{{'Sent.previewAlertOkButton'
+                                            |translate}}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" [ngStyle]="{'background-color': FooterBgColor}">
+                    <div class="col-md-12">
+                        <div [ngStyle]="{'text-align': FooterLogo}">
+                            <img *ngIf="FooterImageUrl" src="{{FooterImageUrl}}" alt="skin pic"
+                                style="width: 90%; height: auto;">
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-7 text-right" [ngStyle]="{'color': footerColor}">
+                        <div [ngStyle]="{'font-size': FooterFontSize + 'px'}"
+                            class="mt-2">
+                            {{FooterText}}
+                        </div>
+                    </div> -->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- 
+<div class="modal fade bd-example-modal-lg" id="PreviewScrollingModal">
+    <div class="modal-dialog modal-lg modal-static1">
+        <div class="modal-content">
+            <div class="row" style="display: flex; padding: 1px; margin: 0;" [ngStyle]="{'background-color': AlertBgColor}">
+                <div class="col-md-11" style="width: 100%">
+                    <div style="display: flex;">
+                        <span style="background: #fff;" *ngIf="ShowFooter === true">
+                            <img src="{{HeaderTextImg}}" alt="Logo" width="70" height="auto">
+                        </span>
+
+                        <span style="background: #fff;" *ngIf="ShowFooter === false">
+                            <img src="{{HeaderTextImg}}" alt="Logo" width="70" height="auto">
+                        </span>
+                        
+                        <marquee width="100%" [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#fff'}"
+                            style="margin-top: 17px; font-family: 'Dubai-Bold', sans-serif !important; font-size: 20px;">
+                            {{TextTitle}} {{TextBody}}
+                        </marquee>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <button type="button" [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#fff'}"
+                     class="close" data-bs-dismiss="modal" style="background-color: transparent;
+                    border: 0; font-size: 40px; margin-top: 8px;">&times;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

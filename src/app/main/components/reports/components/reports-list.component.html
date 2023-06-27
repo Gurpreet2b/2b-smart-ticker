@@ -1,7 +1,7 @@
 <div class="container-fluid plr_30 pt_30">
     <div class="row justify-content-center">
         <div class="col-lg-12">
-            <div class="white_box mb_30">
+            <div class="white_box mb_30 add-widget-box">
                 <div class="row mb_30">
                     <div class="col-md-12">
                         <ul class="nav nav-tabs dash-tabs" role="tablist">
@@ -46,75 +46,73 @@
                             <div class="tab-pane active" id="overall" role="tabpanel">
                                 <div class="card mt-2">
                                     <div class="card-body">
-
                                         <button (click)="AddWidget()" class="btn btn-info mb-3" type="checkbox">
                                             {{'Dashboard.ADDWIDGET' | translate}}
                                         </button>
-
                                         <div *ngIf="IsWidget" class="container-fluid p-0" id="divshow">
                                             <div class="row">
-                                                <div class="col-md-3 mt-2 ">
+                                                <div class="col-md-3 mt-2 br-10">
                                                     <div class="card mb-3" style="max-width: 18rem;">
-                                                        <div class="card-header bg-transparent bg-success text-white">
+                                                        <div class="card-header bg-transparent add-w-box-size text-white">
                                                             {{'Dashboard.USERS' | translate}}
                                                         </div>
                                                         <div class="card-body text-success text-center">
                                                             <img src="assets/img/user-details.png"
                                                                 class="float-start" alt="mail" width="150" height="150">
                                                         </div>
-                                                        <button (click)="userDetails()" class="btn btn-outline-info ">
+                                                        <button (click)="userDetails()" class="btn btn-success">
                                                             {{'Dashboard.ADD' | translate}} </button>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3 mt-2">
                                                     <div class="card mb-3" style="max-width: 18rem;">
-                                                        <div class="card-header bg-transparent bg-success text-white">
+                                                        <div class="card-header bg-transparent add-w-box-size text-white">
                                                             {{'Dashboard.STATS' | translate}} </div>
                                                         <div class="card-body text-success text-center">
                                                             <img src="assets/img/user-statistics.png"
                                                                 class="float-start" alt="mail" width="160" height="150">
                                                         </div>
                                                         <button (click)=" userStatistics()"
-                                                            class="btn btn-outline-info ">
+                                                            class="btn btn-success">
                                                             {{'Dashboard.ADD' | translate}} </button>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3 mt-2">
                                                     <div class="card mb-3" style="max-width: 18rem;">
-                                                        <div class="card-header bg-transparent bg-success text-white">
+                                                        <div class="card-header bg-transparent add-w-box-size text-white">
                                                             {{'Dashboard.ALERT' | translate}}
                                                         </div>
                                                         <div class="card-body text-success text-center">
                                                             <img src="assets/img/alert-details.png"
                                                                 class="float-start" alt="mail" width="170" height="150">
                                                         </div>
-                                                        <button (click)="alertDetails()" class="btn btn-outline-info ">
+                                                        <button (click)="alertDetails()" class="btn btn-success">
                                                             {{'Dashboard.ADD' | translate}} </button>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3 mt-2">
                                                     <div class="card mb-3" style="max-width: 18rem;">
-                                                        <div class="card-header bg-transparent bg-success text-white">
+                                                        <div class="card-header bg-transparent add-w-box-size text-white">
                                                             {{'Dashboard.SURVEY' | translate}}
                                                         </div>
                                                         <div class="card-body text-success text-center">
                                                             <img src="assets/img/survey-details.png"
                                                                 class="float-start" alt="mail" width="160" height="150">
                                                         </div>
-                                                        <button (click)="surveyDetails()" class="btn btn-outline-info ">
+                                                        <button (click)="surveyDetails()" class="btn btn-success">
                                                             {{'Dashboard.ADD' | translate}} </button>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3  ">
                                                     <div class="card mb-3" style="max-width: 18rem;">
-                                                        <div class="card-header bg-transparent bg-success text-white">
+                                                        <div class="card-header bg-transparent add-w-box-size text-white">
                                                             {{'Dashboard.CLIENT' | translate}}</div>
                                                         <div class="card-body text-success text-center">
                                                             <img src="assets/img/survey-details.png"
                                                                 class="float-start" alt="mail" width="160" height="150">
                                                         </div>
                                                         <button (click)="clientVersions()"
-                                                            class="btn btn-outline-info ">
+                                                            class="btn btn-success">
                                                             {{'Dashboard.ADD' | translate}} </button>
                                                     </div>
                                                 </div>
@@ -2401,7 +2399,7 @@ border: 0; font-size: 40px;">&times;</button>
                 <div class="modal-body" *ngIf="!IsUserDetailChartAndList">
                     <div class="row mb-2">
                         <div class="col-md-12 text-right">
-                            <b> {{'Reports.sentTotalRecipients' | translate}} <u class="cursor"
+                            <b> Total number of alerts: <u class="cursor"
                                     (click)="OnChangeUserDetailChartAndList('list','total_alerts')">{{TotalRecipients}}</u></b>
                         </div>
                     </div>
