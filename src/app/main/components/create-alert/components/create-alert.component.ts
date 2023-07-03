@@ -35,14 +35,18 @@ export class CreateAlertComponent implements OnInit {
   public HeaderTitle: any = '';
   public HeaderFontSize: any = '';
   public HeaderBgColor: any = '';
+  public paddingSkinAlert: any
   public AlertBgColor: any = '';
-
+public alertBgImg: any;
+public borderradiusImg: any
   public FooterImageUrl: any = '';
   public FooterImgUrl: any = '';
+  public FooterImgUrlSkin: any = '';
   public TickerImg: any = '';
   public FooterLogo: any = 'left';
   public FooterBgColor: any;
   public footerColor: any;
+  public Textcolor: any;
   public FooterFontSize: any;
   public FooterText: any = '';
   public ScriptHTML: any;
@@ -59,6 +63,7 @@ export class CreateAlertComponent implements OnInit {
   public IsCheckPreview: any = false;
   public SkinListLocal: any;
   public WhiteSkinMessage: any;
+  public newLogoSkinalert:any = '';
 
   disableDate() {
     return false;
@@ -165,6 +170,7 @@ export class CreateAlertComponent implements OnInit {
   public IsActivePopupAlert: any = false;
   public IsActiveTickerAlert: any = false;
   public IsActiveRsvpAlert: any = false;
+  public ApiUrl: any = environment.apiUrl;
 
   public Permission: any = [];
   public RoleName: any;
@@ -184,6 +190,8 @@ export class CreateAlertComponent implements OnInit {
     this.PolicyAlertSetting = JSON.parse(this.Permission.alert_setting_list);
     this.RoleName = this.Permission.role;
 
+    // this.GetSkinList(1);
+    // this.GetSkinListById();
     this.GetDefaultSettings();
     this.GetMessageList();
     this.GetAlertChannelDetails();
@@ -299,20 +307,27 @@ export class CreateAlertComponent implements OnInit {
     }
     this.HeaderTextImgTicker = environment.apiUrl + res.team_image;
     this.AlertBgColor = res.alert_background_color;
+    this.alertBgImg = res.alert_background_image;
+    this.borderradiusImg = res.border_radius;
+    this.newLogoSkinalert =  res.new_logo;
     this.HeaderBgColor = res.header_background_color;
+    this.paddingSkinAlert = res.padding_header_alert
     this.WhiteSkinMessage = res.white_skin_message_body;
+    this.Textcolor = res.text_color;
     this.HeaderTitle = res.header_custom_message;
     this.HeaderTitleCheck = res.header_custom_message;
     this.HeaderFontSize = res.header_custom_message_font_color;
     this.ShowFooter = res.show_alert_footer;
     this.IsColorValue = res.show_alert_footer;
     this.ShowFooterImgCheck = res.show_alert_footer;
-
     this.FooterImageUrl = environment.apiUrl + res.footer_background_image;
     this.FooterImgUrl = environment.apiUrl + res.alternate_footer_image;
+    // this.FooterImgUrlSkin = environment.apiUrl + res.info_logo;
+    
     this.FooterLogo = res.footer_align;
     this.FooterBgColor = res.footer_background_color;
     this.footerColor = res.footer_text_color;
+    this.Textcolor = res.text_color;
     this.FooterFontSize = res.footer_font_size;
     this.FooterText = res.footer_text;
     await new Promise(f => setTimeout(f, 2000));
@@ -913,7 +928,7 @@ export class CreateAlertComponent implements OnInit {
         document.getElementById("header-text-skin").innerHTML = `${this.HeaderTitle}`;
         document.getElementById("header-text-img").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="130" height="auto">`;
       }
-      document.getElementById("footer-img").innerHTML = `<img src="${this.FooterImageUrl}" alt="Logo" width="180" height="55">`;
+      // document.getElementById("footer-img").innerHTML = `<img src="${this.FooterImgUrl}" alt="Logo" width="180" height="55" style="display:none;">`;
       // document.getElementById("footer-align").style.textAlign = `${this.FooterLogo}`;
       if (document.getElementById("footer-BgColor") !== null) {
         document.getElementById("footer-BgColor").style.backgroundColor = `${this.FooterBgColor}`;
@@ -922,9 +937,9 @@ export class CreateAlertComponent implements OnInit {
         document.getElementById("footer-text").innerHTML = `${this.FooterText}`;
       }
     } else {
-      if (document.getElementById("header-text-img-white") !== null || document.getElementById("footer-img") !== null) {
-        document.getElementById("header-text-img-white").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="80" height="80" style="background-color:#ffffff00; object-fit: contain; margin:3px;">`;
-        document.getElementById("footer-img").innerHTML = `<img src="${this.FooterImgUrl}" alt="Logo" width="65%" height="auto" style="float:right;">`;
+      if (document.getElementById("header-text-img-white") !== null) {
+        document.getElementById("header-text-img-white").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="80" height="80" style="background-color:#ffffff00; object-fit: contain; margin: 13px 0 0 4px;">`;
+        // document.getElementById("footer-img").innerHTML = `<img src="${this.FooterImgUrl}" alt="Logo" width="70%" height="auto" style="float:right;margin-right: 0.5rem; margin-bottom: 0.7rem; display:none;">`;
       }
     }
     if (this.alertForm.value.fullscreen !== 'fullscreen') {
@@ -942,7 +957,7 @@ export class CreateAlertComponent implements OnInit {
           document.getElementById("alert-max-height-check").style.maxHeight = `${MaxHeight}px`;
 
         } else {
-          let MaxHeight = Number(this.alertForm.value.height) - 270;
+          let MaxHeight = Number(this.alertForm.value.height) - 180;
           document.getElementById("alert-max-height-check").style.maxHeight = `${MaxHeight}px`;
         }
 
@@ -1016,7 +1031,7 @@ export class CreateAlertComponent implements OnInit {
 
     document.getElementById("header-scroll-img").innerHTML = `<img src="${this.HeaderTextImgTicker}" alt="Logo" width="" height="52">`;
     document.getElementById("header-scroll-text").innerHTML = `${this.AlertScrollingEditTitle} ${test} ${this.AlertScrollingEditBody}`;
-    document.getElementById("header-scroll-texts").innerHTML = `${this.AlertScrollingEditTitle} ${test} ${this.AlertScrollingEditBody}`;
+    // document.getElementById("header-scroll-texts").innerHTML = `${this.AlertScrollingEditTitle} ${test} ${this.AlertScrollingEditBody}`;
     document.getElementById("header-scroll-text").style.fontSize = `24px`;
     if (this.IsTickerClose && document.getElementById("tickerCloseId") !== null) {
       document.getElementById("tickerCloseId").style.display = `block`;
@@ -1693,7 +1708,7 @@ export class CreateAlertComponent implements OnInit {
 
   HeaderTitleCheck: any = '';
   HeaderTextImgTicker: any = '';
-  // IsSkinByIdRes: any = false;
+  IsSkinByIdRes: any = false;
   // Skin List By Id Data
   // private GetSkinListById() {
   //   this.loading = true;
@@ -1728,6 +1743,7 @@ export class CreateAlertComponent implements OnInit {
 
   //       this.FooterImageUrl = res.data.footer_background_image;
   //       this.FooterImgUrl = res.data.alternate_footer_image;
+  //       this.newLogoSkinalert = res.data.new_logo;
   //       this.FooterLogo = res.data.footer_align;
   //       this.FooterBgColor = res.data.footer_background_color;
   //       this.footerColor = res.data.footer_text_color;

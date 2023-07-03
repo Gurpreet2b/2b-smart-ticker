@@ -10,6 +10,17 @@
     margin-top: 2.3rem !important;
 }
 
+.alert-skin-pop{
+    background-image: url("/assets/img/footer_frame.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+}
+
+.mb-2{
+    margin-bottom: 1rem !important;
+}
+
 .col-lg-5 {
     -ms-flex: 0 0 41.666667%;
     flex: 0 0 41.666667%;
@@ -28,6 +39,9 @@
     margin: 0.5rem;
 }
 
+hr{
+    border-top: 2px solid #000;
+}
 /* .col-md-6 {
     flex: 0 0 50%;
     max-width: 48%;
@@ -90,11 +104,14 @@
     padding: 10px;
    margin: 0 4px 0 1.4rem;
 }
+
+
 hr {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    /* margin-top: 0 !important;
+    margin-bottom: 0 !important; */
     border: 0;
-    border-top: 1px solid rgba(0, 0, 0, .1);
+    border-top: 1px solid #000;
+    margin: 8px 8px 0px 8px !important;
 }
 .card-body{
     padding: 1rem !important;
@@ -150,6 +167,19 @@ hr {
 .button_ticker{
     padding-top: 1.5rem!important;
 }
+/* .wrapper {
+    padding: 20px;
+    background: #eaeaea;
+    max-width: 400px;
+    margin: 50px auto;
+  }
+  
+.demo-2 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 50px;
+  } */
 
 .accord {
     color: #676b84;
@@ -164,6 +194,7 @@ hr {
 }
 .modal-content {
     border: none !important;
+    background-color: transparent !important;
 }
 
 .size {
