@@ -241,17 +241,20 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-5 mt-3">
-                                                                <h4> {{WhiteSkinMessage}} </h4>
-                                                                <!-- <h1>Sample Alert</h1> -->
+                                                                <h3 [innerHTML]="AlertEditTitlePreview"
+                                                                    [ngClass]="{'colorChange': IsWhiteColor === true}"
+                                                                    class="alertTitle-scroll title-skin-alert"
+                                                                    style="color: #000; word-wrap: break-word; max-height: 50px; overflow-x: auto;">
+                                                                </h3>
+
                                                             </div>
                                                         </div>
-
                                                         <!-- <div
                                                             [ngStyle]="{'border': alertBgImg + 'px solid' + HeaderBorder, 'background-color': AlertBgColor}">
                                                             
                                                         </div> -->
                                                         <div>
-                                                            <div class="row">
+                                                            <!-- <div class="row">
                                                                 <div class="col-md-12">
                                                                     <h3 [innerHTML]="AlertEditTitlePreview"
                                                                         [ngClass]="{'colorChange': IsWhiteColor === true}"
@@ -259,7 +262,7 @@
                                                                         style="color: #000; word-wrap: break-word; max-height: 50px; overflow-x: auto;">
                                                                     </h3>
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
 
                                                             <div class="row">
                                                                 <div class="col-md-12">
@@ -2473,132 +2476,64 @@
                                         </div> -->
                                     </div>
                                 </div>
-                                <div class="col-lg-5 right-side">
+                                <div class="col-lg-5 right-side mt-4">
                                     <!-- <div class="form-group pt-3">
-                                            <label for="exampleFormControlSelect1" class="colorCode"
-                                                > {{ 'CreateAlert.skinChange' |
-                                                translate}}</label>
-                                        
-                                        </div> -->
+                                        <label for="exampleFormControlSelect1">{{
+                                            'CreateAlert.scrollingTickerSkinChange'
+                                            | translate}} </label>
+                                        <select class="form-control" (change)="IsTickerColorChange($event)">
+                                            <option *ngFor="let skin of SkinList" [value]="skin.id">
+                                                {{skin.name}}
+                                            </option>
+                                        </select>
+                                    </div> -->
 
-                                    <div class="cursor" *ngIf="SkinId || SkinList.length" data-bs-toggle="modal"
-                                        data-bs-target="#SkinPreviewModal">
-                                        <div class="row" *ngIf="IsColorValue">
-                                            <div class="col-md-12" style="padding: 3rem;">
-                                                <div [ngStyle]="{'background-color': AlertBgColor}">
-                                                    <div class="alert-change"
-                                                        [ngStyle]="{'border': Think + 'px solid' + HeaderBorder}">
-                                                        <div class="row p-1 m-0"
-                                                            [ngStyle]="{'background-color': HeaderBgColor}">
-                                                            <div class="col-md-5 p-0"
-                                                                [ngStyle]="{'color': footerColor}">
-                                                                <div [ngStyle]="{'font-size': HeaderFontSize + 'px'}"
-                                                                    class="mt-2"
-                                                                    style="font-family: system-ui; font-weight: bold; color: #7e7e7e;">
-                                                                    {{HeaderTitle}}
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-7 p-0">
-                                                                <div [ngStyle]="{'text-align': HeaderLogo}">
-                                                                    <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}"
-                                                                        alt="Skin pic" style="width: 180px;">
-                                                                </div>
+                                    <div class="row cursor" data-bs-toggle="modal"
+                                        data-bs-target="#SkinTickerPreviewModal">
+                                        <div class="col-md-12 p-3">
+                                            <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/dubai">
+                                            <div style="height: 58px;" [ngStyle]="{'background-color': AlertBgColor}">
+                                                <div [ngStyle]="{'border': Think + 'px solid' + HeaderBorder, 'padding': paddingSkinAlert}">
+                                                    <div class="row" [ngStyle]="{'background-color': HeaderBgColor}">
+                                                        <div class="col-md-11" style="width: 100%">
+                                                            <div style="display: flex;">
+                                                                <!-- <span *ngIf="ShowFooterImgCheck === true">
+                                                                    <img *ngIf="HeaderTextImgTicker"
+                                                                        src="{{HeaderTextImgTicker}}" alt="Skin pic" style="background: #fff; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                                                                        padding: 4px; width: 105px;">
+                                                                </span> -->
+                                                                <span>
+                                                                    <img *ngIf="HeaderTextImgTicker"
+                                                                        src="{{HeaderTextImgTicker}}" alt="Skin pic" style="background: #fff; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                                                                        padding: 4px; width: 53px;">
+                                                                </span>
+    
+                                                                <marquee width="100%"
+                                                                    [ngClass]="{'colorChange': IsWhiteColor === true}"
+                                                                    style="align-items: center; display: flex; color: #000;
+                                                                    font-family: 'Dubai-Bold', sans-serif !important; font-size: 20px;"
+                                                                    Scrollamount="IsSpeed"
+                                                                    direction="{{IsScrollingDirection}}">
+                                                                    <!-- {{AlertScrollingEditTitlePreview}} {{AlertScrollingEditBodyPreview}} -->
+                                                                    <div style="display: flex;" id="header-scroll-texts">
+                                                                    </div>
+                                                                </marquee>
                                                             </div>
                                                         </div>
-
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <h3 [innerHTML]="AlertEditTitlePreview"
-                                                                    class="alertTitle-scroll"
-                                                                    style="color: #fff; word-wrap: break-word; max-height: 50px; overflow-x: auto;">
-                                                                    <!-- {{AlertEditTitlePreview}} -->
-                                                                </h3>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <h6 [innerHTML]="AlertEditBodyPreview"
-                                                                    style="height: 150px; overflow: auto; color: #fff; word-wrap: break-word;">
-                                                                    <!-- {{AlertEditBodyPreview}} -->
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="row pt-1 pb-1 m-0"
-                                                            [ngStyle]="{'background-color': FooterBgColor}">
-                                                            <div class="col-md-5" style="padding-left: 0;">
-                                                                <div [ngStyle]="{'text-align': FooterLogo}">
-                                                                    <img *ngIf="FooterImageUrl" src="{{FooterImageUrl}}"
-                                                                        alt="skin pic"
-                                                                        style="width: 180px; height: 50px;"
-                                                                        class="mr-2 mb-3">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-7 text-right"
-                                                                [ngStyle]="{'color': footerColor}">
-                                                                <div [ngStyle]="{'font-size': FooterFontSize + 'px'}"
-                                                                    class="mt-2" style="color: #7e7e7e;">
-                                                                    {{FooterText}}
-                                                                </div>
-                                                            </div>
+                                                        <div class="col-md-1">
+                                                            <button type="button" class="close"
+                                                                [ngClass]="{'colorChange': IsWhiteColor === true}"
+                                                                style="background-color: transparent; border: 0; font-size: 30px; cursor: pointer;
+                                                                font-weight: 300; margin-top: 12px; color: #fff; margin-right: 8px;">&times;</button>
                                                         </div>
                                                     </div>
                                                 </div>
+                                              
                                             </div>
-                                        </div>
 
-                                        <div class="row" *ngIf="IsColorValue === false">
-                                            <div class="col-md-12" style="padding: 4rem;">
-                                                <div [ngStyle]="{'background-color': AlertBgColor}">
-                                                    <div class=""
-                                                        [ngStyle]="{'border': Think + 'px solid' + HeaderBorder}">
-                                                        <div class="row p-1 m-0"
-                                                            [ngStyle]="{'background-color': HeaderBgColor}">
-                                                            <div class="col-md-12 text-right">
-                                                                <div [ngStyle]="{'text-align': HeaderLogo}">
-                                                                    <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}"
-                                                                        alt="Skin pic" style="width: 70px;">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <h3 [innerHTML]="AlertEditTitlePreview"
-                                                                    [ngClass]="{'colorChange': IsWhiteColor === true}"
-                                                                    class="alertTitle-scroll"
-                                                                    style="color: #fff; word-wrap: break-word; max-height: 50px; overflow-x: auto;">
-                                                                    <!-- {{AlertEditTitlePreview}} -->
-                                                                </h3>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <h6 [innerHTML]="AlertEditBodyPreview"
-                                                                    [ngClass]="{'colorChange': IsWhiteColor === true}"
-                                                                    style="height: 130px; color: #fff; overflow: auto; word-wrap: break-word;">
-                                                                    <!-- {{AlertEditBodyPreview}} -->
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="row"
-                                                            [ngStyle]="{'background-color': FooterBgColor}">
-                                                            <div class="col-md-12" style="padding-left: 0;">
-                                                                <div [ngStyle]="{'text-align': FooterLogo}">
-                                                                    <img *ngIf="FooterImgUrl" src="{{FooterImgUrl}}"
-                                                                        alt="skin pic"
-                                                                        style="width: 300px; height: auto;">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                             <!-- <div class="well text-danger">
@@ -3906,7 +3841,7 @@
                                                             <div class="col-md-12">
                                                                 <h6 [innerHTML]="AlertRSVPEditBodyPreview"
                                                                     style="height: 150px; overflow: auto; color: #fff; word-wrap: break-word;">
-                                                                    <!-- {{AlertRSVPEditBodyPreview}} -->
+                                                                 
                                                                 </h6>
                                                             </div>
                                                         </div>
@@ -5404,26 +5339,32 @@
                 </div>
 
                 <div *ngIf="ShowFooter === false">
-                    <div class="" style="border: 0;">
-                        <div style="position: relative;">
-                            <div>
-                                <div class="row"
-                                    style="display: flex; padding: 1px 7px; justify-content: space-between;">
+                    <div>
+                        <div>
+                            <div [ngStyle]="{'border': Think + 'px solid' + HeaderBorder, 'padding': paddingSkinAlert}">
+                                <div class="row" [ngStyle]="{'background-color': HeaderBgColor}">
                                     <!-- <div class="col-md-5" style="width: 100%; display: inline-flex;">
                                         <div id="header-text-skin" style="font-family: system-ui; display: flex; align-items: center;
                                             font-size: 16px; font-weight: bold; color: #7e7e7e;letter-spacing: 2px;">
                                         </div>
                                     </div> -->
-                                    <div class="col-md-9">
+                                    <div class="col-md-4">
                                         <div>
                                             <span id="header-text-img-white"></span>
                                         </div>
+
                                     </div>
-                                    <div class="col-md-2" *ngIf="IsClose"
-                                        style="margin-right: 0.5rem; margin-top: 0.5rem;">
+                                    <div class="col-md-4 mt-3">
+                                        <div id="header-text"
+                                            [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#fff'}" style="font-family: 'Dubai-Bold', sans-serif !important; word-wrap: break-word;
+                                        max-height: 50px; overflow-x: auto;">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3" *ngIf="IsClose">
                                         <button type="button" class="close" data-bs-dismiss="modal"
                                             onclick="close_alert()"
-                                            style="background-color: transparent; border: 0; font-size: 30px; cursor: pointer">&times;</button>
+                                            style="background-color: transparent; border: 0; font-size: 30px; cursor: pointer; margin-right: 1rem;">&times;</button>
                                     </div>
                                 </div>
                             </div>
@@ -5432,7 +5373,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div>
-                                            <div class="row">
+                                            <!-- <div class="row">
                                                 <div class="col-md-12">
                                                     <div id="header-text"
                                                         [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#fff'}"
@@ -5440,7 +5381,7 @@
                                                         max-height: 50px; overflow-x: auto;">
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
 
                                             <div class="row">
                                                 <div class="col-md-12">
@@ -5953,8 +5894,7 @@
                             <div class="row" style="display: flex; padding: 0px 0px;">
                                 <div class="col-md-10" style="width: 100%">
                                     <div style="display: flex;">
-                                        <img src="assets/img/2blogo.png" alt="Logo" height="auto" width="100%"
-                                            class="logo-ticker-skin">
+                                        <img src="assets/img/2blogo.png" alt="Logo" height="auto" width="100%" class="logo-ticker-skin">
                                         <!-- <img src="/assets/img/2blogo.png" alt="Skin pic" style="background: #fff; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
                                         padding: 2px;" width="50px" height="auto"> -->
                                     </div>

@@ -938,7 +938,7 @@ public borderradiusImg: any
       }
     } else {
       if (document.getElementById("header-text-img-white") !== null) {
-        document.getElementById("header-text-img-white").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="80" height="80" style="background-color:#ffffff00; object-fit: contain; margin: 13px 0 0 4px;">`;
+        document.getElementById("header-text-img-white").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="80" height="80" style="background-color:#ffffff00; object-fit: contain; margin: 6px 0 6px 6px;">`;
         // document.getElementById("footer-img").innerHTML = `<img src="${this.FooterImgUrl}" alt="Logo" width="70%" height="auto" style="float:right;margin-right: 0.5rem; margin-bottom: 0.7rem; display:none;">`;
       }
     }
@@ -971,8 +971,11 @@ public borderradiusImg: any
 
     if (document.getElementById("header-text") !== null || document.getElementById("body-text") !== null) {
       document.getElementById("header-text").innerHTML = `${this.AlertEditTitle}`;
-      document.getElementById("header-text-scroll").innerHTML = `<style> #header-text::-webkit-scrollbar {
-            display: none;
+      document.getElementById("header-text-scroll").innerHTML = `<style> #header-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
         } </style>`;
       document.getElementById("body-text").innerHTML = `${this.AlertEditBody}`;
     }
