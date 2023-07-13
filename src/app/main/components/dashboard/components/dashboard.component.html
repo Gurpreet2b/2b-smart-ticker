@@ -2119,26 +2119,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <div class="modal-dialog alert-static">
         <div style="padding: 16px;" *ngIf="ShowFooter">
-            <div class="modal-content" [ngStyle]="{'background-color': AlertBgColor}">
-                <!-- Modal Header -->
-                <div class="">
-                    <div class="row" style="display: flex;">
-                        <!-- <div class="col-md-5" [ngStyle]="{'color': footerColor}">
+            <div class="modal-content" style="padding: 0 13px 0 13px;"
+            [ngStyle]="{'background-color': AlertBgColor, 'border': Think + 'px solid' + HeaderBorder}">
+            <!-- Modal Header -->
+            <div class="">
+                <div class="row" style="display: flex;" [ngStyle]="{'background-color': HeaderBgColor}">
+                            <!-- <div class="col-md-5" [ngStyle]="{'color': footerColor}">
                             <div [ngStyle]="{'font-size': HeaderFontSize + 'px'}" class="mt-2"
                                 style="font-family: system-ui; font-weight: bold; color: #7e7e7e;">
                                 {{HeaderTitle}}
                             </div>
                         </div> -->
-                        <div class="col-md-11">
-                            <div [ngStyle]="{'text-align': HeaderLogo}">
-                                <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}" class="mt-2" alt="Skin pic"
-                                    style="width: 100px; height: auto;">
+                            <div class="col-md-5">
+                                <div [ngStyle]="{'text-align': HeaderLogo}">
+                                    <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}" class="mt-1 mb-2" alt="Skin pic"
+                                        style="width: 100px; height: auto;">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-1">
-                            <button type="button" class="close" data-bs-dismiss="modal" style="background-color: transparent;
+                            <div class="col-md-6">
+                                <h3 class="emergency-scroll title-skin-alert" title="{{TextTitle}}"
+                                    [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#000'}"
+                                    style="overflow-x: auto; height: 95px;">
+                                    {{TextTitle}}
+                                </h3>
+                            </div>
+                            <div class="col-md-1">
+                                <button type="button" class="close" data-bs-dismiss="modal" style="background-color: transparent;
                             border: 0; font-size: 40px;">&times;</button>
-                        </div>
+                            </div>
+                       
                     </div>
                 </div>
 
@@ -2147,22 +2156,22 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="">
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col-md-12">
                                         <h3
                                             style="color: #fff; font-family: 'Dubai-Bold', sans-serif !important; word-wrap: break-word;">
                                             {{TextTitle}}
                                         </h3>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h6 style="height: 110px; overflow-x: hidden;">
+                                        <h6 style="height: 200px; overflow-x: hidden;">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <h6 id="emergency-body-text"
-                                                        style="color: #fff; font-family: 'Dubai-Bold', sans-serif !important; word-wrap: break-word;">
+                                                        style="color: #000; font-family: 'Dubai-Bold', sans-serif !important; word-wrap: break-word;">
                                                         <!-- {{TextBody}} -->
                                                     </h6>
                                                 </div>
@@ -2206,15 +2215,15 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-12" style="padding-left: 0; display: flex; justify-content: end;">
                         <div>
                             <img *ngIf="FooterImageUrl" src="{{FooterImageUrl}}" alt="skin pic"
                                 style="width: 350px; height: auto;">
                         </div>
                     </div>
-
-                </div>
+                   
+                </div> -->
 
                 <!-- <div class="row" style="margin: 4px;" [ngStyle]="{'background-color': FooterBgColor}">
                     <div class="col-md-5" style="padding-left: 0;">
@@ -2234,16 +2243,23 @@
         </div>
 
         <div style="padding: 16px;" *ngIf="!ShowFooter">
-            <div class="modal-content"
+            <div class="modal-content" style="padding: 0 13px 0 13px;"
                 [ngStyle]="{'background-color': AlertBgColor, 'border': Think + 'px solid' + HeaderBorder}">
                 <!-- Modal Header -->
                 <div class="">
                     <div class="row" style="display: flex;" [ngStyle]="{'background-color': HeaderBgColor}">
-                        <div class="col-md-11">
+                        <div class="col-md-5">
                             <div [ngStyle]="{'text-align': HeaderLogo}">
                                 <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}" alt="Skin pic"
                                     style="width: 100px; height: auto; padding: 2px;">
                             </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class="emergency-scroll title-skin-alert"
+                                [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#000'}"
+                                style="overflow-x: auto; height: 95px;">
+                                {{TextTitle}}
+                            </h3>
                         </div>
                         <div class="col-md-1" style="padding-right: 20px;">
                             <button type="button" class="close" data-bs-dismiss="modal" style="background-color: transparent;
@@ -2257,22 +2273,21 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="">
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col-md-12">
-                                        <h3 class="emergency-scroll"
-                                            [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#fff'}"
-                                            style="overflow-x: auto; height: 95px;">
+                                        <h3 class="emergency-scroll" [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#fff'}"
+                                        style="overflow-x: auto; height: 95px;">
                                             {{TextTitle}}
                                         </h3>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h6 style="height: 110px; overflow-x: hidden;">
+                                        <h6 style="height: 200px; overflow-x: hidden;">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <h6 [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#fff'}"
+                                                    <h6 [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#000'}"
                                                         id="emergency-body-text">
                                                         <!-- {{TextBody}} -->
                                                     </h6>
@@ -2316,20 +2331,20 @@
                     </div>
                 </div>
 
-                <div class="row" [ngStyle]="{'background-color': FooterBgColor}">
+                <!-- <div class="row" [ngStyle]="{'background-color': FooterBgColor}">
                     <div class="col-md-12">
                         <div [ngStyle]="{'text-align': FooterLogo}">
                             <img *ngIf="FooterImageUrl" src="{{FooterImageUrl}}" alt="skin pic"
                                 style="width: 90%; height: auto;">
                         </div>
                     </div>
-                    <!-- <div class="col-md-7 text-right" [ngStyle]="{'color': footerColor}">
+                    <div class="col-md-7 text-right" [ngStyle]="{'color': footerColor}">
                         <div [ngStyle]="{'font-size': FooterFontSize + 'px'}"
                             class="mt-2">
                             {{FooterText}}
                         </div>
-                    </div> -->
-                </div>
+                    </div>
+                </div> -->
 
             </div>
         </div>

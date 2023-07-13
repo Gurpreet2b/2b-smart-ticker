@@ -10,7 +10,11 @@
     background-color: silver;
     outline: 1px solid #eee;
 }
-
+.title-skin-alert{
+    white-space: nowrap;
+    width: 10vw;
+    text-overflow: ellipsis;
+}
 .last-scroll {
     display: block;
     overflow-x: hidden;
@@ -255,6 +259,10 @@
 
 .m-r-2 {
     margin-right: 3rem !important;
+}
+
+.emergency-scroll::-webkit-scrollbar {
+    display: none;
 }
 
 .emergency-scroll-box {

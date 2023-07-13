@@ -189,6 +189,7 @@ export class DashboardComponent implements OnInit {
       this.footerColor = item.skin.footer_text_color;
       this.FooterFontSize = item.skin.footer_font_size;
       this.FooterText = item.skin.footer_text;
+      this.paddingSkinAlert = item.skin.padding_header_alert;
       this.acknowledgementRequired = item.acknowledgement_required;
       this.AddPrint = item.add_print_button;
       this.AllowFeedback = item.allow_feedback;
@@ -506,6 +507,7 @@ export class DashboardComponent implements OnInit {
   public footerColor: any;
   public FooterFontSize: any;
   public FooterText: any = '';
+  public paddingSkinAlert: any;
   public acknowledgementRequired: any;
   public AddPrint: any;
   public AllowFeedback: any;
