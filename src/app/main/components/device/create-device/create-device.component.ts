@@ -28,7 +28,7 @@ export class CreateDeviceComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    this.authService.SetRestaurantName(`Digital signage devices`);
+    this.authService.SetRestaurantName(`Digital Signage Devices`);
   }
 
   ngOnChanges() {

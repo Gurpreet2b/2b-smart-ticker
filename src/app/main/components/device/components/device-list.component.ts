@@ -28,7 +28,7 @@ export class DeviceListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.authService.SetRestaurantName(`Digital signage devices`);
+    this.authService.SetRestaurantName(`Digital Signage Devices`);
     this.GetDeviceList(1);
     this.currentURL = window.location.href;
   }
