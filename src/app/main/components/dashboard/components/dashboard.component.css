@@ -18,6 +18,13 @@
     width: 100%;
 }
 
+.text-width-less{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 18vw;
+}
+
 .last-scroll thead th {
     position: sticky;
     top: 0;
@@ -284,7 +291,7 @@
 
 .p-2 {
     padding: 20px !important;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 
 .add-w-box-size {

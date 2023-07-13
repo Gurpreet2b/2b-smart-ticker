@@ -12,6 +12,12 @@
     text-overflow: ellipsis;
     margin-top: 2.5rem;
 }
+.text-width-less{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 18vw;
+}
 .alert-static {
     max-width: 500px;
     margin: 1.75rem auto;

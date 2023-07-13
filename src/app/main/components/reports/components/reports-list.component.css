@@ -5,7 +5,12 @@
 .statistics .box {
     background-color: var(--dk-dark-bg);
 }
-
+.text-width-less{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 18vw;
+}
 .row{
     margin: 0;
 }

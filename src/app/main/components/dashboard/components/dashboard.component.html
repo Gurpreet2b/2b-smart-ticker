@@ -993,7 +993,7 @@
         <div class="modal-content" style="margin-left: 9rem;">
             <div class="scroll p-2">
                 <div class="modal-header">
-                    <h4 class="modal-title mt-2">Sent Alert Details - {{AlertName}}</h4>
+                    <h4 class="modal-title mt-2 text-width-less" title="{{AlertName}}">Sent Alert Details - {{AlertName}}</h4>
                     <div class="col-md-2 right-side">
                         <button type="button" class="close-button" data-bs-dismiss="modal" style="background-color: transparent;
                     border: 0; font-size: 40px;">&times;</button>
@@ -1646,7 +1646,7 @@
         <div class="modal-content" style="margin-left: 3rem; width: 990px;">
             <div class="scroll p-3">
                 <div class="modal-header">
-                    <h4 class="modal-title">Feedback Alert Details - {{AlertName}}</h4>
+                    <h4 class="modal-title text-width-less" title="{{AlertName}}">Feedback Alert Details - {{AlertName}}</h4>
                     <div class="col-md-2 right-side">
                         <button type="button" class="close-button" data-bs-dismiss="modal" style="background-color: transparent;
                     border: 0; font-size: 40px;">&times;</button>
@@ -1788,7 +1788,7 @@
                                 </div>
                                 <div class="col-md-5">
                                     <div class="bg-color">
-                                        <h4>Question: <img *ngIf="ques.image" src="{{ques.image}}" alt="Logo" width="25"
+                                        <h4 class="text-width-less" title="{{ques.question_text}}">Question: <img *ngIf="ques.image" src="{{ques.image}}" alt="Logo" width="25"
                                                 height="25"> {{ques.question_text}}</h4>
                                         <div class="ques-sroll">
                                             <div class="row" *ngFor="let ans of PieChartData; let ansIndex=index">
@@ -1965,7 +1965,7 @@
         <div class="modal-content" style="margin-left: 9rem;">
             <div class="">
                 <div class="modal-header">
-                    <h4 class="modal-title mt-2">User Details - {{UserName}} </h4>
+                    <h4 class="modal-title mt-2 text-width-less" title="{{UserName}}">User Details - {{UserName}} </h4>
                     <div class="col-md-2 right-side">
                         <button type="button" class="close-button" data-bs-dismiss="modal" style="background-color: transparent;
                     border: 0; font-size: 40px;">&times;</button>

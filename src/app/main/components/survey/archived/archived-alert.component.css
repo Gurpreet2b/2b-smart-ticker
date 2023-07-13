@@ -10,6 +10,12 @@
     max-width: 500px;
     margin: 1.75rem auto;
 }
+.text-width-less{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 18vw;
+}
 .scroll {
     width: 990px;
     height: 600px;

@@ -13,6 +13,12 @@
     overflow-y: scroll;
     display: block;
 }
+.text-width-less{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 18vw;
+}
 .maroon-box {
     width: 20px;
     height: 20px;
