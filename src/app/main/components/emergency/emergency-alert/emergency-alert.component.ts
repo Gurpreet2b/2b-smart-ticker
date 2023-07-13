@@ -26,7 +26,7 @@ export class EmergencyAlertComponent implements OnInit {
   public HeaderBorder: any = '#00838f';
   public Think: any = 5;
   public HeaderLogo: any = 'left';
-
+  public paddingSkinAlert: any
   public HeaderTitle: any = '';
   public HeaderFontSize: any = '';
   public HeaderBgColor: any = '';
@@ -66,6 +66,7 @@ export class EmergencyAlertComponent implements OnInit {
   public SkinIdListLocalStorge: any = [];
   public SkinListLocal: any;
   public AlertChannelDetails: any;
+  public RSVPHeaderBgColor: any;
 
   constructor(private http: HttpService,
     private toastr: ToastrService, public translate: TranslateService,
@@ -567,6 +568,7 @@ export class EmergencyAlertComponent implements OnInit {
     this.HeaderTextImgTicker = environment.apiUrl + res.team_image;
     this.AlertBgColor = res.alert_background_color;
     this.HeaderBgColor = res.header_background_color;
+    this.RSVPHeaderBgColor = res.rsvp_header_background_color;
     this.WhiteSkinMessage = res.white_skin_message_body;
     this.HeaderTitle = res.header_custom_message;
     this.HeaderTitleCheck = res.header_custom_message;
@@ -579,6 +581,7 @@ export class EmergencyAlertComponent implements OnInit {
     this.FooterImgUrl = environment.apiUrl + res.alternate_footer_image;
     this.FooterLogo = res.footer_align;
     this.FooterBgColor = res.footer_background_color;
+    this.paddingSkinAlert = res.padding_header_alert
     this.footerColor = res.footer_text_color;
     this.FooterFontSize = res.footer_font_size;
     this.FooterText = res.footer_text;
@@ -845,8 +848,8 @@ export class EmergencyAlertComponent implements OnInit {
       }
     } else {
       if (document.getElementById("header-text-img-white") !== null || document.getElementById("footer-img") !== null) {
-        document.getElementById("header-text-img-white").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="18%" height="18%" style="background-color:#ffffff00; object-fit: contain; margin:3px;">`;
-        document.getElementById("footer-img").innerHTML = `<img src="${this.FooterImgUrl}" alt="Logo" width="65%" height="auto" style="float:right;">`;
+        document.getElementById("header-text-img-white").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="25%" style="background-color:#ffffff00; object-fit: contain; margin:5px 0 5px 5px;">`;
+        document.getElementById("footer-img").innerHTML = `<img src="${this.FooterImgUrl}" alt="Logo" width="65%" height="auto" style="float:right; display: none;">`;
       }
     }
 
@@ -864,7 +867,11 @@ export class EmergencyAlertComponent implements OnInit {
 
     if (document.getElementById("header-text") !== null || document.getElementById("body-text") !== null) {
       document.getElementById("header-text").innerHTML = `${this.AlertEditTitle}`;
-      document.getElementById("header-text-scroll-emergency").innerHTML = `<style> #header-text::-webkit-scrollbar {display: none;} </style>`;
+      document.getElementById("header-text-scroll-emergency").innerHTML =`<style> #header-text p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        } </style>`;
       document.getElementById("body-text").innerHTML = `${this.AlertEditBody}`;
     }
 

@@ -165,7 +165,7 @@
                                                                             <tr
                                                                                 *ngFor="let user of UserList | paginate: { id:'first', itemsPerPage: 10, currentPage: currentPageUserDetail, totalItems: totalItemsUserDetail }; let i=index">
 
-                                                                                <td class="text-left">
+                                                                                <td class="text-left" id="appadd" title="{{user.username}}">
                                                                                     <span class="cursor"
                                                                                         (click)="IsUserDetailById(user)"
                                                                                         data-bs-toggle="modal"
@@ -399,7 +399,7 @@
                                                                     <tbody>
                                                                         <tr
                                                                             *ngFor="let alert of AlertList | paginate: { id:'second', itemsPerPage: 10, currentPage: currentPage, totalItems: totalItems }; let i=index">
-                                                                            <td class="text-left">
+                                                                            <td class="text-left" id="appadd" title="{{alert.name}}">
                                                                                 <span
                                                                                     *ngIf="alert.alert_type === 'PopupAlert'"
                                                                                     class="cursor" data-bs-toggle="modal"
@@ -499,7 +499,7 @@
                                                                     <tbody>
                                                                         <tr
                                                                             *ngFor="let survey of SurveyList | paginate: { id:'third', itemsPerPage: 10, currentPage: currentPageSurveyDetail, totalItems: totalItemsSurveyDetail }; let i=index">
-                                                                            <td class="text-left">
+                                                                            <td class="text-left" id="appadd" title="{{survey.name}}">
                                                                                 <span class="cursor" data-bs-toggle="modal"
                                                                                     data-bs-target="#SurveyChartModal"
                                                                                     (click)="GetGraphStatsSurvey(survey, survey)">
@@ -620,7 +620,7 @@
                                                                 <img src="assets/img/sent-alert-action/rsvp.png" alt="">
                                                             </span>
                                                         </td>
-                                                        <td>
+                                                        <td id="appadd" title="{{alert.name}}">
                                                             <span *ngIf="alert.alert_type === 'PopupAlert'"
                                                                 class="cursor" data-bs-toggle="modal"
                                                                 data-bs-target="#ColumnChartModal"
@@ -740,7 +740,7 @@
                                                     <tr
                                                         *ngFor="let users of UsersList | paginate: { id:'fifth', itemsPerPage: 10, currentPage: currentPageUsers, totalItems: totalItemsUsers }; let i=index">
 
-                                                        <td>
+                                                        <td id="appadd" title="{{users.username}}">
                                                             <span class="cursor"
                                                                 (click)="IsUserDetailById(users)"
                                                                 data-bs-toggle="modal"
@@ -859,7 +859,7 @@
                                                                 <img src="assets/img/sent-alert-action/survey.png" alt="">
                                                             </span>
                                                         </td>
-                                                        <td>
+                                                        <td id="appadd" title="{{surveys.name}}">
                                                             <span class="cursor" data-bs-toggle="modal"
                                                                 data-bs-target="#SurveyChartModal"
                                                                 (click)="GetGraphStatsSurvey(surveys, surveys)">

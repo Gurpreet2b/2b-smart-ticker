@@ -211,7 +211,7 @@
                                                         <img src="assets/img/sent-alert-action/fullscreen.png" alt="">
                                                     </span> -->
                                                 </td>
-                                                <td>
+                                                <td id="appadd" title="{{sent.name}}">
                                                     {{sent.name}}
                                                 </td>
                                                 <td>{{sent.created_date | date}}, {{sent.created_date |
@@ -382,7 +382,7 @@
                                                 <tr
                                                     *ngFor="let user of UserList | paginate: { id:'third', itemsPerPage: 10, currentPage: currentPageUserDetail, totalItems: totalItemsUserDetail }; let i=index">
 
-                                                    <td class="text-left">
+                                                    <td class="text-left" id="appadd">
                                                         <span class="cursor" (click)="IsUserDetailById(user)"
                                                             data-bs-toggle="modal"
                                                             data-bs-target="#UserDetailChartListModal">
@@ -456,7 +456,7 @@
                                         <tbody>
                                             <tr
                                                 *ngFor="let alert of AlertList | paginate: { id:'fifth', itemsPerPage: 10, currentPage: currentPage, totalItems: totalItems }; let i=index">
-                                                <td class="text-left">
+                                                <td class="text-left" id="appadd" title="{{alert.name}}">
                                                     <span class="cursor" data-bs-toggle="modal"
                                                         data-bs-target="#ColumnChartModal"
                                                         (click)="GetGraphStats(alert, 'alert')">
@@ -531,7 +531,7 @@
                                         <tbody>
                                             <tr
                                                 *ngFor="let survey of SurveyList | paginate: { itemsPerPage: 10, currentPage: currentPageSurveyDetail, totalItems: totalItemsSurveyDetail }; let i=index">
-                                                <td class="text-left">
+                                                <td class="text-left"  id="appadd" title="{{survey.name}}">
                                                     <span class="cursor" data-bs-toggle="modal"
                                                         data-bs-target="#SurveyChartModal"
                                                         (click)="GetGraphStatsSurvey(survey.id, survey)">
@@ -717,7 +717,7 @@
                                                             <div class="emergency-scroll-box">
                                                                 <!-- <h3>Emergency Alerts </h3> -->
                                                                 <div class="row">
-                                                                    <div class="col-md-5 mb-3 alert-setting-card m-r-0 justify-content-center d-flex"
+                                                                    <div class="col-md-5 mb-3 alert-setting-card m-r-0"
                                                                         *ngFor="let emergency of EmergencyList | paginate: { itemsPerPage: 10, currentPage: currentPage, totalItems: totalItems }; let i=index">
                                                                         <div class="sent-emergency-alert">
                                                                             <div class="header-emergency">

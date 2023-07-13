@@ -11,6 +11,11 @@
     flex: 0 0 41.666667%;
     max-width: 39.666667%;
 } */
+.title-skin-alert{
+    white-space: nowrap;
+    width: 30px;
+    text-overflow: ellipsis;
+}
 .modal-content {
     border: none !important;
 }
@@ -183,4 +188,10 @@
 
 .alertTitle-scroll::-webkit-scrollbar {
     display: none;
+}
+.title-skin-alert {
+    white-space: nowrap;
+    width: 150px;
+    /* overflow: hidden; */
+    text-overflow: ellipsis;
 }

@@ -1,4 +1,3 @@
-
 .last-scroll::-webkit-scrollbar {
     width: 8px;
 }
@@ -32,10 +31,12 @@
 .user-scroll::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
+
 .user-scroll::-webkit-scrollbar-thumb {
     background-color: silver;
     outline: 1px solid #eee;
 }
+
 .user-scroll {
     overflow-x: hidden;
     height: 400px;
@@ -220,6 +221,7 @@
     background-color: #fff;
     margin-top: 7px;
 }
+
 .footer-emergency {
     background: #f0f2f5;
     width: 250px;
@@ -243,7 +245,8 @@
 .m-r-0 {
     margin-right: 2rem;
 }
-.m-r-2{
+
+.m-r-2 {
     margin-right: 3rem !important;
 }
 
@@ -267,7 +270,7 @@
     outline: 1px solid #eee;
 }
 
-.add-widget-box{
+.add-widget-box {
     margin: 1rem 0 0 0;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -275,15 +278,16 @@
     background-color: #fff;
 }
 
-.bg-success{
+.bg-success {
     border-radius: 5px;
 }
-.p-2{
+
+.p-2 {
     padding: 20px !important;
     margin-left: 20px;
 }
 
-.add-w-box-size{
+.add-w-box-size {
     border-radius: 5px;
     background-color: rgba(0, 0, 0, .03) !important;
     color: #000 !important;

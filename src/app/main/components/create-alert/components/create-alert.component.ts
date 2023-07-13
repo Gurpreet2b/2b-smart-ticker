@@ -37,8 +37,8 @@ export class CreateAlertComponent implements OnInit {
   public HeaderBgColor: any = '';
   public paddingSkinAlert: any
   public AlertBgColor: any = '';
-public alertBgImg: any;
-public borderradiusImg: any
+  public alertBgImg: any;
+  public borderradiusImg: any
   public FooterImageUrl: any = '';
   public FooterImgUrl: any = '';
   public FooterImgUrlSkin: any = '';
@@ -63,7 +63,8 @@ public borderradiusImg: any
   public IsCheckPreview: any = false;
   public SkinListLocal: any;
   public WhiteSkinMessage: any;
-  public newLogoSkinalert:any = '';
+  public newLogoSkinalert: any = '';
+  public RSVPHeaderBgColor: any;
 
   disableDate() {
     return false;
@@ -180,7 +181,7 @@ public borderradiusImg: any
   public AlertChannelDetails: any;
 
   ngOnInit(): void {
-    this.authService.SetRestaurantName(`Send new Alert`);
+    this.authService.SetRestaurantName(`Send New Alert`);
     this.AlertId = this.activeRoute.snapshot.params['id'] || 0;
     this.AlertType = this.activeRoute.snapshot.params['type'] || '';
     this.AlertEdit = this.activeRoute.snapshot.params['edit'] || '';
@@ -309,8 +310,9 @@ public borderradiusImg: any
     this.AlertBgColor = res.alert_background_color;
     this.alertBgImg = res.alert_background_image;
     this.borderradiusImg = res.border_radius;
-    this.newLogoSkinalert =  res.new_logo;
+    this.newLogoSkinalert = res.new_logo;
     this.HeaderBgColor = res.header_background_color;
+    this.RSVPHeaderBgColor = res.rsvp_header_background_color;
     this.paddingSkinAlert = res.padding_header_alert
     this.WhiteSkinMessage = res.white_skin_message_body;
     this.Textcolor = res.text_color;
@@ -323,7 +325,7 @@ public borderradiusImg: any
     this.FooterImageUrl = environment.apiUrl + res.footer_background_image;
     this.FooterImgUrl = environment.apiUrl + res.alternate_footer_image;
     // this.FooterImgUrlSkin = environment.apiUrl + res.info_logo;
-    
+
     this.FooterLogo = res.footer_align;
     this.FooterBgColor = res.footer_background_color;
     this.footerColor = res.footer_text_color;
@@ -938,7 +940,7 @@ public borderradiusImg: any
       }
     } else {
       if (document.getElementById("header-text-img-white") !== null) {
-        document.getElementById("header-text-img-white").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="80" height="80" style="background-color:#ffffff00; object-fit: contain; margin: 6px 0 6px 6px;">`;
+        document.getElementById("header-text-img-white").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="60" height="60" style="background-color:#ffffff00; object-fit: contain; margin: 5px 0 5px 5px;">`;
         // document.getElementById("footer-img").innerHTML = `<img src="${this.FooterImgUrl}" alt="Logo" width="70%" height="auto" style="float:right;margin-right: 0.5rem; margin-bottom: 0.7rem; display:none;">`;
       }
     }
@@ -971,11 +973,10 @@ public borderradiusImg: any
 
     if (document.getElementById("header-text") !== null || document.getElementById("body-text") !== null) {
       document.getElementById("header-text").innerHTML = `${this.AlertEditTitle}`;
-      document.getElementById("header-text-scroll").innerHTML = `<style> #header-text {
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+      document.getElementById("header-text-scroll").innerHTML = `<style> #header-text p {
+           white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         } </style>`;
       document.getElementById("body-text").innerHTML = `${this.AlertEditBody}`;
     }
@@ -1033,8 +1034,8 @@ public borderradiusImg: any
     document.getElementById("alert-Scroll-border").style.backgroundColor = `${this.AlertBgColor}`;
 
     document.getElementById("header-scroll-img").innerHTML = `<img src="${this.HeaderTextImgTicker}" alt="Logo" width="" height="52">`;
-    document.getElementById("header-scroll-text").innerHTML = `${this.AlertScrollingEditTitle} ${test} ${this.AlertScrollingEditBody}`;
-    // document.getElementById("header-scroll-texts").innerHTML = `${this.AlertScrollingEditTitle} ${test} ${this.AlertScrollingEditBody}`;
+    document.getElementById("header-scroll-text").innerHTML = `${this.AlertScrollingEditTitle} ${this.AlertScrollingEditBody}`;
+    document.getElementById("header-scroll-texts").innerHTML = `${this.AlertScrollingEditTitle} ${this.AlertScrollingEditBody}`;
     document.getElementById("header-scroll-text").style.fontSize = `24px`;
     if (this.IsTickerClose && document.getElementById("tickerCloseId") !== null) {
       document.getElementById("tickerCloseId").style.display = `block`;
@@ -1172,8 +1173,10 @@ public borderradiusImg: any
 
     if (document.getElementById("header-RSVP-text") !== null || document.getElementById("body-RSVP-text") !== null) {
       document.getElementById("header-RSVP-text").innerHTML = `${this.AlertRSVPEditTitle}`;
-      document.getElementById("header-text-scroll-RSVP").innerHTML = `<style> #header-RSVP-text::-webkit-scrollbar {
-        display: none;
+      document.getElementById("header-text-scroll-RSVP").innerHTML = `<style> #header-RSVP-text p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     } </style>`;
       document.getElementById("body-RSVP-text").innerHTML = `${this.AlertRSVPEditBody}`;
     }
@@ -1194,7 +1197,7 @@ public borderradiusImg: any
       document.getElementById("footer-RSVP-text").innerHTML = `${this.FooterText}`;
     }
     else if (document.getElementById("footer-RSVP-img") !== null || document.getElementById("header-RSVP-text-img") !== null) {
-      document.getElementById("footer-RSVP-img").innerHTML = `<img src="${this.FooterImgUrl}" alt="Logo" width="50%" height="auto" style="background-color:#ffffff00; float:right;">`;
+      document.getElementById("footer-RSVP-img").innerHTML = `<img src="${this.FooterImgUrl}" alt="Logo" width="50%" height="auto" style="background-color:#ffffff00; float:right; display:none;">`;
       document.getElementById("header-RSVP-text-img").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="80" height="80" style="background-color:#ffffff00; object-fit: contain; margin:3px;">`;
     }
 
@@ -1648,7 +1651,7 @@ public borderradiusImg: any
           this.SechduleData.end_after_date = res.data.scheduled_data.end_after_date;
           this.SechduleData.alert_start_time = res.data.scheduled_data.alert_start_time;
           this.SechduleData.alert_end_time = res.data.scheduled_data.alert_end_time;
-         
+
         }
 
         if (!this.PolicyAlertSetting[2].checked) {

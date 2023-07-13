@@ -103,15 +103,16 @@
                                                 <img src="assets/img/sent-alert-action/rsvp.png" alt="">
                                             </span>
                                         </td>
-                                        <td>
+                                        <td id="appadd" title="{{sent.name}}">
                                             {{sent.name}}
                                         </td>
-                                        <td>{{dateformat(sent.created_date)}}, {{Timeformat(sent.created_date)}}</td>
-                                        <td>{{sent.status}}</td>
+                                        <td class="text-w-set">{{dateformat(sent.created_date)}},
+                                            {{Timeformat(sent.created_date)}}</td>
+                                        <td class="text-w-set">{{sent.status}}</td>
                                         <td>{{sent.approved_status}}</td>
                                         <td>{{sent.scheduled}}</td>
                                         <td>{{sent.sent_by}}</td>
-                                        <td>{{sent.like_count}}</td>
+                                        <td class="text-w-set">{{sent.like_count}}</td>
                                         <td class="marg w-icons-sent">
                                             <span *ngIf="sent.status !== 'Pending'">
                                                 <span *ngIf="sent.status !== 'Failed'">
@@ -183,8 +184,8 @@
                                                         data-bs-toggle="modal" data-bs-target="#PreviewRSVPSentModal">
                                                         <img src="assets/img/sent-alert-action/preview.png" alt="">
                                                     </span>
-                                                    <span class="text-danger cursor" title="Delete" (click)="delete(sent.id)"
-                                                        *ngIf="RoleAssign[0].delete">
+                                                    <span class="text-danger cursor" title="Delete"
+                                                        (click)="delete(sent.id)" *ngIf="RoleAssign[0].delete">
                                                         <img src="assets/img/sent-alert-action/delete.png" alt="">
                                                     </span>
                                                 </span>
@@ -295,61 +296,74 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <div class="modal-dialog alert-static" style="margin: 0;">
         <div *ngIf="ShowFooter" class="showingFooter">
-            <div class="modal-content"
-                [ngStyle]="{'background-color': AlertBgColor, 'width': AlertWidth, 'height': AlertHeight}">
+            <div class="modal-content">
                 <!-- Modal Header -->
-                <div class="">
-                    <div class="row" style="display: flex;">
-                        <!-- <div class="col-md-5" [ngStyle]="{'color': footerColor}">
+                <div
+                    [ngStyle]="{'background-color': AlertBgColor, 'border': Think + 'px solid' + HeaderBorder, 'width': AlertWidth, 'height': AlertHeight}">
+                    <div [ngStyle]="{'background-color': HeaderBgColor}">
+                        <div class="row" style="display: flex;">
+                            <!-- <div class="col-md-5" [ngStyle]="{'color': footerColor}">
                             <div [ngStyle]="{'font-size': HeaderFontSize + 'px'}" class="mt-2"
                                 style="font-family: system-ui; font-weight: bold; color: #7e7e7e;">
                                 {{HeaderTitle}}
                             </div>
                         </div> -->
-                        <div class="col-md-11">
-                            <div [ngStyle]="{'text-align': HeaderLogo}">
-                                <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}" class="mt-2" alt="Skin pic"
-                                    style="width: 100px; height: auto;">
+                            <div class="col-md-5">
+                                <div [ngStyle]="{'text-align': HeaderLogo}">
+                                    <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}" class="mt-2" alt="Skin pic"
+                                        style="width: 100px; height: auto;">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <h3 class="alertTitle-scroll title-alert-header" id="sent-title-text" style="color: #fff; font-family: 'Dubai-Bold', sans-serif !important; word-wrap: break-word;
+                                max-height: 50px; overflow-x: auto; position:absolute; bottom:0px;;">
+                            </h3>
+                            </div>
+                            <div class="col-md-1">
+                                <button type="button" class="close" data-bs-dismiss="modal" style="background-color: transparent;
+                            border: 0; font-size: 40px;">&times;</button>
                             </div>
                         </div>
-                        <div class="col-md-1">
-                            <button type="button" class="close" data-bs-dismiss="modal" style="background-color: transparent;
-                            border: 0; font-size: 40px;">&times;</button>
-                        </div>
                     </div>
-                </div>
 
-                <div class="modal-body" style="padding: 10px; margin: 0;">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h3 class="alertTitle-scroll" id="sent-title-text" style="color: #fff; font-family: 'Dubai-Bold', sans-serif !important; word-wrap: break-word;
-                                            max-height: 50px; overflow-x: auto;">
-                                        </h3>
-                                    </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h6 style="overflow-x: hidden;" [ngStyle]="{'height': AlertBodyHeight}">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div id="sent-body-text"
-                                                        style="color: #fff; font-family: 'Dubai-Bold', sans-serif !important; word-wrap: break-word;">
-                                                      
+
+
+                    <div class="modal-body" style="padding: 10px; margin: 0;">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="">
+                                    <!-- <div class="row">
+                                        <div class="col-md-12">
+                                            <h3 class="alertTitle-scroll" id="sent-title-text" style="color: #fff; font-family: 'Dubai-Bold', sans-serif !important; word-wrap: break-word;
+                                                max-height: 50px; overflow-x: auto;">
+                                            </h3>
+                                        </div>
+                                    </div> -->
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6 style="overflow-x: hidden;" [ngStyle]="{'height': AlertBodyHeight}">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div id="sent-body-text"
+                                                            style="color: #fff; font-family: 'Dubai-Bold', sans-serif !important; word-wrap: break-word;">
+
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </h6>
+                                            </h6>
+                                        </div>
                                     </div>
-                                </div>
 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
 
                 <div style="position: absolute; bottom: 0; width: 100%;">
                     <div class="row ml-2">
@@ -384,15 +398,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-12" style="padding-left: 0; display: flex; justify-content: right;">
                             <div>
                                 <img *ngIf="FooterImageUrl" src="{{FooterImageUrl}}" alt="skin pic"
                                     style="width: 350px; height: auto;">
                             </div>
                         </div>
-                        
-                    </div>
+
+                    </div> -->
 
                     <!-- <div class="row" [ngStyle]="{'background-color': FooterBgColor}">
                         <div class="col-md-12">
@@ -407,64 +421,74 @@
         </div>
 
         <div *ngIf="!ShowFooter">
-            <div class="modal-content"
-                [ngStyle]="{'background-color': AlertBgColor, 'border': Think + 'px solid' + HeaderBorder, 'width': AlertWidth, 'height': AlertHeight}">
+            <div class="modal-content">
                 <!-- Modal Header -->
-                <div class="">
-                    <div class="row" style="display: flex;" [ngStyle]="{'background-color': HeaderBgColor}">
-                        <!-- <div class="col-md-5" [ngStyle]="{'color': footerColor}">
+                <div
+                    [ngStyle]="{'background-color': AlertBgColor, 'border': Think + 'px solid' + HeaderBorder, 'width': AlertWidth, 'height': AlertHeight}">
+                    <div [ngStyle]="{'background-color': HeaderBgColor}">
+                        <div class="row" style="display: flex;">
+                            <!-- <div class="col-md-5" [ngStyle]="{'color': footerColor}">
                             <div [ngStyle]="{'font-size': HeaderFontSize + 'px'}"
                                 class="mt-2" style="font-family: system-ui; font-weight: bold; color: #7e7e7e;">
                                 {{HeaderTitle}}
                             </div>
                         </div> -->
-                        <div class="col-md-11">
-                            <div [ngStyle]="{'text-align': HeaderLogo}">
-                                <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}" alt="Skin pic"
-                                    style="width: 80px; height: auto; padding: 2px;">
+                            <div class="col-md-5">
+                                <div [ngStyle]="{'text-align': HeaderLogo}">
+                                    <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}" alt="Skin pic"
+                                        style="width: 80px; height: auto; padding: 2px;">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <h3 class="alertTitle-scroll title-alert-header" id="sent-title-text"
+                                    [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#000'}" style="font-family: 'Dubai-Bold', sans-serif !important; word-wrap: break-word;
+                            max-height: 50px; overflow-x: auto; ">
+                                </h3>
+                            </div>
+                            <div class="col-md-1" style="padding-right: 20px;">
+                                <button type="button" class="close" data-bs-dismiss="modal" style="background-color: transparent;
+                            border: 0; font-size: 40px;">&times;</button>
                             </div>
                         </div>
-                        <div class="col-md-1" style="padding-right: 20px;">
-                            <button type="button" class="close" data-bs-dismiss="modal" style="background-color: transparent;
-                            border: 0; font-size: 40px;">&times;</button>
+                    </div>
+                    <div class="modal-body" style="padding: 10px; margin: 0;">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="">
+                                    <!-- <div class="row">
+                                        <div class="col-md-12">
+                                            <h3 class="alertTitle-scroll" id="sent-title-text"
+                                                [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#fff'}" style="font-family: 'Dubai-Bold', sans-serif !important; word-wrap: break-word;
+                                            max-height: 50px; overflow-x: auto;">
+                                               
+                                            </h3>
+                                        </div>
+                                    </div> -->
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6 style="overflow-x: hidden;" [ngStyle]="{'height': AlertBodyHeight}">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div id="sent-body-text"
+                                                            [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#fff'}">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </h6>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Modal body -->
-                <div class="modal-body" style="padding: 10px; margin: 0;">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h3 class="alertTitle-scroll" id="sent-title-text"
-                                            [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#fff'}" style="font-family: 'Dubai-Bold', sans-serif !important; word-wrap: break-word;
-                                        max-height: 50px; overflow-x: auto;">
-                                            <!-- {{TextTitle}} -->
-                                        </h3>
-                                    </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h6 style="overflow-x: hidden;" [ngStyle]="{'height': AlertBodyHeight}">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div id="sent-body-text"
-                                                        [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#fff'}">
-                                                        <!-- {{TextBody}} -->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </h6>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <div style="position: absolute; bottom: 0; width: 100%;">
                     <div class="row ml-2">
@@ -499,20 +523,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row" [ngStyle]="{'background-color': FooterBgColor}">
+                    <!-- <div class="row" [ngStyle]="{'background-color': FooterBgColor}">
                         <div class="col-md-12">
                             <div [ngStyle]="{'text-align': FooterLogo}">
                                 <img *ngIf="FooterImgUrl" src="{{FooterImgUrl}}" alt="skin pic"
                                     style="width: 60%; height: auto;">
                             </div>
                         </div>
-                        <!-- <div class="col-md-7 text-right" [ngStyle]="{'color': footerColor}">
+                        <div class="col-md-7 text-right" [ngStyle]="{'color': footerColor}">
                             <div [ngStyle]="{'font-size': FooterFontSize + 'px'}"
                                 class="mt-2">
                                 {{FooterText}}
                             </div>
-                        </div> -->
-                    </div>
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -523,14 +547,15 @@
 <div class="modal fade bd-example-modal-lg" id="PreviewScrollingModal">
     <div class="modal-dialog modal-lg modal-static1">
         <div class="modal-content">
+            <div  [ngStyle]="{'background-color': AlertBgColor}">
             <div class="row" style="display: flex; padding: 0; margin: 0;"
-                [ngStyle]="{'background-color': AlertBgColor}">
+            [ngStyle]="{'border': Think + 'px solid' + HeaderBorder}">
                 <div class="col-md-11" style="width: 100%">
                     <div style="display: flex;">
                         <span>
                             <img src="{{HeaderTextImg}}" alt="Logo" width="60px" height="auto">
                         </span>
-                        <marquee width="100%" [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#fff'}"
+                        <marquee width="100%" [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#000'}"
                             style="margin-top: 10px; font-family: 'Dubai-Bold', sans-serif !important; font-size: 20px;"
                             id="sent-body-ticker">
                             <!-- {{TextTitle}} {{TextBody}} -->
@@ -543,6 +568,7 @@
                 </div>
             </div>
         </div>
+        </div>
     </div>
 </div>
 
@@ -551,9 +577,9 @@
     <div class="modal-dialog alert-static" style="margin: 0;">
         <div *ngIf="ShowFooter === true">
             <div class="modal-content"
-                [ngStyle]="{'background-color': AlertBgColor, 'width': AlertWidth, 'height': AlertHeight}">
+            [ngStyle]="{'background-color': AlertBgColor, 'border': Think + 'px solid' + HeaderBorder, 'width': AlertWidth, 'height': AlertHeight}">
                 <!-- Modal Header -->
-                <div class="">
+                <div [ngStyle]="{'background-color': HeaderBgColor}">
                     <div class="row" style="display: flex;">
                         <!-- <div class="col-md-5" [ngStyle]="{'color': footerColor}">
                             <div [ngStyle]="{'font-size': HeaderFontSize + 'px'}" class="mt-2"
@@ -561,11 +587,17 @@
                                 {{HeaderTitle}}
                             </div>
                         </div> -->
-                        <div class="col-md-11">
+                        <div class="col-md-5">
                             <div [ngStyle]="{'text-align': HeaderLogo}">
                                 <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}" class="mt-2" alt="Skin pic"
                                     style="width: 120px; height: auto; padding: 10px;">
                             </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class="alertTitle-scroll title-alert-header" id="sent-rsvp-title-text" style="color: #fff; font-family: 'Dubai-Bold', sans-serif !important; word-wrap: break-word;
+                                            max-height: 50px; overflow-x: auto;">
+                                           
+                                        </h3>
                         </div>
                         <div class="col-md-1">
                             <button type="button" class="close" data-bs-dismiss="modal" style="background-color: transparent;
@@ -579,14 +611,14 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="">
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col-md-12">
                                         <h3 class="alertTitle-scroll" id="sent-rsvp-title-text" style="color: #fff; font-family: 'Dubai-Bold', sans-serif !important; word-wrap: break-word;
                                             max-height: 50px; overflow-x: auto;">
-                                            <!-- {{TextTitle}}  -->
+                                           
                                         </h3>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="row">
                                     <div class="col-md-12">
@@ -686,22 +718,29 @@
         </div>
 
         <div *ngIf="ShowFooter === false">
-            <div class="modal-content"
-                [ngStyle]="{'background-color': AlertBgColor, 'border': Think + 'px solid' + HeaderBorder, 'width': AlertWidth, 'height': AlertHeight}">
+            <div class="modal-content">
+                <div  [ngStyle]="{'background-color': AlertBgColor, 'border': Think + 'px solid' + HeaderBorder, 'width': AlertWidth, 'height': AlertHeight}">
                 <!-- Modal Header -->
-                <div class="">
-                    <div class="row" style="display: flex;" [ngStyle]="{'background-color': HeaderBgColor}">
+                <div [ngStyle]="{'background-color': HeaderBgColor}">
+                    <div class="row" style="display: flex;">
                         <!-- <div class="col-md-5" [ngStyle]="{'color': footerColor}">
                             <div [ngStyle]="{'font-size': HeaderFontSize + 'px'}"
                                 class="mt-2" style="font-family: system-ui; font-weight: bold; color: #7e7e7e;">
                                 {{HeaderTitle}}
                             </div>
                         </div> -->
-                        <div class="col-md-11">
+                        <div class="col-md-5">
                             <div [ngStyle]="{'text-align': HeaderLogo}">
                                 <img *ngIf="HeaderTextImg" src="{{HeaderTextImg}}" alt="Skin pic"
                                     style="width: 80px; height: auto; padding: 2px;">
                             </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class="alertTitle-scroll title-alert-header" id="sent-rsvp-title-text"
+                            [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#fff'}"
+                            style="max-height: 50px; overflow-x: auto;">
+                           
+                        </h3>
                         </div>
                         <div class="col-md-1" style="padding-right: 20px;">
                             <button type="button" class="close" data-bs-dismiss="modal" style="background-color: transparent;
@@ -715,15 +754,15 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="">
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col-md-12">
                                         <h3 class="alertTitle-scroll" id="sent-rsvp-title-text"
                                             [ngStyle]="IsWhiteColor?{'color': 'black'} : {'color': '#fff'}"
                                             style="max-height: 50px; overflow-x: auto;">
-                                            <!-- {{TextTitle}} -->
+                                           
                                         </h3>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="row">
                                     <div class="col-md-12">
@@ -804,7 +843,7 @@
                         </div>
                     </div>
                 </div>
-
+            </div>
                 <div class="row ml-2">
                     <div style="display: flex;">
                         <div style="cursor: pointer;" *ngIf="AddPrint">
@@ -837,20 +876,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" [ngStyle]="{'background-color': FooterBgColor}">
+                <!-- <div class="row" [ngStyle]="{'background-color': FooterBgColor}">
                     <div class="col-md-12">
                         <div [ngStyle]="{'text-align': FooterLogo}">
                             <img *ngIf="FooterImageUrl" src="{{FooterImageUrl}}" alt="skin pic"
                                 style="width: 50%; height: auto;">
                         </div>
                     </div>
-                    <!-- <div class="col-md-7 text-right" [ngStyle]="{'color': footerColor}">
+                    <div class="col-md-7 text-right" [ngStyle]="{'color': footerColor}">
                         <div [ngStyle]="{'font-size': FooterFontSize + 'px'}"
                             class="mt-2">
                             {{FooterText}}
                         </div>
-                    </div> -->
-                </div>
+                    </div>
+                </div> -->
 
             </div>
         </div>

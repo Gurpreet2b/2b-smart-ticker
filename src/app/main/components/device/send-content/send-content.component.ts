@@ -28,6 +28,7 @@ export class SendContentComponent implements OnInit {
   public HeaderTitle: any = '';
   public HeaderFontSize: any = '';
   public HeaderBgColor: any = '';
+  public paddingSkinAlert: any;
   public AlertBgColor: any = '';
   public WhiteSkinMessage: any;
 
@@ -83,18 +84,18 @@ export class SendContentComponent implements OnInit {
       image_caption: true,
       autoresize_bottom_margin: 20,
       // paste_block_drop: true,
-      file_picker_callback: function(cb, value, meta) {
+      file_picker_callback: function (cb, value, meta) {
         const input = document.createElement("input");
         input.setAttribute("type", "file");
         input.setAttribute("accept", "image/*");
-        input.onchange = function() {
+        input.onchange = function () {
           const file = input.files[0];
-          if(file.size > 1048576){
+          if (file.size > 1048576) {
             alert('File size cannot be larger than 1MB!')
             return;
           } else {
             const reader = new FileReader();
-            reader.onload = function() {
+            reader.onload = function () {
               const id = "blobid" + new Date().getTime();
               const blobCache = tinymce.activeEditor.editorUpload.blobCache;
               const base64 = (<string>reader.result).split(",")[1];
@@ -113,7 +114,7 @@ export class SendContentComponent implements OnInit {
   }
 
   OnDropImage(event: any) {
-    if(event.event.dataTransfer.files[0].size > 1048576){
+    if (event.event.dataTransfer.files[0].size > 1048576) {
       this.toastr.warning('File size cannot be larger than 1MB!')
       event.event.preventDefault();
       return;
@@ -209,6 +210,7 @@ export class SendContentComponent implements OnInit {
     this.HeaderTextImgTicker = environment.apiUrl + res.team_image;
     this.AlertBgColor = res.alert_background_color;
     this.HeaderBgColor = res.header_background_color;
+    this.paddingSkinAlert = res.padding_header_alert;
     this.WhiteSkinMessage = res.white_skin_message_body;
     this.HeaderTitle = res.header_custom_message;
     this.HeaderTitleCheck = res.header_custom_message;
@@ -240,7 +242,7 @@ export class SendContentComponent implements OnInit {
       this.AlertEditTitlePreview = this._sanitizer.sanitize(SecurityContext.HTML, this.AlertEditTitlePreview);
       // this.AlertEditTitlePreview = this.AlertEditTitlePreview;
     }
-    
+
     this.AlertEditTitle = this.alertForm.value.title;
     await new Promise(f => setTimeout(f, 2000));
     this.IsScript();
@@ -257,7 +259,7 @@ export class SendContentComponent implements OnInit {
       this.AlertEditBodyPreview = this._sanitizer.sanitize(SecurityContext.HTML, this.AlertEditBodyPreview);
       // this.AlertEditBodyPreview = this.AlertEditBodyPreview;
     }
-    
+
     this.AlertEditBody = this.alertForm.value.body;
     await new Promise(f => setTimeout(f, 2000));
     this.IsScript();
@@ -355,7 +357,7 @@ export class SendContentComponent implements OnInit {
     } else {
       if (document.getElementById("header-text-img-white") !== null || document.getElementById("footer-img") !== null) {
         document.getElementById("header-text-img-white").innerHTML = `<img src="${this.HeaderTextImg}" alt="Logo" width="80" height="80" style="background-color:#ffffff00; object-fit: contain; margin:3px;">`;
-        document.getElementById("footer-img").innerHTML = `<img src="${this.FooterImgUrl}" alt="Logo" width="50%" height="auto" style="float:right;">`;
+        document.getElementById("footer-img").innerHTML = `<img src="${this.FooterImgUrl}" alt="Logo" width="50%" height="auto" style="float:right; display:none;">`;
       }
     }
 
@@ -367,7 +369,7 @@ export class SendContentComponent implements OnInit {
     } else {
       if (document.getElementById("alert-max-height-check") !== null) {
         let MaxHeight = Number(100) - 50;
-        document.getElementById("alert-max-height-check").style.maxHeight = `${MaxHeight}vh`; 
+        document.getElementById("alert-max-height-check").style.maxHeight = `${MaxHeight}vh`;
       }
     }
 
@@ -377,8 +379,10 @@ export class SendContentComponent implements OnInit {
     // }
     if (document.getElementById("header-text") !== null || document.getElementById("body-text") !== null) {
       document.getElementById("header-text").innerHTML = `${this.AlertEditTitle}`;
-      document.getElementById("header-text-scroll").innerHTML = `<style> #header-text::-webkit-scrollbar {
-        display: none;
+      document.getElementById("header-text-scroll").innerHTML = `<style> #header-text p {
+        white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
     } </style>`;
       document.getElementById("body-text").innerHTML = `${this.AlertEditBody}`;
     }
@@ -413,7 +417,7 @@ export class SendContentComponent implements OnInit {
   // Scrolling Alert Editor Title, body and Range Function End
 
   // Scrolling Alert Preview Script css and img Function Start
-  IsScrollingScript() {  
+  IsScrollingScript() {
     let ScrollingContainer = <HTMLElement>document.querySelector("#ScrollingContentHtmlModal");
     // document.getElementById("alert-Scroll-border").style.border = `${this.Think}px solid ${this.HeaderBorder}`;
     document.getElementById("alert-Scroll-border").style.boxShadow = `0 0 0 2px ${this.HeaderBorder} inset`;
@@ -428,7 +432,7 @@ export class SendContentComponent implements OnInit {
 
   }
 
-  
+
   IsScreenSizeAlert(item: any) {
     if (item === 'fullscreen') {
       this.alertForm.value.width = '100';
@@ -472,7 +476,7 @@ export class SendContentComponent implements OnInit {
       // this.GetSkinListById();
       this.GetLocalSkinListById(this.SkinId);
       await new Promise(f => setTimeout(f, 2000));
-        this.IsScript();
+      this.IsScript();
 
       // this.SetInterval = setInterval(() => {
       //   this.IsScript();
@@ -611,7 +615,7 @@ export class SendContentComponent implements OnInit {
   //       this.authService.logout();
   //       this.router.navigate(['/signin']);
   //       this.loading = false;
-        
+
   //     } else if(error.status === 400) {
   //       this.toastr.error("Server Bad Request");
   //     } else if(error.status === 403) {
@@ -627,7 +631,7 @@ export class SendContentComponent implements OnInit {
   //   });
   // }
 
-  
+
   AlertTabType: any = 'popup';
   OnAlertTabChange(type: any) {
     this.AlertTabType = type;
@@ -704,7 +708,7 @@ export class SendContentComponent implements OnInit {
   //       this.authService.logout();
   //       this.router.navigate(['/signin']);
   //       this.loading = false;
-        
+
   //     } else if(error.status === 400) {
   //       this.toastr.error("Server Bad Request");
   //     } else if(error.status === 403) {
@@ -725,11 +729,11 @@ export class SendContentComponent implements OnInit {
   IsScrollingDirection: any = 'left'
   IsSpeed: number = 6;
 
-  OnChangeDirection(item: any){
+  OnChangeDirection(item: any) {
     this.IsScrollingDirection = item;
   }
 
-  OnChangeSpeed(speed){
+  OnChangeSpeed(speed) {
     this.IsSpeed = Number(speed);
   }
 

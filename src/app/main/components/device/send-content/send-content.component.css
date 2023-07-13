@@ -22,6 +22,11 @@
     flex: 0 0 41.666667%;
     max-width: 39.666667%;
 } */
+.title-skin-alert {
+    white-space: nowrap;
+    width: 200px;
+    text-overflow: ellipsis;
+}
 
 .logo-skin{
     height: 80px;
@@ -33,7 +38,7 @@
 }
 
 .logo-ticker-skin{
-    height: 57px;
+    height: 54px;
     width: 63px;
     /* background-color: #fff; */
     padding: 2%;

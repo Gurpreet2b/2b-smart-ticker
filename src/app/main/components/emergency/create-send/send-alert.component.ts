@@ -42,6 +42,7 @@ export class SendNowAlertComponent implements OnInit {
   public RoleName: any;
   public RoleAssign: any = [];
   public ShowFooter = false;
+  public paddingSkinAlert: any;
 
   constructor(private http: HttpService,
     private toastr: ToastrService,
@@ -171,6 +172,7 @@ export class SendNowAlertComponent implements OnInit {
       this.ShowFooter = item.skin.show_alert_footer;
       this.AlertBgColor = item.skin.alert_background_color;
       this.HeaderBgColor = item.skin.header_background_color;
+      this.paddingSkinAlert = item.skin.padding_header_alert;
       this.HeaderTitle = item.skin.header_custom_message;
       this.HeaderFontSize = item.skin.header_custom_message_font_color;
       this.FooterImageUrl = item.skin.new_footer_image;

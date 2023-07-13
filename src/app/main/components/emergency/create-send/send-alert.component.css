@@ -4,6 +4,11 @@
     padding: 8px;
 }
 
+.title-skin-alert{
+    white-space: nowrap;
+    width: 100px;
+    text-overflow: ellipsis;
+}
 .header-emergency {
     background: gray;
     width: 250px;

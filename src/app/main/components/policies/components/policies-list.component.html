@@ -52,7 +52,7 @@
                                 <tbody>
                                     <tr
                                         *ngFor="let policies of PoliciesList | paginate: { itemsPerPage: 10, currentPage: currentPage, totalItems: totalItems }; let i=index">
-                                        <td>
+                                        <td id="appadd" title="{{policies.name}}">
                                             {{policies.name}}
                                         </td>
                                         <td>{{policies.user_count}}</td>

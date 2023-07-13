@@ -97,7 +97,7 @@
                                         </thead>
                                         <tbody>
                                             <tr *ngFor="let org of OrganizationList | paginate: { id:'first', itemsPerPage: 10, currentPage: currentPage, totalItems: totalItems }; let i=index">
-                                                <td *ngIf="UserType !== 'groups'">
+                                                <td *ngIf="UserType !== 'groups'" id="appadd" title="{{org.username}}">
                                                     {{org.username}}
                                                 </td>
                                                 <td *ngIf="UserType !== 'groups'">

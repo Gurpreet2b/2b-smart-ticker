@@ -297,6 +297,7 @@ export class SentAlertComponent implements OnInit {
   public AlertWidth: any = '700px';
   public AlertHeight: any = '700px';
   public AlertBodyHeight: any = '460px';
+  public paddingSkinAlert: any;
 
   public FooterImageUrl: any = '/assets/img/dewa-lines.png';
 
@@ -398,6 +399,8 @@ export class SentAlertComponent implements OnInit {
       this.AllowFeedback = item.popup_alert.allow_feedback;
       this.AlertBgColor = item.skin_id.alert_background_color;
       this.HeaderBgColor = item.skin_id.header_background_color;
+      this.paddingSkinAlert = item.skin_id.padding_header_alert;
+      
       this.HeaderTitle = item.skin_id.header_custom_message;
       this.HeaderFontSize = item.skin_id.header_custom_message_font_color;
       this.FooterImageUrl = item.skin_id.new_footer_image;

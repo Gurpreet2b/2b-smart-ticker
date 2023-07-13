@@ -45,7 +45,7 @@
 
                                 <tbody>
                                     <tr *ngFor="let template of SurveyTemplateList | paginate: { itemsPerPage: 10, currentPage: currentPage, totalItems: totalItems }; let i=index">
-                                        <td>
+                                        <td id="appadd">
                                             {{template.name}}
                                         </td>
                                         <td class="marg w-icons">

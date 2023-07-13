@@ -5,13 +5,37 @@
 .modal-content{
     border: none !important;
 }
-
+.title-alert-header{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    margin-top: 2.5rem;
+}
 .alert-static {
     max-width: 500px;
     margin: 1.75rem auto;
 }
 .w-icons-sent img{
-    width: 10%;
+    width: 13%;
+}
+.title-skin-alert{
+    white-space: nowrap;
+    width: 40px;
+    text-overflow: ellipsis;
+}
+#appadd {
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 145px; 
+}
+
+.text-w-set {
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px; 
 }
 .scrol {
     width: 800px;

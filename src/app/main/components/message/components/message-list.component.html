@@ -49,7 +49,7 @@
                                     <tr
                                         *ngFor="let message of MessageList | paginate: { itemsPerPage: 10, currentPage: currentPage, totalItems: totalItems }; let i=index">
 
-                                        <td>
+                                        <td id="messageappad" title="{{message.name}}">
                                             {{message.name}}
                                         </td>
                                         <td>

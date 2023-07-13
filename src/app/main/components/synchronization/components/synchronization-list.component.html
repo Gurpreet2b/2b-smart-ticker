@@ -76,13 +76,13 @@
                                 <tbody>
                                     <tr
                                         *ngFor="let synchronization of SynchronizationList | paginate: { itemsPerPage: 10, currentPage: currentPage, totalItems: totalItems }; let i=index">
-                                        <td>
+                                        <td id="appadd" title="{{synchronization.name}}">
                                             {{synchronization.name}}
                                         </td>
                                         <td>
                                             {{synchronization.created_at | date}}
                                         </td>
-                                        <td>
+                                        <td id="appadd" title="{{synchronization.username}}">
                                             {{synchronization.username}}
                                         </td>
                                         <td>
@@ -91,7 +91,7 @@
                                         <td>
                                             {{synchronization.port}}
                                         </td>
-                                        <td>
+                                        <td id="appadd" title="{{synchronization.status}}">
                                             {{synchronization.status}}
                                         </td>
                                         <td class="margin w-icons">
